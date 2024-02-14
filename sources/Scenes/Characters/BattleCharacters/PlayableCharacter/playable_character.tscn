@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b33jnnf4nai64"]
+
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/Scenes/Characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
+[ext_resource type="Texture2D" uid="uid://ch3x2dgrs4ld" path="res://assets/Apple.png" id="2_442wc"]
+[ext_resource type="Script" path="res://sources/Scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.gd" id="2_muque"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wd7"]
+
+[node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
+position = Vector2(47, 21)
+script = ExtResource("2_muque")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_442wc")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_c4wd7")
