@@ -15,6 +15,10 @@ run/main_scene="res://sources/Scenes/Characters/BattleCharacters/PlayableCharact
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/scale=3.0
+
 [importer_defaults]
 
 animation_library={
