@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=51 format=3 uid="uid://b33jnnf4nai64"]
 
-[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/Scenes/Characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
-[ext_resource type="Script" path="res://sources/Scripts/playable_character.gd" id="2_muque"]
-[ext_resource type="Texture2D" uid="uid://do04twf70sgve" path="res://assets/Characters/char_a_p1_0bas_humn_v00.png" id="3_vj6h6"]
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
+[ext_resource type="Script" path="res://sources/scripts/playable_character.gd" id="2_muque"]
+[ext_resource type="Texture2D" uid="uid://do04twf70sgve" path="res://assets/characters/base/standMovePush/humn_v00.png" id="3_vj6h6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wd7"]
 size = Vector2(16, 17)
@@ -20,6 +20,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Base:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_0g1gx"]
@@ -39,8 +75,8 @@ tracks/0/keys = {
 "values": [32, 33, 38, 35, 36, 39]
 }
 
-[sub_resource type="Animation" id="Animation_tad55"]
-resource_name = "run_right"
+[sub_resource type="Animation" id="Animation_gq0pt"]
+resource_name = "run_down_sword_shield"
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -53,7 +89,43 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [48, 49, 54, 51, 52, 55]
+"values": [32, 33, 38, 35, 36, 39]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/OneHandWeapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 38, 35, 36, 39]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Base:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_cqxje"]
@@ -73,6 +145,129 @@ tracks/0/keys = {
 "values": [56, 57, 62, 59, 60, 63]
 }
 
+[sub_resource type="Animation" id="Animation_syb3t"]
+resource_name = "run_left_sword_shield"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 62, 59, 60, 63]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Base:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 62, 59, 60, 63]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_tad55"]
+resource_name = "run_right"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 54, 51, 52, 55]
+}
+
+[sub_resource type="Animation" id="Animation_pv7uj"]
+resource_name = "run_right_sword_shield"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 54, 51, 52, 55]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/OneHandWeapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 54, 51, 52, 55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Base:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="Animation" id="Animation_qpihn"]
 resource_name = "run_up"
 length = 0.6
@@ -90,6 +285,59 @@ tracks/0/keys = {
 "values": [40, 41, 46, 43, 44, 47]
 }
 
+[sub_resource type="Animation" id="Animation_sk1m0"]
+resource_name = "run_up_sword_shield"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 46, 43, 44, 47]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/OneHandWeapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 46, 43, 44, 47]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Base:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="Animation" id="Animation_xxy5q"]
 resource_name = "stand_down"
 tracks/0/type = "value"
@@ -103,36 +351,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_iyweq"]
-resource_name = "stand_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Base:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_tyf4o"]
-resource_name = "stand_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Base:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [16]
 }
 
 [sub_resource type="Animation" id="Animation_3ad7k"]
@@ -150,17 +368,259 @@ tracks/0/keys = {
 "values": [24]
 }
 
+[sub_resource type="Animation" id="Animation_tyf4o"]
+resource_name = "stand_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_iyweq"]
+resource_name = "stand_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_xmpjf"]
+resource_name = "stand_down_sword_shield"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Base:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_c4y54"]
+resource_name = "stand_up_sword_shield"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Base:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_bg7hm"]
+resource_name = "stand_right_sword_shield"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Base:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_dw6mw"]
+resource_name = "stand_left_sword_shield"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Base:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/OneHandWeapon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/OneHandWeapon:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x6i1r"]
 _data = {
 "RESET": SubResource("Animation_rvpgc"),
 "run_down": SubResource("Animation_0g1gx"),
+"run_down_sword_shield": SubResource("Animation_gq0pt"),
 "run_left": SubResource("Animation_cqxje"),
+"run_left_sword_shield": SubResource("Animation_syb3t"),
 "run_right": SubResource("Animation_tad55"),
+"run_right_sword_shield": SubResource("Animation_pv7uj"),
 "run_up": SubResource("Animation_qpihn"),
+"run_up_sword_shield": SubResource("Animation_sk1m0"),
 "stand_down": SubResource("Animation_xxy5q"),
+"stand_down_sword_shield": SubResource("Animation_xmpjf"),
 "stand_left": SubResource("Animation_3ad7k"),
+"stand_left_sword_shield": SubResource("Animation_dw6mw"),
 "stand_right": SubResource("Animation_tyf4o"),
-"stand_up": SubResource("Animation_iyweq")
+"stand_right_sword_shield": SubResource("Animation_bg7hm"),
+"stand_up": SubResource("Animation_iyweq"),
+"stand_up_sword_shield": SubResource("Animation_c4y54")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nw81m"]
@@ -183,6 +643,31 @@ blend_point_1/pos = Vector2(0, -1.1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_lbcd8")
 blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_ec6kr")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4tyji"]
+animation = &"run_down_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cps56"]
+animation = &"run_up_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_closc"]
+animation = &"run_right_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oxvqa"]
+animation = &"run_left_sword_shield"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7v7gl"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_4tyji")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_cps56")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_closc")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_oxvqa")
 blend_point_3/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
@@ -211,28 +696,85 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_8a7o4")
 blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4la5v"]
+animation = &"stand_down_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6qvew"]
+animation = &"stand_up_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hiees"]
+animation = &"stand_right_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ckehr"]
+animation = &"stand_left_sword_shield"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_m6a8d"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_4la5v")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_6qvew")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_hiees")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ckehr")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xjwk8"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w0dq6"]
+advance_mode = 2
+advance_condition = &"is_running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sj4gm"]
+advance_mode = 2
+advance_condition = &"is_stand"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3xdj4"]
+advance_mode = 2
+advance_condition = &"is_equip_sword_shield"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1fq4i"]
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g2gjg"]
+advance_mode = 2
+advance_condition = &"is_stand"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7gj7v"]
+advance_mode = 2
+advance_condition = &"is_unequip_weapon"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jywqs"]
-states/End/position = Vector2(778, 157)
+states/End/position = Vector2(911, 158)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_qb66d")
 states/Run/position = Vector2(494, 48)
+states/Run_sword_shield/node = SubResource("AnimationNodeBlendSpace2D_7v7gl")
+states/Run_sword_shield/position = Vector2(703, 217)
 states/Stand/node = SubResource("AnimationNodeBlendSpace2D_84jof")
-states/Stand/position = Vector2(494, 159)
+states/Stand/position = Vector2(494, 128)
+states/Stand_sword_shield/node = SubResource("AnimationNodeBlendSpace2D_m6a8d")
+states/Stand_sword_shield/position = Vector2(703, 128)
 states/Start/position = Vector2(198, 154)
-transitions = ["Start", "Stand", SubResource("AnimationNodeStateMachineTransition_xjwk8"), "Stand", "Run", SubResource("AnimationNodeStateMachineTransition_w0dq6"), "Run", "Stand", SubResource("AnimationNodeStateMachineTransition_sj4gm")]
+transitions = ["Start", "Stand", SubResource("AnimationNodeStateMachineTransition_xjwk8"), "Stand", "Run", SubResource("AnimationNodeStateMachineTransition_w0dq6"), "Run", "Stand", SubResource("AnimationNodeStateMachineTransition_sj4gm"), "Stand", "Stand_sword_shield", SubResource("AnimationNodeStateMachineTransition_3xdj4"), "Stand_sword_shield", "Run_sword_shield", SubResource("AnimationNodeStateMachineTransition_1fq4i"), "Run_sword_shield", "Stand_sword_shield", SubResource("AnimationNodeStateMachineTransition_g2gjg"), "Stand_sword_shield", "Stand", SubResource("AnimationNodeStateMachineTransition_7gj7v")]
+graph_offset = Vector2(2, -6)
 
 [node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
 position = Vector2(0, -12)
 script = ExtResource("2_muque")
+move_speed_unit = 5
 
 [node name="Base" parent="Body" index="0"]
+z_index = 2
 texture = ExtResource("3_vj6h6")
+hframes = 8
+vframes = 8
+
+[node name="OneHandWeapon" parent="Body" index="1"]
+z_index = 1
 hframes = 8
 vframes = 8
 
@@ -252,5 +794,11 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_jywqs")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_equip_sword_shield = false
+parameters/conditions/is_running = false
+parameters/conditions/is_stand = false
+parameters/conditions/is_unequip_weapon = false
 parameters/Run/blend_position = Vector2(-0.1088, 0.444934)
+parameters/Run_sword_shield/blend_position = Vector2(-0.51049, -0.111454)
 parameters/Stand/blend_position = Vector2(0, 0.925926)
+parameters/Stand_sword_shield/blend_position = Vector2(0, 1.1)
