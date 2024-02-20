@@ -1,10 +1,7 @@
-[gd_scene load_steps=71 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=77 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/playable_character.gd" id="2_muque"]
-[ext_resource type="Texture2D" uid="uid://bu12spcwfamp7" path="res://assets/characters/swordAndShieldBase/attack/humn_v00.png" id="3_5kai7"]
-[ext_resource type="Texture2D" uid="uid://co4bflt82q1tp" path="res://assets/weapon/swordAndShield/attack/axe_v00.png" id="4_cvx8s"]
-[ext_resource type="Texture2D" uid="uid://dhbnbvw17j7n0" path="res://assets/weapon/swordAndShield/attack/shield_v00.png" id="5_m13jp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wd7"]
 size = Vector2(16, 17)
@@ -467,6 +464,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [2, 0]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_mgu2b"]
 resource_name = "slash_down_sword_shield_2"
@@ -542,6 +553,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 2]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_8ukeu"]
@@ -619,6 +644,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [1, 2, 1]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_65w3t"]
 resource_name = "slash_left_sword_shield_2"
@@ -694,6 +733,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_v3you"]
@@ -771,6 +824,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8i5af"]
 resource_name = "slash_right_sword_shield_2"
@@ -846,6 +913,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_f4r5l"]
@@ -923,6 +1004,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [0, 2]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_6jlc0"]
 resource_name = "slash_up_sword_shield_2"
@@ -998,6 +1093,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_xmpjf"]
@@ -1375,6 +1484,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [2, 1]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_sddp5"]
 resource_name = "thrust_left_sword_shield"
@@ -1450,6 +1573,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_dwgwe"]
@@ -1527,6 +1664,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_mepkw"]
 resource_name = "thrust_up_sword_shield"
@@ -1602,6 +1753,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_u441e"]
@@ -1679,6 +1844,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [2, 0]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_bhmk7"]
 resource_name = "shield_bash_up"
@@ -1754,6 +1933,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 2]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ol66g"]
@@ -1831,6 +2024,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [2, 1, 2]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_llt63"]
 resource_name = "shield_bash_left"
@@ -1907,6 +2114,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [3]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_attack_finished"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x6i1r"]
 _data = {
@@ -1962,80 +2183,6 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5xr1n"]
-animation = &"shield_bash_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s0nwj"]
-animation = &"shield_bash_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kxr1f"]
-animation = &"shield_bash_right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wggbw"]
-animation = &"shield_bash_left"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_lqc8d"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_5xr1n")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_s0nwj")
-blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_kxr1f")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_wggbw")
-blend_point_3/pos = Vector2(-1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hku6a"]
-animation = &"slash_down_sword_shield_1"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pkw0y"]
-animation = &"slash_right_sword_shield_1"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lfycm"]
-animation = &"slash_up_sword_shield_1"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uou8v"]
-animation = &"slash_left_sword_shield_1"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_sw7hx"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_hku6a")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_pkw0y")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_lfycm")
-blend_point_2/pos = Vector2(0, -1.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_uou8v")
-blend_point_3/pos = Vector2(-1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_48g3n"]
-animation = &"slash_down_sword_shield_2"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bfa6b"]
-animation = &"slash_up_sword_shield_2"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8arj6"]
-animation = &"slash_right_sword_shield_2"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_liqbi"]
-animation = &"slash_left_sword_shield_2"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qs6ey"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_48g3n")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_bfa6b")
-blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_8arj6")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_liqbi")
-blend_point_3/pos = Vector2(-1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4la5v"]
 animation = &"stand_down"
 
@@ -2061,30 +2208,150 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w5x1r"]
-animation = &"thrust_down_sword_shield"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m1tib"]
+animation = &"shield_bash_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_33q60"]
-animation = &"thrust_up_sword_shield"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_msckr"]
+animation = &"shield_bash_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vmx8t"]
-animation = &"thrust_right_sword_shield"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5vgj6"]
+animation = &"shield_bash_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_loj08"]
-animation = &"thrust_left_sword_shield"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pwkci"]
+animation = &"shield_bash_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qqd85"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_w5x1r")
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_je5j7"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_m1tib")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_33q60")
+blend_point_1/node = SubResource("AnimationNodeAnimation_msckr")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_vmx8t")
+blend_point_2/node = SubResource("AnimationNodeAnimation_5vgj6")
 blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_loj08")
+blend_point_3/node = SubResource("AnimationNodeAnimation_pwkci")
 blend_point_3/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1u5t6"]
+animation = &"slash_down_sword_shield_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y2j44"]
+animation = &"slash_up_sword_shield_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wq3hy"]
+animation = &"slash_right_sword_shield_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hdosr"]
+animation = &"slash_left_sword_shield_1"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mf4s7"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1u5t6")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_y2j44")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_wq3hy")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_hdosr")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jw8n"]
+animation = &"slash_down_sword_shield_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6lgl0"]
+animation = &"slash_up_sword_shield_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s01cc"]
+animation = &"slash_right_sword_shield_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4b7h8"]
+animation = &"slash_left_sword_shield_2"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ypdc4"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1jw8n")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_6lgl0")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_s01cc")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_4b7h8")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1xhnk"]
+animation = &"thrust_down_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l70pw"]
+animation = &"thrust_up_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ac7aa"]
+animation = &"thrust_right_sword_shield"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nxdjh"]
+animation = &"thrust_left_sword_shield"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_loqb5"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1xhnk")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_l70pw")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ac7aa")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_nxdjh")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dx6b4"]
+advance_mode = 2
+advance_condition = &"is_slash_1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d51m8"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gk8mv"]
+advance_mode = 2
+advance_condition = &"is_slash_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_042i4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8n4ol"]
+advance_mode = 2
+advance_condition = &"is_thrust"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cju7e"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ptb5"]
+advance_mode = 2
+advance_condition = &"is_shield_bash"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1s2uw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_br6w5"]
+states/End/position = Vector2(762, 128)
+states/Shield_bash/node = SubResource("AnimationNodeBlendSpace2D_je5j7")
+states/Shield_bash/position = Vector2(406, 231)
+states/Slash_1/node = SubResource("AnimationNodeBlendSpace2D_mf4s7")
+states/Slash_1/position = Vector2(406, 32)
+states/Slash_2/node = SubResource("AnimationNodeBlendSpace2D_ypdc4")
+states/Slash_2/position = Vector2(406, 99)
+states/Start/position = Vector2(156, 128)
+states/Thrust/node = SubResource("AnimationNodeBlendSpace2D_loqb5")
+states/Thrust/position = Vector2(406, 166)
+transitions = ["Start", "Slash_1", SubResource("AnimationNodeStateMachineTransition_dx6b4"), "Slash_1", "End", SubResource("AnimationNodeStateMachineTransition_d51m8"), "Start", "Slash_2", SubResource("AnimationNodeStateMachineTransition_gk8mv"), "Slash_2", "End", SubResource("AnimationNodeStateMachineTransition_042i4"), "Start", "Thrust", SubResource("AnimationNodeStateMachineTransition_8n4ol"), "Thrust", "End", SubResource("AnimationNodeStateMachineTransition_cju7e"), "Start", "Shield_bash", SubResource("AnimationNodeStateMachineTransition_7ptb5"), "Shield_bash", "End", SubResource("AnimationNodeStateMachineTransition_1s2uw")]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1fq4i"]
 advance_mode = 2
@@ -2092,42 +2359,40 @@ advance_condition = &"is_running"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g2gjg"]
 advance_mode = 2
-advance_condition = &"is_stand"
+advance_condition = &"is_standing"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_agkb2"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5i5lo"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bdrl1"]
 advance_mode = 2
-advance_condition = &"is_attack_sword_shield"
+advance_condition = &"is_attacking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6srxo"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6bvqb"]
 advance_mode = 2
-advance_condition = &"is_attack_combo"
+advance_condition = &"is_attacking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hhpll"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_65fgq"]
+switch_mode = 2
 advance_mode = 2
+advance_condition = &"is_standing"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5nwk7"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qc3g5"]
+switch_mode = 2
 advance_mode = 2
+advance_condition = &"is_running"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jywqs"]
 states/End/position = Vector2(820, 27)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_7v7gl")
-states/Run/position = Vector2(432, 181)
-states/Shield_bash/node = SubResource("AnimationNodeBlendSpace2D_lqc8d")
-states/Shield_bash/position = Vector2(1162.43, 72)
-states/Slash_sword_shield_1/node = SubResource("AnimationNodeBlendSpace2D_sw7hx")
-states/Slash_sword_shield_1/position = Vector2(641, 181)
-states/Slash_sword_shield_2/node = SubResource("AnimationNodeBlendSpace2D_qs6ey")
-states/Slash_sword_shield_2/position = Vector2(889, 181)
+states/Run/position = Vector2(516, 235)
 states/Stand/node = SubResource("AnimationNodeBlendSpace2D_m6a8d")
-states/Stand/position = Vector2(432, 88)
+states/Stand/position = Vector2(516, 111)
 states/Start/position = Vector2(198, 154)
-states/Thrust_sword_shield/node = SubResource("AnimationNodeBlendSpace2D_qqd85")
-states/Thrust_sword_shield/position = Vector2(1126.43, 181)
-transitions = ["Stand", "Run", SubResource("AnimationNodeStateMachineTransition_1fq4i"), "Run", "Stand", SubResource("AnimationNodeStateMachineTransition_g2gjg"), "Start", "Stand", SubResource("AnimationNodeStateMachineTransition_agkb2"), "Run", "Slash_sword_shield_1", SubResource("AnimationNodeStateMachineTransition_5i5lo"), "Slash_sword_shield_1", "Slash_sword_shield_2", SubResource("AnimationNodeStateMachineTransition_6srxo"), "Slash_sword_shield_2", "Thrust_sword_shield", SubResource("AnimationNodeStateMachineTransition_hhpll"), "Thrust_sword_shield", "Shield_bash", SubResource("AnimationNodeStateMachineTransition_5nwk7")]
-graph_offset = Vector2(173.429, -6)
+states/Sword_shield_attack/node = SubResource("AnimationNodeStateMachine_br6w5")
+states/Sword_shield_attack/position = Vector2(771.429, 184.402)
+transitions = ["Stand", "Run", SubResource("AnimationNodeStateMachineTransition_1fq4i"), "Run", "Stand", SubResource("AnimationNodeStateMachineTransition_g2gjg"), "Start", "Stand", SubResource("AnimationNodeStateMachineTransition_agkb2"), "Stand", "Sword_shield_attack", SubResource("AnimationNodeStateMachineTransition_bdrl1"), "Run", "Sword_shield_attack", SubResource("AnimationNodeStateMachineTransition_6bvqb"), "Sword_shield_attack", "Stand", SubResource("AnimationNodeStateMachineTransition_65fgq"), "Sword_shield_attack", "Run", SubResource("AnimationNodeStateMachineTransition_qc3g5")]
+graph_offset = Vector2(173.429, 83.4015)
 
 [node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
 position = Vector2(0, -12)
@@ -2136,18 +2401,15 @@ move_speed_unit = 5
 
 [node name="Base" parent="Body" index="0"]
 z_index = 2
-texture = ExtResource("3_5kai7")
 hframes = 8
 vframes = 8
 
 [node name="OneHandWeapon" parent="Body" index="1"]
 z_index = 1
-texture = ExtResource("4_cvx8s")
 hframes = 8
 vframes = 8
 
 [node name="Shield" parent="Body" index="2"]
-texture = ExtResource("5_m13jp")
 hframes = 8
 vframes = 8
 frame = 32
@@ -2168,13 +2430,22 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_jywqs")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/is_attack_combo = false
-parameters/conditions/is_attack_sword_shield = false
+parameters/conditions/is_attacking = false
 parameters/conditions/is_running = false
-parameters/conditions/is_stand = false
+parameters/conditions/is_standing = false
 parameters/Run/blend_position = Vector2(0, 0)
-parameters/Shield_bash/blend_position = Vector2(0, 0)
-parameters/Slash_sword_shield_1/blend_position = Vector2(-0.00174826, 1.08922)
-parameters/Slash_sword_shield_2/blend_position = Vector2(0, 0)
 parameters/Stand/blend_position = Vector2(-0.106643, 0.106061)
-parameters/Thrust_sword_shield/blend_position = Vector2(0, 0)
+parameters/Sword_shield_attack/conditions/is_shield_bash = false
+parameters/Sword_shield_attack/conditions/is_slash_1 = false
+parameters/Sword_shield_attack/conditions/is_slash_2 = false
+parameters/Sword_shield_attack/conditions/is_thrust = false
+parameters/Sword_shield_attack/Shield_bash/blend_position = Vector2(0, 0)
+parameters/Sword_shield_attack/Slash_1/blend_position = Vector2(0, 0)
+parameters/Sword_shield_attack/Slash_2/blend_position = Vector2(0, 0)
+parameters/Sword_shield_attack/Thrust/blend_position = Vector2(0, 0)
+
+[node name="AttackTimer" type="Timer" parent="." index="4"]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
