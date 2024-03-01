@@ -4,7 +4,7 @@ class_name PlayableCharacter
 const BIAS = Vector2(0, 5)
 
 
-@export var move_speed_unit = 5 #toc do di chuyen cua nhan vat
+@export var move_speed_unit: float = 5: set = set_move_speed_unit, get = get_move_speed_unit
 
 @onready var animation_tree = $AnimationTree
 @onready var base : Sprite2D = $Body/Base
@@ -105,11 +105,15 @@ func attack():
 	else:
 		attack_combo = 0
 
+#Rút vũ khí
 func draw():
+	set_move_speed_unit(2)
 	is_drawing = true
 	animation_tree.set("parameters/conditions/is_drawing", is_drawing)
 
+#Cất vũ khí
 func sheath():
+	set_move_speed_unit(5)
 	is_attack_state = false
 	is_sheathing = true
 	animation_tree.set("parameters/Sword_shield/conditions/is_sheathing", is_sheathing)
@@ -189,3 +193,9 @@ func move_idle_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/moveIdle/humn_v00.png")
 	one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/moveIdle/axe_v00.png")
 	shield.texture = load("res://assets/weapon/swordAndShield/moveIdle/shield_v00.png")
+
+func set_move_speed_unit(value: float):
+	move_speed_unit = value
+
+func get_move_speed_unit():
+	return move_speed_unit
