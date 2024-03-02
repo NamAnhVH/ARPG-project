@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="ARPG project"
-run/main_scene="res://sources/scenes/characters/BattleCharacters/PlayableCharacter/playable_character.tscn"
+run/main_scene="res://sources/Scenes/Map/test_map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/scale=3.0
+window/stretch/scale=2.5
 
 [importer_defaults]
 

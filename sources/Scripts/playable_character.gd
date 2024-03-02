@@ -7,6 +7,7 @@ const BIAS = Vector2(0, 5)
 @export var move_speed_unit: float = 5: set = set_move_speed_unit, get = get_move_speed_unit
 
 @onready var animation_tree = $AnimationTree
+@onready var body : Node2D = $Body
 @onready var base : Sprite2D = $Body/Base
 @onready var one_hand_weapon : Sprite2D = $Body/OneHandWeapon
 @onready var shield : Sprite2D = $Body/Shield
@@ -199,3 +200,9 @@ func set_move_speed_unit(value: float):
 
 func get_move_speed_unit():
 	return move_speed_unit
+
+#Thiết lập các tầng sprite body
+func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: int):
+	body.move_child(base, base_index)
+	body.move_child(one_hand_weapon, one_hand_weapon_index)
+	body.move_child(shield, shield_index)
