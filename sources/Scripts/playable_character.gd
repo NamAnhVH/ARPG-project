@@ -3,7 +3,6 @@ class_name PlayableCharacter
 
 const BIAS = Vector2(0, 5)
 
-
 @export var move_speed_unit: float = 5: set = set_move_speed_unit, get = get_move_speed_unit
 
 @onready var animation_tree = $AnimationTree
@@ -13,13 +12,15 @@ const BIAS = Vector2(0, 5)
 @onready var shield : Sprite2D = $Body/Shield
 @onready var attack_timer : Timer = $AttackTimer
 
+
 var is_unequip_weapon : bool = true #Check trang bị vũ khí chưa (Chỉnh sửa sau)
 var is_attacking : bool = false
 var is_attack_state: bool = false
 var is_drawing : bool = false
 var is_sheathing : bool = false
-var attack_combo : int = 0
+var is_in_stair_direction : Enums.Direction
 
+var attack_combo : int = 0
 var move_input := Vector2()
 var mouse := Vector2()
 
@@ -55,7 +56,17 @@ func _physics_process(_delta):
 #Trạng thái di chuyển của nhân vật
 func move_state():
 	move_input.x = -Input.get_action_strength("move_left") + Input.get_action_strength("move_right")
-	move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down")
+	
+	#Trục Oy khi di chuyển lên xuống cầu thang
+	match is_in_stair_direction:
+		Enums.Direction.NONE:
+			move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down")
+		Enums.Direction.RIGHT:
+			move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down") + Input.get_action_strength("move_left") / sqrt(2) - Input.get_action_strength("move_right") / sqrt(2)
+		Enums.Direction.LEFT:
+			move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down") - Input.get_action_strength("move_left") / sqrt(2) + Input.get_action_strength("move_right") / sqrt(2)
+		Enums.Direction.DOWN:
+			move_input.y = -Input.get_action_strength("move_up") / 2 + Input.get_action_strength("move_down") / 2
 	
 	#Vecto chuẩn hoá hướng di chuyển
 	move_input = move_input.normalized()
@@ -206,3 +217,7 @@ func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: i
 	body.move_child(base, base_index)
 	body.move_child(one_hand_weapon, one_hand_weapon_index)
 	body.move_child(shield, shield_index)
+
+
+
+

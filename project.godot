@@ -15,6 +15,10 @@ run/main_scene="res://sources/Scenes/Map/test_map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Enum="*res://sources/scripts/enum.gd"
+
 [display]
 
 window/stretch/scale=2.5
@@ -62,6 +66,12 @@ draw_sheath={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="floor_1"
+2d_physics/layer_2="floor_2"
+2d_physics/layer_32="stair"
 
 [rendering]
 
