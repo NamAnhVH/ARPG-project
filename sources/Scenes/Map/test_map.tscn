@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bmxlfrnlvvvjt"]
 
-[ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/summer forest.png" id="1_08bvg"]
+[ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="1_08bvg"]
 [ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="2_x025v"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/Core/camera.tscn" id="3_by3yc"]
 [ext_resource type="Script" path="res://sources/scripts/change_layer_area.gd" id="5_3kxo3"]
