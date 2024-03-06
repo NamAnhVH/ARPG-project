@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bmxlfrnlvvvjt"]
+[gd_scene load_steps=19 format=3 uid="uid://bmxlfrnlvvvjt"]
 
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="1_08bvg"]
 [ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="2_x025v"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/Core/camera.tscn" id="3_by3yc"]
 [ext_resource type="Script" path="res://sources/scripts/change_layer_area.gd" id="5_3kxo3"]
 [ext_resource type="PackedScene" uid="uid://bl5nrfl5vxm56" path="res://sources/scenes/Core/stair_area.tscn" id="5_a58ij"]
+[ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/Characters/BattleCharacters/Enemies/slime.tscn" id="6_u2j18"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_p0jv7"]
 tile_data = PackedInt32Array(0, 1310720, 11, 65536, 1310720, 11, 131072, 1310720, 12, 1, 1245184, 11, 65537, 1245184, 11, 131073, 1245184, 12)
@@ -2024,6 +2025,10 @@ layer_4/tile_data = PackedInt32Array(-458715, 1179648, 10, -524252, 1114112, 9, 
 z_index = 1
 y_sort_enabled = true
 position = Vector2(370, 32)
+move_speed_unit = 5.0
+knockback_modifier = true
+move_weight = 0.2
+max_health = 10.0
 
 [node name="Camera" parent="PlayableCharacter" node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("3_by3yc")]
 position = Vector2(0, 12)
@@ -2159,3 +2164,9 @@ collision_mask = 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionArea/Floor3"]
 visible = false
 polygon = PackedVector2Array(609, -104, 615, -102, 615, -96, 615, -54, 609, -51, 579, -74, 577, -149, 577, -175, 720, -175, 720, -108, 653, -54, 653, -102, 680, -106, 694, -115, 708, -125, 707, -164, 597, -164, 587, -159, 588, -126, 603, -110)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Slime" parent="Enemies" instance=ExtResource("6_u2j18")]
+position = Vector2(267, 27)
+max_health = 2.0

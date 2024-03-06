@@ -72,6 +72,8 @@ draw_sheath={
 2d_physics/layer_1="floor_1"
 2d_physics/layer_2="floor_2"
 2d_physics/layer_3="floor_3"
+2d_physics/layer_17="player_hazard"
+2d_physics/layer_18="enemy_hazard"
 2d_physics/layer_32="stair"
 
 [rendering]

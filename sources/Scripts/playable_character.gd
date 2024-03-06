@@ -11,6 +11,7 @@ const BIAS = Vector2(0, 5)
 @onready var attack_timer : Timer = $AttackTimer
 
 var is_unequip_weapon : bool = true #Check trang bị vũ khí chưa (Chỉnh sửa sau)
+
 var is_attacking : bool = false
 var is_attack_state: bool = false
 var is_drawing : bool = false
@@ -121,16 +122,18 @@ func draw():
 	set_move_speed_unit(2)
 	is_drawing = true
 	is_attack_state = true
-	animation_tree.set("parameters/conditions/is_attack_state", is_attack_state)
-	animation_tree.set("parameters/conditions/!is_attack_state", !is_attack_state)
+	animation_tree.set("parameters/Attack_state/conditions/is_drawing", is_drawing)
+	animation_tree.set("parameters/Attack_state/conditions/is_not_drawing", !is_drawing)
+	animation_tree.set("parameters/conditions/is_attack_state_and_alive", is_attack_state and is_alive)
+	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", !is_attack_state and is_alive)
 
 #Cất vũ khí
 func sheath():
 	set_move_speed_unit(5)
 	is_attack_state = false
 	is_sheathing = true
-	animation_tree.set("parameters/conditions/is_attack_state", is_attack_state)
-	animation_tree.set("parameters/conditions/!is_attack_state", !is_attack_state)
+	animation_tree.set("parameters/conditions/is_attack_state_and_alive", is_attack_state and is_alive)
+	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", !is_attack_state and is_alive)
 	animation_tree.set("parameters/Attack_state/conditions/is_sheathing", is_sheathing)
 
 #Thiết lập hoạt ảnh đòn đánh
@@ -183,6 +186,8 @@ func _draw_started():
 #Kết thúc hoạt ảnh rút vũ khí
 func _draw_finished():
 	is_drawing = false
+	animation_tree.set("parameters/Attack_state/conditions/is_drawing", is_drawing)
+	animation_tree.set("parameters/Attack_state/conditions/is_not_drawing", !is_drawing)
 	move_idle_asset()
 
 #Bắt đầu hoạt ảnh cất vũ khí
@@ -220,3 +225,15 @@ func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: i
 	body.move_child(base, base_index)
 	body.move_child(one_hand_weapon, one_hand_weapon_index)
 	body.move_child(shield, shield_index)
+
+func _on_is_attacked():
+	animation_tree.set("parameters/conditions/is_attacked", true)
+
+func _hurt_finished():
+	animation_tree.set("parameters/conditions/is_attacked", false)
+
+func _on_is_dead():
+	is_alive = false
+	animation_tree.set("parameters/conditions/is_attack_state_and_alive", is_alive)
+	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", is_alive)
+	animation_tree.set("parameters/conditions/is_dead", !is_alive)
