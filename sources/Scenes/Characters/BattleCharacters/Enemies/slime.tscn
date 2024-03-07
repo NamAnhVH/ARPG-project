@@ -994,6 +994,7 @@ graph_offset = Vector2(4, -5)
 
 [node name="Slime" instance=ExtResource("1_dcox8")]
 script = ExtResource("2_fxcpq")
+max_active_area = 50
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -1061,6 +1062,12 @@ parameters/conditions/is_dead = false
 parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Hurt/blend_position = Vector2(0, 0)
 parameters/Move_idle/blend_position = Vector2(0, 0)
+
+[node name="Timers" type="Node" parent="." index="6"]
+
+[node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="0"]
+
+[node name="DirectionChangeTime" type="Timer" parent="Timers" index="1"]
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]

@@ -16,6 +16,7 @@ var is_attacking : bool = false
 var is_attack_state: bool = false
 var is_drawing : bool = false
 var is_sheathing : bool = false
+var is_hurting : bool = false
 var is_in_stair_direction : Enums.Direction
 
 var attack_combo : int = 0
@@ -25,6 +26,9 @@ var mouse := Vector2()
 func _ready():
 	#Gán texture khi được khởi tạo
 	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
+	
+	_set_body_layer(2,1,0)
+	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", !is_attack_state and is_alive)
 
 #Xử lý thao tác
 func _unhandled_input(event):
@@ -44,11 +48,11 @@ func _unhandled_input(event):
 	
 	#Nhấn phím Attack
 	if event.is_action_pressed("attack"):
-		if !is_attacking and !is_unequip_weapon and !is_drawing and !is_sheathing and is_attack_state:
+		if !is_attacking and !is_unequip_weapon and !is_drawing and !is_sheathing and !is_hurting and is_attack_state:
 			attack()
 
 func _physics_process(_delta):
-	if !is_attacking and !is_drawing and !is_sheathing:
+	if !is_attacking and !is_drawing and !is_sheathing and !is_hurting:
 		move_state()
 
 #Trạng thái di chuyển của nhân vật
@@ -92,7 +96,7 @@ func move_state():
 		animation_tree.set("parameters/Attack_state/conditions/is_idling", true)
 
 	#Vecto di chuyen
-	velocity = lerp(velocity, move_input * move_speed_unit * 24, 1)
+	velocity = lerp(velocity, move_input * move_speed_unit * 24, get_move_weight())
 	move_and_slide()
 
 #Chỉnh sửa sau
@@ -200,25 +204,42 @@ func _sheath_finished():
 	animation_tree.set("parameters/Attack_state/conditions/is_sheathing", is_sheathing)
 	base_asset()
 
+func _hurt_started():
+	is_hurting = true
+	change_state_asset()
+
+func _hurt_finished():
+	velocity = Vector2.ZERO
+	is_hurting = false
+	animation_tree.set("parameters/conditions/is_attacked", false)
+	if is_attack_state:
+		move_idle_asset()
+	else:
+		base_asset()
+
 func base_asset():
 	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
-	one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/standMovePush/axe_v00.png")
-	shield.texture = load("res://assets/weapon/swordAndShield/standMovePush/shield_v00.png")
+	if !is_unequip_weapon:
+		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/standMovePush/axe_v00.png")
+		shield.texture = load("res://assets/weapon/swordAndShield/standMovePush/shield_v00.png")
 
 func change_state_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/changeState/humn_v00.png")
-	one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/changeState/axe_v00.png")
-	shield.texture = load("res://assets/weapon/swordAndShield/changeState/shield_v00.png")
+	if !is_unequip_weapon:
+		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/changeState/axe_v00.png")
+		shield.texture = load("res://assets/weapon/swordAndShield/changeState/shield_v00.png")
 
 func attack_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/attack/humn_v00.png")
-	one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/attack/axe_v00.png")
-	shield.texture = load("res://assets/weapon/swordAndShield/attack/shield_v00.png")
+	if !is_unequip_weapon:
+		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/attack/axe_v00.png")
+		shield.texture = load("res://assets/weapon/swordAndShield/attack/shield_v00.png")
 
 func move_idle_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/moveIdle/humn_v00.png")
-	one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/moveIdle/axe_v00.png")
-	shield.texture = load("res://assets/weapon/swordAndShield/moveIdle/shield_v00.png")
+	if !is_unequip_weapon:
+		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/moveIdle/axe_v00.png")
+		shield.texture = load("res://assets/weapon/swordAndShield/moveIdle/shield_v00.png")
 
 #Thiết lập các tầng sprite body
 func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: int):
@@ -229,8 +250,6 @@ func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: i
 func _on_is_attacked():
 	animation_tree.set("parameters/conditions/is_attacked", true)
 
-func _hurt_finished():
-	animation_tree.set("parameters/conditions/is_attacked", false)
 
 func _on_is_dead():
 	is_alive = false

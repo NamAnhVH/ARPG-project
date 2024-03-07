@@ -2025,10 +2025,6 @@ layer_4/tile_data = PackedInt32Array(-458715, 1179648, 10, -524252, 1114112, 9, 
 z_index = 1
 y_sort_enabled = true
 position = Vector2(370, 32)
-move_speed_unit = 5.0
-knockback_modifier = true
-move_weight = 0.2
-max_health = 10.0
 
 [node name="Camera" parent="PlayableCharacter" node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("3_by3yc")]
 position = Vector2(0, 12)
