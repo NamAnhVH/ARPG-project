@@ -9,10 +9,12 @@ const KNOCKBACK_VELOCITY = 200
 @export var move_speed_unit: float = 5: set = set_move_speed_unit, get = get_move_speed_unit
 @export var knockback_modifier: bool = true
 @export var move_weight: float = 0.2: set = set_move_weight, get = get_move_weight
-@export var max_health = 10.0
+@export var max_health : int = 10
 
-@onready var health = max_health: set = set_health
-@onready var hitbox = $Hitbox
+@onready var health : int = max_health: set = set_health
+@onready var hitbox : Area2D = $Hitbox
+@onready var damage_area : Area2D = $DamageArea
+@onready var animation_tree : AnimationTree = $AnimationTree
 
 var is_alive : bool = true
 

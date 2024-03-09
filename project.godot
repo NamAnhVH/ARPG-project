@@ -66,14 +66,25 @@ draw_sheath={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
 ]
 }
+asd={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":109,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
 2d_physics/layer_1="floor_1"
 2d_physics/layer_2="floor_2"
 2d_physics/layer_3="floor_3"
-2d_physics/layer_17="player_hazard"
-2d_physics/layer_18="enemy_hazard"
+2d_physics/layer_17="player_hazard_floor_1"
+2d_physics/layer_18="player_hazard_floor_2"
+2d_physics/layer_19="player_hazard_floor_3"
+2d_physics/layer_20="player_hazard_floor_4"
+2d_physics/layer_21="enemy_hazard_floor_1"
+2d_physics/layer_22="enemy_hazard_floor_2"
+2d_physics/layer_23="enemy_hazard_floor_3"
+2d_physics/layer_24="enemy_hazard_floor_4"
 2d_physics/layer_32="stair"
 
 [rendering]

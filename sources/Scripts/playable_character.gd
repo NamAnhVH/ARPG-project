@@ -3,7 +3,6 @@ class_name PlayableCharacter
 
 const BIAS = Vector2(0, 5)
 
-@onready var animation_tree = $AnimationTree
 @onready var body : Node2D = $Body
 @onready var base : Sprite2D = $Body/Base
 @onready var one_hand_weapon : Sprite2D = $Body/OneHandWeapon

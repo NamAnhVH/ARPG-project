@@ -1,9 +1,10 @@
-[gd_scene load_steps=179 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=180 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/Characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/playable_character.gd" id="2_muque"]
 [ext_resource type="PackedScene" uid="uid://ba00tp4ce2gpf" path="res://sources/scenes/Core/detect_layer_area.tscn" id="3_2bnah"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/hurt_flash.tres" id="3_7x3km"]
+[ext_resource type="Texture2D" uid="uid://do04twf70sgve" path="res://assets/characters/base/standMovePush/humn_v00.png" id="4_t8fbv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qv6ah"]
 shader = ExtResource("3_7x3km")
@@ -24,12 +25,12 @@ shader_parameter/tint = Color(1, 1, 1, 1)
 radius = 6.0
 height = 20.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hd0t"]
+size = Vector2(0.5, 0.5)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnrn4"]
 radius = 4.0
 height = 12.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hd0t"]
-size = Vector2(0.5, 0.5)
 
 [sub_resource type="Animation" id="Animation_rvpgc"]
 length = 0.001
@@ -4880,11 +4881,16 @@ position = Vector2(0, -12)
 collision_layer = 2147483649
 collision_mask = 2147483649
 script = ExtResource("2_muque")
+move_speed_unit = null
+knockback_modifier = null
+move_weight = null
+max_health = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_qv6ah")
+texture = ExtResource("4_t8fbv")
 hframes = 8
 vframes = 8
 
@@ -4907,28 +4913,29 @@ collision_mask = 65536
 shape = SubResource("CapsuleShape2D_enwvx")
 
 [node name="DamageArea" parent="." index="2"]
-collision_layer = 131072
+visible = false
+collision_layer = 1048576
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea" index="0"]
 polygon = PackedVector2Array(-16, 4, -18, 6, -18, 10, -16, 14, -13, 18, -8, 20, 1, 21, 8, 19, 12, 16, 16, 12, 16, 4)
 disabled = true
 
-[node name="CollisionShape2D" parent="." index="3"]
-visible = false
-position = Vector2(0, 6)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_nnrn4")
-
-[node name="AttackTimer" type="Timer" parent="." index="4"]
-one_shot = true
-
-[node name="DetectLayerArea" parent="." index="5" instance=ExtResource("3_2bnah")]
+[node name="DetectLayerArea" parent="." index="3" instance=ExtResource("3_2bnah")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectLayerArea" index="0"]
 visible = false
 position = Vector2(0, 6.625)
 shape = SubResource("RectangleShape2D_3hd0t")
+
+[node name="CollisionShape2D" parent="." index="4"]
+visible = false
+position = Vector2(0, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nnrn4")
+
+[node name="AttackTimer" type="Timer" parent="." index="5"]
+one_shot = true
 
 [node name="AnimationPlayer" parent="." index="6"]
 libraries = {

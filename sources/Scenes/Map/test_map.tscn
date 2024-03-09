@@ -1,11 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmxlfrnlvvvjt"]
+[gd_scene load_steps=23 format=3 uid="uid://bmxlfrnlvvvjt"]
 
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="1_08bvg"]
+[ext_resource type="Script" path="res://test_map.gd" id="1_fheyy"]
 [ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="2_x025v"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/Core/camera.tscn" id="3_by3yc"]
 [ext_resource type="Script" path="res://sources/scripts/change_layer_area.gd" id="5_3kxo3"]
 [ext_resource type="PackedScene" uid="uid://bl5nrfl5vxm56" path="res://sources/scenes/Core/stair_area.tscn" id="5_a58ij"]
 [ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/Characters/BattleCharacters/Enemies/slime.tscn" id="6_u2j18"]
+[ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="8_tioq6"]
+[ext_resource type="Texture2D" uid="uid://de2mcfloxfa8h" path="res://assets/monsters/slimes/slime_v07.png" id="9_2ycev"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_p0jv7"]
 tile_data = PackedInt32Array(0, 1310720, 11, 65536, 1310720, 11, 131072, 1310720, 12, 1, 1245184, 11, 65537, 1245184, 11, 131073, 1245184, 12)
@@ -1997,8 +2000,15 @@ size = Vector2(40, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hchp"]
 size = Vector2(40, 2)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_uujvf"]
+vertices = PackedVector2Array(249, -53, 166, -52, 246, -59, 188, 93, 455, 45, 514, 38, 519, 91, 176, 105, 165, 105, 164, 102, 291, -212, 506, -220, 504, -49, 454, -45, 248, -12, 189, 54, 125, 23, 131, 53)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8, 9), PackedInt32Array(2, 10, 11, 12, 13, 0), PackedInt32Array(14, 0, 13, 4), PackedInt32Array(14, 4, 3, 15), PackedInt32Array(16, 14, 15, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(238, -20, 113, 16, 123, 63, 179, 64, 178, 86, 156, 96, 152, 115, 176, 115, 530, 101, 524, 27, 465, 34, 464, -36, 514, -40, 517, -231, 284, -222, 238, -68, 139, -60, 144, -42, 239, -43)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="TestMap" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_fheyy")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -2024,7 +2034,7 @@ layer_4/tile_data = PackedInt32Array(-458715, 1179648, 10, -524252, 1114112, 9, 
 [node name="PlayableCharacter" parent="." instance=ExtResource("2_x025v")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(370, 32)
+position = Vector2(431, 20)
 
 [node name="Camera" parent="PlayableCharacter" node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("3_by3yc")]
 position = Vector2(0, 12)
@@ -2161,8 +2171,19 @@ collision_mask = 4
 visible = false
 polygon = PackedVector2Array(609, -104, 615, -102, 615, -96, 615, -54, 609, -51, 579, -74, 577, -149, 577, -175, 720, -175, 720, -108, 653, -54, 653, -102, 680, -106, 694, -115, 708, -125, 707, -164, 597, -164, 587, -159, 588, -126, 603, -110)
 
-[node name="Enemies" type="Node" parent="."]
+[node name="Enemies" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Slime" parent="Enemies" instance=ExtResource("6_u2j18")]
-position = Vector2(267, 27)
-max_health = 2.0
+z_index = 1
+position = Vector2(247, 75)
+texture = ExtResource("8_tioq6")
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("6_u2j18")]
+z_index = 1
+position = Vector2(381, -92)
+texture = ExtResource("9_2ycev")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-33, 24)
+navigation_polygon = SubResource("NavigationPolygon_uujvf")
