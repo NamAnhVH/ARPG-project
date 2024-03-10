@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfq1tjn3b14n5"]
+
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/Characters/BattleCharacters/battle_character.tscn" id="1_ohiu0"]
+[ext_resource type="Script" path="res://sources/scripts/enemy_character.gd" id="2_vofjr"]
+
+[node name="EnemyCharacter" instance=ExtResource("1_ohiu0")]
+script = ExtResource("2_vofjr")
+texture = null
+
+[node name="Timers" type="Node" parent="." index="5"]
+
+[node name="AttackCooldownTime" type="Timer" parent="Timers" index="0"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="6"]

@@ -2,28 +2,15 @@ extends EnemyCharacter
 class_name SlimeCharacter
 
 @export var max_active_area = 50
-@export var texture : Texture2D
 
 @onready var move_idle_change_time : Timer = $Timers/MoveIdleChangeTime
-@onready var direction_change_time : Timer = $Timers/DirectionChangeTime
-@onready var attack_cooldown_time: Timer = $Timers/AttackCooldownTime
-@onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
+@onready var clockwise_change_time : Timer = $Timers/ClockwiseChangeTime
 @onready var base : Sprite2D = $Body/Base
 @onready var attack_effect : Sprite2D = $Body/AttackEffect
-
-@onready var first_position = global_position
-@onready var random_position = first_position
-
-var is_moving : bool = false
-var is_chasing : bool = false
-var is_ready_attack : bool = false
-var is_attacking : bool = false
-var is_clockwise : bool = false
 
 func _ready():
 	base.texture = texture
 	attack_effect.texture = texture
-	animation_tree.active = true
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 
 func _physics_process(delta):
@@ -47,7 +34,7 @@ func move_state():
 	move_direction = move_direction.normalized()
 	animation_tree.set("parameters/Move_idle/blend_position", move_direction)
 	
-	if !is_chasing and !is_moving and is_attacking:
+	if !is_chasing and !is_moving and !is_ready_attack or is_attacking:
 		move_direction = Vector2.ZERO
 	
 	velocity = lerp(velocity, move_direction * move_speed_unit * 24, get_move_weight())
@@ -71,7 +58,6 @@ func _attack_finished():
 	attack_cooldown_time.start()
 
 func _die_finished():
-	get_parent().get_children().erase(self)
 	queue_free()
 
 func _on_is_attacked():
@@ -87,7 +73,6 @@ func _on_move_idle_change_time_timeout():
 	is_moving = !is_moving
 	move_idle_change_time.start()
 
-func _on_direction_change_time_timeout():
+func _on_clockwise_change_time_timeout():
 	is_clockwise = !is_clockwise
-	direction_change_time.start()
-
+	clockwise_change_time.start()

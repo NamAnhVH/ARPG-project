@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://dlenjisq3ek4s"]
 
-[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/Characters/BattleCharacters/battle_character.tscn" id="1_dcox8"]
+[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/Characters/BattleCharacters/Enemies/enemy_character.tscn" id="1_dcox8"]
 [ext_resource type="Script" path="res://sources/scripts/slime.gd" id="2_fxcpq"]
 [ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="3_j2kmd"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/hurt_flash.tres" id="3_ktnkn"]
@@ -1074,14 +1074,13 @@ graph_offset = Vector2(4, -5)
 [node name="Slime" instance=ExtResource("1_dcox8")]
 script = ExtResource("2_fxcpq")
 max_active_area = 50
-texture = null
 move_speed_unit = 1.0
+max_health = 2
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_soqsy")
-texture = ExtResource("3_j2kmd")
 hframes = 8
 vframes = 8
 
@@ -1127,6 +1126,7 @@ shape = SubResource("CircleShape2D_w4ewf")
 
 [node name="AttackArea" parent="." index="4" instance=ExtResource("7_wptn3")]
 visible = false
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_5wato")
@@ -1156,24 +1156,19 @@ parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Hurt/blend_position = Vector2(0, 0)
 parameters/Move_idle/blend_position = Vector2(0, 0)
 
-[node name="Timers" type="Node" parent="." index="8"]
+[node name="AttackCooldownTime" parent="Timers" index="0"]
+wait_time = 4.0
 
-[node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="0"]
+[node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="1"]
 autostart = true
 
-[node name="DirectionChangeTime" type="Timer" parent="Timers" index="1"]
-autostart = true
-
-[node name="AttackCooldownTime" type="Timer" parent="Timers" index="2"]
+[node name="ClockwiseChangeTime" type="Timer" parent="Timers" index="2"]
 wait_time = 2.0
-one_shot = true
 autostart = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="9"]
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
 [connection signal="timeout" from="Timers/MoveIdleChangeTime" to="." method="_on_move_idle_change_time_timeout"]
-[connection signal="timeout" from="Timers/DirectionChangeTime" to="." method="_on_direction_change_time_timeout"]
+[connection signal="timeout" from="Timers/ClockwiseChangeTime" to="." method="_on_clockwise_change_time_timeout"]

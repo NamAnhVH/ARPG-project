@@ -1,11 +1,10 @@
 extends Node2D
 
 @onready var playable_character = $PlayableCharacter
-var enemies : Array
+@onready var enemies : Node2D = $Enemies
 
 func _process(delta):
-	enemies = $Enemies.get_children()
-	for slime: SlimeCharacter in enemies:
+	for slime: SlimeCharacter in enemies.get_children():
 		if is_instance_valid(slime) and slime.is_chasing:
 			slime.navigation_agent.target_position = playable_character.global_position
 
