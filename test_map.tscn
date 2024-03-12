@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="1_08bvg"]
 [ext_resource type="Script" path="res://test_map.gd" id="1_fheyy"]
-[ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="2_x025v"]
-[ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/Core/camera.tscn" id="3_by3yc"]
+[ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/playableCharacter/playable_character.tscn" id="2_x025v"]
+[ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="3_by3yc"]
 [ext_resource type="Script" path="res://sources/scripts/change_layer_area.gd" id="5_3kxo3"]
-[ext_resource type="PackedScene" uid="uid://bl5nrfl5vxm56" path="res://sources/scenes/Core/stair_area.tscn" id="5_a58ij"]
-[ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/Characters/BattleCharacters/Enemies/slime.tscn" id="6_u2j18"]
+[ext_resource type="PackedScene" uid="uid://bl5nrfl5vxm56" path="res://sources/scenes/core/stair_area.tscn" id="5_a58ij"]
+[ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/Characters/BattleCharacters/enemies/slime.tscn" id="6_u2j18"]
 [ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="8_tioq6"]
 [ext_resource type="Texture2D" uid="uid://dlo5xd8gi7kp8" path="res://assets/monsters/slimes/slime_v06.png" id="9_eui8a"]
 
@@ -2044,10 +2044,10 @@ bottom_position = NodePath("../../CameraLimit/BottomPosition")
 [node name="CameraLimit" type="Node" parent="."]
 
 [node name="TopPosition" type="Marker2D" parent="CameraLimit"]
-position = Vector2(-206, -281)
+position = Vector2(-414, -454)
 
 [node name="BottomPosition" type="Marker2D" parent="CameraLimit"]
-position = Vector2(912, 176)
+position = Vector2(1290, 527)
 
 [node name="ChangeLayerArea" type="Node" parent="."]
 

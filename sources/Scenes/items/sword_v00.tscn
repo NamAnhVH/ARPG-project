@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvpcunqgbt6ay"]
+
+[ext_resource type="Texture2D" uid="uid://coijysihms8e8" path="res://assets/item/sword_v00.png" id="1_1gy8u"]
+[ext_resource type="Script" path="res://sources/scripts/item.gd" id="2_d1rhe"]
+
+[node name="Item" type="TextureRect"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1gy8u")
+script = ExtResource("2_d1rhe")
+id = "sword_v00"
+item_name = "Sword of Pain"

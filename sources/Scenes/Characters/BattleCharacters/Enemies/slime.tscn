@@ -1,12 +1,12 @@
 [gd_scene load_steps=55 format=3 uid="uid://dlenjisq3ek4s"]
 
-[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/Characters/BattleCharacters/Enemies/enemy_character.tscn" id="1_dcox8"]
+[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/Characters/BattleCharacters/enemies/enemy_character.tscn" id="1_dcox8"]
 [ext_resource type="Script" path="res://sources/scripts/slime.gd" id="2_fxcpq"]
 [ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="3_j2kmd"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/hurt_flash.tres" id="3_ktnkn"]
-[ext_resource type="PackedScene" uid="uid://s76l57fu45ld" path="res://sources/scenes/Core/detect_area.tscn" id="5_cyv2s"]
+[ext_resource type="PackedScene" uid="uid://s76l57fu45ld" path="res://sources/scenes/core/detect_area.tscn" id="5_cyv2s"]
 [ext_resource type="Script" path="res://sources/scripts/detect_area.gd" id="6_7ti8b"]
-[ext_resource type="PackedScene" uid="uid://bxdman2p7uqju" path="res://sources/scenes/Core/attack_area.tscn" id="7_wptn3"]
+[ext_resource type="PackedScene" uid="uid://bxdman2p7uqju" path="res://sources/scenes/core/attack_area.tscn" id="7_wptn3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_soqsy"]
 resource_local_to_scene = true
@@ -685,6 +685,30 @@ tracks/1/keys = {
 "method": &"_die_finished"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageArea/Attack:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/AttackEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_nocor"]
 resource_name = "hurt_down"
@@ -727,6 +751,30 @@ tracks/2/keys = {
 "method": &"_hurt_finished"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageArea/Attack:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/AttackEffect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_6qvvh"]
 resource_name = "hurt_left"
@@ -768,6 +816,30 @@ tracks/2/keys = {
 "args": [],
 "method": &"_hurt_finished"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/AttackEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DamageArea/Attack:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_aj0uk"]
@@ -812,6 +884,30 @@ tracks/2/keys = {
 "method": &"_hurt_finished"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageArea/Attack:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/AttackEffect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_l750y"]
 resource_name = "hurt_up"
@@ -854,6 +950,30 @@ tracks/2/keys = {
 "args": [],
 "method": &"_hurt_finished"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/AttackEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DamageArea/Attack:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_1lwhf"]
@@ -1157,7 +1277,7 @@ parameters/Hurt/blend_position = Vector2(0, 0)
 parameters/Move_idle/blend_position = Vector2(0, 0)
 
 [node name="AttackCooldownTime" parent="Timers" index="0"]
-wait_time = 4.0
+wait_time = 3.0
 
 [node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="1"]
 autostart = true

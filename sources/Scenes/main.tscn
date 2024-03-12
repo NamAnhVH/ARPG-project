@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://fsttyo8rq87n"]
+
+[ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
+[ext_resource type="PackedScene" uid="uid://bmxlfrnlvvvjt" path="res://test_map.tscn" id="1_pmagf"]
+[ext_resource type="Script" path="res://sources/scripts/inventory_manager.gd" id="2_caucb"]
+[ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inventory_container.tscn" id="3_pn8rf"]
+[ext_resource type="PackedScene" uid="uid://ccsv3662j4b8c" path="res://sources/scenes/ui/item_info.tscn" id="4_4786u"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_j7hlb")
+items = Array[String](["sword_v00", "sword_v01"])
+
+[node name="TestMap" parent="." instance=ExtResource("1_pmagf")]
+
+[node name="Manager" type="Node2D" parent="."]
+
+[node name="Inventory_manager" type="Node2D" parent="Manager"]
+script = ExtResource("2_caucb")
+item_in_hand_path = NodePath("../../User_interface/Item_in_hand")
+item_info_path = NodePath("../../User_interface/Item_info")
+
+[node name="User_interface" type="CanvasLayer" parent="."]
+
+[node name="Inventory_container" parent="User_interface" instance=ExtResource("3_pn8rf")]
+visible = false
+
+[node name="Item_in_hand" type="Control" parent="User_interface"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Item_info" parent="User_interface" instance=ExtResource("4_4786u")]
+visible = false
+offset_left = 907.0
+offset_top = 296.0
+offset_right = 1004.0
+offset_bottom = 357.0
