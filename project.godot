@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Enum="*res://sources/scripts/enum.gd"
+GameEnums="*res://sources/scripts/game_enums.gd"
 SignalManager="*res://sources/scripts/signal_manager.gd"
 ItemManager="*res://sources/scripts/item_manager.gd"
 

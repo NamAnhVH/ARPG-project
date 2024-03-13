@@ -1,10 +1,9 @@
-[gd_scene load_steps=180 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=179 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/Characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/playable_character.gd" id="2_muque"]
 [ext_resource type="PackedScene" uid="uid://ba00tp4ce2gpf" path="res://sources/scenes/core/detect_layer_area.tscn" id="3_2bnah"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/hurt_flash.tres" id="3_7x3km"]
-[ext_resource type="Texture2D" uid="uid://do04twf70sgve" path="res://assets/characters/base/standMovePush/humn_v00.png" id="4_t8fbv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qv6ah"]
 shader = ExtResource("3_7x3km")
@@ -4881,16 +4880,11 @@ position = Vector2(0, -12)
 collision_layer = 2147483649
 collision_mask = 2147483649
 script = ExtResource("2_muque")
-move_speed_unit = null
-knockback_modifier = null
-move_weight = null
-max_health = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_qv6ah")
-texture = ExtResource("4_t8fbv")
 hframes = 8
 vframes = 8
 

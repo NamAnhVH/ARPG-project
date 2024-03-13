@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck6q1hy5mn5p5"]
 
-[ext_resource type="Texture2D" uid="uid://b7fwbvdvi6lu6" path="res://assets/item/sword_v01.png" id="1_mmng1"]
+[ext_resource type="Texture2D" uid="uid://b7fwbvdvi6lu6" path="res://assets/items/sword_v01.png" id="1_dslon"]
 [ext_resource type="Script" path="res://sources/scripts/item.gd" id="2_rk2a1"]
 
 [node name="Item" type="TextureRect"]
@@ -10,7 +10,8 @@ offset_right = 30.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_mmng1")
+texture = ExtResource("1_dslon")
 script = ExtResource("2_rk2a1")
 id = "sword_v01"
 item_name = "Sword of Agony"
+equipment_type = 5

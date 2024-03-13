@@ -13,7 +13,7 @@ font_color = Color(0.827451, 0.54902, 0.203922, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Inventory_container" type="NinePatchRect"]
+[node name="InventoryContainer" type="NinePatchRect"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -35,7 +35,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("2_2r4ul")
 
-[node name="Title_container" type="NinePatchRect" parent="."]
+[node name="TitleContainer" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -52,7 +52,7 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 13
 
-[node name="Label_container" type="NinePatchRect" parent="Title_container"]
+[node name="LabelContainer" type="NinePatchRect" parent="TitleContainer"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -67,7 +67,7 @@ patch_margin_bottom = 3
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Label" type="Label" parent="Title_container/Label_container"]
+[node name="Label" type="Label" parent="TitleContainer/LabelContainer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

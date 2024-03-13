@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bixx6wvu3nju8" path="res://assets/ui/item_slot_v01.png" id="1_3468s"]
 [ext_resource type="Script" path="res://sources/scripts/inventory_slot.gd" id="2_kocrr"]
 
-[node name="Inventory_slot" type="TextureRect"]
+[node name="InventorySlot" type="TextureRect"]
 texture = ExtResource("1_3468s")
 script = ExtResource("2_kocrr")
-item_container_path = NodePath("Item_container")
+item_container_path = NodePath("ItemContainer")
 
-[node name="Item_container" type="Control" parent="."]
+[node name="ItemContainer" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

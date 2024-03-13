@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://fsttyo8rq87n"]
+[gd_scene load_steps=7 format=3 uid="uid://fsttyo8rq87n"]
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
 [ext_resource type="PackedScene" uid="uid://bmxlfrnlvvvjt" path="res://test_map.tscn" id="1_pmagf"]
 [ext_resource type="Script" path="res://sources/scripts/inventory_manager.gd" id="2_caucb"]
 [ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inventory_container.tscn" id="3_pn8rf"]
 [ext_resource type="PackedScene" uid="uid://ccsv3662j4b8c" path="res://sources/scenes/ui/item_info.tscn" id="4_4786u"]
+[ext_resource type="PackedScene" uid="uid://dh0kcds7ama2w" path="res://sources/scenes/ui/player_equipment.tscn" id="6_m5jwq"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_j7hlb")
-items = Array[String](["sword_v00", "sword_v01"])
 
 [node name="TestMap" parent="." instance=ExtResource("1_pmagf")]
 
@@ -16,13 +16,33 @@ items = Array[String](["sword_v00", "sword_v01"])
 
 [node name="Inventory_manager" type="Node2D" parent="Manager"]
 script = ExtResource("2_caucb")
+items = Array[String](["sword_v00", "sword_v01"])
 item_in_hand_path = NodePath("../../User_interface/Item_in_hand")
 item_info_path = NodePath("../../User_interface/Item_info")
 
 [node name="User_interface" type="CanvasLayer" parent="."]
 
-[node name="Inventory_container" parent="User_interface" instance=ExtResource("3_pn8rf")]
+[node name="Window" type="Control" parent="User_interface"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory_container" parent="User_interface/Window" instance=ExtResource("3_pn8rf")]
 visible = false
+layout_mode = 1
+offset_left = 415.0
+offset_top = 134.0
+offset_right = 701.0
+offset_bottom = 323.0
+
+[node name="PlayerEquipment" parent="User_interface/Window" instance=ExtResource("6_m5jwq")]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = 152.0
+offset_right = 250.0
+offset_bottom = 341.0
 
 [node name="Item_in_hand" type="Control" parent="User_interface"]
 layout_mode = 3

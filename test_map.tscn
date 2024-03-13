@@ -2035,6 +2035,10 @@ layer_4/tile_data = PackedInt32Array(-458715, 1179648, 10, -524252, 1114112, 9, 
 z_index = 1
 y_sort_enabled = true
 position = Vector2(431, 20)
+move_speed_unit = 5.0
+knockback_modifier = true
+move_weight = 0.2
+max_health = 10
 
 [node name="Camera" parent="PlayableCharacter" node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("3_by3yc")]
 position = Vector2(0, 12)
@@ -2118,7 +2122,6 @@ shape = SubResource("RectangleShape2D_8hchp")
 [node name="StairArea" parent="StairArea" instance=ExtResource("5_a58ij")]
 visible = false
 z_index = 2
-direction = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StairArea/StairArea"]
 polygon = PackedVector2Array(451, 10, 498, -30, 498, 7, 451, 44)
@@ -2126,7 +2129,6 @@ polygon = PackedVector2Array(451, 10, 498, -30, 498, 7, 451, 44)
 [node name="StairArea2" parent="StairArea" instance=ExtResource("5_a58ij")]
 visible = false
 z_index = 2
-direction = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StairArea/StairArea2"]
 position = Vector2(505, -3)

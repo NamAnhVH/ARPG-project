@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bho8beclfapcs"
-path="res://.godot/imported/axe_v00.png-3563e8b71fcd5a60fafff7f0c352eefe.ctex"
+uid="uid://coijysihms8e8"
+path="res://.godot/imported/sword_v00.png-3935fd06a56df500dd87862ac4ea3a4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapon/swordAndShield/changeState/axe_v00.png"
-dest_files=["res://.godot/imported/axe_v00.png-3563e8b71fcd5a60fafff7f0c352eefe.ctex"]
+source_file="res://assets/items/sword_v00.png"
+dest_files=["res://.godot/imported/sword_v00.png-3935fd06a56df500dd87862ac4ea3a4d.ctex"]
 
 [params]
 

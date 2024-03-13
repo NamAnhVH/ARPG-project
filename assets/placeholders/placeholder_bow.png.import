@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3w2ecdtch8ci"
-path="res://.godot/imported/shield_v00.png-fe5734d889a5a18b1ff0a27cb6d4c973.ctex"
+uid="uid://dv2017516r4tl"
+path="res://.godot/imported/placeholder_bow.png-71da3d9fa3368a360fa64f790b694b16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapon/swordAndShield/standMovePush/shield_v00.png"
-dest_files=["res://.godot/imported/shield_v00.png-fe5734d889a5a18b1ff0a27cb6d4c973.ctex"]
+source_file="res://assets/placeholders/placeholder_bow.png"
+dest_files=["res://.godot/imported/placeholder_bow.png-71da3d9fa3368a360fa64f790b694b16.ctex"]
 
 [params]
 

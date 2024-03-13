@@ -1,0 +1,158 @@
+[gd_scene load_steps=4 format=3 uid="uid://e8vwuv8nj76"]
+
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="1_yq4i7"]
+[ext_resource type="Script" path="res://sources/scripts/equipment.gd" id="2_kcu56"]
+[ext_resource type="PackedScene" uid="uid://ddpr87bordd6n" path="res://sources/scenes/ui/equipment_slot.tscn" id="3_ul6kg"]
+
+[node name="Equipment" type="NinePatchRect"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 180.0
+offset_bottom = 181.0
+texture = ExtResource("1_yq4i7")
+region_rect = Rect2(160, 0, 24, 24)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("2_kcu56")
+head_path = NodePath("SlotContainer/Head")
+chest_path = NodePath("SlotContainer/Chest")
+pants_path = NodePath("SlotContainer/Pants")
+shoes_path = NodePath("SlotContainer/Shoes")
+one_hand_weapon_path = NodePath("SlotContainer/OneHandWeapon")
+shield_path = NodePath("SlotContainer/Shield")
+spear_path = NodePath("SlotContainer/Spear")
+bow_path = NodePath("SlotContainer/Bow")
+main_accessory_path = NodePath("SlotContainer/MainAccessory")
+extra_accessory_path = NodePath("SlotContainer/ExtraAccessory")
+inventory_size = 10
+slot_container_path = NodePath("SlotContainer")
+
+[node name="SlotContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Head" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 10.0
+offset_right = 16.0
+offset_bottom = 42.0
+grow_horizontal = 2
+type = 1
+
+[node name="Chest" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 47.0
+offset_right = 16.0
+offset_bottom = 79.0
+grow_horizontal = 2
+type = 2
+
+[node name="Pants" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 85.0
+offset_right = 16.0
+offset_bottom = 117.0
+grow_horizontal = 2
+type = 3
+
+[node name="Shoes" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 124.0
+offset_right = 16.0
+offset_bottom = 156.0
+grow_horizontal = 2
+type = 3
+
+[node name="OneHandWeapon" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 47.0
+offset_right = -39.0
+offset_bottom = 79.0
+grow_horizontal = 2
+type = 5
+
+[node name="Shield" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 39.0
+offset_top = 47.0
+offset_right = 71.0
+offset_bottom = 79.0
+grow_horizontal = 2
+type = 6
+
+[node name="Spear" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 85.0
+offset_right = -39.0
+offset_bottom = 117.0
+grow_horizontal = 2
+type = 8
+
+[node name="Bow" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 124.0
+offset_right = -39.0
+offset_bottom = 156.0
+grow_horizontal = 2
+type = 7
+
+[node name="MainAccessory" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 39.0
+offset_top = 85.0
+offset_right = 71.0
+offset_bottom = 117.0
+grow_horizontal = 2
+type = 9
+
+[node name="ExtraAccessory" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 39.0
+offset_top = 124.0
+offset_right = 71.0
+offset_bottom = 156.0
+grow_horizontal = 2
+type = 9

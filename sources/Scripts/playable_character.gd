@@ -16,7 +16,7 @@ var is_attack_state: bool = false
 var is_drawing : bool = false
 var is_sheathing : bool = false
 var is_hurting : bool = false
-var is_in_stair_direction : Enums.Direction
+var is_in_stair_direction : GameEnums.STAIR_DIRECTION
 
 var attack_combo : int = 0
 var move_input := Vector2()
@@ -60,13 +60,13 @@ func move_state():
 	
 	#Trục Oy khi di chuyển lên xuống cầu thang
 	match is_in_stair_direction:
-		Enums.Direction.NONE:
+		GameEnums.STAIR_DIRECTION.NONE:
 			move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down")
-		Enums.Direction.RIGHT:
+		GameEnums.STAIR_DIRECTION.RIGHT:
 			move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down") + Input.get_action_strength("move_left") / sqrt(2) - Input.get_action_strength("move_right") / sqrt(2)
-		Enums.Direction.LEFT:
+		GameEnums.STAIR_DIRECTION.LEFT:
 			move_input.y = -Input.get_action_strength("move_up") + Input.get_action_strength("move_down") - Input.get_action_strength("move_left") / sqrt(2) + Input.get_action_strength("move_right") / sqrt(2)
-		Enums.Direction.DOWN:
+		GameEnums.STAIR_DIRECTION.DOWN:
 			move_input.y = -Input.get_action_strength("move_up") / 2 + Input.get_action_strength("move_down") / 2
 	
 	#Vecto chuẩn hoá hướng di chuyển
@@ -100,8 +100,8 @@ func move_state():
 
 #Chỉnh sửa sau
 func equip_weapon():
-	one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/standMovePush/axe_v00.png")
-	shield.texture = load("res://assets/weapon/swordAndShield/standMovePush/shield_v00.png")
+	one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/standMovePush/axe_v00.png")
+	shield.texture = load("res://assets/weapons/swordAndShield/standMovePush/shield_v00.png")
 	is_unequip_weapon = false
 
 #Chỉnh sửa sau
@@ -219,26 +219,26 @@ func _hurt_finished():
 func base_asset():
 	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
 	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/standMovePush/axe_v00.png")
-		shield.texture = load("res://assets/weapon/swordAndShield/standMovePush/shield_v00.png")
+		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/standMovePush/axe_v00.png")
+		shield.texture = load("res://assets/weapons/swordAndShield/standMovePush/shield_v00.png")
 
 func change_state_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/changeState/humn_v00.png")
 	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/changeState/axe_v00.png")
-		shield.texture = load("res://assets/weapon/swordAndShield/changeState/shield_v00.png")
+		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/changeState/axe_v00.png")
+		shield.texture = load("res://assets/weapons/swordAndShield/changeState/shield_v00.png")
 
 func attack_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/attack/humn_v00.png")
 	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/attack/axe_v00.png")
-		shield.texture = load("res://assets/weapon/swordAndShield/attack/shield_v00.png")
+		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/attack/axe_v00.png")
+		shield.texture = load("res://assets/weapons/swordAndShield/attack/shield_v00.png")
 
 func move_idle_asset():
 	base.texture = load("res://assets/characters/swordAndShieldBase/moveIdle/humn_v00.png")
 	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapon/swordAndShield/moveIdle/axe_v00.png")
-		shield.texture = load("res://assets/weapon/swordAndShield/moveIdle/shield_v00.png")
+		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/moveIdle/axe_v00.png")
+		shield.texture = load("res://assets/weapons/swordAndShield/moveIdle/shield_v00.png")
 
 #Thiết lập các tầng sprite body
 func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: int):

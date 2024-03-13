@@ -7,7 +7,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_7p8ca"]
 font = ExtResource("2_kcpej")
 
-[node name="Item_info" type="NinePatchRect"]
+[node name="ItemInfo" type="NinePatchRect"]
 offset_right = 97.0
 offset_bottom = 61.0
 texture = ExtResource("1_13xpk")
@@ -19,9 +19,9 @@ patch_margin_bottom = 3
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("2_7nrdc")
-item_name_path = NodePath("Item_name")
+item_name_path = NodePath("ItemName")
 
-[node name="Item_name" type="Label" parent="."]
+[node name="ItemName" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

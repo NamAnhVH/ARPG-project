@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddpr87bordd6n"]
+
+[ext_resource type="PackedScene" uid="uid://dm54tgsrs80w3" path="res://sources/scenes/ui/inventory_slot.tscn" id="1_8etrs"]
+[ext_resource type="Script" path="res://sources/scripts/equipment_slot.gd" id="2_y47je"]
+
+[node name="EquipmentSlot" instance=ExtResource("1_8etrs")]
+script = ExtResource("2_y47je")
+type = 0
+placeholder_path = NodePath("Placeholder")
+
+[node name="Placeholder" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

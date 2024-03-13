@@ -3,10 +3,8 @@ class_name Item
 
 @export var id : String
 @export var item_name : String
+@export var equipment_type : GameEnums.EQUIPMENT_TYPE
 
-func is_pick_up():
+func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-func is_put_down():
-	mouse_filter = Control.MOUSE_FILTER_PASS
 
