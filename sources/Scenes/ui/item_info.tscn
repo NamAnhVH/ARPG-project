@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccsv3662j4b8c"]
 
 [ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="1_13xpk"]
-[ext_resource type="Script" path="res://sources/scripts/item_info.gd" id="2_7nrdc"]
+[ext_resource type="Script" path="res://sources/scripts/ui/item_info.gd" id="2_7nrdc"]
 [ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="2_kcpej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7p8ca"]
 font = ExtResource("2_kcpej")
+font_color = Color(0, 0, 0, 1)
 
 [node name="ItemInfo" type="NinePatchRect"]
 offset_right = 97.0
@@ -19,16 +20,27 @@ patch_margin_bottom = 3
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("2_7nrdc")
-item_name_path = NodePath("ItemName")
+item_name_path = NodePath("VBoxContainer/ItemName")
+line_container_path = NodePath("VBoxContainer/LineContainer")
 
-[node name="ItemName" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -26.5
-offset_right = 26.5
-offset_bottom = 23.0
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 61.0
 grow_horizontal = 2
+
+[node name="ItemName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "item name"
 label_settings = SubResource("LabelSettings_7p8ca")
+horizontal_alignment = 1
+
+[node name="LineContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

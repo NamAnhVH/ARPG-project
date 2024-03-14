@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bl5nrfl5vxm56"]
 
-[ext_resource type="Script" path="res://sources/scripts/stair_area.gd" id="1_nlw3x"]
+[ext_resource type="Script" path="res://sources/scripts/core/stair_area.gd" id="1_nlw3x"]
 
 [node name="StairArea" type="Area2D"]
 collision_layer = 2147483648

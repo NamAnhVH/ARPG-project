@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgvcaah774heo"]
+
+[ext_resource type="Texture2D" uid="uid://b0ekric5jlfnc" path="res://assets/items/mace_v02.png" id="1_lqkel"]
+[ext_resource type="Script" path="res://sources/scripts/items/item.gd" id="2_a37ce"]
+
+[node name="Item" type="TextureRect"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lqkel")
+script = ExtResource("2_a37ce")
+id = "mace_v02"
+item_name = "Paradise Sword"
+equipment_type = 5

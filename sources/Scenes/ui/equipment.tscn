@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://e8vwuv8nj76"]
 
 [ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="1_yq4i7"]
-[ext_resource type="Script" path="res://sources/scripts/equipment.gd" id="2_kcu56"]
+[ext_resource type="Script" path="res://sources/scripts/ui/equipment.gd" id="2_5cbbj"]
 [ext_resource type="PackedScene" uid="uid://ddpr87bordd6n" path="res://sources/scenes/ui/equipment_slot.tscn" id="3_ul6kg"]
 
 [node name="Equipment" type="NinePatchRect"]
@@ -15,7 +15,7 @@ patch_margin_left = 1
 patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
-script = ExtResource("2_kcu56")
+script = ExtResource("2_5cbbj")
 head_path = NodePath("SlotContainer/Head")
 chest_path = NodePath("SlotContainer/Chest")
 pants_path = NodePath("SlotContainer/Pants")

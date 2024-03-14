@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7e4iq1o054gp"]
+
+[ext_resource type="Texture2D" uid="uid://dumajsm880rgn" path="res://assets/items/axe_v01.png" id="1_tvid1"]
+[ext_resource type="Script" path="res://sources/scripts/items/item.gd" id="2_virbh"]
+
+[node name="Item" type="TextureRect"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tvid1")
+script = ExtResource("2_virbh")

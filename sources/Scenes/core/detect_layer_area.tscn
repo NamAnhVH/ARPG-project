@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ba00tp4ce2gpf"]
 
-[ext_resource type="Script" path="res://sources/scripts/detect_layer_area.gd" id="1_x3hov"]
+[ext_resource type="Script" path="res://sources/scripts/core/detect_layer_area.gd" id="1_x3hov"]
 
 [node name="DetectLayerArea" type="Area2D"]
 script = ExtResource("1_x3hov")

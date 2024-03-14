@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dh0kcds7ama2w"]
 
 [ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_kltso"]
-[ext_resource type="Script" path="res://sources/scripts/player_equipment.gd" id="2_rb6if"]
+[ext_resource type="Script" path="res://sources/scripts/ui/player_equipment.gd" id="2_rb6if"]
 
 [node name="PlayerEquipment" type="NinePatchRect"]
 offset_right = 188.0

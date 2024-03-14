@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
 [ext_resource type="PackedScene" uid="uid://bmxlfrnlvvvjt" path="res://test_map.tscn" id="1_pmagf"]
-[ext_resource type="Script" path="res://sources/scripts/inventory_manager.gd" id="2_caucb"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inventory_manager.gd" id="2_caucb"]
 [ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inventory_container.tscn" id="3_pn8rf"]
 [ext_resource type="PackedScene" uid="uid://ccsv3662j4b8c" path="res://sources/scenes/ui/item_info.tscn" id="4_4786u"]
 [ext_resource type="PackedScene" uid="uid://dh0kcds7ama2w" path="res://sources/scenes/ui/player_equipment.tscn" id="6_m5jwq"]
@@ -16,7 +16,7 @@ script = ExtResource("1_j7hlb")
 
 [node name="Inventory_manager" type="Node2D" parent="Manager"]
 script = ExtResource("2_caucb")
-items = Array[String](["sword_v00", "sword_v01"])
+items = Array[String](["sword_v00", "sword_v01", "axe_v00", "stone", "stone", "stone", "stone", "stone"])
 item_in_hand_path = NodePath("../../User_interface/Item_in_hand")
 item_info_path = NodePath("../../User_interface/Item_info")
 

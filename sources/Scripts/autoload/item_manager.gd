@@ -1,9 +1,8 @@
 extends Node
 
-@onready var items = {
-	"sword_v00" : preload("res://sources/scenes/items/sword_v00.tscn"),
-	"sword_v01" : preload("res://sources/scenes/items/sword_v01.tscn")
-}
+const ITEM_PATH : String = "res://sources/scenes/items/items.json"
+
+var items = {}
 
 @onready var placeholders = {
 	GameEnums.EQUIPMENT_TYPE.HEAD : preload("res://assets/placeholders/placeholder_head.png"),
@@ -17,8 +16,13 @@ extends Node
 	GameEnums.EQUIPMENT_TYPE.SPEAR : preload("res://assets/placeholders/placeholder_spear.png")
 }
 
+func _ready():
+	var file = FileAccess.open(ITEM_PATH, FileAccess.READ)
+	items = JSON.parse_string(file.get_as_text())
+	file.close()
+
 func get_item(id: String):
-	return items[id].instantiate()
+	return Item.new(id, items[id])
 
 func get_placeholder(id):
 	return placeholders[id]
