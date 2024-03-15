@@ -10,6 +10,9 @@ const ITEM_OFFSET = Vector2(-12, -12)
 @export_node_path var item_info_path : NodePath
 @onready var item_info : ItemInfo = get_node(item_info_path)
 
+@export_node_path var item_void_path : NodePath
+@onready var item_void : Control = get_node(item_void_path)
+
 
 var inventory: Inventory
 var equipment: Equipment
@@ -21,8 +24,12 @@ func _init():
 	equipment = preload("res://sources/scenes/ui/equipment.tscn").instantiate()
 
 func _ready():
+	SignalManager.item_picked.connect(_on_item_picked)
 	SignalManager.inventory_ready.connect(_on_inventory_ready)
 	SignalManager.equipment_ready.connect(_on_equipment_ready)
+	SignalManager.hotbar_ready.connect(_on_hotbar_ready)
+	SignalManager.chest_ready.connect(_on_chest_ready)
+	item_void.gui_input.connect(_on_void_gui_input)
 	
 	for i in items:
 		inventory.add_item(ItemManager.get_item(i))
@@ -54,6 +61,18 @@ func _on_equipment_ready(equipment: Equipment):
 		slot.mouse_exited.connect(_on_mouse_exited_slot)
 		slot.gui_input.connect(_on_gui_input_slot.bindv([slot]))
 
+func _on_hotbar_ready(hotbar: Hotbar):
+	for slot : HotbarSlot in hotbar.slots:
+		slot.mouse_entered.connect(_on_mouse_entered_slot.bind(slot))
+		slot.mouse_exited.connect(_on_mouse_exited_slot)
+		slot.gui_input.connect(_on_gui_input_slot.bindv([slot]))
+
+func _on_chest_ready(chest: Chest):
+	for slot : InventorySlot in chest.slots:
+		slot.mouse_entered.connect(_on_mouse_entered_slot.bind(slot))
+		slot.mouse_exited.connect(_on_mouse_exited_slot)
+		slot.gui_input.connect(_on_gui_input_slot.bindv([slot]))
+
 func _on_mouse_entered_slot(slot: InventorySlot):
 	if slot.item:
 		item_info.display(slot)
@@ -70,33 +89,30 @@ func _on_gui_input_slot(event: InputEvent, slot: InventorySlot):
 		item_in_hand = new_item
 		item_in_hand_node.add_child(item_in_hand)
 	elif event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		var had_empty_hand : bool = item_in_hand == null
+		
 		if item_in_hand:
-			if slot is EquipmentSlot and item_in_hand.equipment_type != slot.type:
-				return
 			item_in_hand_node.remove_child(item_in_hand)
-			
-			if slot.item:
-				if slot.item.id == item_in_hand.id and slot.item.quantity < slot.item.stack_size:
-					var remainder = slot.item.add_item_quantity(item_in_hand.quantity)
-					
-					if remainder < 1:
-						item_in_hand = null
-					else:
-						item_in_hand_node.add_child(item_in_hand)
-						item_in_hand.quantity = remainder
-				else:
-					var temp_item = slot.item
-					slot.pick_item()
-					temp_item.global_position = event.global_position
-					slot.put_item(item_in_hand)
-					item_in_hand = temp_item
-					item_in_hand_node.add_child(item_in_hand)
-			else:
-				slot.put_item(item_in_hand)
-				item_in_hand = null
-			
-		elif slot.item:
-			item_in_hand = slot.item
-			slot.pick_item()
+		
+		item_in_hand = slot.put_item(item_in_hand)
+		if item_in_hand:
 			item_in_hand_node.add_child(item_in_hand)
 
+func _on_item_picked(item: Item, sender: FloorItem):
+	item = inventory.add_item(item)
+	if not item:
+		sender.item_picked()
+		return
+
+func _on_void_gui_input(event):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and item_in_hand:
+		SignalManager.item_dropped.emit(item_in_hand)
+		item_in_hand_node.remove_child(item_in_hand)
+		item_in_hand = null
+		set_item_void_filter()
+
+func set_item_void_filter():
+	if item_in_hand:
+		item_void.mouse_filter = Control.MOUSE_FILTER_IGNORE 
+	else:
+		item_void.mouse_filter = Control.MOUSE_FILTER_STOP

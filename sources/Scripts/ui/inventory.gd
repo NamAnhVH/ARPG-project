@@ -7,7 +7,7 @@ class_name Inventory
 @onready var slot_container : Control = get_node(slot_container_path)
 
 var slots : Array = []
-var inventory_slot_res = preload("res://sources/scenes/ui/inventory_slot.tscn")
+
 
 func _init():
 	set_inventory_size(28)
@@ -22,11 +22,14 @@ func set_inventory_size(value):
 	inventory_size = value
 	
 	for s in inventory_size:
-		var new_slot = inventory_slot_res.instantiate()
+		var new_slot = ResourceManager.tscn.inventory_slot.instantiate()
 		slots.append(new_slot)
 
 func add_item(item: Item):
 	for s in slots:
-		if not s.item:
-			s.set_item(item)
-			return
+		if s.try_put_item(item):
+			item = s.put_item(item)
+			
+			if not item:
+				return null
+	return item

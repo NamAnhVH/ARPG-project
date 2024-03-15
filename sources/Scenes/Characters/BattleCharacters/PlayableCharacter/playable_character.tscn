@@ -1,9 +1,12 @@
-[gd_scene load_steps=179 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=185 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/characters/playable_character.gd" id="2_muque"]
 [ext_resource type="PackedScene" uid="uid://ba00tp4ce2gpf" path="res://sources/scenes/core/detect_layer_area.tscn" id="3_2bnah"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="3_7x3km"]
+[ext_resource type="Texture2D" uid="uid://do04twf70sgve" path="res://assets/characters/base/standMovePush/humn_v00.png" id="4_s5ke4"]
+[ext_resource type="Script" path="res://sources/scripts/interactables/interactable_labels.gd" id="6_g3p5i"]
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="7_h2tvk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qv6ah"]
 shader = ExtResource("3_7x3km")
@@ -26,6 +29,9 @@ height = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hd0t"]
 size = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6cac"]
+radius = 14.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnrn4"]
 radius = 4.0
@@ -4875,16 +4881,31 @@ states/Start/position = Vector2(198, 154)
 transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition_vpyef"), "Base", "Attack_state", SubResource("AnimationNodeStateMachineTransition_3ge40"), "Attack_state", "Base", SubResource("AnimationNodeStateMachineTransition_4gkmi"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_67e2g"), "Die", "End", SubResource("AnimationNodeStateMachineTransition_p2l7m"), "Base", "Hurt", SubResource("AnimationNodeStateMachineTransition_v0tyn"), "Attack_state", "Hurt", SubResource("AnimationNodeStateMachineTransition_t4ck2"), "Hurt", "Base", SubResource("AnimationNodeStateMachineTransition_y41bb"), "Hurt", "Attack_state", SubResource("AnimationNodeStateMachineTransition_witsv")]
 graph_offset = Vector2(102.313, -69.5985)
 
+[sub_resource type="LabelSettings" id="LabelSettings_8da0m"]
+line_spacing = 0.0
+font = ExtResource("7_h2tvk")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6v7j"]
+line_spacing = 0.0
+font = ExtResource("7_h2tvk")
+font_size = 10
+
 [node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
 position = Vector2(0, -12)
 collision_layer = 2147483649
 collision_mask = 2147483649
 script = ExtResource("2_muque")
+move_speed_unit = 5.0
+knockback_modifier = true
+move_weight = 0.2
+max_health = 10
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_qv6ah")
+texture = ExtResource("4_s5ke4")
 hframes = 8
 vframes = 8
 
@@ -4922,21 +4943,29 @@ visible = false
 position = Vector2(0, 6.625)
 shape = SubResource("RectangleShape2D_3hd0t")
 
-[node name="CollisionShape2D" parent="." index="4"]
+[node name="InteractableArea" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" index="0"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_t6cac")
+
+[node name="CollisionShape2D" parent="." index="5"]
 visible = false
 position = Vector2(0, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nnrn4")
 
-[node name="AttackTimer" type="Timer" parent="." index="5"]
+[node name="AttackTimer" type="Timer" parent="." index="6"]
 one_shot = true
 
-[node name="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" parent="." index="7"]
 libraries = {
 "": SubResource("AnimationLibrary_x6i1r")
 }
 
-[node name="AnimationTree" parent="." index="7"]
+[node name="AnimationTree" parent="." index="8"]
 libraries = {
 "": SubResource("AnimationLibrary_x6i1r")
 }
@@ -4980,6 +5009,38 @@ parameters/Base/Stand/blend_position = Vector2(0, 1.09394)
 parameters/Die/blend_position = Vector2(0, 0)
 parameters/Hurt/blend_position = Vector2(-0.341051, 0.111111)
 
+[node name="Interactable" type="Node2D" parent="." index="9"]
+z_index = 10
+
+[node name="InteractableLabels" type="VBoxContainer" parent="Interactable" index="0"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.5
+offset_top = -39.0
+offset_right = 33.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_g3p5i")
+lbl_action_path = NodePath("Action")
+lbl_name_path = NodePath("ObjectName")
+
+[node name="Action" type="Label" parent="Interactable/InteractableLabels" index="0"]
+layout_mode = 2
+text = "Press \"f\" to *action*"
+label_settings = SubResource("LabelSettings_8da0m")
+horizontal_alignment = 1
+
+[node name="ObjectName" type="Label" parent="Interactable/InteractableLabels" index="1"]
+layout_mode = 2
+text = "object name"
+label_settings = SubResource("LabelSettings_o6v7j")
+horizontal_alignment = 1
+
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]
+[connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

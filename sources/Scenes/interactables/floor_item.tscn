@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://xc4ma4xl30x1"]
+
+[ext_resource type="Script" path="res://sources/scripts/interactables/floor_item.gd" id="1_sf4hd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ookfc"]
+radius = 7.0
+
+[node name="FloorItem" type="Area2D"]
+z_index = 1
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_sf4hd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ookfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)

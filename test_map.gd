@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var playable_character = $PlayableCharacter
 @onready var enemies : Node2D = $Enemies
+@onready var floor_item : Node2D = $FloorItem
 
 var is_pause : bool = false
 

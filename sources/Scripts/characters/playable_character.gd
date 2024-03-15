@@ -8,6 +8,10 @@ const BIAS = Vector2(0, 5)
 @onready var one_hand_weapon : Sprite2D = $Body/OneHandWeapon
 @onready var shield : Sprite2D = $Body/Shield
 @onready var attack_timer : Timer = $AttackTimer
+@onready var interactable_area : Area2D = $InteractableArea
+@onready var interactable_labels : VBoxContainer = $Interactable/InteractableLabels
+
+@onready var current_map = get_parent()
 
 var is_unequip_weapon : bool = true #Check trang bị vũ khí chưa (Chỉnh sửa sau)
 
@@ -22,7 +26,10 @@ var attack_combo : int = 0
 var move_input := Vector2()
 var mouse := Vector2()
 
+var current_interactable
+
 func _ready():
+	super._ready()
 	#Gán texture khi được khởi tạo
 	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
 	
@@ -38,6 +45,7 @@ func _unhandled_input(event):
 		else:
 			unequip_weapon()
 	
+	#Nhấn phím chuyển trạng thái sẵn sàng tấn công
 	if event.is_action_pressed("draw_sheath"):
 		if !is_unequip_weapon:
 			if is_attack_state:
@@ -49,10 +57,22 @@ func _unhandled_input(event):
 	if event.is_action_pressed("attack"):
 		if !is_attacking and !is_unequip_weapon and !is_drawing and !is_sheathing and !is_hurting and is_attack_state:
 			attack()
+	
+	#Nhấn phím tương tác
+	if event.is_action_pressed("interact") and current_interactable:
+		current_interactable.interact()
 
 func _physics_process(_delta):
 	if !is_attacking and !is_drawing and !is_sheathing and !is_hurting:
 		move_state()
+
+func _process(_delta):
+	if not current_interactable:
+		var overlapping_area = interactable_area.get_overlapping_areas()
+		
+		if overlapping_area.size() > 0 and overlapping_area[0].has_method("interact"):
+			current_interactable = overlapping_area[0]
+			interactable_labels.display(current_interactable)
 
 #Trạng thái di chuyển của nhân vật
 func move_state():
@@ -255,3 +275,17 @@ func _on_is_dead():
 	animation_tree.set("parameters/conditions/is_attack_state_and_alive", is_alive)
 	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", is_alive)
 	animation_tree.set("parameters/conditions/is_dead", !is_alive)
+
+func _on_interactable_area_area_exited(area):
+	if current_interactable == area:
+		if current_interactable.has_method("out_of_range"):
+			current_interactable.out_of_range()
+		interactable_labels.hide()
+		current_interactable = null
+
+func _on_item_dropped(item):
+	var floor_item = ResourceManager.tscn.floor_item.instantiate()
+	floor_item.item = item
+	current_map.floor_item.add_child(floor_item)
+	floor_item.position = position
+	floor_item.set_z_index(self.z_index)

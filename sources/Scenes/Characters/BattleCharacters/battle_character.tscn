@@ -7,6 +7,10 @@
 
 [node name="BattleCharacter" instance=ExtResource("1_j8mnv")]
 script = ExtResource("2_mgrvq")
+move_speed_unit = 5.0
+knockback_modifier = true
+move_weight = 0.2
+max_health = 10
 
 [node name="Hitbox" parent="." index="0" instance=ExtResource("3_cqoav")]
 

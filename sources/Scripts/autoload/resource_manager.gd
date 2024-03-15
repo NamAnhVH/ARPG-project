@@ -18,7 +18,18 @@ var sprites = {
 	"mace_v02": preload("res://assets/items/mace_v02.png"),
 	"mace_v03": preload("res://assets/items/mace_v03.png"),
 	"mace_v04": preload("res://assets/items/mace_v04.png"),
-	"stone": preload("res://assets/items/mace_v01.png")
+	"stone": preload("res://assets/items/stone.png"),
+	"coal": preload("res://assets/items/coal.png"),
+	"iron": preload("res://assets/items/iron.png"),
+	"copper": preload("res://assets/items/copper.png"),
+	"silver": preload("res://assets/items/silver.png"),
+	"gold": preload("res://assets/items/gold.png")
+}
+
+var tscn = {
+	"inventory_slot" : preload("res://sources/scenes/ui/inventory_slot.tscn"),
+	"hotbar_slot": preload("res://sources/scenes/ui/hotbar_slot.tscn"),
+	"floor_item": preload("res://sources/scenes/interactables/floor_item.tscn")
 }
 
 var stat_info = {}

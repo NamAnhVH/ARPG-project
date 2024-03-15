@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://78854h3t0bhu"]
+
+[ext_resource type="Texture2D" uid="uid://bixx6wvu3nju8" path="res://assets/ui/item_slot_v01.png" id="1_l00xm"]
+[ext_resource type="Script" path="res://sources/scripts/ui/hotbar_slot.gd" id="2_rihek"]
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="3_tkc4n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmrxp"]
+font = ExtResource("3_tkc4n")
+font_size = 18
+
+[node name="HotbarSlot" type="TextureRect"]
+texture = ExtResource("1_l00xm")
+script = ExtResource("2_rihek")
+label_key_path = NodePath("LabelKey")
+item_container_path = NodePath("ItemContainer")
+
+[node name="ItemContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LabelKey" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -3.5
+offset_top = -10.0
+offset_right = 3.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "1"
+label_settings = SubResource("LabelSettings_rmrxp")

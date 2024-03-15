@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Character
 class_name BattleCharacter
 
 signal is_dead()
@@ -17,6 +17,9 @@ const KNOCKBACK_VELOCITY = 200
 @onready var animation_tree : AnimationTree = $AnimationTree
 
 var is_alive : bool = true
+
+func _ready():
+	super._ready()
 
 func _on_hitbox_damaged(amount, knockback_strength, damage_source, attacker):
 	set_health(health - amount)

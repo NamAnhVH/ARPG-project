@@ -7,19 +7,19 @@ class_name EquipmentSlot
 @onready var placeholder : Control = get_node(placeholder_path)
 
 func _ready():
+	is_ready = true
 	placeholder.texture = ItemManager.get_placeholder(type)
 
-func set_item(new_item: Item):
-	item = new_item
-	placeholder.hide()
+func try_put_item(new_item: Item):
+	return new_item.equipment_type == type and super.try_put_item(new_item)
 
-func pick_item():
-	item_container.remove_child(item)
-	item = null
-	placeholder.show()
+func put_item(new_item: Item) -> Item:
+	if new_item:
+		if new_item.equipment_type != type:
+			return new_item
+		placeholder.hide()
+	else:
+		placeholder.show()
+	
+	return super.put_item(new_item)
 
-func put_item(new_item: Item):
-	item = new_item
-	item.position = Vector2(2, 2)
-	item_container.add_child(item)
-	placeholder.hide()
