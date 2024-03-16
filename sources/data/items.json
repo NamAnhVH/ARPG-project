@@ -1,6 +1,6 @@
 {
 	"sword_v00": {
-		"name": "Dull Blade",
+		"name": "Blade",
 		"type": "ONE_HAND_WEAPON",
 		"level": 1,
 		"base_stats": [
@@ -9,7 +9,15 @@
 				"minimum": 10,
 				"maximum": 22
 			}
-		]
+		],
+		"legendary": {
+			"name": "Favonius Blade",
+			"stats": [{
+				"stat": "ATK",
+				"minimum": 25,
+				"maximum": 25
+			}]
+		}
 	},
 	"sword_v01": {
 		"name": "Silver Sword",
@@ -21,7 +29,15 @@
 				"minimum": 22,
 				"maximum": 33
 			}
-		]
+		],
+		"legendary": {
+			"name": "Lion's Roar",
+			"stats": [{
+				"stat": "ATK",
+				"minimum": 40,
+				"maximum": 40
+			}]
+		}
 	},
 	"sword_v02": {
 		"name": "Dark Iron Sword",
@@ -33,7 +49,15 @@
 				"minimum": 33,
 				"maximum": 40
 			}
-		]
+		],
+		"legendary": {
+			"name": "Sword of Descension",
+			"stats": [{
+				"stat": "ATK",
+				"minimum": 60,
+				"maximum": 60
+			}]
+		}
 	},
 	"sword_v03": {
 		"name": "Skyrider Sword",
@@ -45,10 +69,18 @@
 				"minimum": 40,
 				"maximum": 45
 			}
-		]
+		],
+		"legendary": {
+			"name": "Freedom-Sworn",
+			"stats": [{
+				"stat": "ATK",
+				"minimum": 80,
+				"maximum": 80
+			}]
+		}
 	},
 	"sword_v04": {
-		"name": "Harbinger of Dawn",
+		"name": "Golden Blade",
 		"type": "ONE_HAND_WEAPON",
 		"level": 5,
 		"base_stats": [
@@ -57,10 +89,18 @@
 				"minimum": 45,
 				"maximum": 52
 			}
-		]
+		],
+		"legendary": {
+			"name": "Aquila Favonia",
+			"stats": [{
+				"stat": "ATK",
+				"minimum": 100,
+				"maximum": 100
+			}]
+		}
 	},
 	"axe_v00": {
-		"name": "Cool Steel",
+		"name": "Stone Axe",
 		"type": "ONE_HAND_WEAPON",
 		"level": 1,
 		"base_stats": [
@@ -72,7 +112,7 @@
 		]
 	},
 	"axe_v01": {
-		"name": "Traveler's Handy Axe",
+		"name": "Iron Axe",
 		"type": "ONE_HAND_WEAPON",
 		"level": 2,
 		"base_stats": [
@@ -84,7 +124,7 @@
 		]
 	},
 	"axe_v02": {
-		"name": "Old Merc's Pal",
+		"name": "Silver Axe",
 		"type": "ONE_HAND_WEAPON",
 		"level": 3,
 		"base_stats": [
@@ -96,7 +136,7 @@
 		]
 	},
 	"axe_v03": {
-		"name": "Snow-Tombed Starsilver",
+		"name": "Snow-Tombed Axe",
 		"type": "ONE_HAND_WEAPON",
 		"level": 4,
 		"base_stats": [
@@ -122,13 +162,13 @@
 	"stone": {
 		"name": "Stone",
 		"stack_size": 99,
-		"level": 1,
-		"base_stats": [
-			{
-				"stat": "REGENERATION",
-				"minimum": 2,
-				"maximum": 5
-			}
-		]
+		"level": 1
+	},
+	"gold":{
+		"name": "Gold",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 1
 	}
+
 }

@@ -27,28 +27,28 @@ func display(slot : InventorySlot):
 	
 	size.x = 0
 	global_position = slot.size + slot.global_position
-	item_name.text = slot.item.item_name
-	var line_type = ItemInfoLine.new(type_names[slot.item.equipment_type], "bd9000")
+	item_name.text = slot.item.get_item_name()
+	var rarity_name = GameEnums.RARITY.keys()[slot.item.rarity].capitalize()
+	var line_type = ItemInfoLine.new(rarity_name + " " + type_names[slot.item.equipment_type], ResourceManager.colors[slot.item.rarity])
 	line_container.add_child(line_type)
 	
-	var components = slot.item.components
+	for c in slot.item.components.values():
+		c.set_info(self)
 	
-	if components.has("base_stats"):
-		var base_stat_lines = components.base_stats.get_lines()
-		
-		for line in base_stat_lines:
-			line_container.add_child(line)
 	show()
 	
 	await(get_tree())
 	
 	var max_width = 0
 	var height = 0
-	
 	for c in line_container.get_children():
-		height += c.size.y + 10
+		height += c.size.y
 		if c.size.x > max_width:
-			max_width = c.size.x
-	
-	size = Vector2(max_width + 30, height + 8)
+			max_width = c.size.x + 20
+	size = Vector2(max_width + 30, height)
+	height += item_name.get_line_count() * 16
+	size = Vector2(max_width + 30, height + 20)
+
+func add_line(line):
+	line_container.add_child(line)
 

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://5mq8h28hbgyr"]
-
-[ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/interactables/interactable_chest.tscn" id="1_wuqms"]
-
-[node name="InteractableRandomChest" instance=ExtResource("1_wuqms")]

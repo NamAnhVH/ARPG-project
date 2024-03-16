@@ -2,21 +2,15 @@ extends Resource
 class_name BaseStat
 
 var stat_ranges = []
-var scale : float
+var scale : float = 0
 
-func _init(data, value):
-	scale = value
-	
+func _init(data):
 	for stat_range in data:
 		stat_ranges.append(StatRange.new(stat_range))
 
-func get_lines():
-	var lines = []
-	
+func set_info(item_info):
 	for stat_range in stat_ranges:
-		var stat_info = ResourceManager.stat_info[stat_range.stat]
+		var display = ResourceManager.stat_info[stat_range.stat].display
 		var value = stat_range.get_value(scale, stat_range.stat)
-		var text = stat_info.display.replace("#", str(value))
-		lines.append(ItemInfoLine.new(text, "bd9000"))
-	
-	return lines
+		var text = display % value
+		item_info.add_line(ItemInfoLine.new(text, ResourceManager.colors[GameEnums.RARITY.COMMON]))

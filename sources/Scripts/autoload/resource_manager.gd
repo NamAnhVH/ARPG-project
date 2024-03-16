@@ -1,6 +1,6 @@
 extends Node
 
-const STAT_PATH = "res://sources/scenes/items/stats.json"
+const STAT_PATH = "res://sources/data/stats.json"
 
 var sprites = {
 	"sword_v00": preload("res://assets/items/sword_v00.png"),
@@ -30,6 +30,14 @@ var tscn = {
 	"inventory_slot" : preload("res://sources/scenes/ui/inventory_slot.tscn"),
 	"hotbar_slot": preload("res://sources/scenes/ui/hotbar_slot.tscn"),
 	"floor_item": preload("res://sources/scenes/interactables/floor_item.tscn")
+}
+
+var colors = {
+	GameEnums.RARITY.COMMON : "B9B9B8",
+	GameEnums.RARITY.UNCOMMON : "009623",
+	GameEnums.RARITY.RARE : "0090FF",
+	GameEnums.RARITY.EPIC : "9C00FF",
+	GameEnums.RARITY.LEGENDARY : "FF0000",
 }
 
 var stat_info = {}

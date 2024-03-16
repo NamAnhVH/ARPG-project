@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmxlfrnlvvvjt"]
+[gd_scene load_steps=27 format=3 uid="uid://bmxlfrnlvvvjt"]
 
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="1_08bvg"]
 [ext_resource type="Script" path="res://test_map.gd" id="1_fheyy"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dlo5xd8gi7kp8" path="res://assets/monsters/slimes/slime_v06.png" id="9_eui8a"]
 [ext_resource type="PackedScene" uid="uid://xc4ma4xl30x1" path="res://sources/scenes/interactables/floor_item.tscn" id="10_hxaqd"]
 [ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/interactables/interactable_chest.tscn" id="11_1apeb"]
+[ext_resource type="PackedScene" uid="uid://5mq8h28hbgyr" path="res://sources/scenes/interactables/interactable_random_chest.tscn" id="12_e34tj"]
+[ext_resource type="PackedScene" uid="uid://b20oknxj3srm1" path="res://sources/scenes/interactables/interactable_treasure_chest.tscn" id="13_3ysnl"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_p0jv7"]
 tile_data = PackedInt32Array(0, 1310720, 11, 65536, 1310720, 11, 131072, 1310720, 12, 1, 1245184, 11, 65537, 1245184, 11, 131073, 1245184, 12)
@@ -2005,7 +2007,7 @@ size = Vector2(40, 2)
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uujvf"]
 vertices = PackedVector2Array(249, -53, 166, -52, 246, -59, 188, 93, 455, 45, 514, 38, 519, 91, 176, 105, 165, 105, 164, 102, 291, -212, 506, -220, 504, -49, 454, -45, 248, -12, 189, 54, 125, 23, 131, 53)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8, 9), PackedInt32Array(2, 10, 11, 12, 13, 0), PackedInt32Array(14, 0, 13, 4), PackedInt32Array(14, 4, 3, 15), PackedInt32Array(16, 14, 15, 17)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(238, -20, 113, 16, 123, 63, 179, 64, 178, 86, 156, 96, 152, 115, 176, 115, 530, 101, 524, 27, 465, 34, 464, -36, 514, -40, 517, -231, 284, -222, 238, -68, 139, -60, 144, -42, 239, -43)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(238, -20, 113, 16, 123, 63, 179, 64, 178, 86, 156, 96, 152, 115, 176, 115, 530, 101, 527.516, 70.3636, 524, 27, 465, 34, 464, -36, 514, -40, 517, -231, 284, -222, 238, -68, 139, -60, 144, -42, 239, -43)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="TestMap" type="Node2D"]
@@ -2211,3 +2213,11 @@ frame = 13
 [node name="InteractableChest2" parent="Chests" instance=ExtResource("11_1apeb")]
 z_index = 1
 position = Vector2(540, 107)
+
+[node name="InteractableRandomChest" parent="Chests" instance=ExtResource("12_e34tj")]
+position = Vector2(603, 140)
+number_of_items = 10
+items = Array[String](["stone", "sword_v00", "axe_v00", "gold"])
+
+[node name="InteractableTreasureChest" parent="Chests" instance=ExtResource("13_3ysnl")]
+position = Vector2(479, 141)
