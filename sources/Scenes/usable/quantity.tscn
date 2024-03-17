@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bikl4k7w7nob2"]
+
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="1_cdqog"]
+[ext_resource type="Script" path="res://sources/scripts/usable/quantity.gd" id="2_yqkis"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4wje5"]
+font = ExtResource("1_cdqog")
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+
+[node name="Quantity" type="Label"]
+visible = false
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 27.0
+offset_bottom = 24.0
+text = "20"
+label_settings = SubResource("LabelSettings_4wje5")
+horizontal_alignment = 2
+script = ExtResource("2_yqkis")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba3ckafpos0op"]
+[gd_scene load_steps=7 format=3 uid="uid://ba3ckafpos0op"]
 
 [ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_qygom"]
 [ext_resource type="Script" path="res://sources/scripts/ui/inventory_container.gd" id="2_2r4ul"]
 [ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_gfxkb"]
 [ext_resource type="FontFile" uid="uid://del1en3qo0ujb" path="res://font/Pixel Sans Serif.ttf" id="3_8be7h"]
+[ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_j6cnb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wc8fc"]
 line_spacing = 0.0
@@ -34,6 +35,7 @@ patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("2_2r4ul")
+player_data = ExtResource("3_j6cnb")
 
 [node name="TitleContainer" type="NinePatchRect" parent="."]
 layout_mode = 1

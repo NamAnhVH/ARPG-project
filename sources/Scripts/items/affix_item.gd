@@ -17,3 +17,10 @@ func set_info(item_info, rarity):
 		var value = stat_range.get_value(scale, stat_range.stat)
 		var text = display % str(value)
 		item_info.add_line(ItemInfoLine.new(text, ResourceManager.colors[rarity]))
+
+func get_data():
+	return {
+		"affix_group": affix_group.id,
+		"affix": affix.id,
+		"scale": scale
+	}

@@ -10,14 +10,15 @@ var action = "pick up"
 var object_name = ""
 
 func _ready():
-	if not item:
+	if !item:
 		item = ItemManager.get_item(item_id)
 	
 	object_name = item.item_name
 	sprite.texture = ResourceManager.sprites[item.id]
+	InventoryManager.add_hidden_node(item)
 
 func interact():
-	SignalManager.item_picked.emit(item, self)
-
-func item_picked():
-	queue_free()
+	if InventoryManager.has_space_for_items([item.get_data()]):
+		InventoryManager.remove_hidden_node(item)
+		InventoryManager.add_items([item])
+		queue_free()

@@ -1,6 +1,6 @@
 extends Node
 
-const STAT_PATH = "res://sources/data/stats.json"
+const STAT_PATH = "res://data/json/stats.json"
 
 var sprites = {
 	"sword_v00": preload("res://assets/items/sword_v00.png"),
@@ -18,22 +18,39 @@ var sprites = {
 	"mace_v02": preload("res://assets/items/mace_v02.png"),
 	"mace_v03": preload("res://assets/items/mace_v03.png"),
 	"mace_v04": preload("res://assets/items/mace_v04.png"),
+	"ring_v00": preload("res://assets/items/ring_v00.png"),
 	"stone": preload("res://assets/items/stone.png"),
 	"coal": preload("res://assets/items/coal.png"),
 	"iron": preload("res://assets/items/iron.png"),
 	"copper": preload("res://assets/items/copper.png"),
 	"silver": preload("res://assets/items/silver.png"),
-	"gold": preload("res://assets/items/gold.png")
+	"gold": preload("res://assets/items/gold.png"),
+	"healing_potion_v00": preload("res://assets/items/healing_potion_v00.png"),
+	"healing_potion_v01": preload("res://assets/items/healing_potion_v01.png"),
+	"healing_potion_v02": preload("res://assets/items/healing_potion_v02.png"),
+	"healing_potion_v03": preload("res://assets/items/healing_potion_v03.png"),
+	"healing_potion_v04": preload("res://assets/items/healing_potion_v04.png"),
 }
 
 var tscn = {
 	"inventory_slot" : preload("res://sources/scenes/ui/inventory_slot.tscn"),
 	"hotbar_slot": preload("res://sources/scenes/ui/hotbar_slot.tscn"),
-	"floor_item": preload("res://sources/scenes/interactables/floor_item.tscn")
+	"floor_item": preload("res://sources/scenes/interactables/floor_item.tscn"),
+	"cooldown": preload("res://sources/scenes/usable/cooldown.tscn"),
+	"quantity": preload("res://sources/scenes/usable/quantity.tscn"),
+	"inventory": preload("res://sources/scenes/ui/inventory.tscn"),
+	"equipment": preload("res://sources/scenes/ui/equipment.tscn"),
+	"chest": preload("res://sources/scenes/ui/chest.tscn")
+}
+
+var resources = {
+	"game_data": preload("res://data/resources/game_data.tres"),
+	"player_data": preload("res://data/resources/player_data.tres"),
+	"setting_data": preload("res://data/resources/setting_data.tres")
 }
 
 var colors = {
-	GameEnums.RARITY.COMMON : "B9B9B8",
+	GameEnums.RARITY.COMMON : "000000",
 	GameEnums.RARITY.UNCOMMON : "009623",
 	GameEnums.RARITY.RARE : "0090FF",
 	GameEnums.RARITY.EPIC : "9C00FF",
@@ -57,4 +74,7 @@ func set_font(font_size: int, color = "000000"):
 	label_setting.font_size = font_size
 	label_setting.font_color = Color(color)
 	return label_setting
+
+func get_instance(id):
+	return tscn[id].instantiate()
 

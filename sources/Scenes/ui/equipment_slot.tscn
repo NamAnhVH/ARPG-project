@@ -6,7 +6,6 @@
 [node name="EquipmentSlot" instance=ExtResource("1_8etrs")]
 script = ExtResource("2_y47je")
 type = 0
-placeholder_path = NodePath("Placeholder")
 
 [node name="Placeholder" type="TextureRect" parent="." index="1"]
 layout_mode = 1

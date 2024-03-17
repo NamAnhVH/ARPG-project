@@ -1,17 +1,30 @@
 extends Node
 
 #Inventory
-signal inventory_opened(inventory: Inventory)
-signal inventory_ready(inventory: Inventory)
-signal inventory_closed(inventory: Inventory)
-signal equipment_opened(equipment: Equipment)
-signal equipment_ready(equipment: Equipment)
-signal equipment_closed(equipment: Equipment)
+signal inventory_opened()
+signal inventory_ready()
+signal inventory_closed()
+signal get_inventory_data()
+signal set_inventory_data(inventory: Inventory)
+signal equipment_ready()
+signal get_equipment_data()
+signal set_equipment_data(equipment: Equipment)
 signal hotbar_ready(hotbar: Hotbar)
 signal chest_opened(chest: Chest)
 signal chest_ready(chest: Chest)
 signal chest_closed(chest: Chest)
+signal content_changed()
 
 #Interactable
-signal item_picked(item: Item, sender: FloorItem)
 signal item_dropped(item: Item)
+
+#PlayableCharacter
+signal player_life_changed(health, max_health)
+signal heal_player(healing_amount)
+
+#Item
+signal upgrade_item()
+signal has_upgradable_item(value)
+
+#SaveManager
+signal saving_game()

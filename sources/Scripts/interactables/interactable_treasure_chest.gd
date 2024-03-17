@@ -1,10 +1,7 @@
 extends InteractableChest
 
-func set_item():
-	pass
+func set_items():
+	for i in randi_range(1, 10):
+		chest.add_item(ItemManager.rng_generate_rarity(100))
 
-func interact():
-	for s in chest.slots:
-		s.put_item(ItemManager.rng_generate_rarity(100))
-	
-	SignalManager.chest_opened.emit(chest)
+

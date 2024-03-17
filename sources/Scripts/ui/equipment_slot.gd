@@ -3,15 +3,17 @@ class_name EquipmentSlot
 
 @export var type : GameEnums.EQUIPMENT_TYPE
 
-@export_node_path var placeholder_path : NodePath
-@onready var placeholder : Control = get_node(placeholder_path)
+@onready var placeholder : TextureRect = $Placeholder
 
 func _ready():
 	is_ready = true
 	placeholder.texture = ItemManager.get_placeholder(type)
 
+func accept_item(new_item):
+	return new_item.equipment_type == type and super.accept_item(new_item)
+
 func try_put_item(new_item: Item):
-	return new_item.equipment_type == type and super.try_put_item(new_item)
+	return accept_item(new_item) and super.try_put_item(new_item)
 
 func put_item(new_item: Item) -> Item:
 	if new_item:
@@ -23,3 +25,5 @@ func put_item(new_item: Item) -> Item:
 	
 	return super.put_item(new_item)
 
+func get_stat(stat):
+	return item.get_stat(stat) if item else 0

@@ -3,14 +3,16 @@ class_name PlayableCharacter
 
 const BIAS = Vector2(0, 5)
 
+@export var player_data : Resource
+
 @onready var body : Node2D = $Body
 @onready var base : Sprite2D = $Body/Base
 @onready var one_hand_weapon : Sprite2D = $Body/OneHandWeapon
 @onready var shield : Sprite2D = $Body/Shield
+@onready var spear : Sprite2D = $Body/Spear
 @onready var attack_timer : Timer = $AttackTimer
 @onready var interactable_area : Area2D = $InteractableArea
 @onready var interactable_labels : VBoxContainer = $Interactable/InteractableLabels
-
 @onready var current_map = get_parent()
 
 var is_unequip_weapon : bool = true #Check trang bị vũ khí chưa (Chỉnh sửa sau)
@@ -30,20 +32,22 @@ var current_interactable
 
 func _ready():
 	super._ready()
+	player_data.changed.connect(_on_data_changed)
 	#Gán texture khi được khởi tạo
 	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
 	
-	_set_body_layer(2,1,0)
+	_set_body_layer(3,2,1,0)
 	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", !is_attack_state and is_alive)
+	_on_data_changed()
 
 #Xử lý thao tác
 func _unhandled_input(event):
-	#Chỉnh sửa sau (Đang dùng để chỉnh trạng thái trang bị vũ khí)
-	if event.is_action_pressed("change_weapon"):
-		if is_unequip_weapon:
-			equip_weapon()
-		else:
-			unequip_weapon()
+	##Chỉnh sửa sau (Đang dùng để chỉnh trạng thái trang bị vũ khí)
+	#if event.is_action_pressed("change_weapon"):
+		#if is_unequip_weapon:
+			#equip_weapon()
+		#else:
+			#unequip_weapon()
 	
 	#Nhấn phím chuyển trạng thái sẵn sàng tấn công
 	if event.is_action_pressed("draw_sheath"):
@@ -65,6 +69,9 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	if !is_attacking and !is_drawing and !is_sheathing and !is_hurting:
 		move_state()
+	
+	if player_data:
+		player_data.global_position = global_position
 
 func _process(_delta):
 	if not current_interactable:
@@ -115,7 +122,7 @@ func move_state():
 		animation_tree.set("parameters/Attack_state/conditions/is_idling", true)
 
 	#Vecto di chuyen
-	velocity = lerp(velocity, move_input * move_speed_unit * 24, get_move_weight())
+	velocity = lerp(velocity, move_input * player_data.get_stat(GameEnums.STAT.MOVE_SPEED) * 24, get_move_weight())
 	move_and_slide()
 
 #Chỉnh sửa sau
@@ -261,10 +268,11 @@ func move_idle_asset():
 		shield.texture = load("res://assets/weapons/swordAndShield/moveIdle/shield_v00.png")
 
 #Thiết lập các tầng sprite body
-func _set_body_layer(base_index: int, one_hand_weapon_index:int, shield_index: int):
+func _set_body_layer(base_index: int, one_hand_weapon_index: int, shield_index: int, spear_index: int):
 	body.move_child(base, base_index)
 	body.move_child(one_hand_weapon, one_hand_weapon_index)
 	body.move_child(shield, shield_index)
+	body.move_child(spear, spear_index)
 
 func _on_is_attacked():
 	animation_tree.set("parameters/conditions/is_attacked", true)
@@ -289,3 +297,6 @@ func _on_item_dropped(item):
 	current_map.floor_item.add_child(floor_item)
 	floor_item.position = position
 	floor_item.set_z_index(self.z_index)
+
+func _on_data_changed():
+	global_position = player_data.global_position

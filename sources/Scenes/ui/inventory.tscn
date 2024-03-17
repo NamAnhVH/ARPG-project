@@ -14,7 +14,6 @@ patch_margin_left = 8
 patch_margin_right = 16
 patch_margin_bottom = 8
 script = ExtResource("2_apfb3")
-slot_container_path = NodePath("SlotContainer")
 
 [node name="SlotContainer" type="GridContainer" parent="."]
 layout_mode = 0

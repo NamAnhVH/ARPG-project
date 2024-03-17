@@ -2205,19 +2205,17 @@ item_id = "stone"
 y_sort_enabled = true
 
 [node name="InteractableChest" parent="Chests" instance=ExtResource("11_1apeb")]
-z_index = 1
 position = Vector2(616, 88)
-items = Array[String](["sword_v00", "stone"])
+items = Array[String](["sword_v00", "stone", "healing_potion_v00", "healing_potion_v00", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01"])
 frame = 13
 
 [node name="InteractableChest2" parent="Chests" instance=ExtResource("11_1apeb")]
-z_index = 1
 position = Vector2(540, 107)
 
 [node name="InteractableRandomChest" parent="Chests" instance=ExtResource("12_e34tj")]
 position = Vector2(603, 140)
 number_of_items = 10
-items = Array[String](["stone", "sword_v00", "axe_v00", "gold"])
+items = Array[String](["stone", "sword_v00", "axe_v00"])
 
 [node name="InteractableTreasureChest" parent="Chests" instance=ExtResource("13_3ysnl")]
 position = Vector2(479, 141)

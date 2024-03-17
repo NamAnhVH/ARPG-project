@@ -7,19 +7,6 @@ class_name ItemInfo
 @export_node_path var line_container_path : NodePath
 @onready var line_container = get_node(line_container_path)
 
-var type_names = {
-	GameEnums.EQUIPMENT_TYPE.NONE: "Material",
-	GameEnums.EQUIPMENT_TYPE.HEAD: "Head",
-	GameEnums.EQUIPMENT_TYPE.CHEST: "Chest",
-	GameEnums.EQUIPMENT_TYPE.PANTS: "Pants",
-	GameEnums.EQUIPMENT_TYPE.SHOES: "Shoes",
-	GameEnums.EQUIPMENT_TYPE.ONE_HAND_WEAPON: "Weapon",
-	GameEnums.EQUIPMENT_TYPE.SHIELD: "Shield",
-	GameEnums.EQUIPMENT_TYPE.BOW: "Bow",
-	GameEnums.EQUIPMENT_TYPE.SPEAR: "Spear",
-	GameEnums.EQUIPMENT_TYPE.ACCESSORY: "Accessory"
-}
-
 func display(slot : InventorySlot):
 	for c in line_container.get_children():
 		line_container.remove_child(c)
@@ -29,15 +16,12 @@ func display(slot : InventorySlot):
 	global_position = slot.size + slot.global_position
 	item_name.text = slot.item.get_item_name()
 	var rarity_name = GameEnums.RARITY.keys()[slot.item.rarity].capitalize()
-	var line_type = ItemInfoLine.new(rarity_name + " " + type_names[slot.item.equipment_type], ResourceManager.colors[slot.item.rarity])
+	var line_type = ItemInfoLine.new(rarity_name + " " + ItemManager.get_type_name(slot.item), ResourceManager.colors[slot.item.rarity])
 	line_container.add_child(line_type)
 	
 	for c in slot.item.components.values():
 		c.set_info(self)
 	
-	show()
-	
-	await(get_tree())
 	
 	var max_width = 0
 	var height = 0
@@ -45,9 +29,17 @@ func display(slot : InventorySlot):
 		height += c.size.y
 		if c.size.x > max_width:
 			max_width = c.size.x + 20
-	size = Vector2(max_width + 30, height)
+	size = Vector2(max_width, height)
+	if item_name.get_line_count() > 1:
+		max_width = 120
+		size = Vector2(max_width, height)
 	height += item_name.get_line_count() * 16
-	size = Vector2(max_width + 30, height + 20)
+	size = Vector2(max_width, height + 20)
+	if slot is HotbarSlot:
+			global_position += Vector2(0, -size.y)
+	
+	show()
+
 
 func add_line(line):
 	line_container.add_child(line)

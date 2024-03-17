@@ -34,5 +34,9 @@
 	"CRIT_DAMAGE": {
 		"name": "Crit Damage",
 		"display": "+%s%% to Crit Damage"
+	},
+	"MOVE_SPEED": {
+		"name": "Move Speed",
+		"display": "+%s to Move Speed"
 	}
 }

@@ -10,12 +10,11 @@ var chest : Chest
 var action = "open"
 var object_name = "Chest"
 
-func _init():
-	chest = preload("res://sources/scenes/ui/chest.tscn").instantiate()
-
 func _ready():
+	chest = ResourceManager.get_instance("chest")
 	set_sprite()
 	set_items()
+	InventoryManager.add_hidden_node(chest)
 
 func set_sprite():
 	if frame < 5:

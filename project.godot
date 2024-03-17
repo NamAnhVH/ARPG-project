@@ -21,12 +21,19 @@ GameEnums="*res://sources/scripts/autoload/game_enums.gd"
 SignalManager="*res://sources/scripts/autoload/signal_manager.gd"
 ItemManager="*res://sources/scripts/autoload/item_manager.gd"
 ResourceManager="*res://sources/scripts/autoload/resource_manager.gd"
+InventoryManager="*res://sources/scenes/managers/inventory_manager.tscn"
+SaveManager="*res://sources/scripts/autoload/save_manager.gd"
+
+[debug]
+
+gdscript/warnings/unused_variable=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=450
-window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [importer_defaults]

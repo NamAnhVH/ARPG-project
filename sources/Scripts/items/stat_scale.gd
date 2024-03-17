@@ -13,3 +13,6 @@ func set_info(item_info, color_id):
 	var value = stat_range.get_value(scale, stat_range.stat)
 	var text = display % str(value)
 	item_info.add_line(ItemInfoLine.new(text, ResourceManager.colors[color_id]))
+
+func get_stat(stat):
+	return stat_range.get_value(scale, stat)
