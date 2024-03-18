@@ -21,6 +21,8 @@ signal item_dropped(item: Item)
 #PlayableCharacter
 signal player_life_changed(health, max_health)
 signal heal_player(healing_amount)
+signal equip_item(item)
+signal unequip_item(equipment_type)
 
 #Item
 signal upgrade_item()

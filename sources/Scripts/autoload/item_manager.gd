@@ -9,11 +9,9 @@ const RARE_NAMES_PATH : String = "res://data/json/rare_names.json"
 	GameEnums.EQUIPMENT_TYPE.CHEST : preload("res://assets/placeholders/placeholder_chest.png"),
 	GameEnums.EQUIPMENT_TYPE.PANTS : preload("res://assets/placeholders/placeholder_pants.png"),
 	GameEnums.EQUIPMENT_TYPE.SHOES : preload("res://assets/placeholders/placeholder_shoes.png"),
-	GameEnums.EQUIPMENT_TYPE.ONE_HAND_WEAPON : preload("res://assets/placeholders/placeholder_one_hand_weapon.png"),
-	GameEnums.EQUIPMENT_TYPE.SHIELD : preload("res://assets/placeholders/placeholder_shield.png"),
+	GameEnums.EQUIPMENT_TYPE.WEAPON : preload("res://assets/placeholders/placeholder_weapon.png"),
+	GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON : preload("res://assets/placeholders/placeholder_extra_weapon.png"),
 	GameEnums.EQUIPMENT_TYPE.ACCESSORY : preload("res://assets/placeholders/placeholder_accessory.png"),
-	GameEnums.EQUIPMENT_TYPE.BOW : preload("res://assets/placeholders/placeholder_bow.png"),
-	GameEnums.EQUIPMENT_TYPE.SPEAR : preload("res://assets/placeholders/placeholder_spear.png")
 }
 
 var equipment_names = {
@@ -21,10 +19,8 @@ var equipment_names = {
 	GameEnums.EQUIPMENT_TYPE.CHEST: "Chest",
 	GameEnums.EQUIPMENT_TYPE.PANTS: "Pants",
 	GameEnums.EQUIPMENT_TYPE.SHOES: "Shoes",
-	GameEnums.EQUIPMENT_TYPE.ONE_HAND_WEAPON: "Weapon",
-	GameEnums.EQUIPMENT_TYPE.SHIELD: "Shield",
-	GameEnums.EQUIPMENT_TYPE.BOW: "Bow",
-	GameEnums.EQUIPMENT_TYPE.SPEAR: "Spear",
+	GameEnums.EQUIPMENT_TYPE.WEAPON: "Weapon",
+	GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON: "Extra weapon",
 	GameEnums.EQUIPMENT_TYPE.ACCESSORY: "Accessory"
 }
 

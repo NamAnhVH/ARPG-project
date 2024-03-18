@@ -23,7 +23,30 @@ func put_item(new_item: Item) -> Item:
 	else:
 		placeholder.show()
 	
-	return super.put_item(new_item)
+	#Nếu có item trên tay
+	if new_item:
+		return has_new_item(new_item)
+	
+	#Nếu không có item trên tay, thì lấy item từ slot lên tay
+	elif item:
+		SignalManager.unequip_item.emit(item.equipment_type)
+		new_item = item
+		set_item(null)
+		
+	return new_item
+
+func has_new_item(new_item):
+	SignalManager.equip_item.emit(new_item)
+	if item:
+		var temp_item = item
+		remove_item_child()
+		set_item(new_item)
+		new_item = temp_item
+		return new_item
+	else:
+		set_item(new_item)
+		return null
+
 
 func get_stat(stat):
 	return item.get_stat(stat) if item else 0

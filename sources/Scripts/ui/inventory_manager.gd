@@ -42,14 +42,11 @@ func _unhandled_input(event):
 func _process(float):
 	if item_in_hand:
 		item_in_hand.position = get_viewport().get_mouse_position() + ITEM_OFFSET
+		item_void.mouse_filter = Control.MOUSE_FILTER_STOP
+	else:
+		item_void.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 #Function
-func set_item_void_filter():
-	if item_in_hand:
-		item_void.mouse_filter = Control.MOUSE_FILTER_IGNORE 
-	else:
-		item_void.mouse_filter = Control.MOUSE_FILTER_STOP
-
 func has_space_for_items(items_data):
 	var items = ItemManager.get_items(items_data)
 	items = inventory.try_place_stack_items(items)
@@ -138,4 +135,3 @@ func _on_void_gui_input(event):
 		item_in_hand_node.remove_child(item_in_hand)
 		SignalManager.item_dropped.emit(item_in_hand)
 		item_in_hand = null
-		set_item_void_filter()

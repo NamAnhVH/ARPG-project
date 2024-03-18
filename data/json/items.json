@@ -2,7 +2,8 @@
 	"sword_v00": {
 		"name": "Blade",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 1,
 		"base_stats": [
 			{
@@ -29,7 +30,8 @@
 	"sword_v01": {
 		"name": "Silver Sword",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 2,
 		"base_stats": [
 			{
@@ -50,7 +52,8 @@
 	"sword_v02": {
 		"name": "Dark Iron Sword",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 3,
 		"base_stats": [
 			{
@@ -71,7 +74,8 @@
 	"sword_v03": {
 		"name": "Skyrider Sword",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 4,
 		"base_stats": [
 			{
@@ -92,7 +96,8 @@
 	"sword_v04": {
 		"name": "Golden Blade",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 5,
 		"base_stats": [
 			{
@@ -113,7 +118,8 @@
 	"axe_v00": {
 		"name": "Stone Axe",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 1,
 		"base_stats": [
 			{
@@ -126,7 +132,8 @@
 	"axe_v01": {
 		"name": "Iron Axe",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 2,
 		"base_stats": [
 			{
@@ -139,7 +146,8 @@
 	"axe_v02": {
 		"name": "Silver Axe",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 3,
 		"base_stats": [
 			{
@@ -152,7 +160,8 @@
 	"axe_v03": {
 		"name": "Snow-Tombed Axe",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 4,
 		"base_stats": [
 			{
@@ -165,7 +174,8 @@
 	"axe_v04": {
 		"name": "Lithic Axe",
 		"type": "EQUIPMENT",
-		"equipment_type": "ONE_HAND_WEAPON",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
 		"level": 5,
 		"base_stats": [
 			{

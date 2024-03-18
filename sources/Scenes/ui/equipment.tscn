@@ -74,7 +74,7 @@ offset_bottom = 156.0
 grow_horizontal = 2
 type = 4
 
-[node name="OneHandWeapon" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+[node name="Weapon" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -86,62 +86,38 @@ offset_bottom = 79.0
 grow_horizontal = 2
 type = 5
 
-[node name="Shield" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+[node name="ExtraWeapon" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 39.0
-offset_top = 47.0
-offset_right = 71.0
-offset_bottom = 79.0
+offset_left = -71.0
+offset_top = 87.0
+offset_right = -39.0
+offset_bottom = 119.0
 grow_horizontal = 2
 type = 6
-
-[node name="Spear" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -71.0
-offset_top = 85.0
-offset_right = -39.0
-offset_bottom = 117.0
-grow_horizontal = 2
-type = 8
-
-[node name="Bow" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -71.0
-offset_top = 124.0
-offset_right = -39.0
-offset_bottom = 156.0
-grow_horizontal = 2
-type = 7
 
 [node name="MainAccessory" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 39.0
-offset_top = 85.0
-offset_right = 71.0
-offset_bottom = 117.0
+offset_left = 38.0
+offset_top = 47.0
+offset_right = 70.0
+offset_bottom = 79.0
 grow_horizontal = 2
-type = 9
+type = 7
 
 [node name="ExtraAccessory" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 39.0
-offset_top = 124.0
-offset_right = 71.0
-offset_bottom = 156.0
+offset_left = 38.0
+offset_top = 85.0
+offset_right = 70.0
+offset_bottom = 117.0
 grow_horizontal = 2
-type = 9
+type = 7

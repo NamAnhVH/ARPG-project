@@ -2,10 +2,8 @@
     "damage": {
 		"type": "PREFIX",
 		"apply_to": [
-			"ONE_HAND_WEAPON",
+			"WEAPON",
             "ACCESSORY",
-            "BOW",
-            "SPEAR",
             "CHEST"
 		],
 		"affixes": {
@@ -105,7 +103,7 @@
             "PANTS",
             "SHOES",
             "ACCESSORY",
-            "SHIELD"
+            "EXTRA_WEAPON"
 		],
 		"affixes": {
 			"lifetime": {
@@ -321,10 +319,8 @@
 	"strength": {
 		"type": "SUFFIX",
 		"apply_to": [
-			"ONE_HAND_WEAPON",
+			"WEAPON",
             "ACCESSORY",
-            "BOW",
-            "SPEAR",
             "CHEST"
 		],
 		"affixes": {
@@ -400,9 +396,7 @@
 	"experience": {
 		"type": "SUFFIX",
 		"apply_to": [
-            "ONE_HAND_WEAPON",
-            "BOW",
-            "SPEAR",
+            "WEAPON",
 			"ACCESSORY",
             "PANTS",
             "SHOES"

@@ -4,6 +4,7 @@ class_name PlayableCharacter
 const BIAS = Vector2(0, 5)
 
 @export var player_data : Resource
+@export var player_base_id: String
 
 @onready var body : Node2D = $Body
 @onready var base : Sprite2D = $Body/Base
@@ -15,14 +16,19 @@ const BIAS = Vector2(0, 5)
 @onready var interactable_labels : VBoxContainer = $Interactable/InteractableLabels
 @onready var current_map = get_parent()
 
-var is_unequip_weapon : bool = true #Check trang bị vũ khí chưa (Chỉnh sửa sau)
+ #Check trang bị hiện tại
+var current_weapon : Item
+var current_extra_weapon : Item
 
+#State
+var is_unequip_weapon : bool = true
 var is_attacking : bool = false
 var is_attack_state: bool = false
 var is_drawing : bool = false
 var is_sheathing : bool = false
 var is_hurting : bool = false
 var is_in_stair_direction : GameEnums.STAIR_DIRECTION
+
 
 var attack_combo : int = 0
 var move_input := Vector2()
@@ -32,23 +38,17 @@ var current_interactable
 
 func _ready():
 	super._ready()
+	SignalManager.equip_item.connect(_on_equip_item)
+	SignalManager.unequip_item.connect(_on_unequip_item)
 	player_data.changed.connect(_on_data_changed)
-	#Gán texture khi được khởi tạo
-	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
 	
 	_set_body_layer(3,2,1,0)
 	animation_tree.set("parameters/conditions/is_not_attack_state_and_alive", !is_attack_state and is_alive)
 	_on_data_changed()
+	set_player_asset("stand_move_push")
 
 #Xử lý thao tác
 func _unhandled_input(event):
-	##Chỉnh sửa sau (Đang dùng để chỉnh trạng thái trang bị vũ khí)
-	#if event.is_action_pressed("change_weapon"):
-		#if is_unequip_weapon:
-			#equip_weapon()
-		#else:
-			#unequip_weapon()
-	
 	#Nhấn phím chuyển trạng thái sẵn sàng tấn công
 	if event.is_action_pressed("draw_sheath"):
 		if !is_unequip_weapon:
@@ -125,18 +125,6 @@ func move_state():
 	velocity = lerp(velocity, move_input * player_data.get_stat(GameEnums.STAT.MOVE_SPEED) * 24, get_move_weight())
 	move_and_slide()
 
-#Chỉnh sửa sau
-func equip_weapon():
-	one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/standMovePush/axe_v00.png")
-	shield.texture = load("res://assets/weapons/swordAndShield/standMovePush/shield_v00.png")
-	is_unequip_weapon = false
-
-#Chỉnh sửa sau
-func unequip_weapon():
-	one_hand_weapon.texture = null
-	shield.texture = null
-	is_unequip_weapon = true
-
 func attack():
 	is_attacking = true
 	attack_timer.start()
@@ -198,74 +186,74 @@ func _on_attack_timer_timeout():
 
 #Bắt đầu hoạt ảnh tấn công
 func _attack_started():
-	attack_asset()
+	set_player_asset("attack")
 
 #Kết thúc hoạt ảnh tấn công
 func _attack_finished():
 	is_attacking = false
 	animation_tree.set("parameters/Attack_state/conditions/is_attacking", is_attacking)
-	move_idle_asset()
+	set_player_asset("move_idle")
 	
 	#Chỉnh sửa sau
 	#animation_tree.set("parameters/Attack_state/Attack/conditions/is_sword_shield_attack", false)
 
 #Bắt đầu hoạt ảnh rút vũ khí
 func _draw_started():
-	change_state_asset()
+	set_player_asset("change_state")
 
 #Kết thúc hoạt ảnh rút vũ khí
 func _draw_finished():
 	is_drawing = false
 	animation_tree.set("parameters/Attack_state/conditions/is_drawing", is_drawing)
 	animation_tree.set("parameters/Attack_state/conditions/is_not_drawing", !is_drawing)
-	move_idle_asset()
+	set_player_asset("move_idle")
 
 #Bắt đầu hoạt ảnh cất vũ khí
 func _sheath_started():
-	change_state_asset()
+	set_player_asset("change_state")
 
 #Kết thúc hoạt ảnh cất vũ khí
 func _sheath_finished():
 	is_sheathing = false
 	animation_tree.set("parameters/Attack_state/conditions/is_sheathing", is_sheathing)
-	base_asset()
+	set_player_asset("stand_move_push")
 
 func _hurt_started():
 	is_hurting = true
-	change_state_asset()
+	set_player_asset("change_state")
 
 func _hurt_finished():
 	velocity = Vector2.ZERO
 	is_hurting = false
 	animation_tree.set("parameters/conditions/is_attacked", false)
 	if is_attack_state:
-		move_idle_asset()
+		set_player_asset("move_idle")
 	else:
-		base_asset()
+		set_player_asset("stand_move_push")
 
-func base_asset():
-	base.texture = load("res://assets/characters/base/standMovePush/humn_v00.png")
-	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/standMovePush/axe_v00.png")
-		shield.texture = load("res://assets/weapons/swordAndShield/standMovePush/shield_v00.png")
+func set_player_asset(asset_type):
+	if current_weapon:
+		if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
+			base.texture = ResourceManager.player_character_texture[current_weapon.weapon_type].stand_move_push[player_base_id]
+	else:
+		base.texture = ResourceManager.player_character_texture.base.stand_move_push[player_base_id]
+	set_equipment_asset(asset_type)
 
-func change_state_asset():
-	base.texture = load("res://assets/characters/swordAndShieldBase/changeState/humn_v00.png")
-	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/changeState/axe_v00.png")
-		shield.texture = load("res://assets/weapons/swordAndShield/changeState/shield_v00.png")
+func remove_equipment_asset(equipment_type):
+	if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
+		if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
+			one_hand_weapon.texture = null
+	elif equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
+		if current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:
+			shield.texture = null
 
-func attack_asset():
-	base.texture = load("res://assets/characters/swordAndShieldBase/attack/humn_v00.png")
+func set_equipment_asset(asset_type: String):
 	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/attack/axe_v00.png")
-		shield.texture = load("res://assets/weapons/swordAndShield/attack/shield_v00.png")
-
-func move_idle_asset():
-	base.texture = load("res://assets/characters/swordAndShieldBase/moveIdle/humn_v00.png")
-	if !is_unequip_weapon:
-		one_hand_weapon.texture = load("res://assets/weapons/swordAndShield/moveIdle/axe_v00.png")
-		shield.texture = load("res://assets/weapons/swordAndShield/moveIdle/shield_v00.png")
+		if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
+			one_hand_weapon.texture = ResourceManager.weapon_texture[current_weapon.weapon_type][asset_type][current_weapon.id]
+	if current_extra_weapon:
+		if current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:
+			shield.texture = ResourceManager.extra_weapon_texture[current_extra_weapon.extra_weapon_type][asset_type][current_extra_weapon.id]
 
 #Thiết lập các tầng sprite body
 func _set_body_layer(base_index: int, one_hand_weapon_index: int, shield_index: int, spear_index: int):
@@ -276,7 +264,6 @@ func _set_body_layer(base_index: int, one_hand_weapon_index: int, shield_index: 
 
 func _on_is_attacked():
 	animation_tree.set("parameters/conditions/is_attacked", true)
-
 
 func _on_is_dead():
 	is_alive = false
@@ -300,3 +287,25 @@ func _on_item_dropped(item):
 
 func _on_data_changed():
 	global_position = player_data.global_position
+
+func _on_equip_item(item: Item):
+	if item.equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
+			is_unequip_weapon = false
+			if item.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
+				current_weapon = item
+				one_hand_weapon.texture = ResourceManager.weapon_texture[item.weapon_type].stand_move_push[item.id]
+		
+	elif item.equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
+			if item.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:
+				current_extra_weapon = item
+				shield.texture = ResourceManager.extra_weapon_texture[item.extra_weapon_type].stand_move_push[item.id]
+
+func _on_unequip_item(equipment_type):
+	remove_equipment_asset(equipment_type)
+	if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
+		is_unequip_weapon = true
+		current_weapon = null
+		if is_attack_state:
+			sheath()
+	elif equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
+		current_extra_weapon = null

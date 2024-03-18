@@ -10,6 +10,8 @@ var type
 var item_name : String
 var rarity = GameEnums.RARITY.COMMON
 var equipment_type : GameEnums.EQUIPMENT_TYPE
+var weapon_type: GameEnums.WEAPON_TYPE
+var extra_weapon_type: GameEnums.EXTRA_WEAPON_TYPE
 var stack_size : int = 1
 var quantity: int = 1 : set = set_quantity
 var level: int = 1
@@ -32,6 +34,10 @@ func _init(item_id: String, data):
 	
 	if type == GameEnums.ITEM_TYPE.EQUIPMENT:
 		equipment_type = GameEnums.EQUIPMENT_TYPE[data.equipment_type]
+		if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
+			weapon_type = GameEnums.WEAPON_TYPE[data.weapon_type]
+		if equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
+			extra_weapon_type = GameEnums.EXTRA_WEAPON_TYPE[data.extra_weapon_type]
 	
 	if data.has("rarity"):
 		rarity = GameEnums.RARITY[data.rarity]
