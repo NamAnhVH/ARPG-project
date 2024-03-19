@@ -185,6 +185,34 @@
 			}
 		]
 	},
+	"spear_v00":{
+		"name": "Stone Spear",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 2,
+				"maximum": 5
+			}
+		]
+	},
+	"shield_v00": {
+		"name": "Wood Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "DEF",
+				"minimum": 2,
+				"maximum": 5
+			}
+		]
+	},
 	"ring_v00":{
 		"name": "Dirty Ring",
 		"type": "EQUIPMENT",

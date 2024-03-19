@@ -18,6 +18,8 @@ var sprites = {
 	"mace_v02": preload("res://assets/items/mace_v02.png"),
 	"mace_v03": preload("res://assets/items/mace_v03.png"),
 	"mace_v04": preload("res://assets/items/mace_v04.png"),
+	"spear_v00": preload("res://assets/items/spear_v00.png"),
+	"shield_v00": preload("res://assets/items/shield_v00.png"),
 	"ring_v00": preload("res://assets/items/ring_v00.png"),
 	"stone": preload("res://assets/items/stone.png"),
 	"coal": preload("res://assets/items/coal.png"),
@@ -40,7 +42,8 @@ var tscn = {
 	"quantity": preload("res://sources/scenes/usable/quantity.tscn"),
 	"inventory": preload("res://sources/scenes/ui/inventory.tscn"),
 	"equipment": preload("res://sources/scenes/ui/equipment.tscn"),
-	"chest": preload("res://sources/scenes/ui/chest.tscn")
+	"chest": preload("res://sources/scenes/ui/chest.tscn"),
+	"damage_indicator": preload("res://sources/scenes/ui/damage_indicator.tscn")
 }
 
 var resources = {

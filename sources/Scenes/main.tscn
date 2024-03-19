@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fsttyo8rq87n"]
+[gd_scene load_steps=10 format=3 uid="uid://fsttyo8rq87n"]
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
 [ext_resource type="PackedScene" uid="uid://bmxlfrnlvvvjt" path="res://test_map.tscn" id="1_pmagf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dh0kcds7ama2w" path="res://sources/scenes/ui/player_equipment.tscn" id="6_m5jwq"]
 [ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/ui/hotbar_container.tscn" id="6_obsuh"]
 [ext_resource type="PackedScene" uid="uid://bhagkd1c6uibr" path="res://sources/scenes/ui/player_stat_ui.tscn" id="7_g3osk"]
+[ext_resource type="PackedScene" uid="uid://bv0v7uuyaela0" path="res://sources/scenes/ui/player_health_bar.tscn" id="8_ddojd"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_j7hlb")
@@ -67,6 +68,13 @@ offset_left = 47.0
 offset_top = 311.0
 offset_right = 192.0
 offset_bottom = 428.0
+
+[node name="PlayerHealthBar" parent="User_interface/UIContainer/Window" instance=ExtResource("8_ddojd")]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 36.0
+offset_right = 243.0
+offset_bottom = 42.0
 
 [node name="HotbarContainer" parent="User_interface/UIContainer" instance=ExtResource("6_obsuh")]
 layout_mode = 1

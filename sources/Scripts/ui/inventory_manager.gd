@@ -39,7 +39,7 @@ func _unhandled_input(event):
 			SignalManager.inventory_closed.emit()
 			is_open_inventory = false
 
-func _process(float):
+func _process(delta):
 	if item_in_hand:
 		item_in_hand.position = get_viewport().get_mouse_position() + ITEM_OFFSET
 		item_void.mouse_filter = Control.MOUSE_FILTER_STOP

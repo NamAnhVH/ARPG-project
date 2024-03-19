@@ -24,6 +24,11 @@ signal heal_player(healing_amount)
 signal equip_item(item)
 signal unequip_item(equipment_type)
 
+#ProgressBar
+signal set_health_bar(max_health, health)
+signal new_max_health(value)
+signal new_health(value)
+
 #Item
 signal upgrade_item()
 signal has_upgradable_item(value)

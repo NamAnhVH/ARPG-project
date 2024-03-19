@@ -1,9 +1,11 @@
 extends Resource
 class_name PlayerData
 
-@export var global_position : Vector2 = Vector2(431, 20)
+@export var global_position : Vector2 
 @export var inventory : Dictionary
 @export var equipment : Dictionary
+@export var health : int
+@export var max_health : int = 10
 
 var base_stats = {
 	GameEnums.STAT.ATK: 5,
@@ -15,13 +17,17 @@ func set_data(data):
 	global_position = data.global_position
 	inventory = data.inventory
 	equipment = data.equipment
+	health = data.health
+	max_health = data.max_health
 	emit_changed()
 
 func get_data():
 	return {
 		"global_position": global_position,
 		"inventory": inventory,
-		"equipment": equipment
+		"equipment": equipment,
+		"health": health,
+		"max_health" : max_health
 	}
 
 func get_stat(stat):

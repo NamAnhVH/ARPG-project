@@ -9,6 +9,7 @@ class_name SlimeCharacter
 @onready var attack_effect : Sprite2D = $Body/AttackEffect
 
 func _ready():
+	super._ready()
 	base.texture = texture
 	attack_effect.texture = texture
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
@@ -37,7 +38,7 @@ func move_state():
 	if !is_chasing and !is_moving and !is_ready_attack or is_attacking:
 		move_direction = Vector2.ZERO
 	
-	velocity = lerp(velocity, move_direction * move_speed_unit * 24, get_move_weight())
+	velocity = lerp(velocity, move_direction * move_speed_unit * 24, move_weight)
 	move_and_slide()
 
 func generate_random_position():

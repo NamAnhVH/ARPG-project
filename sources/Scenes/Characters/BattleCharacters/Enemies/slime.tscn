@@ -158,6 +158,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DamageArea/Body:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_5m8wq"]
 resource_name = "attack_down"
@@ -709,6 +721,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DamageArea/Body:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nocor"]
 resource_name = "hurt_down"
@@ -1201,6 +1225,7 @@ max_health = 2
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_soqsy")
+texture = ExtResource("3_j2kmd")
 hframes = 8
 vframes = 8
 
@@ -1263,6 +1288,7 @@ libraries = {
 }
 
 [node name="AnimationTree" parent="." index="7"]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_54iju")
 }
@@ -1285,6 +1311,12 @@ autostart = true
 [node name="ClockwiseChangeTime" type="Timer" parent="Timers" index="2"]
 wait_time = 2.0
 autostart = true
+
+[node name="HealthBar" parent="." index="10"]
+offset_left = -12.0
+offset_top = -17.0
+offset_right = 12.0
+offset_bottom = -15.0
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]

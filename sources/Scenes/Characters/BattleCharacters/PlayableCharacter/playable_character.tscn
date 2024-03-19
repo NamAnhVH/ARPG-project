@@ -2364,9 +2364,21 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 38, 35, 36, 39]
 }
 
 [sub_resource type="Animation" id="Animation_syb3t"]
@@ -2419,15 +2431,27 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }, {
-"args": [0, 1, 2],
+"args": [1, 2, 3, 0],
 "method": &"_set_body_layer"
 }, {
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 62, 59, 60, 63]
 }
 
 [sub_resource type="Animation" id="Animation_pv7uj"]
@@ -2480,15 +2504,27 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }, {
-"args": [0, 1, 2],
+"args": [1, 2, 3, 0],
 "method": &"_set_body_layer"
 }, {
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 54, 51, 52, 55]
 }
 
 [sub_resource type="Animation" id="Animation_sk1m0"]
@@ -2541,9 +2577,21 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [0, 1, 2],
+"args": [0, 1, 2, 3],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 46, 43, 44, 47]
 }
 
 [sub_resource type="Animation" id="Animation_ikdjp"]
@@ -2948,7 +2996,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3046,7 +3094,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3147,7 +3195,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3248,7 +3296,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3348,7 +3396,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -3429,7 +3477,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3527,7 +3575,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3630,7 +3678,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -3711,7 +3759,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3812,7 +3860,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -3912,7 +3960,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -3993,7 +4041,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -4094,7 +4142,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -4194,7 +4242,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -4275,7 +4323,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -4373,7 +4421,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -4467,9 +4515,21 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"change_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_dw6mw"]
@@ -4520,9 +4580,21 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
 }
 
 [sub_resource type="Animation" id="Animation_bg7hm"]
@@ -4573,9 +4645,21 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [2, 1, 0],
+"args": [3, 2, 1, 0],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
 }
 
 [sub_resource type="Animation" id="Animation_c4y54"]
@@ -4626,9 +4710,21 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [0, 1, 2],
+"args": [1, 2, 3, 0],
 "method": &"_set_body_layer"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_uc5re"]
@@ -4685,7 +4781,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -4768,7 +4864,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -4849,7 +4945,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -4952,7 +5048,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -5035,7 +5131,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -5116,7 +5212,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -5216,7 +5312,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -5299,7 +5395,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -5380,7 +5476,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -5483,7 +5579,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -5569,7 +5665,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["spear"],
 "method": &"_attack_finished"
 }]
 }
@@ -5650,7 +5746,7 @@ tracks/3/keys = {
 "args": [],
 "method": &"_attack_started"
 }, {
-"args": [],
+"args": ["sword_shield"],
 "method": &"_attack_finished"
 }]
 }
@@ -6160,14 +6256,6 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vhk0b"]
-advance_mode = 2
-advance_condition = &"is_drawing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bxlk5"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_87f3q"]
 advance_mode = 2
 advance_condition = &"is_moving"
@@ -6175,18 +6263,6 @@ advance_condition = &"is_moving"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m1ybu"]
 advance_mode = 2
 advance_condition = &"is_idling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ovwfx"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x174v"]
-advance_mode = 2
-advance_condition = &"is_sheathing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8yfhw"]
-advance_mode = 2
-advance_condition = &"is_sheathing"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_elbtb"]
 advance_mode = 2
@@ -6240,6 +6316,26 @@ advance_condition = &"is_moving"
 advance_mode = 2
 advance_condition = &"is_not_drawing"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ovwfx"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x174v"]
+advance_mode = 2
+advance_condition = &"is_sheathing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8yfhw"]
+advance_mode = 2
+advance_condition = &"is_sheathing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vhk0b"]
+advance_mode = 2
+advance_condition = &"is_drawing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bxlk5"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g3rdt"]
 states/Attack/node = SubResource("AnimationNodeStateMachine_ojfrg")
 states/Attack/position = Vector2(645, 136)
@@ -6257,8 +6353,8 @@ states/Parry/position = Vector2(153, 215)
 states/Sheath/node = SubResource("AnimationNodeBlendSpace2D_r3t6t")
 states/Sheath/position = Vector2(577, 324)
 states/Start/position = Vector2(161, 44)
-transitions = ["Start", "Draw", SubResource("AnimationNodeStateMachineTransition_vhk0b"), "Draw", "Idle", SubResource("AnimationNodeStateMachineTransition_bxlk5"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_87f3q"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_m1ybu"), "Sheath", "End", SubResource("AnimationNodeStateMachineTransition_ovwfx"), "Idle", "Sheath", SubResource("AnimationNodeStateMachineTransition_x174v"), "Move", "Sheath", SubResource("AnimationNodeStateMachineTransition_8yfhw"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_elbtb"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_q4h4o"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_ob3t3"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_wiffs"), "Dodge", "Parry", SubResource("AnimationNodeStateMachineTransition_ms0x6"), "Idle", "Dodge", SubResource("AnimationNodeStateMachineTransition_hwu6v"), "Move", "Dodge", SubResource("AnimationNodeStateMachineTransition_cl24l"), "Dodge", "Idle", SubResource("AnimationNodeStateMachineTransition_1tvn0"), "Dodge", "Move", SubResource("AnimationNodeStateMachineTransition_iypp7"), "Parry", "Idle", SubResource("AnimationNodeStateMachineTransition_dwvf5"), "Parry", "Move", SubResource("AnimationNodeStateMachineTransition_tkbmm"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rduaw")]
-graph_offset = Vector2(24, 117.571)
+transitions = ["Idle", "Move", SubResource("AnimationNodeStateMachineTransition_87f3q"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_m1ybu"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_elbtb"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_q4h4o"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_ob3t3"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_wiffs"), "Dodge", "Parry", SubResource("AnimationNodeStateMachineTransition_ms0x6"), "Idle", "Dodge", SubResource("AnimationNodeStateMachineTransition_hwu6v"), "Move", "Dodge", SubResource("AnimationNodeStateMachineTransition_cl24l"), "Dodge", "Idle", SubResource("AnimationNodeStateMachineTransition_1tvn0"), "Dodge", "Move", SubResource("AnimationNodeStateMachineTransition_iypp7"), "Parry", "Idle", SubResource("AnimationNodeStateMachineTransition_dwvf5"), "Parry", "Move", SubResource("AnimationNodeStateMachineTransition_tkbmm"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rduaw"), "Sheath", "End", SubResource("AnimationNodeStateMachineTransition_ovwfx"), "Idle", "Sheath", SubResource("AnimationNodeStateMachineTransition_x174v"), "Move", "Sheath", SubResource("AnimationNodeStateMachineTransition_8yfhw"), "Start", "Draw", SubResource("AnimationNodeStateMachineTransition_vhk0b"), "Draw", "Idle", SubResource("AnimationNodeStateMachineTransition_bxlk5")]
+graph_offset = Vector2(-55, 142.571)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kwd51"]
 animation = &"run_down"
@@ -6455,6 +6551,7 @@ collision_mask = 65536
 shape = SubResource("CapsuleShape2D_enwvx")
 
 [node name="DamageArea" parent="." index="2"]
+visible = false
 collision_layer = 1048576
 collision_mask = 0
 
@@ -6531,7 +6628,7 @@ parameters/Attack_state/Attack/Sword_shield_attack/Slash_1/blend_position = Vect
 parameters/Attack_state/Attack/Sword_shield_attack/Slash_2/blend_position = Vector2(0, 0)
 parameters/Attack_state/Attack/Sword_shield_attack/Thrust/blend_position = Vector2(0, 0)
 parameters/Attack_state/Dodge/blend_position = Vector2(0, 0)
-parameters/Attack_state/Draw/blend_position = Vector2(-0.253759, -0.270854)
+parameters/Attack_state/Draw/blend_position = Vector2(0, 0)
 parameters/Attack_state/Idle/blend_position = Vector2(-0.00939852, 1.1)
 parameters/Attack_state/Move/blend_position = Vector2(0, 0)
 parameters/Attack_state/Parry/blend_position = Vector2(0, 0)

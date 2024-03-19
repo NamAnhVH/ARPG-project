@@ -2180,11 +2180,13 @@ y_sort_enabled = true
 z_index = 1
 position = Vector2(272, 58)
 texture = ExtResource("8_tioq6")
+max_health = 200
 
 [node name="Slime2" parent="Enemies" instance=ExtResource("6_u2j18")]
 z_index = 1
 position = Vector2(359, -96)
 texture = ExtResource("9_eui8a")
+max_health = 200
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-33, 24)
@@ -2206,7 +2208,7 @@ y_sort_enabled = true
 
 [node name="InteractableChest" parent="Chests" instance=ExtResource("11_1apeb")]
 position = Vector2(616, 88)
-items = Array[String](["sword_v00", "stone", "healing_potion_v00", "healing_potion_v00", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01"])
+items = Array[String](["sword_v00", "stone", "healing_potion_v00", "healing_potion_v00", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "healing_potion_v01", "spear_v00", "shield_v00"])
 frame = 13
 
 [node name="InteractableChest2" parent="Chests" instance=ExtResource("11_1apeb")]
