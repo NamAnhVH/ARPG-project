@@ -8,11 +8,12 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_fgsdr"]
 font = ExtResource("4_krkwq")
+font_size = 14
 font_color = Color(0, 0, 0, 1)
 
 [node name="PlayerStatUI" type="NinePatchRect"]
 offset_right = 145.0
-offset_bottom = 117.0
+offset_bottom = 120.0
 texture = ExtResource("1_58tgx")
 region_rect = Rect2(32, 0, 24, 24)
 patch_margin_left = 16
@@ -25,11 +26,16 @@ script = ExtResource("2_7q5t6")
 player_data = ExtResource("3_kesae")
 
 [node name="StatContainer" type="NinePatchRect" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 137.0
-offset_bottom = 109.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_iqx7b")
 region_rect = Rect2(128, 0, 24, 24)
 patch_margin_left = 3
@@ -40,11 +46,15 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StatContainer"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 1.0
-offset_right = 125.0
-offset_bottom = 99.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AttackDamage" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
 layout_mode = 2

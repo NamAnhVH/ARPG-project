@@ -5,4 +5,5 @@ class_name DamageArea
 @export var knockback_strength : float = 3
 var attacker
 
-
+func _ready():
+	attacker = get_parent()

@@ -1,12 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://dlenjisq3ek4s"]
+[gd_scene load_steps=50 format=3 uid="uid://dlenjisq3ek4s"]
 
 [ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy_character.tscn" id="1_dcox8"]
 [ext_resource type="Script" path="res://sources/scripts/characters/slime.gd" id="2_fxcpq"]
 [ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="3_j2kmd"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="3_ktnkn"]
-[ext_resource type="PackedScene" uid="uid://s76l57fu45ld" path="res://sources/scenes/core/detect_area.tscn" id="5_cyv2s"]
-[ext_resource type="Script" path="res://sources/scripts/core/detect_area.gd" id="6_7ti8b"]
-[ext_resource type="PackedScene" uid="uid://bxdman2p7uqju" path="res://sources/scenes/core/attack_area.tscn" id="7_wptn3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_soqsy"]
 resource_local_to_scene = true
@@ -25,12 +22,6 @@ height = 20.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkf5e"]
 radius = 15.0
 height = 38.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_w4ewf"]
-radius = 114.07
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5wato"]
-radius = 37.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_meu4h"]
 radius = 4.0
@@ -1213,7 +1204,7 @@ states/Start/position = Vector2(200, 138)
 states/die/node = SubResource("AnimationNodeAnimation_q2an1")
 states/die/position = Vector2(718, 138)
 transitions = ["Start", "Move_idle", SubResource("AnimationNodeStateMachineTransition_hr4hy"), "Move_idle", "Attack", SubResource("AnimationNodeStateMachineTransition_4opab"), "Attack", "Move_idle", SubResource("AnimationNodeStateMachineTransition_71bfx"), "die", "End", SubResource("AnimationNodeStateMachineTransition_1e2ck"), "Attack", "Hurt", SubResource("AnimationNodeStateMachineTransition_s5d3p"), "Move_idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_r5g0d"), "Hurt", "Move_idle", SubResource("AnimationNodeStateMachineTransition_38tmp"), "Hurt", "die", SubResource("AnimationNodeStateMachineTransition_4xhle")]
-graph_offset = Vector2(4, -5)
+graph_offset = Vector2(50, -10)
 
 [node name="Slime" instance=ExtResource("1_dcox8")]
 script = ExtResource("2_fxcpq")
@@ -1263,19 +1254,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rkf5e")
 disabled = true
 
-[node name="DetectArea" parent="." index="3" instance=ExtResource("5_cyv2s")]
-script = ExtResource("6_7ti8b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" index="0"]
-shape = SubResource("CircleShape2D_w4ewf")
-
-[node name="AttackArea" parent="." index="4" instance=ExtResource("7_wptn3")]
-visible = false
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
-shape = SubResource("CircleShape2D_5wato")
-
 [node name="CollisionShape2D" parent="." index="5"]
 visible = false
 position = Vector2(0, -1)
@@ -1303,7 +1281,7 @@ parameters/Hurt/blend_position = Vector2(0, 0)
 parameters/Move_idle/blend_position = Vector2(0, 0)
 
 [node name="AttackCooldownTime" parent="Timers" index="0"]
-wait_time = 3.0
+wait_time = 3.5
 
 [node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="1"]
 autostart = true
@@ -1320,7 +1298,5 @@ offset_bottom = -15.0
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]
-[connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
-[connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
 [connection signal="timeout" from="Timers/MoveIdleChangeTime" to="." method="_on_move_idle_change_time_timeout"]
 [connection signal="timeout" from="Timers/ClockwiseChangeTime" to="." method="_on_clockwise_change_time_timeout"]

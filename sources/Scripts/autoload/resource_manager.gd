@@ -19,7 +19,58 @@ var sprites = {
 	"mace_v03": preload("res://assets/items/mace_v03.png"),
 	"mace_v04": preload("res://assets/items/mace_v04.png"),
 	"spear_v00": preload("res://assets/items/spear_v00.png"),
+	"spear_v01": preload("res://assets/items/spear_v01.png"),
+	"spear_v02": preload("res://assets/items/spear_v02.png"),
+	"spear_v03": preload("res://assets/items/spear_v03.png"),
+	"spear_v04": preload("res://assets/items/spear_v04.png"),
+	"heavy_spear_v00": preload("res://assets/items/heavy_spear_v00.png"),
+	"heavy_spear_v01": preload("res://assets/items/heavy_spear_v01.png"),
+	"heavy_spear_v02": preload("res://assets/items/heavy_spear_v02.png"),
+	"heavy_spear_v03": preload("res://assets/items/heavy_spear_v03.png"),
+	"heavy_spear_v04": preload("res://assets/items/heavy_spear_v04.png"),
+	"axe_spear_v00": preload("res://assets/items/axe_spear_v00.png"),
+	"axe_spear_v01": preload("res://assets/items/axe_spear_v01.png"),
+	"axe_spear_v02": preload("res://assets/items/axe_spear_v02.png"),
+	"axe_spear_v03": preload("res://assets/items/axe_spear_v03.png"),
+	"axe_spear_v04": preload("res://assets/items/axe_spear_v04.png"),
+	"bow_v00": preload("res://assets/items/bow_v00.png"),
+	"bow_v01": preload("res://assets/items/bow_v01.png"),
+	"bow_v02": preload("res://assets/items/bow_v02.png"),
+	"bow_v03": preload("res://assets/items/bow_v03.png"),
+	"bow_v04": preload("res://assets/items/bow_v04.png"),
+	"long_bow_v00": preload("res://assets/items/long_bow_v00.png"),
+	"long_bow_v01": preload("res://assets/items/long_bow_v01.png"),
+	"long_bow_v02": preload("res://assets/items/long_bow_v02.png"),
+	"long_bow_v03": preload("res://assets/items/long_bow_v03.png"),
+	"long_bow_v04": preload("res://assets/items/long_bow_v04.png"),
+	"recurve_v00": preload("res://assets/items/recurve_v00.png"),
+	"recurve_v01": preload("res://assets/items/recurve_v01.png"),
+	"recurve_v02": preload("res://assets/items/recurve_v02.png"),
+	"recurve_v03": preload("res://assets/items/recurve_v03.png"),
+	"recurve_v04": preload("res://assets/items/recurve_v04.png"),
 	"shield_v00": preload("res://assets/items/shield_v00.png"),
+	"shield_v01": preload("res://assets/items/shield_v01.png"),
+	"shield_v02": preload("res://assets/items/shield_v02.png"),
+	"shield_v03": preload("res://assets/items/shield_v03.png"),
+	"shield_v04": preload("res://assets/items/shield_v04.png"),
+	"heavy_shield_v00": preload("res://assets/items/heavy_shield_v00.png"),
+	"heavy_shield_v01": preload("res://assets/items/heavy_shield_v01.png"),
+	"heavy_shield_v02": preload("res://assets/items/heavy_shield_v02.png"),
+	"heavy_shield_v03": preload("res://assets/items/heavy_shield_v03.png"),
+	"heavy_shield_v04": preload("res://assets/items/heavy_shield_v04.png"),
+	"knight_shield_v00": preload("res://assets/items/knight_shield_v00.png"),
+	"knight_shield_v01": preload("res://assets/items/knight_shield_v01.png"),
+	"knight_shield_v02": preload("res://assets/items/knight_shield_v02.png"),
+	"knight_shield_v03": preload("res://assets/items/knight_shield_v03.png"),
+	"knight_shield_v04": preload("res://assets/items/knight_shield_v04.png"),
+	"quiver_v00": preload("res://assets/items/quiver_v00.png"),
+	"quiver_v01": preload("res://assets/items/quiver_v01.png"),
+	"quiver_v02": preload("res://assets/items/quiver_v02.png"),
+	"quiver_v03": preload("res://assets/items/quiver_v03.png"),
+	"quiver_v04": preload("res://assets/items/quiver_v04.png"),
+	"quiver_v05": preload("res://assets/items/quiver_v05.png"),
+	"quiver_v06": preload("res://assets/items/quiver_v06.png"),
+	"quiver_v07": preload("res://assets/items/quiver_v07.png"),
 	"ring_v00": preload("res://assets/items/ring_v00.png"),
 	"stone": preload("res://assets/items/stone.png"),
 	"coal": preload("res://assets/items/coal.png"),
@@ -43,7 +94,8 @@ var tscn = {
 	"inventory": preload("res://sources/scenes/ui/inventory.tscn"),
 	"equipment": preload("res://sources/scenes/ui/equipment.tscn"),
 	"chest": preload("res://sources/scenes/ui/chest.tscn"),
-	"damage_indicator": preload("res://sources/scenes/ui/damage_indicator.tscn")
+	"indicator": preload("res://sources/scenes/ui/indicator.tscn"),
+	"arrow": preload("res://sources/scenes/core/arrow.tscn")
 }
 
 var resources = {
@@ -192,6 +244,76 @@ var weapon_texture = {
 			"axe_spear_v03": preload("res://assets/weapons/spear/standMovePush/axe_spear_v03.png"),
 			"axe_spear_v04": preload("res://assets/weapons/spear/standMovePush/axe_spear_v04.png")
 		}
+	},
+	GameEnums.WEAPON_TYPE.BOW: {
+		"attack": {
+			"bow_v00": preload("res://assets/weapons/bow/attack/weapon/bow_v00.png"),
+			"bow_v01": preload("res://assets/weapons/bow/attack/weapon/bow_v01.png"),
+			"bow_v02": preload("res://assets/weapons/bow/attack/weapon/bow_v02.png"),
+			"bow_v03": preload("res://assets/weapons/bow/attack/weapon/bow_v03.png"),
+			"bow_v04": preload("res://assets/weapons/bow/attack/weapon/bow_v04.png"),
+			"long_bow_v00": preload("res://assets/weapons/bow/attack/weapon/long_bow_v00.png"),
+			"long_bow_v01": preload("res://assets/weapons/bow/attack/weapon/long_bow_v01.png"),
+			"long_bow_v02": preload("res://assets/weapons/bow/attack/weapon/long_bow_v02.png"),
+			"long_bow_v03": preload("res://assets/weapons/bow/attack/weapon/long_bow_v03.png"),
+			"long_bow_v04": preload("res://assets/weapons/bow/attack/weapon/long_bow_v04.png"),
+			"recurve_v00": preload("res://assets/weapons/bow/attack/weapon/recurve_v00.png"),
+			"recurve_v01": preload("res://assets/weapons/bow/attack/weapon/recurve_v01.png"),
+			"recurve_v02": preload("res://assets/weapons/bow/attack/weapon/recurve_v02.png"),
+			"recurve_v03": preload("res://assets/weapons/bow/attack/weapon/recurve_v03.png"),
+			"recurve_v04": preload("res://assets/weapons/bow/attack/weapon/recurve_v04.png")
+		},
+		"change_state": {
+			"bow_v00": preload("res://assets/weapons/bow/changeState/weapon/bow_v00.png"),
+			"bow_v01": preload("res://assets/weapons/bow/changeState/weapon/bow_v01.png"),
+			"bow_v02": preload("res://assets/weapons/bow/changeState/weapon/bow_v02.png"),
+			"bow_v03": preload("res://assets/weapons/bow/changeState/weapon/bow_v03.png"),
+			"bow_v04": preload("res://assets/weapons/bow/changeState/weapon/bow_v04.png"),
+			"long_bow_v00": preload("res://assets/weapons/bow/changeState/weapon/long_bow_v00.png"),
+			"long_bow_v01": preload("res://assets/weapons/bow/changeState/weapon/long_bow_v01.png"),
+			"long_bow_v02": preload("res://assets/weapons/bow/changeState/weapon/long_bow_v02.png"),
+			"long_bow_v03": preload("res://assets/weapons/bow/changeState/weapon/long_bow_v03.png"),
+			"long_bow_v04": preload("res://assets/weapons/bow/changeState/weapon/long_bow_v04.png"),
+			"recurve_v00": preload("res://assets/weapons/bow/changeState/weapon/recurve_v00.png"),
+			"recurve_v01": preload("res://assets/weapons/bow/changeState/weapon/recurve_v01.png"),
+			"recurve_v02": preload("res://assets/weapons/bow/changeState/weapon/recurve_v02.png"),
+			"recurve_v03": preload("res://assets/weapons/bow/changeState/weapon/recurve_v03.png"),
+			"recurve_v04": preload("res://assets/weapons/bow/changeState/weapon/recurve_v04.png")
+		},
+		"move_idle": {
+			"bow_v00": preload("res://assets/weapons/bow/moveIdle/weapon/bow_v00.png"),
+			"bow_v01": preload("res://assets/weapons/bow/moveIdle/weapon/bow_v01.png"),
+			"bow_v02": preload("res://assets/weapons/bow/moveIdle/weapon/bow_v02.png"),
+			"bow_v03": preload("res://assets/weapons/bow/moveIdle/weapon/bow_v03.png"),
+			"bow_v04": preload("res://assets/weapons/bow/moveIdle/weapon/bow_v04.png"),
+			"long_bow_v00": preload("res://assets/weapons/bow/moveIdle/weapon/long_bow_v00.png"),
+			"long_bow_v01": preload("res://assets/weapons/bow/moveIdle/weapon/long_bow_v01.png"),
+			"long_bow_v02": preload("res://assets/weapons/bow/moveIdle/weapon/long_bow_v02.png"),
+			"long_bow_v03": preload("res://assets/weapons/bow/moveIdle/weapon/long_bow_v03.png"),
+			"long_bow_v04": preload("res://assets/weapons/bow/moveIdle/weapon/long_bow_v04.png"),
+			"recurve_v00": preload("res://assets/weapons/bow/moveIdle/weapon/recurve_v00.png"),
+			"recurve_v01": preload("res://assets/weapons/bow/moveIdle/weapon/recurve_v01.png"),
+			"recurve_v02": preload("res://assets/weapons/bow/moveIdle/weapon/recurve_v02.png"),
+			"recurve_v03": preload("res://assets/weapons/bow/moveIdle/weapon/recurve_v03.png"),
+			"recurve_v04": preload("res://assets/weapons/bow/moveIdle/weapon/recurve_v04.png")
+		},
+		"stand_move_push": {
+			"bow_v00": preload("res://assets/weapons/bow/standMovePush/weapon/bow_v00.png"),
+			"bow_v01": preload("res://assets/weapons/bow/standMovePush/weapon/bow_v01.png"),
+			"bow_v02": preload("res://assets/weapons/bow/standMovePush/weapon/bow_v02.png"),
+			"bow_v03": preload("res://assets/weapons/bow/standMovePush/weapon/bow_v03.png"),
+			"bow_v04": preload("res://assets/weapons/bow/standMovePush/weapon/bow_v04.png"),
+			"long_bow_v00": preload("res://assets/weapons/bow/standMovePush/weapon/long_bow_v00.png"),
+			"long_bow_v01": preload("res://assets/weapons/bow/standMovePush/weapon/long_bow_v01.png"),
+			"long_bow_v02": preload("res://assets/weapons/bow/standMovePush/weapon/long_bow_v02.png"),
+			"long_bow_v03": preload("res://assets/weapons/bow/standMovePush/weapon/long_bow_v03.png"),
+			"long_bow_v04": preload("res://assets/weapons/bow/standMovePush/weapon/long_bow_v04.png"),
+			"recurve_v00": preload("res://assets/weapons/bow/standMovePush/weapon/recurve_v00.png"),
+			"recurve_v01": preload("res://assets/weapons/bow/standMovePush/weapon/recurve_v01.png"),
+			"recurve_v02": preload("res://assets/weapons/bow/standMovePush/weapon/recurve_v02.png"),
+			"recurve_v03": preload("res://assets/weapons/bow/standMovePush/weapon/recurve_v03.png"),
+			"recurve_v04": preload("res://assets/weapons/bow/standMovePush/weapon/recurve_v04.png")
+		}
 	}
 }
 
@@ -265,6 +387,48 @@ var extra_weapon_texture = {
 			"knight_shield_v03": preload("res://assets/weapons/swordAndShield/standMovePush/shield/knight_shield_v03.png"),
 			"knight_shield_v04": preload("res://assets/weapons/swordAndShield/standMovePush/shield/knight_shield_v04.png")
 		}
+	},
+	GameEnums.EXTRA_WEAPON_TYPE.QUIVER: {
+		"attack": {
+			"quiver_v00": preload("res://assets/weapons/bow/attack/quiver/quiver_v00.png"),
+			"quiver_v01": preload("res://assets/weapons/bow/attack/quiver/quiver_v01.png"),
+			"quiver_v02": preload("res://assets/weapons/bow/attack/quiver/quiver_v02.png"),
+			"quiver_v03": preload("res://assets/weapons/bow/attack/quiver/quiver_v03.png"),
+			"quiver_v04": preload("res://assets/weapons/bow/attack/quiver/quiver_v04.png"),
+			"quiver_v05": preload("res://assets/weapons/bow/attack/quiver/quiver_v05.png"),
+			"quiver_v06": preload("res://assets/weapons/bow/attack/quiver/quiver_v06.png"),
+			"quiver_v07": preload("res://assets/weapons/bow/attack/quiver/quiver_v07.png")
+		},
+		"change_state": {
+			"quiver_v00": preload("res://assets/weapons/bow/changeState/quiver/quiver_v00.png"),
+			"quiver_v01": preload("res://assets/weapons/bow/changeState/quiver/quiver_v01.png"),
+			"quiver_v02": preload("res://assets/weapons/bow/changeState/quiver/quiver_v02.png"),
+			"quiver_v03": preload("res://assets/weapons/bow/changeState/quiver/quiver_v03.png"),
+			"quiver_v04": preload("res://assets/weapons/bow/changeState/quiver/quiver_v04.png"),
+			"quiver_v05": preload("res://assets/weapons/bow/changeState/quiver/quiver_v05.png"),
+			"quiver_v06": preload("res://assets/weapons/bow/changeState/quiver/quiver_v06.png"),
+			"quiver_v07": preload("res://assets/weapons/bow/changeState/quiver/quiver_v07.png")
+		},
+		"move_idle": {
+			"quiver_v00": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v00.png"),
+			"quiver_v01": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v01.png"),
+			"quiver_v02": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v02.png"),
+			"quiver_v03": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v03.png"),
+			"quiver_v04": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v04.png"),
+			"quiver_v05": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v05.png"),
+			"quiver_v06": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v06.png"),
+			"quiver_v07": preload("res://assets/weapons/bow/moveIdle/quiver/quiver_v07.png")
+		},
+		"stand_move_push": {
+			"quiver_v00": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v00.png"),
+			"quiver_v01": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v01.png"),
+			"quiver_v02": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v02.png"),
+			"quiver_v03": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v03.png"),
+			"quiver_v04": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v04.png"),
+			"quiver_v05": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v05.png"),
+			"quiver_v06": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v06.png"),
+			"quiver_v07": preload("res://assets/weapons/bow/standMovePush/quiver/quiver_v07.png")
+		}
 	}
 }
 
@@ -301,7 +465,25 @@ var player_character_texture = {
 		"stand_move_push": {
 			"humn_v00": preload("res://assets/characters/spearBase/standMovePush/humn_v00.png")
 		}
+	},
+	GameEnums.WEAPON_TYPE.BOW: {
+		"attack": {
+			"humn_v00": preload("res://assets/characters/bowBase/attack/humn_v00.png")
+		},
+		"change_state": {
+			"humn_v00": preload("res://assets/characters/bowBase/changeState/humn_v00.png")
+		},
+		"move_idle": {
+			"humn_v00": preload("res://assets/characters/bowBase/moveIdle/humn_v00.png")
+		},
+		"stand_move_push": {
+			"humn_v00": preload("res://assets/characters/bowBase/standMovePush/humn_v00.png")
+		}
 	}
+}
+
+var arrow_texture = {
+	"quiver_v00": preload("res://assets/weapons/bow/attack/arrow/quiver_v00.png")
 }
 
 var colors = {

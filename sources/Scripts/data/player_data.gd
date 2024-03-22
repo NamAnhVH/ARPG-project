@@ -9,7 +9,7 @@ class_name PlayerData
 
 var base_stats = {
 	GameEnums.STAT.ATK: 5,
-	GameEnums.STAT.MOVE_SPEED: 5,
+	GameEnums.STAT.MOVE_SPEED: 0,
 	GameEnums.STAT.LIFE_POINT: 10
 }
 

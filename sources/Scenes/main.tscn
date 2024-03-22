@@ -65,9 +65,9 @@ offset_bottom = 306.0
 visible = false
 layout_mode = 0
 offset_left = 47.0
-offset_top = 311.0
-offset_right = 192.0
-offset_bottom = 428.0
+offset_top = 312.0
+offset_right = 190.0
+offset_bottom = 434.0
 
 [node name="PlayerHealthBar" parent="User_interface/UIContainer/Window" instance=ExtResource("8_ddojd")]
 layout_mode = 0

@@ -199,6 +199,20 @@
 			}
 		]
 	},
+	"bow_v00": {
+		"name": "Wooden Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 3,
+				"maximum": 10
+			}
+		]
+	},
 	"shield_v00": {
 		"name": "Wood Shield",
 		"type": "EQUIPMENT",
@@ -209,6 +223,20 @@
 			{
 				"stat": "DEF",
 				"minimum": 2,
+				"maximum": 5
+			}
+		]
+	},
+	"quiver_v00": {
+		"name": "Swiftshot Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 1,
 				"maximum": 5
 			}
 		]

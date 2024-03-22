@@ -17,12 +17,16 @@ func _ready():
 func _physics_process(delta):
 	if is_alive:
 		move_state()
+
+func _process(delta):
 	if global_position.distance_to(random_position) < 5:
 		generate_random_position()
 	if is_ready_attack and attack_cooldown_time.is_stopped():
+		attack_cooldown_time.start()
 		is_attacking = true
 		animation_tree.set("parameters/Attack/blend_position", navigation_agent.target_position - global_position)
 		animation_tree.set("parameters/conditions/is_attacking", is_attacking)
+
 
 func move_state():
 	var move_direction : Vector2
@@ -56,7 +60,6 @@ func _hurt_finished():
 func _attack_finished():
 	is_attacking = false
 	animation_tree.set("parameters/conditions/is_attacking", is_attacking)
-	attack_cooldown_time.start()
 
 func _die_finished():
 	queue_free()
@@ -64,6 +67,8 @@ func _die_finished():
 func _on_is_attacked():
 	animation_tree.set("parameters/conditions/is_attacked", true)
 	animation_tree.set("parameters/Hurt/blend_position", -velocity)
+	is_attacking = false
+	animation_tree.set("parameters/conditions/is_attacking", is_attacking)
 
 func _on_is_dead():
 	is_alive = false

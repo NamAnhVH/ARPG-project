@@ -29,9 +29,9 @@ func knockback(knockback_strength, damage_source_position: Vector2):
 		velocity = knockback_strength * normal * KNOCKBACK_VELOCITY
 
 func show_damage_indicator(amount):
-	var damage_indicator = ResourceManager.get_instance("damage_indicator")
+	var damage_indicator = ResourceManager.get_instance("indicator")
+	damage_indicator.text = str(amount)
 	add_child(damage_indicator)
-	damage_indicator.label.text = str(amount)
 
 ##Setget
 func set_move_speed_unit(value: float):
