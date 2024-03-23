@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fsttyo8rq87n"]
+[gd_scene load_steps=11 format=3 uid="uid://fsttyo8rq87n"]
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
 [ext_resource type="PackedScene" uid="uid://bmxlfrnlvvvjt" path="res://test_map.tscn" id="1_pmagf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/ui/hotbar_container.tscn" id="6_obsuh"]
 [ext_resource type="PackedScene" uid="uid://bhagkd1c6uibr" path="res://sources/scenes/ui/player_stat_ui.tscn" id="7_g3osk"]
 [ext_resource type="PackedScene" uid="uid://bv0v7uuyaela0" path="res://sources/scenes/ui/player_health_bar.tscn" id="8_ddojd"]
+[ext_resource type="PackedScene" uid="uid://cqy7j7njemsll" path="res://sources/scenes/ui/shop_container.tscn" id="9_o0jo6"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_j7hlb")
@@ -40,26 +41,26 @@ grow_vertical = 2
 [node name="Inventory_container" parent="User_interface/UIContainer/Window" instance=ExtResource("3_pn8rf")]
 visible = false
 layout_mode = 1
-offset_left = 248.0
-offset_top = 117.0
-offset_right = 534.0
-offset_bottom = 306.0
+offset_left = 247.0
+offset_top = 84.0
+offset_right = 537.0
+offset_bottom = 272.0
 
 [node name="PlayerEquipment" parent="User_interface/UIContainer/Window" instance=ExtResource("6_m5jwq")]
 visible = false
 layout_mode = 0
-offset_left = 47.0
-offset_top = 117.0
-offset_right = 234.0
-offset_bottom = 306.0
+offset_left = 46.0
+offset_top = 83.0
+offset_right = 233.0
+offset_bottom = 272.0
 
 [node name="ChestContainer" parent="User_interface/UIContainer/Window" instance=ExtResource("6_bscoc")]
 visible = false
 layout_mode = 0
-offset_left = 556.0
-offset_top = 210.0
-offset_right = 763.0
-offset_bottom = 306.0
+offset_left = 289.0
+offset_top = 291.0
+offset_right = 496.0
+offset_bottom = 387.0
 
 [node name="PlayerStatUI" parent="User_interface/UIContainer/Window" instance=ExtResource("7_g3osk")]
 visible = false
@@ -70,11 +71,20 @@ offset_right = 190.0
 offset_bottom = 434.0
 
 [node name="PlayerHealthBar" parent="User_interface/UIContainer/Window" instance=ExtResource("8_ddojd")]
+visible = false
 layout_mode = 0
 offset_left = 51.0
 offset_top = 36.0
 offset_right = 243.0
 offset_bottom = 42.0
+
+[node name="ShopContainer" parent="User_interface/UIContainer/Window" instance=ExtResource("9_o0jo6")]
+visible = false
+layout_mode = 0
+offset_left = 582.0
+offset_top = 84.0
+offset_right = 764.0
+offset_bottom = 276.0
 
 [node name="HotbarContainer" parent="User_interface/UIContainer" instance=ExtResource("6_obsuh")]
 layout_mode = 1
@@ -95,26 +105,26 @@ anchors_preset = 0
 
 [node name="Save" type="Button" parent="User_interface/UIContainer/Button"]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 18.0
-offset_right = 776.0
-offset_bottom = 49.0
+offset_left = 633.0
+offset_top = 14.0
+offset_right = 679.0
+offset_bottom = 45.0
 text = "Save"
 
 [node name="Load" type="Button" parent="User_interface/UIContainer/Button"]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 57.0
-offset_right = 776.0
-offset_bottom = 88.0
+offset_left = 697.0
+offset_top = 15.0
+offset_right = 743.0
+offset_bottom = 46.0
 text = "Load"
 
 [node name="Quit" type="Button" parent="User_interface/UIContainer/Button"]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 99.0
-offset_right = 776.0
-offset_bottom = 130.0
+offset_left = 755.0
+offset_top = 15.0
+offset_right = 801.0
+offset_bottom = 46.0
 text = "Quit"
 
 [connection signal="pressed" from="User_interface/UIContainer/Button/Save" to="User_interface/UIContainer" method="_on_save_pressed"]

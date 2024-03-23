@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjsd6g1ub31r"]
+
+[ext_resource type="Texture2D" uid="uid://dxmdh86gqw7ls" path="res://assets/ui/item_slot_v02.png" id="1_p0rhr"]
+[ext_resource type="Script" path="res://sources/scripts/ui/shop_slot.gd" id="2_21c2g"]
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="3_sdbrp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6blci"]
+font = ExtResource("3_sdbrp")
+font_size = 13
+font_color = Color(0, 0, 0, 1)
+
+[node name="ShopSlot" type="TextureRect"]
+texture = ExtResource("1_p0rhr")
+script = ExtResource("2_21c2g")
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = SubResource("LabelSettings_6blci")
+horizontal_alignment = 2
+
+[node name="Item" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 29.0
+offset_bottom = 29.0

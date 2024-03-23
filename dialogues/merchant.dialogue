@@ -1,0 +1,12 @@
+~ start
+
+{{Global.npc_name}}: [[Hi|Hello|Howdy]], can i do anything for you?.
+- Buy some items
+	{{Global.npc_name}}: Sure thing, take a look at what we have available.
+	do SignalManager.set_shop.emit(Global.npc_name)
+- Upgrade an item
+	{{Global.npc_name}}: Ah, looking to enhance something? Let's see what we can do.
+- No, thanks 
+	{{Global.npc_name}}: Ok bye.
+	
+=> END

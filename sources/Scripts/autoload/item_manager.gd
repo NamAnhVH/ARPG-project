@@ -56,7 +56,7 @@ func _ready():
 	#Rare Name
 	var rare_name_file = FileAccess.open(RARE_NAMES_PATH, FileAccess.READ)
 	rare_names = JSON.parse_string(rare_name_file.get_as_text())
-	item_file.close()
+	rare_name_file.close()
 
 func get_item(id: String):
 	return Item.new(id, items[id])
@@ -82,6 +82,9 @@ func get_item_from_data( item_data ):
 		if item_data.components.has("legendary_stats"):
 			set_legendary(item, item_data.components.legendary_stats)
 	return item
+
+func get_item_name(id: String):
+	return items[id].name
 
 func get_placeholder(id):
 	return placeholders[id]
@@ -213,3 +216,16 @@ func get_type_name(item: Item):
 		return equipment_names[item.equipment_type]
 	else:
 		return type_names[item.type]
+
+func get_type_name_with_id(id: String):
+	if GameEnums.ITEM_TYPE[items[id].type] == GameEnums.ITEM_TYPE.EQUIPMENT:
+		return equipment_names[GameEnums.EQUIPMENT_TYPE[items[id].equipment_type]]
+	else:
+		return type_names[GameEnums.ITEM_TYPE[items[id].type]]
+
+func can_stack(id: String, quantity):
+	if items[id].has("stack_size"):
+		if quantity <= items[id].stack_size:
+			return true
+	return false
+	

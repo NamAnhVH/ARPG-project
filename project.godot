@@ -23,6 +23,8 @@ ItemManager="*res://sources/scripts/autoload/item_manager.gd"
 ResourceManager="*res://sources/scripts/autoload/resource_manager.gd"
 InventoryManager="*res://sources/scenes/managers/inventory_manager.tscn"
 SaveManager="*res://sources/scripts/autoload/save_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Global="*res://sources/scripts/autoload/global.gd"
 
 [debug]
 
@@ -31,12 +33,20 @@ gdscript/warnings/unused_parameter=0
 gdscript/warnings/unused_signal=0
 gdscript/warnings/integer_division=0
 
+[dialogue_manager]
+
+general/balloon_path="res://sources/scenes/ui/balloon.tscn"
+
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=450
 window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [importer_defaults]
 
@@ -125,6 +135,10 @@ dodge={
 "events": [null, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogues/merchant.dialogue")
 
 [layer_names]
 

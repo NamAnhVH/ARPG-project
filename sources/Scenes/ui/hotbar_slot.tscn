@@ -12,9 +12,6 @@ font_color = Color(0, 0, 0, 1)
 [node name="HotbarSlot" type="TextureRect"]
 texture = ExtResource("1_l00xm")
 script = ExtResource("2_rihek")
-label_key_path = NodePath("LabelKey")
-item_texture_path = NodePath("ItemContainer/ItemTexture")
-item_container_path = NodePath("ItemContainer")
 
 [node name="ItemContainer" type="Control" parent="."]
 layout_mode = 1

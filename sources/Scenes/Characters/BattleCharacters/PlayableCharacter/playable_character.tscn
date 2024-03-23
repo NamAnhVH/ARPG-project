@@ -9314,8 +9314,6 @@ offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("6_g3p5i")
-lbl_action_path = NodePath("Action")
-lbl_name_path = NodePath("ObjectName")
 
 [node name="Action" type="Label" parent="Interactable/InteractableLabels" index="0"]
 layout_mode = 2
@@ -9345,4 +9343,5 @@ one_shot = true
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]
 [connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]
+[connection signal="body_exited" from="InteractableArea" to="." method="_on_interactable_area_body_exited"]
 [connection signal="timeout" from="Timer/AttackTimer" to="." method="_on_attack_timer_timeout"]

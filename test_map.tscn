@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bmxlfrnlvvvjt"]
+[gd_scene load_steps=28 format=3 uid="uid://bmxlfrnlvvvjt"]
 
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="1_08bvg"]
 [ext_resource type="Script" path="res://test_map.gd" id="1_fheyy"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="8_tioq6"]
 [ext_resource type="Texture2D" uid="uid://dlo5xd8gi7kp8" path="res://assets/monsters/slimes/slime_v06.png" id="9_eui8a"]
 [ext_resource type="PackedScene" uid="uid://xc4ma4xl30x1" path="res://sources/scenes/interactables/floor_item.tscn" id="10_hxaqd"]
+[ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/scenes/characters/npcs/merchant.tscn" id="10_utu2e"]
 [ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/interactables/interactable_chest.tscn" id="11_1apeb"]
 [ext_resource type="PackedScene" uid="uid://5mq8h28hbgyr" path="res://sources/scenes/interactables/interactable_random_chest.tscn" id="12_e34tj"]
 [ext_resource type="PackedScene" uid="uid://b20oknxj3srm1" path="res://sources/scenes/interactables/interactable_treasure_chest.tscn" id="13_3ysnl"]
@@ -2187,6 +2188,21 @@ z_index = 1
 position = Vector2(359, -96)
 texture = ExtResource("9_eui8a")
 max_health = 200
+
+[node name="NPCS" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Merchant" parent="NPCS" instance=ExtResource("10_utu2e")]
+position = Vector2(661, 104)
+product = Array[Dictionary]([{
+"item_id": "sword_v00",
+"price": 10
+}, {
+"item_id": "healing_potion_v00",
+"price": 25,
+"quantity": 5
+}])
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-33, 24)

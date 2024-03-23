@@ -3,8 +3,7 @@ class_name InventorySlot
 
 signal item_changed()
 
-@export_node_path var item_container_path : NodePath
-@onready var item_container : Control = get_node(item_container_path)
+@onready var item_container : Control = $ItemContainer
 
 var item : Item : set = set_item
 var is_ready : bool = false

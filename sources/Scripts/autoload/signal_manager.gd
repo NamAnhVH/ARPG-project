@@ -15,6 +15,13 @@ signal chest_ready(chest: Chest)
 signal chest_closed(chest: Chest)
 signal content_changed()
 
+#Shop
+signal set_shop(npc_name: String)
+signal shop_opened(list_item : Array[ShopItem])
+signal shop_closed()
+signal shop_ready(shop: Shop)
+signal buy_item(price: int)
+
 #Interactable
 signal item_dropped(item: Item)
 

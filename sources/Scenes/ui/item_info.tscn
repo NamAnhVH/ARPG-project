@@ -18,8 +18,6 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 script = ExtResource("2_7nrdc")
-item_name_path = NodePath("ItemName")
-line_container_path = NodePath("LineContainer")
 
 [node name="ItemName" type="Label" parent="."]
 layout_mode = 1

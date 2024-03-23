@@ -31,6 +31,5 @@ shape = SubResource("CapsuleShape2D_k7fqb")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_2gedc")

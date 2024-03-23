@@ -2,6 +2,8 @@ extends CanvasLayer
 
 const ITEM_OFFSET = Vector2(-12, -12)
 
+@export var player_data : Resource
+
 @onready var item_in_hand_node : Control = $ItemInHand
 @onready var item_info : ItemInfo = $ItemInfo
 @onready var item_void : Control = $CanvasLayer/ItemVoid
@@ -21,6 +23,7 @@ func _ready():
 	SignalManager.equipment_ready.connect(_on_equipment_ready)
 	SignalManager.hotbar_ready.connect(_on_hotbar_ready)
 	SignalManager.chest_ready.connect(_on_chest_ready)
+	SignalManager.shop_ready.connect(_on_shop_ready)
 	
 	item_void.gui_input.connect(_on_void_gui_input)
 	
@@ -102,9 +105,19 @@ func _on_chest_ready(chest: Chest):
 		slot.mouse_exited.connect(_on_mouse_exited_slot)
 		slot.gui_input.connect(_on_gui_input_slot.bindv([slot]))
 
+func _on_shop_ready(shop: Shop):
+	for s : ShopSlotContainer in shop.list_item_container.get_children():
+		s.slot.mouse_entered.connect(_on_mouse_entered_shop_slot.bind(s.slot))
+		s.slot.mouse_exited.connect(_on_mouse_exited_slot)
+		s.slot.gui_input.connect(_on_gui_input_shop_slot.bindv([s]))
+
 func _on_mouse_entered_slot(slot: InventorySlot):
 	if slot.item:
 		item_info.display(slot)
+
+func _on_mouse_entered_shop_slot(slot):
+	if slot.item:
+		item_info.display_shop_item(slot)
 
 func _on_mouse_exited_slot():
 	item_info.hide()
@@ -114,8 +127,6 @@ func _on_gui_input_slot(event: InputEvent, slot: InventorySlot):
 		split_item(slot.item)
 	elif event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			var had_empty_hand : bool = item_in_hand == null
-			
 			if item_in_hand:
 				item_in_hand_node.remove_child(item_in_hand)
 			
@@ -129,6 +140,19 @@ func _on_gui_input_slot(event: InputEvent, slot: InventorySlot):
 		slot.mouse_entered.emit()
 	else:
 		slot.mouse_exited.emit()
+
+func _on_gui_input_shop_slot(event: InputEvent, slot):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		if player_data.money >= slot.price:
+			if item_in_hand:
+				if item_in_hand.id == slot.item_id and ItemManager.can_stack(slot.item_id, item_in_hand.quantity + slot.quantity):
+					item_in_hand.quantity += slot.quantity
+					SignalManager.buy_item.emit(slot.price)
+			else:
+				item_in_hand = ItemManager.get_item(slot.item_id)
+				item_in_hand.quantity = slot.quantity
+				item_in_hand_node.add_child(item_in_hand)
+				SignalManager.buy_item.emit(slot.price)
 
 func _on_void_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and item_in_hand:

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsjbcqtcivcmq"]
+
+[ext_resource type="PackedScene" uid="uid://bjmtni4gq7kuh" path="res://sources/scenes/characters/npcs/none_playable_character.tscn" id="1_3lyyi"]
+[ext_resource type="Texture2D" uid="uid://dt11px7w78n1o" path="res://assets/npcs/merchant_v00.png" id="2_5x7vi"]
+[ext_resource type="Script" path="res://sources/scripts/characters/merchant.gd" id="2_oi2k7"]
+
+[node name="Merchant" instance=ExtResource("1_3lyyi")]
+script = ExtResource("2_oi2k7")
+object_name = "Nam Anh"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_5x7vi")

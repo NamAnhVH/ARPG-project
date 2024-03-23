@@ -95,7 +95,10 @@ var tscn = {
 	"equipment": preload("res://sources/scenes/ui/equipment.tscn"),
 	"chest": preload("res://sources/scenes/ui/chest.tscn"),
 	"indicator": preload("res://sources/scenes/ui/indicator.tscn"),
-	"arrow": preload("res://sources/scenes/core/arrow.tscn")
+	"arrow": preload("res://sources/scenes/core/arrow.tscn"),
+	"balloon": preload("res://sources/scenes/ui/balloon.tscn"),
+	"shop_slot_container": preload("res://sources/scenes/ui/shop_slot_container.tscn"),
+	"shop_slot": preload("res://sources/scenes/ui/shop_slot.tscn")
 }
 
 var resources = {

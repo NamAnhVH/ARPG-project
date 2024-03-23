@@ -5,7 +5,8 @@ class_name PlayerData
 @export var inventory : Dictionary
 @export var equipment : Dictionary
 @export var health : int
-@export var max_health : int = 10
+@export var max_health : int
+@export var money : int
 
 var base_stats = {
 	GameEnums.STAT.ATK: 5,
@@ -19,6 +20,7 @@ func set_data(data):
 	equipment = data.equipment
 	health = data.health
 	max_health = data.max_health
+	money = data.money
 	emit_changed()
 
 func get_data():
@@ -27,7 +29,8 @@ func get_data():
 		"inventory": inventory,
 		"equipment": equipment,
 		"health": health,
-		"max_health" : max_health
+		"max_health" : max_health,
+		"money": money
 	}
 
 func get_stat(stat):

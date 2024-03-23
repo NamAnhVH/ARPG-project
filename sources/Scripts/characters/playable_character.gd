@@ -85,11 +85,16 @@ func _physics_process(_delta):
 		move_state()
 
 func _process(_delta):
-	if not current_interactable:
+	if !current_interactable:
 		var overlapping_area = interactable_area.get_overlapping_areas()
 		
 		if overlapping_area.size() > 0 and overlapping_area[0].has_method("interact"):
 			current_interactable = overlapping_area[0]
+			interactable_labels.display(current_interactable)
+		
+		var overlapping_body = interactable_area.get_overlapping_bodies()
+		if overlapping_body.size() > 0 and overlapping_body[0].has_method("interact"):
+			current_interactable = overlapping_body[0]
 			interactable_labels.display(current_interactable)
 	
 	if player_data:
@@ -347,6 +352,13 @@ func _on_interactable_area_area_exited(area):
 		interactable_labels.hide()
 		current_interactable = null
 
+func _on_interactable_area_body_exited(_body):
+	if current_interactable == _body:
+		if current_interactable.has_method("out_of_range"):
+			current_interactable.out_of_range()
+		interactable_labels.hide()
+		current_interactable = null
+
 func _on_item_dropped(item):
 	var floor_item = ResourceManager.tscn.floor_item.instantiate()
 	floor_item.item = item
@@ -442,4 +454,5 @@ func _hurt_finished():
 	velocity = Vector2.ZERO
 	is_hurting = false
 	animation_tree.set("parameters/conditions/is_attacked", false)
+
 

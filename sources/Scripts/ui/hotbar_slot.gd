@@ -1,11 +1,8 @@
 extends InventorySlot
 class_name HotbarSlot
 
-@export_node_path var label_key_path : NodePath
-@onready var label_key : Label = get_node(label_key_path)
-
-@export_node_path var item_texture_path : NodePath
-@onready var item_texture : TextureRect = get_node(item_texture_path)
+@onready var label_key : Label = $LabelKey
+@onready var item_texture : TextureRect = $ItemContainer/ItemTexture
 
 var key : String
 var cooldown_node : Control
