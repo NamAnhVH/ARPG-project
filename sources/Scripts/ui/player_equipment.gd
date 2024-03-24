@@ -9,6 +9,7 @@ func _ready():
 	SignalManager.inventory_closed.connect(_on_equipment_closed)
 	SignalManager.set_equipment_data.connect(_set_equipment_data)
 	SignalManager.saving_game.connect(_on_saving_game)
+	SignalManager.set_player.connect(_on_changed_data)
 	player_data.changed.connect(_on_changed_data)
 	get_equipment_data()
 	_on_changed_data()

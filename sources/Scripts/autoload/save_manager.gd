@@ -12,6 +12,9 @@ func _ready():
 func has_save_file(file_path):
 	return FileAccess.file_exists(file_path)
 
+#func new_game():
+	#
+
 func load_game():
 	var save_path = SAVE_FOLDER + SAVE_FILE
 	if FileAccess.file_exists(save_path):

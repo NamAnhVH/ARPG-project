@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckb6kvjosdnlj"]
+
+[ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_ceb2d"]
+
+[node name="Map" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+format = 2
+
+[node name="Camera" parent="." node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("2_ceb2d")]
+position = Vector2(0, -12)
+top_position = NodePath("../CameraLimit/TopPosition")
+bottom_position = NodePath("../CameraLimit/BottomPosition")
+
+[node name="CameraLimit" type="Node2D" parent="."]
+
+[node name="TopPosition" type="Marker2D" parent="CameraLimit"]
+
+[node name="BottomPosition" type="Marker2D" parent="CameraLimit"]
+
+[node name="ChangeLayerArea" type="Node2D" parent="."]
+
+[node name="StairArea" type="Node2D" parent="."]
+
+[node name="ChangeMap" type="Node2D" parent="."]
+
+[node name="CollisionArea" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Npcs" type="Node2D" parent="."]
+
+[node name="FloorItem" type="Node2D" parent="."]
+
+[node name="Chest" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

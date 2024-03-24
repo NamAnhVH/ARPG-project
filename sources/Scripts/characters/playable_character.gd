@@ -47,6 +47,7 @@ func _ready():
 	super._ready()
 	SignalManager.equip_item.connect(_on_equip_item)
 	SignalManager.unequip_item.connect(_on_unequip_item)
+	SignalManager.set_player.connect(_on_data_changed)
 	player_data.changed.connect(_on_data_changed)
 	
 	_set_body_layer(5,4,3,2,1,0)
@@ -101,7 +102,6 @@ func _process(_delta):
 		set_player_data()
 	
 	parry()
-
 
 ##State Function
 #Trạng thái di chuyển của nhân vật
@@ -309,6 +309,11 @@ func set_equipment_asset(asset_type: String):
 			if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.BOW:
 				quiver.texture = ResourceManager.extra_weapon_texture[current_extra_weapon.extra_weapon_type][asset_type][current_extra_weapon.id] if current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.QUIVER else null
 				shield.texture = null
+		else:
+			if current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:
+				shield.texture = ResourceManager.extra_weapon_texture[current_extra_weapon.extra_weapon_type][asset_type][current_extra_weapon.id]
+			else:
+				quiver.texture = ResourceManager.extra_weapon_texture[current_extra_weapon.extra_weapon_type][asset_type][current_extra_weapon.id]
 
 func set_player_data():
 	player_data.global_position = global_position
@@ -394,6 +399,8 @@ func _on_unequip_item(equipment_type):
 	if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
 		is_unequip_weapon = true
 		current_weapon = null
+		if is_attack_state:
+			sheath()
 	elif equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
 		current_extra_weapon = null
 

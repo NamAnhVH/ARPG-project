@@ -6,6 +6,7 @@
 
 [node name="Merchant" instance=ExtResource("1_3lyyi")]
 script = ExtResource("2_oi2k7")
+product = Array[Dictionary]([])
 object_name = "Nam Anh"
 
 [node name="Sprite2D" parent="." index="0"]

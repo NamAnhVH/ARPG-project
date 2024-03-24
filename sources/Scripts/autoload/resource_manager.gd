@@ -101,6 +101,11 @@ var tscn = {
 	"shop_slot": preload("res://sources/scenes/ui/shop_slot.tscn")
 }
 
+var world = {
+	"world_1": preload("res://sources/scenes/map/world_1.tscn"),
+	"village": preload("res://sources/scenes/map/village.tscn")
+}
+
 var resources = {
 	"game_data": preload("res://data/resources/game_data.tres"),
 	"player_data": preload("res://data/resources/player_data.tres"),
@@ -518,3 +523,5 @@ func set_font(font_size: int, color = "000000"):
 func get_instance(id):
 	return tscn[id].instantiate()
 
+func get_map(id):
+	return world[id].instantiate()

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WorldData" load_steps=2 format=3 uid="uid://ux1xcdadgxto"]
+
+[ext_resource type="Script" path="res://sources/scripts/data/world_data.gd" id="1_ipb6v"]
+
+[resource]
+script = ExtResource("1_ipb6v")
+current_map = "village"

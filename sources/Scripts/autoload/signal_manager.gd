@@ -40,5 +40,10 @@ signal new_health(value)
 signal upgrade_item()
 signal has_upgradable_item(value)
 
+#Map
+signal change_map(world_id: String, location: Vector2)
+signal set_player()
+
 #SaveManager
 signal saving_game()
+
