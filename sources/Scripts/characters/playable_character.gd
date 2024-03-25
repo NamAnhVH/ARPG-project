@@ -271,18 +271,20 @@ func set_player_asset(asset_type: String):
 
 func remove_equipment_asset(equipment_type):
 	if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
-		if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
-			one_hand_weapon.texture = null
-		elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.SPEAR:
-			spear.texture = null
-		elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.BOW:
-			bow.texture = null
+		if current_weapon:
+			if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
+				one_hand_weapon.texture = null
+			elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.SPEAR:
+				spear.texture = null
+			elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.BOW:
+				bow.texture = null
 	
 	elif equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
-		if current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:
-			shield.texture = null
-		elif current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.QUIVER:
-			quiver.texture = null
+		if current_extra_weapon:
+			if current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:
+				shield.texture = null
+			elif current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.QUIVER:
+				quiver.texture = null
 
 func set_equipment_asset(asset_type: String):
 	if !is_unequip_weapon:

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckb6kvjosdnlj"]
+[gd_scene load_steps=4 format=3 uid="uid://ckb6kvjosdnlj"]
 
-[ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_ceb2d"]
+[ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="1_8utsy"]
+[ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_nisv8"]
+[ext_resource type="PackedScene" uid="uid://ded1w1y1piutp" path="res://sources/scenes/ui/in_game_ui.tscn" id="3_xybhv"]
 
 [node name="Map" type="Node2D"]
 
@@ -8,10 +10,11 @@
 y_sort_enabled = true
 format = 2
 
-[node name="Camera" parent="." node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("2_ceb2d")]
-position = Vector2(0, -12)
-top_position = NodePath("../CameraLimit/TopPosition")
-bottom_position = NodePath("../CameraLimit/BottomPosition")
+[node name="PlayableCharacter" parent="." instance=ExtResource("1_8utsy")]
+
+[node name="Camera" parent="PlayableCharacter" node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("2_nisv8")]
+top_position = NodePath("../../CameraLimit/TopPosition")
+bottom_position = NodePath("../../CameraLimit/BottomPosition")
 
 [node name="CameraLimit" type="Node2D" parent="."]
 
@@ -36,3 +39,5 @@ bottom_position = NodePath("../CameraLimit/BottomPosition")
 [node name="Chest" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+
+[node name="InGameUI" parent="." instance=ExtResource("3_xybhv")]

@@ -10,15 +10,15 @@ func _ready():
 	_on_change_map(world_data.current_map, player_data.global_position)
 
 func _on_change_map(world_id, location):
-	if get_children().size() > 1:
-		get_child(1).queue_free()
+	if get_children().size() > 0:
+		get_child(0).queue_free()
 	var current_map = ResourceManager.get_map(world_id)
 	player_data.global_position = location
 	world_data.current_map = world_id
 	call_deferred("add_child", current_map)
 
 func _on_changed_map():
-	if get_children().size() > 1:
-		get_child(1).queue_free()
+	if get_children().size() > 0:
+		get_child(0).queue_free()
 	var current_map = ResourceManager.get_map(world_data.current_map)
 	call_deferred("add_child", current_map)

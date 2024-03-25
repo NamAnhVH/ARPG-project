@@ -155,6 +155,12 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/merchant.dialog
 2d_physics/layer_24="enemy_hazard_floor_4"
 2d_physics/layer_32="stair"
 
+[physics]
+
+2d/run_on_separate_thread=true
+common/physics_ticks_per_second=75
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true

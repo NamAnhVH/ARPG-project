@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="2_eh25o"]
 
 [node name="InventoryManager" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_jjcom")
 player_data = ExtResource("2_eh25o")
 

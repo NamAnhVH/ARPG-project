@@ -12,7 +12,7 @@ const ITEM_OFFSET = Vector2(-12, -12)
 var inventory: Inventory
 var equipment: Equipment
 var item_in_hand : Item = null
-var is_open_inventory : bool = false
+
 
 #Build
 func _ready():
@@ -33,14 +33,7 @@ func _ready():
 	InventoryManager.add_hidden_node(inventory)
 	InventoryManager.add_hidden_node(equipment)
 
-func _unhandled_input(event):
-	if event.is_action_pressed("inventory"):
-		if !is_open_inventory:
-			SignalManager.inventory_opened.emit()
-			is_open_inventory = true
-		else:
-			SignalManager.inventory_closed.emit()
-			is_open_inventory = false
+
 
 func _process(delta):
 	if item_in_hand:
@@ -131,6 +124,10 @@ func _on_gui_input_slot(event: InputEvent, slot: InventorySlot):
 				item_in_hand_node.remove_child(item_in_hand)
 			
 			item_in_hand = slot.put_item(item_in_hand)
+			if slot is InventorySlot:
+				player_data.inventory = inventory.get_data()
+			if slot is EquipmentSlot:
+				player_data.equipment = equipment.get_data()
 			if item_in_hand:
 				item_in_hand_node.add_child(item_in_hand)
 		elif event.button_index == MOUSE_BUTTON_RIGHT and slot.item and slot.item.components.has("usable"):

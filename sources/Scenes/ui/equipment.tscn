@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://sources/scripts/ui/equipment.gd" id="2_5cbbj"]
 [ext_resource type="PackedScene" uid="uid://ddpr87bordd6n" path="res://sources/scenes/ui/equipment_slot.tscn" id="3_ul6kg"]
 
+
 [node name="Equipment" type="NinePatchRect"]
 offset_left = 8.0
 offset_top = 8.0

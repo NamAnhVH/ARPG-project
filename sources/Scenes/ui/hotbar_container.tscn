@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_qpfwd"]
 [ext_resource type="PackedScene" uid="uid://datmlptdgu3a" path="res://sources/scenes/ui/hotbar.tscn" id="3_vdxyj"]
 
+
 [node name="HotbarContainer" type="NinePatchRect"]
 offset_right = 198.0
 offset_bottom = 49.0

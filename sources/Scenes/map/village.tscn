@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://muota2mnwki3"]
 
-[ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_o36td"]
+[ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_jpx6w"]
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="2_xtlqi"]
 [ext_resource type="Texture2D" uid="uid://bi2u8sirs7gho" path="res://assets/tilesets/house/home exteriors, timber roof v2.png" id="3_53luv"]
 [ext_resource type="Texture2D" uid="uid://bp1h2o64knvii" path="res://assets/tilesets/house/home exteriors, timber roof v1.png" id="4_tfqc2"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cuj7b4pkexm6j" path="res://assets/tilesets/village/village accessories 80x96.png" id="8_6dcg3"]
 [ext_resource type="Texture2D" uid="uid://c8p5mbqvmbk6j" path="res://assets/tilesets/village/bonus merchant goods.png" id="9_pnxvr"]
 [ext_resource type="Texture2D" uid="uid://bx7qsapx37wck" path="res://assets/tilesets/wall/low stone wall 16x16.png" id="10_c188d"]
-[ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/scenes/characters/npcs/merchant.tscn" id="10_cwo0i"]
+[ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/scenes/Characters/npcs/merchant.tscn" id="10_cwo0i"]
 [ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_map_area.tscn" id="10_ho21b"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ax2hm"]
@@ -5932,7 +5932,7 @@ pattern_7 = SubResource("TileMapPattern_s4tmy")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5cvp"]
 size = Vector2(19, 123)
 
-[node name="Village" instance=ExtResource("1_o36td")]
+[node name="Village" instance=ExtResource("1_jpx6w")]
 
 [node name="TileMap" parent="." index="0"]
 tile_set = SubResource("TileSet_1dtdu")

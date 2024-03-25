@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/interactables/interactable_chest.tscn" id="1_w73fg"]
 [ext_resource type="Script" path="res://sources/scripts/interactables/interactable_random_chest.gd" id="2_tn05p"]
 
+
 [node name="InteractableRandomChest" instance=ExtResource("1_w73fg")]
 z_index = 1
 script = ExtResource("2_tn05p")

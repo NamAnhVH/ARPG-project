@@ -1,18 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://fsttyo8rq87n"]
+[gd_scene load_steps=6 format=3 uid="uid://fsttyo8rq87n"]
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
 [ext_resource type="Script" path="res://sources/scripts/map/world_manager.gd" id="2_eagn0"]
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_5dv0b"]
 [ext_resource type="Script" path="res://sources/scripts/ui/user_interface_container.gd" id="3_gdkrc"]
-[ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inventory_container.tscn" id="3_pn8rf"]
 [ext_resource type="Resource" uid="uid://ux1xcdadgxto" path="res://data/resources/world_data.tres" id="4_77d44"]
-[ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/characters/battleCharacters/playableCharacter/playable_character.tscn" id="5_te650"]
-[ext_resource type="PackedScene" uid="uid://bm8ioreu85dku" path="res://sources/scenes/ui/chest_container.tscn" id="6_bscoc"]
-[ext_resource type="PackedScene" uid="uid://dh0kcds7ama2w" path="res://sources/scenes/ui/player_equipment.tscn" id="6_m5jwq"]
-[ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/ui/hotbar_container.tscn" id="6_obsuh"]
-[ext_resource type="PackedScene" uid="uid://bhagkd1c6uibr" path="res://sources/scenes/ui/player_stat_ui.tscn" id="7_g3osk"]
-[ext_resource type="PackedScene" uid="uid://bv0v7uuyaela0" path="res://sources/scenes/ui/player_health_bar.tscn" id="8_ddojd"]
-[ext_resource type="PackedScene" uid="uid://cqy7j7njemsll" path="res://sources/scenes/ui/shop_container.tscn" id="9_o0jo6"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_j7hlb")
@@ -22,10 +14,6 @@ y_sort_enabled = true
 script = ExtResource("2_eagn0")
 player_data = ExtResource("3_5dv0b")
 world_data = ExtResource("4_77d44")
-
-[node name="PlayableCharacter" parent="WorldManager" instance=ExtResource("5_te650")]
-z_index = 1
-y_sort_enabled = true
 
 [node name="User_interface" type="CanvasLayer" parent="."]
 
@@ -40,76 +28,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_gdkrc")
-
-[node name="Window" type="Control" parent="User_interface/UIContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Inventory_container" parent="User_interface/UIContainer/Window" instance=ExtResource("3_pn8rf")]
-visible = false
-layout_mode = 1
-offset_left = 247.0
-offset_top = 84.0
-offset_right = 537.0
-offset_bottom = 272.0
-
-[node name="PlayerEquipment" parent="User_interface/UIContainer/Window" instance=ExtResource("6_m5jwq")]
-visible = false
-layout_mode = 0
-offset_left = 46.0
-offset_top = 83.0
-offset_right = 233.0
-offset_bottom = 272.0
-
-[node name="ChestContainer" parent="User_interface/UIContainer/Window" instance=ExtResource("6_bscoc")]
-visible = false
-layout_mode = 0
-offset_left = 289.0
-offset_top = 291.0
-offset_right = 496.0
-offset_bottom = 387.0
-
-[node name="PlayerStatUI" parent="User_interface/UIContainer/Window" instance=ExtResource("7_g3osk")]
-visible = false
-layout_mode = 0
-offset_left = 47.0
-offset_top = 312.0
-offset_right = 190.0
-offset_bottom = 434.0
-
-[node name="PlayerHealthBar" parent="User_interface/UIContainer/Window" instance=ExtResource("8_ddojd")]
-visible = false
-layout_mode = 0
-offset_left = 51.0
-offset_top = 36.0
-offset_right = 243.0
-offset_bottom = 42.0
-
-[node name="ShopContainer" parent="User_interface/UIContainer/Window" instance=ExtResource("9_o0jo6")]
-visible = false
-layout_mode = 0
-offset_left = 582.0
-offset_top = 84.0
-offset_right = 764.0
-offset_bottom = 276.0
-
-[node name="HotbarContainer" parent="User_interface/UIContainer" instance=ExtResource("6_obsuh")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 303.0
-offset_top = 399.0
-offset_right = 501.0
-offset_bottom = 448.0
-grow_horizontal = 2
-grow_vertical = 0
 
 [node name="Button" type="Control" parent="User_interface/UIContainer"]
 anchors_preset = 0

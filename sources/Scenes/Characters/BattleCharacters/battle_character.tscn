@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://tmkgaywd14n6"]
 
-[ext_resource type="PackedScene" uid="uid://b5hcdfcp8fn2k" path="res://sources/scenes/characters/character.tscn" id="1_j8mnv"]
+[ext_resource type="PackedScene" uid="uid://b5hcdfcp8fn2k" path="res://sources/scenes/Characters/character.tscn" id="1_j8mnv"]
 [ext_resource type="Script" path="res://sources/scripts/characters/battle_character.gd" id="2_mgrvq"]
 [ext_resource type="PackedScene" uid="uid://m7gcd725pp7p" path="res://sources/scenes/core/hitbox.tscn" id="3_cqoav"]
 [ext_resource type="Script" path="res://sources/scripts/core/damage_area.gd" id="4_nu7wf"]
+
 
 [node name="BattleCharacter" instance=ExtResource("1_j8mnv")]
 script = ExtResource("2_mgrvq")

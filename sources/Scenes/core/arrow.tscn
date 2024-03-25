@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byo274rofpbqr" path="res://assets/weapons/bow/attack/arrow/quiver_v00.png" id="1_y6mar"]
 [ext_resource type="PackedScene" uid="uid://bmog06rqp4lr1" path="res://sources/scenes/core/damage_area.tscn" id="2_487hu"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0eag"]
 size = Vector2(16, 5)
 

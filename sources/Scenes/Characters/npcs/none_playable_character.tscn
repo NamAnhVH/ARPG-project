@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjmtni4gq7kuh"]
 
-[ext_resource type="PackedScene" uid="uid://b5hcdfcp8fn2k" path="res://sources/scenes/characters/character.tscn" id="1_af701"]
+[ext_resource type="PackedScene" uid="uid://b5hcdfcp8fn2k" path="res://sources/scenes/Characters/character.tscn" id="1_af701"]
 [ext_resource type="Script" path="res://sources/scripts/characters/none_playable_character.gd" id="2_2q2n2"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pthu5"]
 radius = 8.24621
