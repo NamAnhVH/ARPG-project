@@ -34,7 +34,7 @@
         "Peculiar",
         "Intricate"
       ],
-      "ONE_HAND_WEAPON": [
+      "WEAPON": [
         "Barbaric",
         "Not-Quite-Lethal",
         "Omnidirectional",
@@ -42,30 +42,17 @@
         "Sharp",
         "Deadly",
         "Incurable",
-        "Punctured"
-      ],
-      "SHIELD":[
-        "Ancient",
-        "Doom",
-        "Towering"
-      ],
-      "SPEAR":[
-        "Barbaric",
-        "Not-Quite-Lethal",
-        "Omnidirectional",
-        "Archaic",
-        "Sharp",
-        "Deadly",
-        "Incurable",
-        "Punctured"
-      ],
-      "BOW": [
+        "Punctured",
         "Controversial",
         "Illegal",
         "Villainous",
         "Unyielding"
+      ],
+      "EXTRA_WEAPON":[
+        "Ancient",
+        "Doom",
+        "Towering"
       ]
-      
   },
   "suffix": {
       "CHEST": [
@@ -104,7 +91,7 @@
           "Hardware",
           "Plaything"
       ],
-      "ONE_HAND_WEAPON": [
+      "WEAPON": [
           "Weapon",
           "Gizmo",
           "Arms",
@@ -114,29 +101,15 @@
           "Mangler",
           "Scratch",
           "Bruise",
-          "Fracture"
+          "Fracture",
+          "Scar",
+          "Ouch!",
+          "Outrage"
       ],
-      "SHIELD":[
+      "EXTRA_WEAPON":[
         "Master",
         "Injustice",
         "Injury"
-      ],
-      "SPEAR": [
-        "Weapon",
-        "Gizmo",
-        "Arms",
-        "Heraldry",
-        "Heavy Stuff",
-        "Grinder",
-        "Mangler",
-        "Scratch",
-        "Bruise",
-        "Fracture"
-      ],
-      "BOW": [
-        "Scar",
-        "Ouch!",
-        "Outrage"
       ]
   }
 }

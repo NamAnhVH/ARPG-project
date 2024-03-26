@@ -4,5 +4,10 @@
 
 [resource]
 script = ExtResource("1_7rmyi")
-global_position = null
-inventories = null
+global_position = Vector2(0, 0)
+inventory = {}
+equipment = {}
+health = 10
+max_health = 10
+money = 0
+z_index = 1

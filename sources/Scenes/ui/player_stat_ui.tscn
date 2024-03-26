@@ -13,7 +13,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="PlayerStatUI" type="NinePatchRect"]
 offset_right = 145.0
-offset_bottom = 120.0
+offset_bottom = 143.0
 texture = ExtResource("1_58tgx")
 region_rect = Rect2(32, 0, 24, 24)
 patch_margin_left = 16
@@ -55,6 +55,21 @@ offset_top = 3.0
 offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Level" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/Level"]
+layout_mode = 2
+text = "Level
+"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/Level"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
 
 [node name="AttackDamage" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
 layout_mode = 2

@@ -21,12 +21,10 @@ func _ready():
 	elif indicator_type == GameEnums.INDICATOR_TYPE.EMOTE_INDICATOR:
 		label.label_settings.font_color = Color("ff0000")
 
-
 func _process(delta):
 	if indicator_type == GameEnums.INDICATOR_TYPE.DAMAGE_INDICATOR:
 		global_position += speed * shift_direction * delta
 		speed = max(speed - friction * delta, 0)
 	elif indicator_type == GameEnums.INDICATOR_TYPE.EMOTE_INDICATOR:
 		global_position = get_parent().global_position + Vector2(-8, -20)
-		
-		
+

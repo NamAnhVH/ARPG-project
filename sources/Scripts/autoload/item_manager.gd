@@ -104,13 +104,13 @@ func generate_random_rarity(item, ilevel):
 	var rarity = GameEnums.RARITY.COMMON
 	var rng = randf()
 	if rng >= 0.99 and item.legendary_data:
-		item.rarity = GameEnums.RARITY.LEGENDARY
+		rarity = GameEnums.RARITY.LEGENDARY
 	elif rng >= 0.95:
-		item.rarity = GameEnums.RARITY.EPIC
+		rarity = GameEnums.RARITY.EPIC
 	elif rng >= 0.85:
-		item.rarity = GameEnums.RARITY.RARE
+		rarity = GameEnums.RARITY.RARE
 	elif rng >= 0.60:
-		item.rarity = GameEnums.RARITY.UNCOMMON
+		rarity = GameEnums.RARITY.UNCOMMON
 	
 	generate_rarity(item, ilevel, rarity)
 	return item

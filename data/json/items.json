@@ -12,9 +12,14 @@
 				"maximum": 22
 			},
 			{
-				"stat": "MOVE_SPEED",
-				"minimum": 2,
+				"stat": "CRIT_RATE",
+				"minimum": 5,
 				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 50,
+				"maximum": 100
 			}
 		],
 		"legendary": {
@@ -24,7 +29,6 @@
 				"minimum": 25,
 				"maximum": 25
 			}]
-	
 		}
 	},
 	"sword_v01": {
@@ -32,12 +36,27 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 2,
+		"level": 10,
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 22,
-				"maximum": 33
+				"minimum": 28,
+				"maximum": 36
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 2,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 80,
+				"maximum": 120
 			}
 		],
 		"legendary": {
@@ -54,12 +73,27 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 3,
+		"level": 20,
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 33,
-				"maximum": 40
+				"minimum": 35,
+				"maximum": 42
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 3,
+				"maximum": 7
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 100,
+				"maximum": 150
 			}
 		],
 		"legendary": {
@@ -76,12 +110,27 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 4,
+		"level": 30,
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 40,
-				"maximum": 45
+				"minimum": 42,
+				"maximum": 48
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 120,
+				"maximum": 180
 			}
 		],
 		"legendary": {
@@ -98,12 +147,27 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 5,
+		"level": 40,
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 45,
-				"maximum": 52
+				"minimum": 48,
+				"maximum": 55
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 7,
+				"maximum": 12
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 25,
+				"maximum": 30
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 150,
+				"maximum": 200
 			}
 		],
 		"legendary": {
@@ -126,6 +190,16 @@
 				"stat": "ATK",
 				"minimum": 30,
 				"maximum": 39
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 50,
+				"maximum": 100
 			}
 		]
 	},
@@ -138,8 +212,18 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 39,
+				"minimum": 35,
 				"maximum": 45
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 80,
+				"maximum": 120
 			}
 		]
 	},
@@ -152,8 +236,18 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 45,
+				"minimum": 40,
 				"maximum": 52
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 100,
+				"maximum": 150
 			}
 		]
 	},
@@ -166,8 +260,18 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 52,
+				"minimum": 45,
 				"maximum": 57
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 120,
+				"maximum": 180
 			}
 		]
 	},
@@ -180,8 +284,18 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 57,
+				"minimum": 50,
 				"maximum": 63
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 25,
+				"maximum": 30
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 150,
+				"maximum": 200
 			}
 		]
 	},

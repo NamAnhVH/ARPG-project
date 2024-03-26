@@ -41,6 +41,7 @@ general/balloon_path="res://sources/scenes/ui/balloon.tscn"
 
 window/size/viewport_width=800
 window/size/viewport_height=450
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -164,3 +165,5 @@ common/physics_ticks_per_second=75
 
 textures/canvas_textures/default_texture_filter=0
 2d/snap/snap_2d_transforms_to_pixel=true
+2d/sdf/oversize=3
+2d/sdf/scale=0

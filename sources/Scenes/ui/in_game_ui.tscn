@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dh0kcds7ama2w" path="res://sources/scenes/ui/player_equipment.tscn" id="2_vatp5"]
 [ext_resource type="PackedScene" uid="uid://bm8ioreu85dku" path="res://sources/scenes/ui/chest_container.tscn" id="3_2a0vc"]
 [ext_resource type="PackedScene" uid="uid://bhagkd1c6uibr" path="res://sources/scenes/ui/player_stat_ui.tscn" id="4_h45ma"]
-[ext_resource type="PackedScene" uid="uid://bv0v7uuyaela0" path="res://sources/scenes/ui/player_health_bar.tscn" id="5_lyoy4"]
+[ext_resource type="PackedScene" uid="uid://dfii8m8ffdwdp" path="res://sources/scenes/ui/progress_bar_container.tscn" id="6_c1ipy"]
 [ext_resource type="PackedScene" uid="uid://cqy7j7njemsll" path="res://sources/scenes/ui/shop_container.tscn" id="6_jxwyw"]
 [ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/ui/hotbar_container.tscn" id="7_r0a35"]
 
@@ -53,13 +53,7 @@ offset_top = 312.0
 offset_right = 190.0
 offset_bottom = 434.0
 
-[node name="PlayerHealthBar" parent="Window" instance=ExtResource("5_lyoy4")]
-visible = false
-layout_mode = 0
-offset_left = 51.0
-offset_top = 36.0
-offset_right = 243.0
-offset_bottom = 42.0
+[node name="ProgressBarContainer" parent="Window" instance=ExtResource("6_c1ipy")]
 
 [node name="ShopContainer" parent="Window" instance=ExtResource("6_jxwyw")]
 visible = false

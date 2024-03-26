@@ -13,6 +13,8 @@ func _ready():
 	base.texture = texture
 	attack_effect.texture = texture
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
+	damage_area.damage_amount = damage_amount
+	damage_area.knockback_strength = knockback_strength
 
 func _physics_process(delta):
 	if is_alive:
@@ -26,7 +28,6 @@ func _process(delta):
 		is_attacking = true
 		animation_tree.set("parameters/Attack/blend_position", navigation_agent.target_position - global_position)
 		animation_tree.set("parameters/conditions/is_attacking", is_attacking)
-
 
 func move_state():
 	var move_direction : Vector2
@@ -61,8 +62,6 @@ func _attack_finished():
 	is_attacking = false
 	animation_tree.set("parameters/conditions/is_attacking", is_attacking)
 
-func _die_finished():
-	queue_free()
 
 func _on_is_attacked():
 	animation_tree.set("parameters/conditions/is_attacked", true)

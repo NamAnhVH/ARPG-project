@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckb6kvjosdnlj"]
+[gd_scene load_steps=5 format=3 uid="uid://ckb6kvjosdnlj"]
 
 [ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="1_8utsy"]
+[ext_resource type="Script" path="res://sources/scripts/map/map.gd" id="1_rgvah"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_nisv8"]
 [ext_resource type="PackedScene" uid="uid://ded1w1y1piutp" path="res://sources/scenes/ui/in_game_ui.tscn" id="3_xybhv"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_rgvah")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

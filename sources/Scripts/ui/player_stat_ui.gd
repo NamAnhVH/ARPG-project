@@ -2,6 +2,7 @@ extends NinePatchRect
 
 @export var player_data : Resource
 
+@onready var lbl_level : Label = $StatContainer/VBoxContainer/Level/Stat
 @onready var lbl_atk : Label = $StatContainer/VBoxContainer/AttackDamage/Stat
 @onready var lbl_move_speed : Label = $StatContainer/VBoxContainer/MoveSpeed/Stat
 @onready var lbl_def : Label = $StatContainer/VBoxContainer/Defence/Stat
@@ -14,8 +15,13 @@ func _ready():
 	SignalManager.inventory_closed.connect(_on_inventory_closed)
 	for s in InventoryManager.equipment.slots:
 		s.item_changed.connect(_on_item_changed)
+	SignalManager.level_up.connect(_on_level_up)
 	player_data.changed.connect(_on_item_changed)
+	_on_level_up()
 	_on_item_changed()
+
+func _on_level_up():
+	lbl_level.text = str(player_data.level)
 
 func _on_item_changed():
 	lbl_atk.text = str(player_data.get_stat(GameEnums.STAT.ATK))

@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://5mq8h28hbgyr" path="res://sources/scenes/interactables/interactable_random_chest.tscn" id="12_e34tj"]
 [ext_resource type="PackedScene" uid="uid://b20oknxj3srm1" path="res://sources/scenes/interactables/interactable_treasure_chest.tscn" id="13_3ysnl"]
 
-
 [sub_resource type="TileMapPattern" id="TileMapPattern_p0jv7"]
 tile_data = PackedInt32Array(0, 1310720, 11, 65536, 1310720, 11, 131072, 1310720, 12, 1, 1245184, 11, 65537, 1245184, 11, 131073, 1245184, 12)
 
@@ -2122,7 +2121,6 @@ shape = SubResource("RectangleShape2D_8hchp")
 [node name="StairArea" type="Node" parent="."]
 
 [node name="StairArea" parent="StairArea" instance=ExtResource("5_a58ij")]
-visible = false
 z_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StairArea/StairArea"]

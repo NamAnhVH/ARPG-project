@@ -20,7 +20,7 @@ func set_info(item_info, rarity):
 
 func get_data():
 	return {
-		"affix_group": affix_group.id,
+		"affix_groups": affix_group.id,
 		"affix": affix.id,
 		"scale": scale
 	}

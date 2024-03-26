@@ -16,6 +16,7 @@ func has_save_file(file_path):
 	#
 
 func load_game():
+	SignalManager.inventory_closed.emit()
 	var save_path = SAVE_FOLDER + SAVE_FILE
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)

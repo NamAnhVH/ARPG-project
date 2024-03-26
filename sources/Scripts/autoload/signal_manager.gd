@@ -30,6 +30,9 @@ signal player_life_changed(health, max_health)
 signal heal_player(healing_amount)
 signal equip_item(item)
 signal unequip_item(equipment_type)
+signal gain_money(value: int)
+signal gain_exp(value: int)
+signal level_up()
 
 #ProgressBar
 signal set_health_bar(max_health, health)

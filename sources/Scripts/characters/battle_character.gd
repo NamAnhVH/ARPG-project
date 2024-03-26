@@ -31,6 +31,7 @@ func knockback(knockback_strength, damage_source_position: Vector2):
 func show_damage_indicator(amount):
 	var damage_indicator = ResourceManager.get_instance("indicator")
 	damage_indicator.text = str(amount)
+	damage_indicator.indicator_type = GameEnums.INDICATOR_TYPE.DAMAGE_INDICATOR
 	add_child(damage_indicator)
 
 ##Setget
@@ -44,6 +45,7 @@ func set_health(value, _is_hitted: bool = false):
 	health = clamp(health - value, 0, max_health)
 	if health <= 0:
 		is_dead.emit()
+		hitbox.queue_free()
 	return value
 
 #Signal Function

@@ -7,6 +7,9 @@ class_name PlayerData
 @export var health : int
 @export var max_health : int
 @export var money : int
+@export var z_index : int
+@export var experience : int = 0
+@export var level : int = 1
 
 var base_stats = {
 	GameEnums.STAT.ATK: 5,
@@ -18,9 +21,12 @@ func set_data(data):
 	global_position = data.global_position
 	inventory = data.inventory
 	equipment = data.equipment
-	health = data.health
-	max_health = data.max_health
-	money = data.money
+	health = data.health if data.has("health") and data.health != 0 else 10
+	max_health = data.max_health if data.has("max_health") and data.max_health != 0 else 10
+	money = data.money if data.has("money") else 0 
+	z_index = data.z_index if data.has("z_index") and data.z_index != 0 else 1
+	level = data.level if data.has("level") and level != 0 else 1
+	experience = data.experience if data.has("experience") else 0
 	emit_changed()
 
 func get_data():
@@ -30,7 +36,10 @@ func get_data():
 		"equipment": equipment,
 		"health": health,
 		"max_health" : max_health,
-		"money": money
+		"money": money,
+		"z_index": z_index,
+		"level": level,
+		"experience": experience
 	}
 
 func get_stat(stat):

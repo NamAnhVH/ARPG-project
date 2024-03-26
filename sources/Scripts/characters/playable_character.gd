@@ -48,6 +48,8 @@ func _ready():
 	SignalManager.equip_item.connect(_on_equip_item)
 	SignalManager.unequip_item.connect(_on_unequip_item)
 	SignalManager.set_player.connect(_on_data_changed)
+
+
 	player_data.changed.connect(_on_data_changed)
 	
 	_set_body_layer(5,4,3,2,1,0)
@@ -321,6 +323,14 @@ func set_player_data():
 	player_data.global_position = global_position
 	player_data.health = health
 	player_data.max_health = max_health
+	player_data.z_index = z_index
+
+func set_collision_value():
+	var current_collision_value = (z_index + 1) / 2
+	set_collision_layer_value(current_collision_value, true)
+	set_collision_mask_value(current_collision_value, true)
+	hitbox.set_collision_mask_value(current_collision_value + 16, true)
+	damage_area.set_collision_layer_value(current_collision_value + 20, true)
 
 #Thiết lập các tầng sprite body
 func _set_body_layer(base_index: int, one_hand_weapon_index: int, shield_index: int, spear_index: int, bow_index: int, quiver_index: int):
@@ -377,12 +387,20 @@ func _on_data_changed():
 	global_position = player_data.global_position
 	health = player_data.health
 	max_health = player_data.max_health
+	z_index = player_data.z_index
+	set_collision_value()
 
 func _on_equip_item(item: Item):
 	if item.equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
 		is_unequip_weapon = false
 		current_weapon = item
-		
+		if current_weapon.weapon_type == GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON:
+			one_hand_weapon.texture = ResourceManager.weapon_texture[current_weapon.weapon_type].stand_move_push[current_weapon.id]
+		elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.SPEAR:
+			spear.texture = ResourceManager.weapon_texture[current_weapon.weapon_type].stand_move_push[current_weapon.id]
+		elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.BOW:
+			bow.texture = ResourceManager.weapon_texture[current_weapon.weapon_type].stand_move_push[current_weapon.id]
+	
 	elif item.equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
 		if current_weapon and current_weapon.weapon_type == GameEnums.WEAPON_TYPE.SPEAR:
 			if item.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.SHIELD:

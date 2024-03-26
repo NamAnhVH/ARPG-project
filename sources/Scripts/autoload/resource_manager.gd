@@ -1,6 +1,7 @@
 extends Node
 
 const STAT_PATH = "res://data/json/stats.json"
+const LEVEL_PATH = "res://data/json/level.json"
 
 var sprites = {
 	"sword_v00": preload("res://assets/items/sword_v00.png"),
@@ -491,7 +492,14 @@ var player_character_texture = {
 }
 
 var arrow_texture = {
-	"quiver_v00": preload("res://assets/weapons/bow/attack/arrow/quiver_v00.png")
+	"quiver_v00": preload("res://assets/weapons/bow/attack/arrow/quiver_v00.png"),
+	"quiver_v01": preload("res://assets/weapons/bow/attack/arrow/quiver_v01.png"),
+	"quiver_v02": preload("res://assets/weapons/bow/attack/arrow/quiver_v02.png"),
+	"quiver_v03": preload("res://assets/weapons/bow/attack/arrow/quiver_v03.png"),
+	"quiver_v04": preload("res://assets/weapons/bow/attack/arrow/quiver_v04.png"),
+	"quiver_v05": preload("res://assets/weapons/bow/attack/arrow/quiver_v05.png"),
+	"quiver_v06": preload("res://assets/weapons/bow/attack/arrow/quiver_v06.png"),
+	"quiver_v07": preload("res://assets/weapons/bow/attack/arrow/quiver_v07.png")
 }
 
 var colors = {
@@ -503,6 +511,7 @@ var colors = {
 }
 
 var stat_info = {}
+var level_info = {}
 
 func _ready():
 	var file = FileAccess.open(STAT_PATH, FileAccess.READ)
@@ -511,6 +520,11 @@ func _ready():
 	for stat in data:
 		stat_info[GameEnums.STAT[stat]] = data[stat]
 	file.close()
+	
+	var level_file = FileAccess.open(LEVEL_PATH, FileAccess.READ)
+	level_info = JSON.parse_string(level_file.get_as_text())
+	
+	level_file.close()
 
 
 func set_font(font_size: int, color = "000000"):

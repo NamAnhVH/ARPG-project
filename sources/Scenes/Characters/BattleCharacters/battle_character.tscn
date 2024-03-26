@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://m7gcd725pp7p" path="res://sources/scenes/core/hitbox.tscn" id="3_cqoav"]
 [ext_resource type="Script" path="res://sources/scripts/core/damage_area.gd" id="4_nu7wf"]
 
-
 [node name="BattleCharacter" instance=ExtResource("1_j8mnv")]
 script = ExtResource("2_mgrvq")
 move_speed_unit = 5.0

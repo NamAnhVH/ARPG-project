@@ -9163,11 +9163,16 @@ font_size = 10
 
 [node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
 position = Vector2(0, -12)
-collision_layer = 2147483649
-collision_mask = 2147483649
+collision_layer = 2147483648
+collision_mask = 2147483648
+motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
+move_speed_unit = null
+knockback_modifier = null
+move_weight = null
+max_health = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -9201,14 +9206,14 @@ vframes = 8
 [node name="Hitbox" parent="." index="1"]
 visible = false
 collision_layer = 0
-collision_mask = 65536
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="1"]
 shape = SubResource("CapsuleShape2D_enwvx")
 
 [node name="DamageArea" parent="." index="2"]
 visible = false
-collision_layer = 1048576
+collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea" index="0"]
