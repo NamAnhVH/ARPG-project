@@ -20,5 +20,5 @@ func _on_player_life_changed(health, max_health):
 	can_use = health < health
 
 func execute():
-	SignalManager.heal_player.emit(healing_amount)
-	print(healing_amount)
+	SignalManager.heal_player.emit(-healing_amount)
+

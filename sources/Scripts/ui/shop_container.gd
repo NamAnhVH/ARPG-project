@@ -1,7 +1,7 @@
 extends NinePatchRect
 class_name Shop
 
-@onready var list_item_container : VBoxContainer = $MainContainer/ListItemContainer
+@onready var list_item_container : VBoxContainer = $MainContainer/ScrollContainer/ListItemContainer
 
 func _ready():
 	SignalManager.shop_opened.connect(_on_shop_opened)

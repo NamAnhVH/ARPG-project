@@ -2,14 +2,13 @@ extends NinePatchRect
 
 var current_equipment : Equipment
 
-@export var player_data : Resource
+@export var player_data : PlayerData
 
 func _ready():
 	SignalManager.inventory_opened.connect(_on_equipment_opened)
 	SignalManager.inventory_closed.connect(_on_equipment_closed)
 	SignalManager.set_equipment_data.connect(_set_equipment_data)
 	SignalManager.saving_game.connect(_on_saving_game)
-	SignalManager.set_player.connect(_on_changed_data)
 	player_data.changed.connect(_on_changed_data)
 	get_equipment_data()
 	_on_changed_data()
@@ -26,7 +25,8 @@ func _on_equipment_opened():
 	show()
 
 func _on_equipment_closed():
-	remove_child(current_equipment)
+	if get_child_count() > 0:
+		remove_child(current_equipment)
 	InventoryManager.add_hidden_node(current_equipment)
 	hide()
 

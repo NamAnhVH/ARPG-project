@@ -18,7 +18,7 @@ func get_data():
 	var data = []
 	for affix_item in affixes:
 		data.append(affix_item.get_data())
-		return data
+	return data
 
 func get_stat(stat):
 	var total = 0

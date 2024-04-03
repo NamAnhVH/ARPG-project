@@ -28,7 +28,8 @@ func _on_inventory_opened():
 	show()
 
 func _on_inventory_closed():
-	remove_child(current_inventory)
+	if current_inventory.get_parent() == self:
+		remove_child(current_inventory)
 	InventoryManager.add_hidden_node(current_inventory)
 	hide()
 

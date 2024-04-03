@@ -1,0 +1,221 @@
+{
+    "map_1": {
+        "neighbor": ["map_2", "map_6", "map_7"],
+        "right": "map_2",
+        "right_down": "map_7",
+        "down": "map_6"
+    },
+    "map_2": {
+        "neighbor": ["map_1", "map_3", "map_6", "map_7", "map_8"],
+        "right": "map_3",
+        "right_down": "map_8",
+        "down": "map_7",
+        "left_down": "map_6",
+        "left": "map_1"
+    },
+    "map_3": {
+        "neighbor": ["map_2", "map_4", "map_7", "map_8", "map_9"],
+        "right": "map_4",
+        "right_down": "map_9",
+        "down": "map_8",
+        "left_down": "map_7",
+        "left": "map_2"
+    },
+    "map_4": {
+        "neighbor": ["map_3", "map_5", "map_8", "map_9", "map_10"],
+        "right": "map_5",
+        "right_down": "map_10",
+        "down": "map_9",
+        "left_down": "map_8",
+        "left": "map_3"
+    },
+    "map_5": {
+        "neighbor": ["map_4", "map_9", "map_10"],
+        "down": "map_10",
+        "left_down": "map_9",
+        "left": "map_4"
+    },
+    "map_6": {
+        "neighbor": ["map_1", "map_2", "map_7", "map_11", "map_12"],
+        "up": "map_1",
+        "right_up": "map_2",
+        "right": "map_7",
+        "right_down": "map_12",
+        "down": "map_11"
+    },
+    "map_7": {
+        "neighbor": ["map_1", "map_2", "map_3", "map_6", "map_8", "map_11", "map_12", "map_13"],
+        "up": "map_2",
+        "right_up": "map_3",
+        "right": "map_8",
+        "right_down": "map_13",
+        "down": "map_12",
+        "left_down": "map_11",
+        "left": "map_6",
+        "left_up": "map_1"
+    },
+    "map_8": {
+        "neighbor": ["map_2", "map_3", "map_4", "map_7", "map_9", "map_12", "map_13", "map_14"],
+        "up": "map_3",
+        "right_up": "map_4",
+        "right": "map_9",
+        "right_down": "map_14",
+        "down": "map_13",
+        "left_down": "map_12",
+        "left": "map_7",
+        "left_up": "map_2"
+    },
+    "map_9": {
+        "neighbor": ["map_3", "map_4", "map_5", "map_8", "map_10", "map_13", "map_14", "map_15"],
+        "up": "map_4",
+        "right_up": "map_5",
+        "right": "map_10",
+        "right_down": "map_15",
+        "down": "map_14",
+        "left_down": "map_13",
+        "left": "map_8",
+        "left_up": "map_3"
+    },
+    "map_10": {
+        "neighbor": ["map_4", "map_5", "map_9", "map_14", "map_15"],
+        "up": "map_5",
+        "down": "map_15",
+        "left_down": "map_14",
+        "left": "map_9",
+        "left_up": "map_4"
+    },
+    "map_11": {
+        "neighbor": ["map_6", "map_7", "map_12", "map_16", "map_17"],
+        "up": "map_6",
+        "right_up": "map_7",
+        "right": "map_12",
+        "right_down": "map_17",
+        "down": "map_16"
+    },
+    "map_12": {
+        "neighbor": ["map_6", "map_7", "map_8", "map_11", "map_13", "map_16", "map_17", "map_18"],
+        "up": "map_7",
+        "right_up": "map_8",
+        "right": "map_13",
+        "right_down": "map_18",
+        "down": "map_17",
+        "left_down": "map_16",
+        "left": "map_11",
+        "left_up": "map_6"
+    },
+    "map_13": {
+        "neighbor": ["map_7", "map_8", "map_9", "map_12", "map_14", "map_17", "map_18", "map_19"],
+        "up": "map_8",
+        "right_up": "map_9",
+        "right": "map_14",
+        "right_down": "map_19",
+        "down": "map_18",
+        "left_down": "map_17",
+        "left": "map_12",
+        "left_up": "map_7"
+    },
+    "map_14": {
+        "neighbor": ["map_8", "map_9", "map_10", "map_13", "map_15", "map_18", "map_19", "map_20"],
+        "up": "map_9",
+        "right_up": "map_10",
+        "right": "map_15",
+        "right_down": "map_20",
+        "down": "map_19",
+        "left_down": "map_18",
+        "left": "map_13",
+        "left_up": "map_8"
+    },
+    "map_15": {
+        "neighbor": ["map_9", "map_10", "map_14", "map_19", "map_20"],
+        "up": "map_10",
+        "down": "map_20",
+        "left_down": "map_19",
+        "left": "map_14",
+        "left_up": "map_9"
+    },
+    "map_16": {
+        "neighbor": ["map_11", "map_12", "map_17", "map_21", "map_22"],
+        "up": "map_11",
+        "right_up": "map_12",
+        "right": "map_17",
+        "right_down": "map_22",
+        "down": "map_21"
+    },
+    "map_17": {
+        "neighbor": ["map_11", "map_12", "map_33", "map_16", "map_18", "map_21", "map_22", "map_23"],
+        "up": "map_12",
+        "right_up": "map_13",
+        "right": "map_18",
+        "right_down": "map_23",
+        "down": "map_22",
+        "left_down": "map_21",
+        "left": "map_16",
+        "left_up": "map_11"
+    },
+    "map_18": {
+        "neighbor": ["map_12", "map_13", "map_14", "map_17", "map_19", "map_22", "map_23", "map_24"],
+        "up": "map_13",
+        "right_up": "map_14",
+        "right": "map_19",
+        "right_down": "map_24",
+        "down": "map_23",
+        "left_down": "map_22",
+        "left": "map_17",
+        "left_up": "map_12"
+    },
+    "map_19": {
+        "neighbor": ["map_13", "map_14", "map_15", "map_18", "map_20", "map_23", "map_24", "map_25"],
+        "up": "map_14",
+        "right_up": "map_15",
+        "right": "map_20",
+        "right_down": "map_25",
+        "down": "map_24",
+        "left_down": "map_23",
+        "left": "map_18",
+        "left_up": "map_13"
+    },
+    "map_20": {
+        "neighbor": ["map_14", "map_15", "map_19", "map_24", "map_25"],
+        "up": "map_15",
+        "down": "map_25",
+        "left_down": "map_24",
+        "left": "map_19",
+        "left_up": "map_14"
+    },
+    "map_21": {
+        "neighbor": ["map_16", "map_17", "map_22"],
+        "up": "map_16",
+        "right_up": "map_17",
+        "right": "map_22"
+    },
+    "map_22": {
+        "neighbor": ["map_16", "map_17", "map_18", "map_21", "map_23"],
+        "up": "map_17",
+        "right_up": "map_18",
+        "right": "map_23",
+        "left": "map_21",
+        "left_up": "map_16"
+    },
+    "map_23": {
+        "neighbor": ["map_17", "map_18", "map_19", "map_22", "map_24"],
+        "up": "map_18",
+        "right_up": "map_19",
+        "right": "map_24",
+        "left": "map_22",
+        "left_up": "map_17"
+    },
+    "map_24": {
+        "neighbor": ["map_18", "map_19", "map_20", "map_23", "map_25"],
+        "up": "map_19",
+        "right_up": "map_20",
+        "right": "map_25",
+        "left": "map_23",
+        "left_up": "map_18"
+    },
+    "map_25": {
+        "neighbor": ["map_19", "map_20", "map_24"],
+        "up": "map_20",
+        "left": "map_24",
+        "left_up": "map_19"
+    }
+}

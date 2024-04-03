@@ -44,9 +44,14 @@ signal upgrade_item()
 signal has_upgradable_item(value)
 
 #Map
-signal change_map(world_id: String, location: Vector2)
+signal change_map(map_id: String)
+signal change_world(map_id: String, location: Vector2)
 signal set_player()
+signal clear_hidden_node()
 
 #SaveManager
 signal saving_game()
 
+#Change scene
+signal scene_transition_fade_out()
+signal scene_transition_fade_in()

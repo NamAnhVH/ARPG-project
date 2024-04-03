@@ -1,19 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://fsttyo8rq87n"]
+[gd_scene load_steps=9 format=3 uid="uid://fsttyo8rq87n"]
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_j7hlb"]
 [ext_resource type="Script" path="res://sources/scripts/map/world_manager.gd" id="2_eagn0"]
+[ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/characters/battleCharacters/playableCharacter/playable_character.tscn" id="2_u0g7d"]
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_5dv0b"]
 [ext_resource type="Script" path="res://sources/scripts/ui/user_interface_container.gd" id="3_gdkrc"]
 [ext_resource type="Resource" uid="uid://ux1xcdadgxto" path="res://data/resources/world_data.tres" id="4_77d44"]
+[ext_resource type="PackedScene" uid="uid://kijqsfj0y4gk" path="res://sources/scenes/ui/scene_transition.tscn" id="6_7wkih"]
+[ext_resource type="PackedScene" uid="uid://ded1w1y1piutp" path="res://sources/scenes/ui/in_game_ui.tscn" id="6_uughu"]
 
 [node name="main" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_j7hlb")
+
+[node name="PlayableCharacter" parent="." instance=ExtResource("2_u0g7d")]
+z_index = 1
+y_sort_enabled = true
 
 [node name="WorldManager" type="Node2D" parent="."]
 y_sort_enabled = true
 script = ExtResource("2_eagn0")
 player_data = ExtResource("3_5dv0b")
 world_data = ExtResource("4_77d44")
+
+[node name="InGameUI" parent="." instance=ExtResource("6_uughu")]
 
 [node name="User_interface" type="CanvasLayer" parent="."]
 
@@ -55,6 +65,8 @@ offset_top = 15.0
 offset_right = 801.0
 offset_bottom = 46.0
 text = "Quit"
+
+[node name="SceneTransition" parent="User_interface" instance=ExtResource("6_7wkih")]
 
 [connection signal="pressed" from="User_interface/UIContainer/Button/Save" to="User_interface/UIContainer" method="_on_save_pressed"]
 [connection signal="pressed" from="User_interface/UIContainer/Button/Load" to="User_interface/UIContainer" method="_on_load_pressed"]

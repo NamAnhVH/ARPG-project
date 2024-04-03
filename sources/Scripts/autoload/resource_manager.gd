@@ -2,6 +2,7 @@ extends Node
 
 const STAT_PATH = "res://data/json/stats.json"
 const LEVEL_PATH = "res://data/json/level.json"
+const MAP_PATH = "res://data/json/map.json"
 
 var sprites = {
 	"sword_v00": preload("res://assets/items/sword_v00.png"),
@@ -104,7 +105,32 @@ var tscn = {
 
 var world = {
 	"world_1": preload("res://sources/scenes/map/world_1.tscn"),
-	"village": preload("res://sources/scenes/map/village.tscn")
+	"village": preload("res://sources/scenes/map/village.tscn"),
+	"map_1": preload("res://sources/scenes/map/map_1.tscn"),
+	"map_2": preload("res://sources/scenes/map/map_2.tscn"),
+	"map_3": preload("res://sources/scenes/map/map_3.tscn"),
+	"map_4": preload("res://sources/scenes/map/map_4.tscn"),
+	"map_5": preload("res://sources/scenes/map/map_5.tscn"),
+	"map_6": preload("res://sources/scenes/map/map_6.tscn"),
+	"map_7": preload("res://sources/scenes/map/map_7.tscn"),
+	"map_8": preload("res://sources/scenes/map/map_8.tscn"),
+	"map_9": preload("res://sources/scenes/map/map_9.tscn"),
+	"map_10": preload("res://sources/scenes/map/map_10.tscn"),
+	"map_11": preload("res://sources/scenes/map/map_11.tscn"),
+	"map_12": preload("res://sources/scenes/map/map_12.tscn"),
+	"map_13": preload("res://sources/scenes/map/map_13.tscn"),
+	"map_14": preload("res://sources/scenes/map/map_14.tscn"),
+	"map_15": preload("res://sources/scenes/map/map_15.tscn"),
+	"map_16": preload("res://sources/scenes/map/map_16.tscn"),
+	"map_17": preload("res://sources/scenes/map/map_17.tscn"),
+	"map_18": preload("res://sources/scenes/map/map_18.tscn"),
+	"map_19": preload("res://sources/scenes/map/map_19.tscn"),
+	"map_20": preload("res://sources/scenes/map/map_20.tscn"),
+	"map_21": preload("res://sources/scenes/map/map_21.tscn"),
+	"map_22": preload("res://sources/scenes/map/map_22.tscn"),
+	"map_23": preload("res://sources/scenes/map/map_23.tscn"),
+	"map_24": preload("res://sources/scenes/map/map_24.tscn"),
+	"map_25": preload("res://sources/scenes/map/map_25.tscn")
 }
 
 var resources = {
@@ -512,6 +538,7 @@ var colors = {
 
 var stat_info = {}
 var level_info = {}
+var map_info = {}
 
 func _ready():
 	var file = FileAccess.open(STAT_PATH, FileAccess.READ)
@@ -525,6 +552,11 @@ func _ready():
 	level_info = JSON.parse_string(level_file.get_as_text())
 	
 	level_file.close()
+	
+	var map_file = FileAccess.open(MAP_PATH, FileAccess.READ)
+	map_info = JSON.parse_string(map_file.get_as_text())
+	
+	map_file.close()
 
 
 func set_font(font_size: int, color = "000000"):

@@ -201,8 +201,8 @@ func generate_legendary(item: Item):
 func set_legendary(item, scales):
 	item.item_name = item.legendary_data.name
 	item.components["legendary_stats"] = ItemLegendaryStats.new(item.legendary_data.stats, scales)
-	if item.unique_data.has("usable"):
-		set_usable(item, item.unique_data)
+	if item.legendary_data.has("usable"):
+		set_usable(item, item.legendary_data)
 
 func get_usable(data_usable, item):
 	return usable[data_usable.type].new(data_usable.data, item)

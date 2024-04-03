@@ -24,7 +24,7 @@ const BIAS = Vector2(0, 5)
  #Check trang bị hiện tại
 var current_weapon : Item
 var current_extra_weapon : Item
-var chill : int = 0
+
 
 #State
 var is_unequip_weapon : bool = true
@@ -47,8 +47,14 @@ func _ready():
 	super._ready()
 	SignalManager.equip_item.connect(_on_equip_item)
 	SignalManager.unequip_item.connect(_on_unequip_item)
+	
+	##Xoá sau
 	SignalManager.set_player.connect(_on_data_changed)
-
+	
+	#SignalManager.gain_money.connect(_on_gain_money)
+	#SignalManager.gain_exp.connect(_on_gain_exp)
+	
+	SignalManager.heal_player.connect(set_health)
 
 	player_data.changed.connect(_on_data_changed)
 	
@@ -344,7 +350,7 @@ func _set_body_layer(base_index: int, one_hand_weapon_index: int, shield_index: 
 func get_player_damage():
 	var damage_amount = player_data.get_stat(GameEnums.STAT.ATK)
 	var rnd = randf()
-	if rnd < player_data.get_stat(GameEnums.STAT.CRIT_RATE):
+	if rnd < player_data.get_stat(GameEnums.STAT.CRIT_RATE) / 100:
 		damage_amount += int(round(damage_amount * player_data.get_stat(GameEnums.STAT.CRIT_DAMAGE) / 100))
 	return damage_amount
 
@@ -380,10 +386,12 @@ func _on_item_dropped(item):
 	var floor_item = ResourceManager.tscn.floor_item.instantiate()
 	floor_item.item = item
 	current_map.floor_item.add_child(floor_item)
-	floor_item.position = position
+	floor_item.global_position = global_position
 	floor_item.set_z_index(self.z_index)
 
 func _on_data_changed():
+	player_data.global_position.x = fmod(player_data.global_position.x, 896)
+	player_data.global_position.y = fmod(player_data.global_position.y, 896)
 	global_position = player_data.global_position
 	health = player_data.health
 	max_health = player_data.max_health
@@ -400,6 +408,7 @@ func _on_equip_item(item: Item):
 			spear.texture = ResourceManager.weapon_texture[current_weapon.weapon_type].stand_move_push[current_weapon.id]
 		elif current_weapon.weapon_type == GameEnums.WEAPON_TYPE.BOW:
 			bow.texture = ResourceManager.weapon_texture[current_weapon.weapon_type].stand_move_push[current_weapon.id]
+		set_player_asset("stand_move_push")
 	
 	elif item.equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
 		if current_weapon and current_weapon.weapon_type == GameEnums.WEAPON_TYPE.SPEAR:
@@ -413,6 +422,7 @@ func _on_equip_item(item: Item):
 			elif item.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.QUIVER:
 				quiver.texture = ResourceManager.extra_weapon_texture[item.extra_weapon_type]["stand_move_push" if !is_attack_state else "move_idle"][item.id]
 		current_extra_weapon = item
+
 
 func _on_unequip_item(equipment_type):
 	remove_equipment_asset(equipment_type)
@@ -430,6 +440,18 @@ func _on_hitbox_damaged(amount, knockback_strength, damage_source, attacker):
 	else:
 		super._on_hitbox_damaged(amount, knockback_strength, damage_source, attacker)
 
+#func _on_gain_money(value):
+	#var indicator = ResourceManager.get_instance("indicator")
+	#indicator.text = str(value)
+	#indicator.indicator_type = GameEnums.INDICATOR_TYPE.MONEY_INDICATOR
+	#add_child(indicator)
+#
+#func _on_gain_exp(value):
+	#var indicator = ResourceManager.get_instance("indicator")
+	#indicator.text = str(value)
+	#indicator.indicator_type = GameEnums.INDICATOR_TYPE.EXP_INDICATOR
+	#add_child(indicator)
+
 ##Animation Function
 #Bắt đầu hoạt ảnh tấn công
 func _attack_started():
@@ -444,7 +466,7 @@ func _attack_finished(attack_type):
 func _shoot_arrow():
 	var arrow = ResourceManager.get_instance("arrow")
 	arrow.damage_amount = get_player_damage()
-	arrow.position = global_position
+	arrow.global_position = global_position
 	arrow.direction = mouse
 	arrow.attacker = self
 	if current_extra_weapon and current_extra_weapon.extra_weapon_type == GameEnums.EXTRA_WEAPON_TYPE.QUIVER:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://dis6wr2xh52am"]
 
-[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/Characters/BattleCharacters/Enemies/enemy_character.tscn" id="1_fqxlq"]
+[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy_character.tscn" id="1_fqxlq"]
 [ext_resource type="Texture2D" uid="uid://b0lrhvxsa1jhv" path="res://assets/monsters/gremlins/gremlin_v00.png" id="2_3x7cj"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="2_allb1"]
 

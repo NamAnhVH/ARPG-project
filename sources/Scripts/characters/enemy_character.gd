@@ -39,7 +39,7 @@ func drop_item():
 	var floor_item = ResourceManager.tscn.floor_item.instantiate()
 	floor_item.item = item
 	Global.current_map.floor_item.add_child(floor_item)
-	floor_item.position = position
+	floor_item.global_position = global_position
 	floor_item.set_z_index(self.z_index)
 
 func _on_detect_area_body_entered(body):

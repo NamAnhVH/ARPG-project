@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfq1tjn3b14n5"]
 
-[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/Characters/BattleCharacters/battle_character.tscn" id="1_ohiu0"]
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_ohiu0"]
 [ext_resource type="Script" path="res://sources/scripts/characters/enemy_character.gd" id="2_vofjr"]
 [ext_resource type="PackedScene" uid="uid://b6hrbjx21cb25" path="res://sources/scenes/ui/health_bar.tscn" id="3_kebyl"]
 [ext_resource type="PackedScene" uid="uid://bxdman2p7uqju" path="res://sources/scenes/core/attack_area.tscn" id="5_ksshh"]

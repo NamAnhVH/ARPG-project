@@ -12,6 +12,7 @@ func _ready():
 	for s in slots:
 		s.is_on_player = true
 
+
 func set_inventory_size(value):
 	inventory_size = value
 

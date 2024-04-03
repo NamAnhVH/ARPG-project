@@ -1,6 +1,6 @@
 [gd_scene load_steps=228 format=3 uid="uid://b33jnnf4nai64"]
 
-[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/Characters/BattleCharacters/battle_character.tscn" id="1_54hdu"]
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/characters/playable_character.gd" id="2_muque"]
 [ext_resource type="PackedScene" uid="uid://ba00tp4ce2gpf" path="res://sources/scenes/core/detect_layer_area.tscn" id="3_2bnah"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="3_7x3km"]
@@ -9169,10 +9169,6 @@ motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
-move_speed_unit = null
-knockback_modifier = null
-move_weight = null
-max_health = null
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -9238,7 +9234,6 @@ position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_t6cac")
 
 [node name="CollisionShape2D" parent="." index="5"]
-visible = false
 position = Vector2(0, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nnrn4")

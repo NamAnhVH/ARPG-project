@@ -20,6 +20,12 @@ func _ready():
 		shift_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1))
 	elif indicator_type == GameEnums.INDICATOR_TYPE.EMOTE_INDICATOR:
 		label.label_settings.font_color = Color("ff0000")
+	#elif indicator_type == GameEnums.INDICATOR_TYPE.MONEY_INDICATOR:
+		#label.label_settings.font_color = Color("dbbc16")
+		#label.label_settings.font_size = 10
+	#elif indicator_type == GameEnums.INDICATOR_TYPE.EXP_INDICATOR:
+		#label.label_settings.font_color = Color("7d83dc")
+		#label.label_settings.font_size = 10
 
 func _process(delta):
 	if indicator_type == GameEnums.INDICATOR_TYPE.DAMAGE_INDICATOR:
@@ -27,4 +33,8 @@ func _process(delta):
 		speed = max(speed - friction * delta, 0)
 	elif indicator_type == GameEnums.INDICATOR_TYPE.EMOTE_INDICATOR:
 		global_position = get_parent().global_position + Vector2(-8, -20)
+	#elif indicator_type == GameEnums.INDICATOR_TYPE.MONEY_INDICATOR:
+		#global_position = get_parent().global_position + Vector2(-8, -20)
+	#elif indicator_type == GameEnums.INDICATOR_TYPE.EXP_INDICATOR:
+		#global_position = get_parent().global_position + Vector2(0, -15)
 

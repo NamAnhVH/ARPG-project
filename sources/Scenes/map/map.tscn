@@ -1,28 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckb6kvjosdnlj"]
+[gd_scene load_steps=4 format=3 uid="uid://ckb6kvjosdnlj"]
 
-[ext_resource type="PackedScene" uid="uid://b33jnnf4nai64" path="res://sources/scenes/Characters/BattleCharacters/PlayableCharacter/playable_character.tscn" id="1_8utsy"]
 [ext_resource type="Script" path="res://sources/scripts/map/map.gd" id="1_rgvah"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_nisv8"]
-[ext_resource type="PackedScene" uid="uid://ded1w1y1piutp" path="res://sources/scenes/ui/in_game_ui.tscn" id="3_xybhv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx28p"]
+size = Vector2(896, 896)
 
 [node name="Map" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_rgvah")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(448, 448)
+shape = SubResource("RectangleShape2D_hx28p")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 format = 2
 
-[node name="PlayableCharacter" parent="." instance=ExtResource("1_8utsy")]
-
-[node name="Camera" parent="PlayableCharacter" node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("2_nisv8")]
-top_position = NodePath("../../CameraLimit/TopPosition")
-bottom_position = NodePath("../../CameraLimit/BottomPosition")
+[node name="Camera" parent="." node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("2_nisv8")]
+position = Vector2(0, -12)
+top_position = NodePath("../CameraLimit/TopPosition")
+bottom_position = NodePath("../CameraLimit/BottomPosition")
 
 [node name="CameraLimit" type="Node2D" parent="."]
 
 [node name="TopPosition" type="Marker2D" parent="CameraLimit"]
 
 [node name="BottomPosition" type="Marker2D" parent="CameraLimit"]
+position = Vector2(896, 896)
 
 [node name="ChangeLayerArea" type="Node2D" parent="."]
 
@@ -42,4 +51,4 @@ bottom_position = NodePath("../../CameraLimit/BottomPosition")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 
-[node name="InGameUI" parent="." instance=ExtResource("3_xybhv")]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

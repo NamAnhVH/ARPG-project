@@ -33,8 +33,6 @@ func _ready():
 	InventoryManager.add_hidden_node(inventory)
 	InventoryManager.add_hidden_node(equipment)
 
-
-
 func _process(delta):
 	if item_in_hand:
 		item_in_hand.position = get_viewport().get_mouse_position() + ITEM_OFFSET
@@ -62,10 +60,12 @@ func split_item(item):
 	item_in_hand_node.add_child(item_in_hand)
 
 func add_hidden_node(node):
-	hidden_nodes.add_child(node)
+	if node and node.get_parent() != hidden_nodes:
+		hidden_nodes.add_child(node)
 
 func remove_hidden_node(node):
-	hidden_nodes.remove_child(node)
+	if node and node.get_parent() == hidden_nodes:
+		hidden_nodes.remove_child(node)
 
 #Signal Function
 func _get_inventory_data():
@@ -156,3 +156,7 @@ func _on_void_gui_input(event):
 		item_in_hand_node.remove_child(item_in_hand)
 		SignalManager.item_dropped.emit(item_in_hand)
 		item_in_hand = null
+
+func _on_clear_hidden_node():
+	for c in hidden_nodes.get_children():
+		c.queue_free()

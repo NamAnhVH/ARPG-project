@@ -18,7 +18,7 @@ func _on_gain_exp(_value):
 	else:
 		value = new_exp
 	
-	player_data.experience = value
+	player_data.experience = int(value)
 
 func _init_exp_bar():
 	level = player_data.level

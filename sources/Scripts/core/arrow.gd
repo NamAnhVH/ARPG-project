@@ -16,14 +16,14 @@ var mark_value : int
 
 func _ready():
 	set_as_top_level(true)
-	look_at(position + direction)
+	look_at(global_position + direction)
 	sprite.texture = texture
 	damage_area.damage_amount = damage_amount
 	impact_detector.set_collision_mask_value(mark_value, true)
 
 func _physics_process(delta):
 	if start_time.is_stopped():
-		position += direction * speed * delta
+		global_position += direction * speed * delta
 
 func _on_life_time_timeout():
 	queue_free()
