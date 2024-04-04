@@ -100,7 +100,11 @@ var tscn = {
 	"arrow": preload("res://sources/scenes/core/arrow.tscn"),
 	"balloon": preload("res://sources/scenes/ui/balloon.tscn"),
 	"shop_slot_container": preload("res://sources/scenes/ui/shop_slot_container.tscn"),
-	"shop_slot": preload("res://sources/scenes/ui/shop_slot.tscn")
+	"shop_slot": preload("res://sources/scenes/ui/shop_slot.tscn"),
+	"setting_container": preload("res://sources/scenes/ui/setting_container.tscn"),
+	"add_file_save_button": preload("res://sources/scenes/ui/add_file_save_button.tscn"),
+	"file_saving_container": preload("res://sources/scenes/ui/file_saving_container.tscn"),
+	"save_slot": preload("res://sources/scenes/ui/save_slot.tscn")
 }
 
 var world = {

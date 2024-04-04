@@ -50,6 +50,8 @@ signal set_player()
 signal clear_hidden_node()
 
 #SaveManager
+signal close_file_saving_container
+signal update_file_saving_container
 signal saving_game()
 
 #Change scene

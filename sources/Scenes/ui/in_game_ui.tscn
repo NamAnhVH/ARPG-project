@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ded1w1y1piutp"]
+[gd_scene load_steps=11 format=3 uid="uid://ded1w1y1piutp"]
 
 [ext_resource type="Script" path="res://sources/scripts/ui/in_game_ui.gd" id="1_6gij8"]
 [ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inventory_container.tscn" id="1_jobbp"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dfii8m8ffdwdp" path="res://sources/scenes/ui/progress_bar_container.tscn" id="6_c1ipy"]
 [ext_resource type="PackedScene" uid="uid://cqy7j7njemsll" path="res://sources/scenes/ui/shop_container.tscn" id="6_jxwyw"]
 [ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/ui/hotbar_container.tscn" id="7_r0a35"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="9_ydmhi"]
+[ext_resource type="Texture2D" uid="uid://db2bfq5rpmc0o" path="res://assets/ui/setting_icon.png" id="10_3aq10"]
 
 [node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_6gij8")
@@ -21,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Inventory_container" parent="Window" instance=ExtResource("1_jobbp")]
+[node name="InventoryContainer" parent="Window" instance=ExtResource("1_jobbp")]
 visible = false
 layout_mode = 1
 offset_left = 247.0
@@ -76,3 +78,19 @@ offset_right = 101.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Setting" type="Button" parent="Window"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme = ExtResource("9_ydmhi")
+icon = ExtResource("10_3aq10")
+icon_alignment = 1
+
+[connection signal="pressed" from="Window/Setting" to="." method="_on_setting_pressed"]

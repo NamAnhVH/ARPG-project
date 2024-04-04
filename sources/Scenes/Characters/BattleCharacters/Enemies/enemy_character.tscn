@@ -28,7 +28,10 @@ autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="8"]
 
-[node name="HealthBar" parent="." index="9" instance=ExtResource("3_kebyl")]
+[node name="HealthBar" type="Node2D" parent="." index="9"]
+z_index = 1
+
+[node name="HealthBar" parent="HealthBar" index="0" instance=ExtResource("3_kebyl")]
 
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]

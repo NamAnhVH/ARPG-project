@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var texture : TextureRect = $TextureRect
 @onready var animation : AnimationPlayer = $AnimationPlayer
@@ -17,7 +17,6 @@ func _on_scene_transition_fade_out(_map_id, _location, _next_z_index):
 	map_id = _map_id
 	location = _location
 	next_z_index = _next_z_index
-	#get_tree().paused = true
 
 func _on_scene_transition_fade_in():
 	animation.queue("fade_in")
@@ -27,5 +26,4 @@ func _on_fade_out_finished():
 	SignalManager.set_player.emit()
 
 func _on_fade_in_finished():
-	#get_tree().paused = false
 	pass

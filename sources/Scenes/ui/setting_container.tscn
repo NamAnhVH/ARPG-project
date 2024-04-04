@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://caxwneo7qtynf"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_uingq"]
+[ext_resource type="Script" path="res://sources/scripts/ui/setting_container.gd" id="2_8pm3r"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_kyj1o"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="3_4cbis"]
+
+[node name="SettingContainer" type="NinePatchRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_uingq")
+region_rect = Rect2(0, 0, 24, 23)
+patch_margin_left = 8
+patch_margin_top = 12
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_8pm3r")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kyj1o")
+region_rect = Rect2(160, 0, 24, 24)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="SaveGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = -414.0
+offset_right = 387.0
+offset_bottom = -369.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4cbis")
+text = "Save Game"
+
+[node name="LoadGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = -355.0
+offset_right = 387.0
+offset_bottom = -310.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4cbis")
+text = "Load Game
+"
+
+[node name="QuitGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = -299.0
+offset_right = 387.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4cbis")
+text = "Quit Game
+"
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 305.0
+offset_top = -60.0
+offset_right = 378.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4cbis")
+text = "Close
+"
+
+[connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

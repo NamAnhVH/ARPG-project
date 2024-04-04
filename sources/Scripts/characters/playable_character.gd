@@ -390,8 +390,8 @@ func _on_item_dropped(item):
 	floor_item.set_z_index(self.z_index)
 
 func _on_data_changed():
-	player_data.global_position.x = fmod(player_data.global_position.x, 896)
-	player_data.global_position.y = fmod(player_data.global_position.y, 896)
+	player_data.global_position.x = fmod(fmod(player_data.global_position.x, 896) + 896, 896)
+	player_data.global_position.y = fmod(fmod(player_data.global_position.y, 896) + 896, 896)
 	global_position = player_data.global_position
 	health = player_data.health
 	max_health = player_data.max_health

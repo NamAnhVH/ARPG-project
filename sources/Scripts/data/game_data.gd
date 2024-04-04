@@ -5,6 +5,7 @@ class_name GameData
 @export var player_data : PlayerData
 @export var world_data : WorldData
 
+
 func set_data(data):
 	#setting_data.set_data(data.setting_data)
 	player_data.set_data(data.player_data)
