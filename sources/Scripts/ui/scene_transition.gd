@@ -8,6 +8,7 @@ var location
 var next_z_index
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	SignalManager.scene_transition_fade_out.connect(_on_scene_transition_fade_out)
 	SignalManager.scene_transition_fade_in.connect(_on_scene_transition_fade_in)
 	texture.visible = false

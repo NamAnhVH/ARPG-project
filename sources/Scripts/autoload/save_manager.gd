@@ -5,6 +5,7 @@ const SAVE_FOLDER = "user://save/"
 var game_data : GameData
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	game_data = ResourceManager.resources["game_data"]
 
 func has_save_file(file_path):
@@ -17,6 +18,7 @@ func new_game():
 	
 	if data != null:
 		game_data.set_data(data)
+
 
 func load_game(file_name):
 	SignalManager.inventory_closed.emit()

@@ -1,0 +1,30 @@
+~ start
+???: (Where am I?)
+???: You're awake now, huh.
+???: (Ouch, that hurts.)
+???: Are you okay?
+???: Who are you and where am I?
+Luna: My name is Luna, and this is my home.
+Luna: And you?
+???: I'm... uh...
+???: (What's my name again?)
+???: (My memories...)
+???: I can't remember.
+Luna: It seems like you lost your memory after the accident.
+Luna: You've been lying here for a month.
+???: A month? Really?
+Luna: I'm about to head out for a bit. You can explore around if you want.
+???: Thanks, see you later.
+Luna: Oh, before I go, I think you should come up with a name for yourself.
+???: (A name?)
+{{Global.player_name}}: How about {{Global.npc_name}}?
+Luna: That's a nice name.
+Luna: See ya.
+do SignalManager.luna_go_out.emit()
+=> END
+
+~ luna_go_out
+{{Global.player_name}}: Hmm, I think I should step outside for a bit.
+do SignalManager.change_next_story.emit()
+
+=> END

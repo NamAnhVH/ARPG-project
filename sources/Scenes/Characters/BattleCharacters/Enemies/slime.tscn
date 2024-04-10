@@ -1216,9 +1216,11 @@ graph_offset = Vector2(50, -10)
 y_sort_enabled = true
 script = ExtResource("2_fxcpq")
 max_active_area = 50
-list_item_dropped = Array[String]([])
 move_speed_unit = 1.0
+knockback_modifier = true
+move_weight = 0.2
 max_health = 2
+move_speed_unit = 1.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -1304,11 +1306,11 @@ autostart = true
 wait_time = 2.0
 autostart = true
 
-[node name="HealthBar" parent="." index="10"]
-offset_left = -12.0
-offset_top = -17.0
-offset_right = 12.0
-offset_bottom = -15.0
+[node name="HealthBar" parent="HealthBar" index="0"]
+offset_left = -11.0
+offset_top = -22.0
+offset_right = 11.0
+offset_bottom = -20.0
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]

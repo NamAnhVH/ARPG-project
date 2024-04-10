@@ -65,3 +65,6 @@ enum INDICATOR_TYPE {
 	MONEY_INDICATOR,
 	EXP_INDICATOR
 }
+
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS

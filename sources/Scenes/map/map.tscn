@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckb6kvjosdnlj"]
+[gd_scene load_steps=5 format=3 uid="uid://ckb6kvjosdnlj"]
 
 [ext_resource type="Script" path="res://sources/scripts/map/map.gd" id="1_rgvah"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_nisv8"]
+[ext_resource type="Resource" uid="uid://rm4mjcfxpq7f" path="res://data/resources/progress_data.tres" id="2_om41u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx28p"]
 size = Vector2(880, 880)
@@ -9,6 +10,7 @@ size = Vector2(880, 880)
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rgvah")
+process_data = ExtResource("2_om41u")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

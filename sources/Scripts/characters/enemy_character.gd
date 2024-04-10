@@ -10,7 +10,7 @@ class_name EnemyCharacter
 
 @onready var attack_cooldown_time: Timer = $Timers/AttackCooldownTime
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
-@onready var health_bar : ProgressBar = $HealthBar
+@onready var health_bar : ProgressBar = $HealthBar/HealthBar
 @onready var first_position = global_position
 @onready var random_position = first_position
 

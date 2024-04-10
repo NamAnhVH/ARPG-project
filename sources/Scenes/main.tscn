@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ded1w1y1piutp" path="res://sources/scenes/ui/in_game_ui.tscn" id="6_uughu"]
 
 [node name="main" type="Node2D"]
+process_mode = 3
 y_sort_enabled = true
 
 [node name="PlayableCharacter" parent="." instance=ExtResource("2_u0g7d")]

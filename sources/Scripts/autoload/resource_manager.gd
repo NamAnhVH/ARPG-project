@@ -3,6 +3,8 @@ extends Node
 const STAT_PATH = "res://data/json/stats.json"
 const LEVEL_PATH = "res://data/json/level.json"
 const MAP_PATH = "res://data/json/map.json"
+const QUEST_PATH = "res://data/json/quest.json"
+const STORY_PATH = "res://data/json/story.json"
 
 var sprites = {
 	"sword_v00": preload("res://assets/items/sword_v00.png"),
@@ -107,6 +109,10 @@ var tscn = {
 	"save_slot": preload("res://sources/scenes/ui/save_slot.tscn")
 }
 
+var character = {
+	"luna": preload("res://sources/scenes/characters/npcs/luna.tscn")
+}
+
 var world = {
 	"world_1": preload("res://sources/scenes/map/world_1.tscn"),
 	"village": preload("res://sources/scenes/map/village.tscn"),
@@ -134,7 +140,8 @@ var world = {
 	"map_22": preload("res://sources/scenes/map/map_22.tscn"),
 	"map_23": preload("res://sources/scenes/map/map_23.tscn"),
 	"map_24": preload("res://sources/scenes/map/map_24.tscn"),
-	"map_25": preload("res://sources/scenes/map/map_25.tscn")
+	"map_25": preload("res://sources/scenes/map/map_25.tscn"),
+	"luna_house": preload("res://sources/scenes/map/luna_house.tscn")
 }
 
 var resources = {
@@ -532,6 +539,11 @@ var arrow_texture = {
 	"quiver_v07": preload("res://assets/weapons/bow/attack/arrow/quiver_v07.png")
 }
 
+var dialogue = {
+	"merchant": preload("res://dialogues/merchant.dialogue"),
+	"start_game": preload("res://dialogues/start_game.dialogue")
+}
+
 var colors = {
 	GameEnums.RARITY.COMMON : "000000",
 	GameEnums.RARITY.UNCOMMON : "009623",
@@ -543,8 +555,12 @@ var colors = {
 var stat_info = {}
 var level_info = {}
 var map_info = {}
+var quest_info = {}
+var story_info = []
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	var file = FileAccess.open(STAT_PATH, FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
 	
@@ -554,14 +570,19 @@ func _ready():
 	
 	var level_file = FileAccess.open(LEVEL_PATH, FileAccess.READ)
 	level_info = JSON.parse_string(level_file.get_as_text())
-	
 	level_file.close()
 	
 	var map_file = FileAccess.open(MAP_PATH, FileAccess.READ)
 	map_info = JSON.parse_string(map_file.get_as_text())
-	
 	map_file.close()
-
+	
+	var quest_file = FileAccess.open(QUEST_PATH, FileAccess.READ)
+	quest_info = JSON.parse_string(quest_file.get_as_text())
+	quest_file.close()
+	
+	var story_file = FileAccess.open(STORY_PATH, FileAccess.READ)
+	story_info = JSON.parse_string(story_file.get_as_text())
+	story_file.close()
 
 func set_font(font_size: int, color = "000000"):
 	var label_setting = LabelSettings.new()
@@ -575,3 +596,6 @@ func get_instance(id):
 
 func get_map(id):
 	return world[id].instantiate()
+
+func get_character(id):
+	return character[id].instantiate()

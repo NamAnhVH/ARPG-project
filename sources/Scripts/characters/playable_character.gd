@@ -63,53 +63,63 @@ func _ready():
 	_on_data_changed()
 
 func _unhandled_input(event):
-	#Nhấn phím chuyển trạng thái sẵn sàng tấn công
-	if event.is_action_pressed("draw_sheath"):
-		if !is_unequip_weapon:
-			if is_attack_state:
-				sheath()
-			else:
-				draw()
-	
-	#Nhấn phím Attack
-	if event.is_action_pressed("attack"):
-		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and is_attack_state:
-			attack()
-	
-	#Nhấn phím tương tác
-	if event.is_action_pressed("interact") and current_interactable:
-		current_interactable.interact()
+	if !Global.paused:
+		#Nhấn phím chuyển trạng thái sẵn sàng tấn công
+		if event.is_action_pressed("draw_sheath"):
+			if !is_unequip_weapon:
+				if is_attack_state:
+					sheath()
+				else:
+					draw()
 		
-	#Nhấn phím đỡ đòn
-	if is_attack_state and !is_attacking and parry_timer.is_stopped():
-		if event.get_action_strength("dodge"):
-			is_parrying = true
-		elif event.is_action_released("dodge"):
-			if is_parrying:
-				is_parrying = false
-				parry_timer.start()
+		#Nhấn phím Attack
+		if event.is_action_pressed("attack"):
+			if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and is_attack_state:
+				attack()
+		
+		#Nhấn phím tương tác
+		if event.is_action_pressed("interact") and current_interactable:
+			current_interactable.interact()
+			
+		#Nhấn phím đỡ đòn
+		if is_attack_state and !is_attacking and parry_timer.is_stopped():
+			if event.get_action_strength("dodge"):
+				is_parrying = true
+			elif event.is_action_released("dodge"):
+				if is_parrying:
+					is_parrying = false
+					parry_timer.start()
 
 func _physics_process(_delta):
-	if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying:
-		move_state()
-
+	if !Global.paused:
+		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying:
+			move_state()
+	else: 
+		if !is_attack_state:
+			animation_tree.set("parameters/Base/conditions/is_running", false)
+			animation_tree.set("parameters/Base/conditions/is_standing", true)
+		else:
+			animation_tree.set("parameters/Attack_state/conditions/is_moving", false)
+			animation_tree.set("parameters/Attack_state/conditions/is_idling", true)
+		
 func _process(_delta):
-	if !current_interactable:
-		var overlapping_area = interactable_area.get_overlapping_areas()
+	if !Global.paused:
+		if !current_interactable:
+			var overlapping_area = interactable_area.get_overlapping_areas()
+			
+			if overlapping_area.size() > 0 and overlapping_area[0].has_method("interact"):
+				current_interactable = overlapping_area[0]
+				interactable_labels.display(current_interactable)
+			
+			var overlapping_body = interactable_area.get_overlapping_bodies()
+			if overlapping_body.size() > 0 and overlapping_body[0].has_method("interact"):
+				current_interactable = overlapping_body[0]
+				interactable_labels.display(current_interactable)
 		
-		if overlapping_area.size() > 0 and overlapping_area[0].has_method("interact"):
-			current_interactable = overlapping_area[0]
-			interactable_labels.display(current_interactable)
+		if player_data:
+			set_player_data()
 		
-		var overlapping_body = interactable_area.get_overlapping_bodies()
-		if overlapping_body.size() > 0 and overlapping_body[0].has_method("interact"):
-			current_interactable = overlapping_body[0]
-			interactable_labels.display(current_interactable)
-	
-	if player_data:
-		set_player_data()
-	
-	parry()
+		parry()
 
 ##State Function
 #Trạng thái di chuyển của nhân vật

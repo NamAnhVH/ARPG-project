@@ -16,7 +16,7 @@ signal chest_closed(chest: Chest)
 signal content_changed()
 
 #Shop
-signal set_shop(npc_name: String)
+#signal set_shop(npc_name: String)
 signal shop_opened(list_item : Array[ShopItem])
 signal shop_closed()
 signal shop_ready(shop: Shop)
@@ -57,3 +57,19 @@ signal saving_game()
 #Change scene
 signal scene_transition_fade_out()
 signal scene_transition_fade_in()
+
+#Dialogue
+signal show_dialogue(dialogue: String, branch: String)
+
+#Game
+signal pause_game
+signal resume_game
+
+#NPC Behavior
+signal luna_go_out
+
+#Story
+signal change_next_story
+
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS

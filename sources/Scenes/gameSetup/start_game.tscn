@@ -38,7 +38,8 @@ grow_vertical = 0
 theme = ExtResource("2_e2yhe")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_21m0g")
-text = "New Game"
+text = "New Game
+"
 
 [node name="LoadGame" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1

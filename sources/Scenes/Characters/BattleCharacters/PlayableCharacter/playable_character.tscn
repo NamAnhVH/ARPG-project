@@ -9169,6 +9169,11 @@ motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
+move_speed_unit = 5.0
+knockback_modifier = true
+move_weight = 0.2
+max_health = 10
+move_speed_unit = 5.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 

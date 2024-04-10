@@ -41,6 +41,7 @@ func _init():
 	randomize()
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	#Item
 	var item_file = FileAccess.open(ITEM_PATH, FileAccess.READ)
 	items = JSON.parse_string(item_file.get_as_text())

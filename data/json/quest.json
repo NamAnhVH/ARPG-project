@@ -1,0 +1,23 @@
+{
+	"main_quest": {
+		"1": {
+			"name": "Who am I?"
+		},
+		"2": {
+			"name": "Help the guard",
+			"reward": {
+				"money": 20,
+				"exp": 20
+			}
+		}
+	},
+	"side_quest": {
+		"1": {
+			"name": "Thu thập nguyên liệu",
+			"reward": {
+				"money": 20,
+				"exp": 20
+			}
+		}
+	}
+}

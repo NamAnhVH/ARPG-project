@@ -217,5 +217,8 @@
         "up": "map_20",
         "left": "map_24",
         "left_up": "map_19"
+    },
+    "luna_house": {
+
     }
 }
