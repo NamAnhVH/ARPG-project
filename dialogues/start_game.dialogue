@@ -17,14 +17,21 @@ Luna: I'm about to head out for a bit. You can explore around if you want.
 ???: Thanks, see you later.
 Luna: Oh, before I go, I think you should come up with a name for yourself.
 ???: (A name?)
-{{Global.player_name}}: How about {{Global.npc_name}}?
+do SignalManager.choose_player_name.emit()
+=> END
+
+~ choose_name_finished
+{{Global.player_name}}: How about {{Global.player_name}}?
 Luna: That's a nice name.
 Luna: See ya.
+do Global.paused = false
 do SignalManager.luna_go_out.emit()
+do SignalManager.change_next_progress.emit()
 => END
 
 ~ luna_go_out
 {{Global.player_name}}: Hmm, I think I should step outside for a bit.
-do SignalManager.change_next_story.emit()
+do Global.paused = false
+do SignalManager.change_next_progress.emit()
 
 => END

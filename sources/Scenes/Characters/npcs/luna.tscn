@@ -1,30 +1,15 @@
 [gd_scene load_steps=29 format=3 uid="uid://2d2a7e2kapp8"]
 
 [ext_resource type="PackedScene" uid="uid://bjmtni4gq7kuh" path="res://sources/scenes/characters/npcs/none_playable_character.tscn" id="1_opoh7"]
-[ext_resource type="Script" path="res://sources/scripts/characters/luna.gd" id="2_2kvpv"]
+[ext_resource type="Script" path="res://sources/scripts/characters/npcs/luna.gd" id="2_slfay"]
 [ext_resource type="Texture2D" uid="uid://bi55pa37e1gw2" path="res://assets/npcs/npc woman A v00.png" id="3_54i0c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gq7a"]
 radius = 6.0
 height = 18.0
 
-[sub_resource type="Animation" id="Animation_eg36f"]
-resource_name = "stand_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-
-[sub_resource type="Animation" id="Animation_a37mj"]
-resource_name = "stand_down"
+[sub_resource type="Animation" id="Animation_pwsro"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,8 +23,80 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_pwsro"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_7l5pm"]
+resource_name = "move_down"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_q3k2j"]
+resource_name = "move_left"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_rd7me"]
+resource_name = "move_right"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_oy5tp"]
+resource_name = "move_up"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_a37mj"]
+resource_name = "stand_down"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,6 +125,21 @@ tracks/0/keys = {
 "values": [12]
 }
 
+[sub_resource type="Animation" id="Animation_eg36f"]
+resource_name = "stand_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
 [sub_resource type="Animation" id="Animation_2cve8"]
 resource_name = "stand_up"
 tracks/0/type = "value"
@@ -81,78 +153,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_rd7me"]
-resource_name = "move_right"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 15]
-}
-
-[sub_resource type="Animation" id="Animation_q3k2j"]
-resource_name = "move_left"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 15]
-}
-
-[sub_resource type="Animation" id="Animation_oy5tp"]
-resource_name = "move_up"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [8, 9, 10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_7l5pm"]
-resource_name = "move_down"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vdr5g"]
@@ -237,17 +237,15 @@ states/Stand/position = Vector2(428, 72)
 transitions = ["Start", "Stand", SubResource("AnimationNodeStateMachineTransition_gq0jn"), "Stand", "Move", SubResource("AnimationNodeStateMachineTransition_n8tp0"), "Move", "Stand", SubResource("AnimationNodeStateMachineTransition_uph4q")]
 
 [node name="Luna" instance=ExtResource("1_opoh7")]
-script = ExtResource("2_2kvpv")
+script = ExtResource("2_slfay")
 object_name = "Luna"
 move_speed_unit = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_54i0c")
-frame = 0
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 9)
-rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2gq7a")
 
 [node name="AnimationPlayer" parent="." index="2"]
@@ -263,7 +261,7 @@ tree_root = SubResource("AnimationNodeStateMachine_7hnbf")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_moving = false
 parameters/conditions/is_standing = false
-parameters/Move/blend_position = Vector2(-0.52287, 0.285903)
+parameters/Move/blend_position = Vector2(0.370404, 0.0174602)
 parameters/Stand/blend_position = Vector2(0, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4"]

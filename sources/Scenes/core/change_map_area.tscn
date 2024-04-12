@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4inktsilomhw"]
-
-[ext_resource type="Script" path="res://sources/scripts/core/change_map_area.gd" id="1_dgnjj"]
-
-[node name="ChangeMapArea" type="Area2D"]
-script = ExtResource("1_dgnjj")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

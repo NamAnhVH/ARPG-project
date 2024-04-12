@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmxrmiim303yk"]
+
+[ext_resource type="Script" path="res://sources/scripts/ui/choose_name_panel.gd" id="1_0xogv"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="1_3we0l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbf7v"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.894118, 0.65098, 0.447059, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.454902, 0.247059, 0.223529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_1f66t"]
+Panel/styles/panel = SubResource("StyleBoxFlat_cbf7v")
+
+[node name="ChooseNamePanel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.5
+offset_top = -55.0
+offset_right = 164.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1f66t")
+script = ExtResource("1_0xogv")
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.5
+offset_top = 12.0
+offset_right = 150.5
+offset_bottom = 50.0
+grow_horizontal = 2
+placeholder_text = "Your Name"
+alignment = 1
+
+[node name="Accept" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -56.0
+offset_right = 43.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_3we0l")
+text = "Accept
+"
+
+[connection signal="pressed" from="Accept" to="." method="_on_accept_pressed"]

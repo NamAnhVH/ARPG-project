@@ -33,6 +33,8 @@ signal unequip_item(equipment_type)
 signal gain_money(value: int)
 signal gain_exp(value: int)
 signal level_up()
+signal choose_player_name
+signal player_name(player_name: String)
 
 #ProgressBar
 signal set_health_bar(max_health, health)
@@ -57,6 +59,7 @@ signal saving_game()
 #Change scene
 signal scene_transition_fade_out()
 signal scene_transition_fade_in()
+signal scene_transition_fade_in_finished
 
 #Dialogue
 signal show_dialogue(dialogue: String, branch: String)
@@ -69,7 +72,11 @@ signal resume_game
 signal luna_go_out
 
 #Story
-signal change_next_story
+signal change_next_progress
+signal update_main_quest(quest: String, progress: String)
+signal accept_side_quest(quest: String)
+signal show_quest
+signal show_quest_description(quest: String, type: String)
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS

@@ -1,0 +1,8 @@
+~ start
+
+{{Global.npc_name}}: ...
+{{Global.player_name}}: ...
+{{Global.npc_name}}: Don't disturb me
+do Global.paused = false
+
+=> END

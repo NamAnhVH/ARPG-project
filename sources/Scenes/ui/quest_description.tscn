@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsjorh20p5ogj"]
+
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="1_t72dj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrlci"]
+font = ExtResource("1_t72dj")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[node name="Description" type="Label"]
+custom_minimum_size = Vector2(160, 0)
+text = "Awakening in a strange land, the journey begins."
+label_settings = SubResource("LabelSettings_jrlci")
+autowrap_mode = 2

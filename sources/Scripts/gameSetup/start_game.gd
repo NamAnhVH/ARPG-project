@@ -13,7 +13,6 @@ func _on_close_file_saving_container():
 
 func _on_new_game_pressed():
 	SignalManager.scene_transition_fade_in.emit()
-	SaveManager.new_game()
 	get_tree().change_scene_to_file("res://sources/scenes/main.tscn")
 
 func _on_load_game_pressed():

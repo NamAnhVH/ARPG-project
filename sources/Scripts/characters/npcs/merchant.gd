@@ -6,7 +6,7 @@ extends NonePlayableCharacter
 	#SignalManager.set_shop.connect(open_shop)
 
 func interact():
-	super.interact()
+	Global.npc_name = object_name
 	SignalManager.show_dialogue.emit("merchant", "start")
 
 func open_shop(npc_name: String):

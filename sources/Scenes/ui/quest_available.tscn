@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://c8clisshffs7d"]
+
+[ext_resource type="Texture2D" uid="uid://dmupkhxysbof" path="res://assets/ui/QuestIcon.png" id="1_3v28n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntgq5"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g73cc"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylaav"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bosb6"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhdqi"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nf7d"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n6bn"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k42qg"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le4p2"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xjol"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmwhq"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmago"]
+atlas = ExtResource("1_3v28n")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcc24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntgq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g73cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylaav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bosb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhdqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nf7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n6bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k42qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le4p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xjol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmwhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmago")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="QuestAvailable" type="AnimatedSprite2D"]
+position = Vector2(0, -30)
+scale = Vector2(0.375, 0.375)
+sprite_frames = SubResource("SpriteFrames_xcc24")
+autoplay = "default"
+frame_progress = 0.765949

@@ -4,3 +4,10 @@
 
 [resource]
 script = ExtResource("1_hwnek")
+current_story = {
+"name": "start_game",
+"progress": ["start", "choose_name_finished", "luna_go_out"]
+}
+current_progress = "start"
+current_main_quest = {}
+current_side_quest = ""

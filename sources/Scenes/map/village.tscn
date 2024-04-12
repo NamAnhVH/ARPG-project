@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cuj7b4pkexm6j" path="res://assets/tilesets/village/village accessories 80x96.png" id="8_6dcg3"]
 [ext_resource type="Texture2D" uid="uid://c8p5mbqvmbk6j" path="res://assets/tilesets/village/bonus merchant goods.png" id="9_pnxvr"]
 [ext_resource type="Texture2D" uid="uid://bx7qsapx37wck" path="res://assets/tilesets/wall/low stone wall 16x16.png" id="10_c188d"]
-[ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_map_area.tscn" id="10_ho21b"]
+[ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="10_ho21b"]
 [ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/scenes/characters/npcs/merchant.tscn" id="11_h0e36"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ax2hm"]

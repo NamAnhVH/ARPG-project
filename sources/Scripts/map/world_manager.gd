@@ -54,7 +54,7 @@ func generate_world(current_map: Map):
 	current_world.append(current_map.map_id)
 	for map: Map in get_children():
 		if map != current_map:
-			if current_map_info.neighbor.find(map.map_id) == -1:
+			if current_map_info.has("neighbor") and current_map_info.neighbor.find(map.map_id) == -1:
 				map.queue_free()
 			else:
 				current_world.append(map.map_id)

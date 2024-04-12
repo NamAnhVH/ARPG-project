@@ -24,6 +24,8 @@ func move_state():
 func _on_luna_go_out():
 	navigation_agent.target_position = Vector2(129,-9)
 	is_moving = true
+	animation_tree.set("parameters/conditions/is_moving", is_moving)
+	Global.paused = true
 
 func _on_navigation_agent_2d_navigation_finished():
 	queue_free()

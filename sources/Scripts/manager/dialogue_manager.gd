@@ -8,4 +8,7 @@ func _on_show_dialogue(dialogue: String, branch: String):
 	Global.paused = true
 	var balloon = ResourceManager.get_instance("balloon")
 	add_child(balloon)
-	balloon.start(ResourceManager.dialogue[dialogue], branch)
+	if ResourceManager.dialogue.has(dialogue):
+		balloon.start(ResourceManager.dialogue[dialogue], branch.to_lower())
+	else:
+		balloon.start(ResourceManager.dialogue["default"], "start")

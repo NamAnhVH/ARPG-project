@@ -106,7 +106,11 @@ var tscn = {
 	"setting_container": preload("res://sources/scenes/ui/setting_container.tscn"),
 	"add_file_save_button": preload("res://sources/scenes/ui/add_file_save_button.tscn"),
 	"file_saving_container": preload("res://sources/scenes/ui/file_saving_container.tscn"),
-	"save_slot": preload("res://sources/scenes/ui/save_slot.tscn")
+	"save_slot": preload("res://sources/scenes/ui/save_slot.tscn"),
+	"choose_name_panel": preload("res://sources/scenes/ui/choose_name_panel.tscn"),
+	"quest_available": preload("res://sources/scenes/ui/quest_available.tscn"),
+	"quest_slot": preload("res://sources/scenes/ui/quest_slot.tscn"),
+	"quest_description": preload("res://sources/scenes/ui/quest_description.tscn")
 }
 
 var character = {
@@ -541,7 +545,9 @@ var arrow_texture = {
 
 var dialogue = {
 	"merchant": preload("res://dialogues/merchant.dialogue"),
-	"start_game": preload("res://dialogues/start_game.dialogue")
+	"start_game": preload("res://dialogues/start_game.dialogue"),
+	"default": preload("res://dialogues/default.dialogue"),
+	"main_quest_1": preload("res://dialogues/main_quest_1.dialogue")
 }
 
 var colors = {
@@ -559,8 +565,6 @@ var quest_info = {}
 var story_info = []
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	
 	var file = FileAccess.open(STAT_PATH, FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
 	

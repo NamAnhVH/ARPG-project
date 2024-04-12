@@ -1216,7 +1216,6 @@ graph_offset = Vector2(50, -10)
 y_sort_enabled = true
 script = ExtResource("2_fxcpq")
 max_active_area = 50
-move_speed_unit = 1.0
 knockback_modifier = true
 move_weight = 0.2
 max_health = 2

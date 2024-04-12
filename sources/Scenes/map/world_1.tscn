@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_sugm1"]
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="3_o6ddd"]
-[ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_map_area.tscn" id="4_pqqyw"]
+[ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="4_pqqyw"]
 [ext_resource type="Script" path="res://sources/scripts/core/change_layer_area.gd" id="4_yx5ck"]
 [ext_resource type="PackedScene" uid="uid://5mq8h28hbgyr" path="res://sources/scenes/interactables/interactable_random_chest.tscn" id="5_4oob0"]
 [ext_resource type="PackedScene" uid="uid://bl5nrfl5vxm56" path="res://sources/scenes/core/stair_area.tscn" id="5_l3wn2"]

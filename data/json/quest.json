@@ -1,16 +1,26 @@
 {
-	"main_quest": {
-		"1": {
-			"name": "Who am I?"
+	"main_quest": [
+		{
+			"id": "main_quest_1",
+			"name": "A new start?",
+			"progress": ["talk_to_villager_chief", "talk_to_guard", "kill_5_slimes"],
+			"description": "Awakening in a strange land, the journey begins.",
+			"reward": {
+				"money": 20,
+				"exp": 20
+			}
 		},
-		"2": {
-			"name": "Help the guard",
+		{
+			"id": "main_quest_2",
+			"name": "A new start?",
+			"progress": ["talk_to_villager_chief", "talk_to_guard", "kill_5_slimes"],
+			"description": "Awakening in a strange land, the journey begins.",
 			"reward": {
 				"money": 20,
 				"exp": 20
 			}
 		}
-	},
+	],
 	"side_quest": {
 		"1": {
 			"name": "Thu thập nguyên liệu",

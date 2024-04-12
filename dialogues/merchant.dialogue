@@ -8,5 +8,6 @@
 	{{Global.npc_name}}: Ah, looking to enhance something? Let's see what we can do.
 - No, thanks 
 	{{Global.npc_name}}: Ok bye.
+do Global.paused = false
 	
 => END

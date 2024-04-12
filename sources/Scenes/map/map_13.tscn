@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqwsdscgqcmtc"]
+[gd_scene load_steps=7 format=3 uid="uid://cqwsdscgqcmtc"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_ka0sk"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="2_wsygs"]
+[ext_resource type="PackedScene" uid="uid://bjmtni4gq7kuh" path="res://sources/scenes/characters/npcs/none_playable_character.tscn" id="3_yo7to"]
+[ext_resource type="Texture2D" uid="uid://c7anqctx8ou1v" path="res://assets/npcs/npc old man A v00.png" id="4_nqowf"]
+[ext_resource type="PackedScene" uid="uid://c8gmdyn4qgvur" path="res://sources/scenes/characters/npcs/raven.tscn" id="5_7ytr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cc1v"]
 size = Vector2(14, 14)
@@ -140,3 +143,15 @@ polygon = PackedVector2Array(288, 144, 352, 144, 352, 160, 405, 160, 415, 144, 4
 [node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="26"]
 position = Vector2(0, 624)
 polygon = PackedVector2Array(288, 144, 352, 144, 352, 160, 405, 160, 415, 144, 448, 144, 457, 160, 512, 160, 512, 22, 288, 25)
+
+[node name="Npcs" parent="." index="9"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Nova" parent="Npcs" index="0" instance=ExtResource("3_yo7to")]
+position = Vector2(880, 614)
+object_name = "Nova"
+texture = ExtResource("4_nqowf")
+
+[node name="Raven" parent="Npcs" index="1" instance=ExtResource("5_7ytr6")]
+position = Vector2(550, 456)

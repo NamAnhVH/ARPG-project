@@ -89,6 +89,10 @@ func _unhandled_input(event):
 				if is_parrying:
 					is_parrying = false
 					parry_timer.start()
+		
+		#Nhấn phím mở danh sách nhiệm vụ
+		if event.is_action_pressed("quest"):
+			SignalManager.show_quest.emit()
 
 func _physics_process(_delta):
 	if !Global.paused:

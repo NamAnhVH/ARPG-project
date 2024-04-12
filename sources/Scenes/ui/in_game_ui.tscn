@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ded1w1y1piutp"]
+[gd_scene load_steps=12 format=3 uid="uid://ded1w1y1piutp"]
 
 [ext_resource type="Script" path="res://sources/scripts/ui/in_game_ui.gd" id="1_6gij8"]
 [ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inventory_container.tscn" id="1_jobbp"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/ui/hotbar_container.tscn" id="7_r0a35"]
 [ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="9_ydmhi"]
 [ext_resource type="Texture2D" uid="uid://db2bfq5rpmc0o" path="res://assets/ui/setting_icon.png" id="10_3aq10"]
+[ext_resource type="PackedScene" uid="uid://dr51bs1uwwgk1" path="res://sources/scenes/ui/quest_container.tscn" id="11_n21v6"]
 
 [node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_6gij8")
@@ -92,5 +93,9 @@ grow_horizontal = 0
 theme = ExtResource("9_ydmhi")
 icon = ExtResource("10_3aq10")
 icon_alignment = 1
+
+[node name="QuestContainer" parent="Window" instance=ExtResource("11_n21v6")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="Window/Setting" to="." method="_on_setting_pressed"]
