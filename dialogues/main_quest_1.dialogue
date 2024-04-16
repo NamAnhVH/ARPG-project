@@ -11,15 +11,32 @@ Raven: The people here are hardworking and resilient, despite the challenges we 
 Raven: We're glad to have you here, {{Global.player_name}}. Your presence will surely be a boon to our community.
 Raven: Speaking of challenges, one of our guards reported trouble brewing to the north of our village.
 Raven: It seems they've encountered fierce creatures and strange occurrences in that area.
-{{Global.player_name}}: Sounds like trouble. I will go check a look
-do SignalManager.update_main_quest.emit("main_quest_1", "talk_to_guard")
-do SignalManager.change_next_progress.emit()
+{{Global.player_name}}: Sounds like trouble. I will go check a look.
+do SignalManager.update_main_quest.emit("main_quest_1")
 do Global.paused = false
 
 => END
 
-~ raven
+~ talk_to_guard_1
+Echo: Hello, you've been sent by the village chief to help us, right?
+Echo: Currently, this place is being harassed by a bunch of slimes.
+Echo: Can you help me defeat them?
+{{Global.player_name}}: Do you have any weapons I can borrow?
+Echo: Okay, here you go.
+do SignalManager.update_main_quest.emit("main_quest_1")
+do SignalManager.main_quest_1_talk_to_guard.emit()
+do Global.paused = false
+=> END
 
+~ talk_to_guard_2
+Echo: Wow, you've already defeated them, huh? That was quick.
+Echo: Here's your reward for you.
+{{Global.player_name}}: Thank you.
+do SignalManager.update_main_quest.emit("main_quest_1")
+do Global.paused = false
+=> END
+
+~ raven
 Raven: Hurry up, head north of the village. There are some troubles up there.
 {{Global.player_name}}: Ok, I'm on my way.
 do Global.paused = false

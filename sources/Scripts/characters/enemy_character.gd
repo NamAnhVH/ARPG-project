@@ -31,16 +31,16 @@ func set_health(value, _is_hitted: bool = false):
 	return value
 
 func drop_item():
-	var item = ItemManager.get_item(list_item_dropped[randi() % list_item_dropped.size()])
+	if list_item_dropped.size() > 0:
+		var item = ItemManager.get_item(list_item_dropped[randi() % list_item_dropped.size()])
+		if item.equipment_type != GameEnums.EQUIPMENT_TYPE.NONE:
+			ItemManager.generate_random_rarity(item, 100)
 		
-	if item.equipment_type != GameEnums.EQUIPMENT_TYPE.NONE:
-		ItemManager.generate_random_rarity(item, 100)
-	
-	var floor_item = ResourceManager.tscn.floor_item.instantiate()
-	floor_item.item = item
-	Global.current_map.floor_item.add_child(floor_item)
-	floor_item.global_position = global_position
-	floor_item.set_z_index(self.z_index)
+		var floor_item : FloorItem = ResourceManager.tscn.floor_item.instantiate()
+		floor_item.item = item
+		Global.current_map.floor_item.add_child(floor_item)
+		floor_item.global_position = global_position
+		floor_item.set_z_index(self.z_index)
 
 func _on_detect_area_body_entered(body):
 	if body is PlayableCharacter:
@@ -60,4 +60,5 @@ func _die_finished():
 	SignalManager.gain_money.emit(money_dropped)
 	SignalManager.gain_exp.emit(exp_dropped)
 	drop_item()
+	SignalManager.enemy_died.emit(self)
 	queue_free()

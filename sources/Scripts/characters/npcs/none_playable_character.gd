@@ -10,7 +10,8 @@ class_name NonePlayableCharacter
 var action = "talk"
 
 func _ready():
-	sprite.texture = texture
+	if !sprite.texture:
+		sprite.texture = texture
 
 func interact():
 	Global.npc_name = object_name

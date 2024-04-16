@@ -17,17 +17,19 @@ func _ready():
 	damage_area.knockback_strength = knockback_strength
 
 func _physics_process(delta):
-	if is_alive:
-		move_state()
+	if !Global.paused:
+		if is_alive:
+			move_state()
 
 func _process(delta):
-	if global_position.distance_to(random_position) < 5:
-		generate_random_position()
-	if is_ready_attack and attack_cooldown_time.is_stopped():
-		attack_cooldown_time.start()
-		is_attacking = true
-		animation_tree.set("parameters/Attack/blend_position", navigation_agent.target_position - global_position)
-		animation_tree.set("parameters/conditions/is_attacking", is_attacking)
+	if !Global.paused:
+		if global_position.distance_to(random_position) < 5:
+			generate_random_position()
+		if is_ready_attack and attack_cooldown_time.is_stopped():
+			attack_cooldown_time.start()
+			is_attacking = true
+			animation_tree.set("parameters/Attack/blend_position", navigation_agent.target_position - global_position)
+			animation_tree.set("parameters/conditions/is_attacking", is_attacking)
 
 func move_state():
 	var move_direction : Vector2

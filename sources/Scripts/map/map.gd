@@ -13,10 +13,6 @@ class_name Map
 var is_pause : bool = false
 var balloon
 
-func _ready():
-	#SignalManager.scene_transition_fade_in.emit()
-	pass
-
 
 func _process(delta):
 	if enemies.get_child_count() > 0:

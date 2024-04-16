@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv2ivqdntsvlc"]
+[gd_scene load_steps=6 format=3 uid="uid://bv2ivqdntsvlc"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_xf0ur"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_6j6yg"]
+[ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/characters/battleCharacters/enemies/slime.tscn" id="3_63m6b"]
+[ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="4_3uhrj"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2sbmu"]
+vertices = PackedVector2Array(82, 485, 102, 503, 28, 534, 5, 885, 4, 872, 25, 878, 382, 862, 378, 818, 427, 826, 405, 869, 177, 569, 175, 558, 244, 555, 9, 752, 6, 209, 28, 210, 19, 623, 871, 360, 726, 359, 728, 211, 892, 211, 118, 389, 121, 392, 119, 394, 94, 405, 892, 890, 405, 884, 435, 796, 569, 792, 591, 540, 591, 524, 641, 523, 244, 429, 223, 426, 224, 416, 278, 415, 250, 442, 316, 442, 312, 261, 284, 341, 118, 405, 158, 884, 161, 830, 212, 822, 260, 883, 745, 493, 750, 474, 792, 475, 796, 460, 878, 460, 569, 745, 168, 769, 154, 767, 148, 732, 178, 757, 154, 194, 200, 192, 118, 342, 104, 245, 335, 247, 205, 180, 311, 180, 335, 193, 62, 245, 253, 542, 386, 544, 401, 564, 97, 622, 125, 575, 662, 495, 541, 564, 553, 545, 115, 740, 104, 752, 303, 743, 198, 758, 277, 887, 218, 776)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 26, 9, 8), PackedInt32Array(25, 8, 27, 28), PackedInt32Array(29, 30, 31), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(36, 32, 35, 37), PackedInt32Array(38, 37, 35, 39), PackedInt32Array(23, 40, 24), PackedInt32Array(41, 42, 43, 44), PackedInt32Array(45, 46, 47), PackedInt32Array(47, 48, 49), PackedInt32Array(47, 49, 25, 28, 50, 45), PackedInt32Array(51, 52, 53, 54), PackedInt32Array(55, 56, 38, 39, 57, 58), PackedInt32Array(59, 38, 56, 60, 61, 62), PackedInt32Array(24, 63, 58, 57, 21), PackedInt32Array(12, 64, 65, 66), PackedInt32Array(67, 68, 10), PackedInt32Array(31, 69, 45, 50), PackedInt32Array(70, 71, 29, 50), PackedInt32Array(67, 72, 73, 13, 16), PackedInt32Array(63, 24, 0, 2, 15), PackedInt32Array(12, 66, 74, 75, 54, 53, 67, 10), PackedInt32Array(3, 5, 41), PackedInt32Array(76, 3, 41), PackedInt32Array(44, 76, 41), PackedInt32Array(74, 44, 43, 77), PackedInt32Array(74, 77, 75), PackedInt32Array(49, 17, 20), PackedInt32Array(49, 20, 25), PackedInt32Array(29, 31, 50), PackedInt32Array(70, 50, 74, 66), PackedInt32Array(67, 53, 72), PackedInt32Array(15, 2, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(428, 787, 420, 815, 367, 806, 373, 871, 395, 877, 395, 894, 902, 901, 903, 201, 719, 202, 716, 369, 862, 370, 867, 450, 789, 451, 785, 465, 742, 464, 737, 483, 658, 486, 636, 513, 581, 515, 581, 531, 548, 536, 536, 554, 406, 554, 392, 535, 249, 532, 239, 545, 165, 549, 166, 560, 119, 566, 91, 612, 30, 613, 37, 541, 121, 507, 93, 481, 103, 415, 128, 415, 129, 400, 139, 395, 128, 385, 128, 352, 273, 351, 269, 405, 215, 407, 213, 436, 237, 438, 244, 453, 327, 452, 322, 267, 345, 254, 346, 187, 314, 170, 198, 170, 193, 182, 150, 185, 100, 235, 66, 235, 33, 201, -4, 199, -1, 762, 108, 762, 120, 749, 140, 744, 146, 777, 173, 780, 183, 767, 194, 768, 207, 780, 203, 813, 152, 822, 149, 874, 27, 868, -6, 858, -4, 895, 363, 898, 273, 876, 310, 753, 559, 755, 559, 782)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Map3" instance=ExtResource("1_xf0ur")]
 map_id = "map_3"
@@ -32,3 +40,78 @@ polygon = PackedVector2Array(20, 756, -18, 771, 7, 868, 36, 866, 56, 879, 148, 8
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="2"]
 polygon = PackedVector2Array(397, 896, 395, 876, 372, 869, 367, 804, 417, 812, 419, 786, 560, 784, 559, 761, 313, 755, 274, 873, 285, 882, 359, 897)
+
+[node name="Slime" type="Node2D" parent="Enemies" index="0"]
+y_sort_enabled = true
+position = Vector2(806, 740)
+
+[node name="Slime" parent="Enemies/Slime" index="0" instance=ExtResource("3_63m6b")]
+position = Vector2(-145, -118)
+texture = ExtResource("4_3uhrj")
+damage_amount = 1
+knockback_strength = 2
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime2" parent="Enemies/Slime" index="1" instance=ExtResource("3_63m6b")]
+position = Vector2(-76, 10)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime3" parent="Enemies/Slime" index="2" instance=ExtResource("3_63m6b")]
+position = Vector2(-44, 68)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+exp_dropped = 100
+
+[node name="Slime4" parent="Enemies/Slime" index="3" instance=ExtResource("3_63m6b")]
+position = Vector2(55, -87)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime5" parent="Enemies/Slime" index="4" instance=ExtResource("3_63m6b")]
+position = Vector2(-157, 9)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime6" parent="Enemies/Slime" index="5" instance=ExtResource("3_63m6b")]
+position = Vector2(16, 25)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime7" parent="Enemies/Slime" index="6" instance=ExtResource("3_63m6b")]
+position = Vector2(-22, -44)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime8" parent="Enemies/Slime" index="7" instance=ExtResource("3_63m6b")]
+position = Vector2(-73, -137)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime9" parent="Enemies/Slime" index="8" instance=ExtResource("3_63m6b")]
+position = Vector2(16, -225)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime10" parent="Enemies/Slime" index="9" instance=ExtResource("3_63m6b")]
+position = Vector2(-114, -59)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime11" parent="Enemies/Slime" index="10" instance=ExtResource("3_63m6b")]
+position = Vector2(0, -140)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime12" parent="Enemies/Slime" index="11" instance=ExtResource("3_63m6b")]
+position = Vector2(-84, -191)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime13" parent="Enemies/Slime" index="12" instance=ExtResource("3_63m6b")]
+position = Vector2(34, 97)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="NavigationRegion2D" parent="." index="12"]
+navigation_polygon = SubResource("NavigationPolygon_2sbmu")

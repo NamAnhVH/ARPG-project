@@ -33,5 +33,6 @@ do SignalManager.change_next_progress.emit()
 {{Global.player_name}}: Hmm, I think I should step outside for a bit.
 do Global.paused = false
 do SignalManager.change_next_progress.emit()
+do SignalManager.update_main_quest.emit("main_quest_1")
 
 => END

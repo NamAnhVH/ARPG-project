@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://etb0nlplthmp"]
+[gd_scene load_steps=4 format=3 uid="uid://etb0nlplthmp"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_p3317"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_tbmok"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y2fdd"]
+vertices = PackedVector2Array(443, 258, 363, 262, 328, 258, 328, 235, 368, 122, 473, 221, 473, 242, 897, 197, 916, 934, 899, 736, 896, 617, 282, 376, 84, 448, 71, 434, 177, 386, 583, 181, 685, 178, 802, 267, 781, 267, 501, 242, 501, 221, 823, 833, 856, 833, 566, 870, 566, 846, 855, 417, 855, 396, 662, 322, 712, 329, 543, 352, 631, 322, 326, 788, 326, 764, 336, 744, 452, 811, 426, 827, 391, 827, 833, 595, 809, 546, 809, 525, 824, 417, 156, 386, 71, 412, 856, 812, 824, 396, 802, 288, 833, 159, 222, 352, 243, 352, 177, 365, 294, 258, 285, 318, 243, 331, 222, 331, 612, 562, 604, 527, 623, 540, 708, 644, 292, 132, 291, 131, 242, 629, 186, 689, 132, 610, 132, 589, 107, 550, 111, 589, 83, 546, 83, 525, 701, 163, 807, 706, 823, 812, 688, 776, -81, 913, -81, 194, 58, 199, 40, 412, 537, 846, 537, 870, 426, 849, 62, 525, 40, 434, 506, 130, 601, 693, 567, 796, 748, 644, 775, 546, 781, 288, 662, 300, 631, 300, 459, 637, 601, 652, 432, 649, 775, 525, 780, 472, 774, 373, 361, 404, 510, 388, 532, 421, 490, 467, 426, 477, 313, 448, 398, 514, 314, 513, 371, 645, 391, 564, 562, 808, 701, 541, 156, 365, 166, 181, 188, 164, 215, 164, 83, 177, 336, 743, 298, 764, 391, 849, 298, 788, 111, 610, 241, 148, 294, 235, 62, 546)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19, 20), PackedInt32Array(21, 22, 8, 23, 24), PackedInt32Array(7, 10, 25, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(31, 32, 33, 34, 35, 36), PackedInt32Array(25, 10, 37, 38, 39, 40), PackedInt32Array(41, 14, 13, 42), PackedInt32Array(9, 8, 22, 43), PackedInt32Array(7, 26, 44, 45, 17, 46), PackedInt32Array(47, 48, 11, 14, 49), PackedInt32Array(50, 2, 1, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 59, 4), PackedInt32Array(60, 61, 62, 63), PackedInt32Array(51, 11, 48, 52), PackedInt32Array(12, 64, 65, 66, 67), PackedInt32Array(68, 46, 17, 16), PackedInt32Array(69, 9, 43, 70, 71), PackedInt32Array(72, 73, 74, 75), PackedInt32Array(76, 77, 78, 35, 34), PackedInt32Array(13, 12, 67, 79, 80), PackedInt32Array(4, 81, 15, 20, 5), PackedInt32Array(70, 21, 24, 71), PackedInt32Array(82, 71, 24, 83), PackedInt32Array(38, 37, 84, 85), PackedInt32Array(19, 18, 86, 87, 88, 0, 6), PackedInt32Array(89, 90, 82, 83, 91), PackedInt32Array(40, 39, 92, 93), PackedInt32Array(28, 27, 87, 86), PackedInt32Array(64, 60, 63), PackedInt32Array(64, 63, 65), PackedInt32Array(94, 86, 45, 44, 40, 93), PackedInt32Array(95, 96, 97, 98, 99, 100), PackedInt32Array(100, 99, 101, 102), PackedInt32Array(103, 102, 101, 104), PackedInt32Array(103, 104, 89, 91), PackedInt32Array(105, 83, 24), PackedInt32Array(105, 24, 76, 34), PackedInt32Array(84, 57, 56, 106, 85), PackedInt32Array(92, 85, 106), PackedInt32Array(92, 106, 93), PackedInt32Array(86, 94, 28), PackedInt32Array(53, 47, 49, 107, 108, 109, 110), PackedInt32Array(107, 41, 42, 75, 74, 111), PackedInt32Array(88, 30, 29, 0), PackedInt32Array(61, 112, 33, 32, 113), PackedInt32Array(23, 8, 72, 77), PackedInt32Array(78, 77, 72, 114), PackedInt32Array(31, 36, 114, 72, 115), PackedInt32Array(113, 115, 72, 61), PackedInt32Array(62, 61, 72, 116), PackedInt32Array(117, 58, 4, 3, 118, 110), PackedInt32Array(119, 66, 65, 116, 72), PackedInt32Array(110, 118, 50, 53), PackedInt32Array(111, 108, 107), PackedInt32Array(72, 75, 80), PackedInt32Array(119, 72, 80, 79)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-92, 923, -91, 184, 54, 189, 79, 167, 163, 171, 185, 154, 212, 154, 238, 138, 289, 122, 368, 112, 509, 121, 586, 171, 681, 168, 698, 154, 837, 149, 907, 191, 927, 945), PackedVector2Array(547, 856, 547, 860, 556, 860, 556, 856), PackedVector2Array(308, 774, 308, 778, 316, 778, 316, 774), PackedVector2Array(121, 599, 121, 600, 122, 600, 122, 599), PackedVector2Array(72, 535, 72, 536, 73, 536, 73, 535), PackedVector2Array(50, 422, 50, 424, 61, 424, 61, 422), PackedVector2Array(166, 375, 166, 376, 167, 376, 167, 375), PackedVector2Array(232, 341, 232, 342, 233, 342, 233, 341), PackedVector2Array(304, 245, 304, 248, 318, 248, 318, 245), PackedVector2Array(483, 231, 483, 232, 491, 232, 491, 231), PackedVector2Array(641, 310, 641, 312, 652, 312, 652, 310), PackedVector2Array(791, 277, 791, 278, 792, 278, 792, 277), PackedVector2Array(834, 406, 834, 407, 845, 407, 845, 406), PackedVector2Array(785, 535, 785, 536, 799, 536, 799, 535), PackedVector2Array(833, 822, 833, 823, 846, 823, 846, 822), PackedVector2Array(540, 363, 439, 268, 366, 272, 295, 323, 292, 383, 96, 454, 116, 544, 258, 627, 204, 685, 341, 735, 455, 801, 555, 798, 427, 659, 365, 655, 305, 515, 303, 444, 358, 395, 515, 378, 545, 422, 495, 477, 432, 486, 408, 518, 402, 561, 464, 627, 611, 644, 611, 689, 689, 764, 806, 695, 889, 722, 886, 624, 833.859, 606.112, 752, 655, 705, 654, 603, 568, 589, 507, 626, 530, 697, 531, 770, 468, 764, 378, 709, 339), PackedVector2Array(401, 837, 401, 839, 416, 839, 416, 837)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Map4" instance=ExtResource("1_p3317")]
 map_id = "map_4"
@@ -15,6 +21,9 @@ layer_1/name = "floor_1"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(1507331, 1, 9, 1179662, 655361, 10, 786451, 1, 9, 720926, 327681, 10, 1048616, 1, 9, 917553, 655361, 10, 1441844, 1, 9, 1966129, 327681, 10, 1310730, 655361, 10, 2228231, 655361, 10, 1966084, 655361, 10, 2949139, 1, 9, 3211289, 1, 9, 3145780, 1, 9, 3276834, 327681, 10)
+
+[node name="CollisionArea" parent="." index="7"]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionArea" index="0"]
 
@@ -82,3 +91,7 @@ polygon = PackedVector2Array(47, 418, 47, 431, 62, 431, 62, 418)
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="16"]
 position = Vector2(738, -146)
 polygon = PackedVector2Array(47, 418, 47, 431, 62, 431, 62, 418)
+
+[node name="NavigationRegion2D" parent="." index="12"]
+visible = true
+navigation_polygon = SubResource("NavigationPolygon_y2fdd")

@@ -3,7 +3,7 @@ class_name PlayableCharacter
 
 const BIAS = Vector2(0, 5)
 
-@export var player_data : Resource
+@export var player_data : PlayerData
 @export var player_base_id: String
 
 @onready var body : Node2D = $Body
@@ -55,6 +55,7 @@ func _ready():
 	#SignalManager.gain_exp.connect(_on_gain_exp)
 	
 	SignalManager.heal_player.connect(set_health)
+	SignalManager.level_up.connect(_on_level_up)
 
 	player_data.changed.connect(_on_data_changed)
 	
@@ -124,6 +125,7 @@ func _process(_delta):
 			set_player_data()
 		
 		parry()
+
 
 ##State Function
 #Trạng thái di chuyển của nhân vật
@@ -342,7 +344,7 @@ func set_equipment_asset(asset_type: String):
 func set_player_data():
 	player_data.global_position = global_position
 	player_data.health = health
-	player_data.max_health = max_health
+	#player_data.max_health = max_health
 	player_data.z_index = z_index
 
 func set_collision_value():
@@ -408,9 +410,14 @@ func _on_data_changed():
 	player_data.global_position.y = fmod(fmod(player_data.global_position.y, 896) + 896, 896)
 	global_position = player_data.global_position
 	health = player_data.health
-	max_health = player_data.max_health
+	max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 	z_index = player_data.z_index
 	set_collision_value()
+
+func _on_level_up():
+	max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT) 
+	health = max_health
+	SignalManager.new_health.emit(health)
 
 func _on_equip_item(item: Item):
 	if item.equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
@@ -437,7 +444,6 @@ func _on_equip_item(item: Item):
 				quiver.texture = ResourceManager.extra_weapon_texture[item.extra_weapon_type]["stand_move_push" if !is_attack_state else "move_idle"][item.id]
 		current_extra_weapon = item
 
-
 func _on_unequip_item(equipment_type):
 	remove_equipment_asset(equipment_type)
 	if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
@@ -449,8 +455,11 @@ func _on_unequip_item(equipment_type):
 		current_extra_weapon = null
 
 func _on_hitbox_damaged(amount, knockback_strength, damage_source, attacker):
-	if !counter_attack_timer.is_stopped() and check_parry_direction(attacker):
+	if check_parry_direction(attacker):
+		if !counter_attack_timer.is_stopped():
 			attacker.hitbox.damaged.emit(get_player_damage(), 1, damage_area, self)
+		else:
+			super._on_hitbox_damaged(0, 0, damage_source, attacker)
 	else:
 		super._on_hitbox_damaged(amount, knockback_strength, damage_source, attacker)
 

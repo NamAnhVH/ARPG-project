@@ -208,7 +208,7 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 2,
+		"level": 10,
 		"base_stats": [
 			{
 				"stat": "ATK",
@@ -232,7 +232,7 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 3,
+		"level": 20,
 		"base_stats": [
 			{
 				"stat": "ATK",
@@ -256,7 +256,7 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 4,
+		"level": 30,
 		"base_stats": [
 			{
 				"stat": "ATK",
@@ -280,7 +280,7 @@
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "ONE_HAND_WEAPON",
-		"level": 5,
+		"level": 40,
 		"base_stats": [
 			{
 				"stat": "ATK",
@@ -296,6 +296,25 @@
 				"stat": "CRIT_DAMAGE",
 				"minimum": 150,
 				"maximum": 200
+			}
+		]
+	},
+	"mace_v00":{
+		"name": "Stone Mace",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 1,
+				"maximum": 3
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 8
 			}
 		]
 	},

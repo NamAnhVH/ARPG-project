@@ -1,13 +1,12 @@
-[
-    {
+{
+    "start_game":{
         "name": "start_game",
         "progress": ["start","choose_name_finished", "luna_go_out"]
     },
-    {
-        "name": "main_quest_1",
-        "progress": ["talk_to_villager_chief", "talk_to_guard"]
+    "main_quest_1": {
+        "name": "main_quest_1"
     },
-    {
+    "main_quest_2": {
         "name": "main_quest_2"
     }
-]
+}

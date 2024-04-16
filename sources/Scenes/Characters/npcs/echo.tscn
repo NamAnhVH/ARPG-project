@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj4yxq4xgc4s6"]
+
+[ext_resource type="PackedScene" uid="uid://bjmtni4gq7kuh" path="res://sources/scenes/characters/npcs/none_playable_character.tscn" id="1_1x5rv"]
+[ext_resource type="Script" path="res://sources/scripts/characters/npcs/echo.gd" id="2_dke78"]
+[ext_resource type="Texture2D" uid="uid://bhueoqo1sklsq" path="res://assets/npcs/npc guard v00.png" id="2_e6agy"]
+
+[node name="Echo" instance=ExtResource("1_1x5rv")]
+script = ExtResource("2_dke78")
+list_quest = Array[Dictionary]([{
+"id": "main_quest_1",
+"progress": "talk_to_guard_1"
+}, {
+"id": "main_quest_1",
+"progress": "talk_to_guard_2"
+}])
+object_name = "echo"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_e6agy")

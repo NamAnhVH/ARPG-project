@@ -332,7 +332,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.15),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(-32, -15)]
 }
 tracks/3/type = "value"
@@ -1216,15 +1216,18 @@ graph_offset = Vector2(50, -10)
 y_sort_enabled = true
 script = ExtResource("2_fxcpq")
 max_active_area = 50
+money_dropped = 10
+exp_dropped = 10
 knockback_modifier = true
 move_weight = 0.2
-max_health = 2
+max_health = 100
 move_speed_unit = 1.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_soqsy")
+position = Vector2(0, 4)
 texture = ExtResource("3_j2kmd")
 hframes = 8
 vframes = 8
@@ -1258,13 +1261,20 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wjy78")
 
 [node name="Attack" type="CollisionShape2D" parent="DamageArea" index="1"]
+visible = false
 position = Vector2(3, 19)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rkf5e")
 disabled = true
 
+[node name="DetectArea" parent="." index="3"]
+visible = false
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" index="0"]
 shape = SubResource("CircleShape2D_t86bi")
+
+[node name="AttackArea" parent="." index="4"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_iu6t6")
@@ -1307,9 +1317,9 @@ autostart = true
 
 [node name="HealthBar" parent="HealthBar" index="0"]
 offset_left = -11.0
-offset_top = -22.0
+offset_top = -19.0
 offset_right = 11.0
-offset_bottom = -20.0
+offset_bottom = -17.0
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]

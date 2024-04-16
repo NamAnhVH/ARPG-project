@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://muota2mnwki3"]
+[gd_scene load_steps=29 format=3 uid="uid://muota2mnwki3"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_jpx6w"]
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="2_xtlqi"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cuj7b4pkexm6j" path="res://assets/tilesets/village/village accessories 80x96.png" id="8_6dcg3"]
 [ext_resource type="Texture2D" uid="uid://c8p5mbqvmbk6j" path="res://assets/tilesets/village/bonus merchant goods.png" id="9_pnxvr"]
 [ext_resource type="Texture2D" uid="uid://bx7qsapx37wck" path="res://assets/tilesets/wall/low stone wall 16x16.png" id="10_c188d"]
-[ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="10_ho21b"]
 [ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/scenes/characters/npcs/merchant.tscn" id="11_h0e36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5cvp"]
+size = Vector2(19, 123)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ax2hm"]
 tile_data = PackedInt32Array(0, 2, 25, 65536, 2, 25, 131072, 2, 31, 1, 262146, 26, 65537, 262146, 27, 131073, 983042, 30, 2, 262146, 26, 65538, 262146, 27, 131074, 720898, 30, 3, 327682, 26, 65539, 327682, 27, 131075, 983042, 30, 65540, 2, 27, 131076, 2, 28, 196612, 2, 31, 65541, 65538, 27, 131077, 65538, 28, 196613, 983042, 30, 65542, 393218, 26, 131078, 393218, 27, 196614, 983042, 30, 65543, 1441794, 25, 131079, 1441794, 26, 196615, 1441794, 30, 262151, 1441794, 31, 65544, 1507330, 25, 131080, 1507330, 26, 196616, 1507330, 30, 262152, 1507330, 31, 65545, 1572866, 25, 131081, 1572866, 26, 196617, 1572866, 30, 262153, 1572866, 31, 65546, 1638402, 25, 131082, 1638402, 26, 196618, 1638402, 30, 262154, 1638402, 31, 65547, 327682, 26, 131083, 327682, 27, 196619, 851970, 30, 65548, 1245186, 27, 131084, 1245186, 28, 196620, 1245186, 30, 65549, 1310722, 27, 131085, 1310722, 28, 196621, 1310722, 30)
@@ -5949,13 +5951,13 @@ pattern_5 = SubResource("TileMapPattern_o1vkb")
 pattern_6 = SubResource("TileMapPattern_tlwpy")
 pattern_7 = SubResource("TileMapPattern_s4tmy")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5cvp"]
-size = Vector2(19, 123)
-
 [node name="Village" instance=ExtResource("1_jpx6w")]
-y_sort_enabled = true
 
-[node name="TileMap" parent="." index="0"]
+[node name="ChangeMap_ChangeMapArea#CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(4.5, 3.5)
+shape = SubResource("RectangleShape2D_n5cvp")
+
+[node name="TileMap" parent="." index="2"]
 tile_set = SubResource("TileSet_1dtdu")
 layer_0/name = "background"
 layer_0/z_index = -1
@@ -5978,16 +5980,6 @@ layer_5/tile_data = PackedInt32Array(196637, 0, 5, 262173, 0, 6, 327709, 0, 7, 3
 
 [node name="BottomPosition" parent="CameraLimit" index="1"]
 position = Vector2(1280, 1280)
-
-[node name="ChangeMapArea" parent="ChangeMap" index="0" instance=ExtResource("10_ho21b")]
-position = Vector2(6, 636)
-world_id = "world_1"
-location = Vector2(860, 675)
-next_z_index = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeMap/ChangeMapArea" index="0"]
-position = Vector2(4.5, 3.5)
-shape = SubResource("RectangleShape2D_n5cvp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionArea" index="0"]
 
@@ -6029,7 +6021,7 @@ polygon = PackedVector2Array(704, 720, 704, 736, 757, 736, 763, 721, 766, 712, 8
 position = Vector2(-128, -544)
 polygon = PackedVector2Array(704, 720, 704, 736, 757, 736, 763, 721, 766, 712, 801, 712, 804, 721, 810, 736, 864, 736, 865, 581, 696, 577, 689, 596, 640, 622, 640, 720)
 
-[node name="Npcs" parent="." index="8"]
+[node name="Npcs" parent="." index="10"]
 z_index = 1
 y_sort_enabled = true
 
@@ -6066,4 +6058,9 @@ object_name = "Bob"
 
 [node name="Merchant2" parent="Npcs" index="1" instance=ExtResource("11_h0e36")]
 position = Vector2(1096, 713)
+product = Array[Dictionary]([{
+"item_id": "",
+"price": 1,
+"quantity": 1
+}])
 object_name = "Mice"

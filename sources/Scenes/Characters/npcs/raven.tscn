@@ -6,6 +6,10 @@
 
 [node name="Raven" instance=ExtResource("1_wllfb")]
 script = ExtResource("2_q64dq")
+list_quest = Array[Dictionary]([{
+"id": "main_quest_1",
+"progress": "talk_to_villager_chief"
+}])
 object_name = "Raven"
 
 [node name="Sprite2D" parent="." index="0"]

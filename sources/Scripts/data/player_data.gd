@@ -12,12 +12,6 @@ class_name PlayerData
 @export var level : int = 1
 @export var player_name : String
 
-var base_stats = {
-	GameEnums.STAT.ATK: 5,
-	GameEnums.STAT.MOVE_SPEED: 0,
-	GameEnums.STAT.LIFE_POINT: 10
-}
-
 func set_data(data):
 	global_position = data.global_position
 	inventory = data.inventory
@@ -48,6 +42,12 @@ func get_data():
 
 func get_stat(stat):
 	var stat_total = 0
+	var current_level_stats = ResourceManager.level_info[str(level)].stats
+	var base_stats = {
+		GameEnums.STAT.ATK : current_level_stats.ATK if current_level_stats.has("ATK") else 0,
+		GameEnums.STAT.DEF : current_level_stats.DEF if current_level_stats.has("DEF") else 0,
+		GameEnums.STAT.LIFE_POINT : current_level_stats.LIFE_POINT if current_level_stats.has("LIFE_POINT") else 0,
+	}
 	
 	if base_stats.has(stat):
 		stat_total += base_stats[stat]
@@ -55,6 +55,3 @@ func get_stat(stat):
 	stat_total += InventoryManager.equipment.get_stat(stat)
 	
 	return int(round(stat_total))
-
-
-	

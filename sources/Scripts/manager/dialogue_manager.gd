@@ -1,7 +1,6 @@
 extends Node
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	SignalManager.show_dialogue.connect(_on_show_dialogue)
 
 func _on_show_dialogue(dialogue: String, branch: String):

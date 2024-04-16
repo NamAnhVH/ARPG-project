@@ -16,7 +16,7 @@ signal chest_closed(chest: Chest)
 signal content_changed()
 
 #Shop
-#signal set_shop(npc_name: String)
+signal set_shop(npc_name: String)
 signal shop_opened(list_item : Array[ShopItem])
 signal shop_closed()
 signal shop_ready(shop: Shop)
@@ -35,6 +35,9 @@ signal gain_exp(value: int)
 signal level_up()
 signal choose_player_name
 signal player_name(player_name: String)
+
+#Enemy
+signal enemy_died(enemy)
 
 #ProgressBar
 signal set_health_bar(max_health, health)
@@ -73,10 +76,17 @@ signal luna_go_out
 
 #Story
 signal change_next_progress
-signal update_main_quest(quest: String, progress: String)
+
+signal quest_updated
 signal accept_side_quest(quest: String)
 signal show_quest
 signal show_quest_description(quest: String, type: String)
+
+#Quest
+signal update_main_quest(quest: String)
+signal main_quest_finished(quest: String)
+signal main_quest_1_talk_to_guard
+
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS

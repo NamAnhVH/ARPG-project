@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b65mrtbyhdtuk"]
+[gd_scene load_steps=7 format=3 uid="uid://b65mrtbyhdtuk"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_we45g"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_3cu4h"]
+[ext_resource type="PackedScene" uid="uid://dj4yxq4xgc4s6" path="res://sources/scenes/characters/npcs/echo.tscn" id="3_idqoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pinsg"]
 size = Vector2(14, 14)
@@ -136,3 +137,6 @@ polygon = PackedVector2Array(594, 292, 594, 303, 608, 303, 637, 295, 638, 283)
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="25"]
 position = Vector2(-64, -271)
 polygon = PackedVector2Array(594, 292, 594, 303, 608, 303, 637, 295, 638, 283)
+
+[node name="Echo" parent="Npcs" index="0" instance=ExtResource("3_idqoa")]
+position = Vector2(617, 9)

@@ -1,6 +1,6 @@
 extends NinePatchRect
 
-@export var player_data : Resource
+@export var player_data : PlayerData
 
 @onready var lbl_level : Label = $StatContainer/VBoxContainer/Level/Stat
 @onready var lbl_atk : Label = $StatContainer/VBoxContainer/AttackDamage/Stat
@@ -22,6 +22,7 @@ func _ready():
 
 func _on_level_up():
 	lbl_level.text = str(player_data.level)
+	_on_item_changed()
 
 func _on_item_changed():
 	lbl_atk.text = str(player_data.get_stat(GameEnums.STAT.ATK))

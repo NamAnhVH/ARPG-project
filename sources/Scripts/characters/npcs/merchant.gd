@@ -1,9 +1,10 @@
 extends NonePlayableCharacter
 
-@export var product : Array[Dictionary]
+@export var product : Array[Dictionary] = [{"item_id": "", "price": 1, "quantity": 1}]
 
-#func _ready():
-	#SignalManager.set_shop.connect(open_shop)
+func _ready():
+	super._ready()
+	SignalManager.set_shop.connect(open_shop)
 
 func interact():
 	Global.npc_name = object_name

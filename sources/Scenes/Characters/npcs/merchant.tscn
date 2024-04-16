@@ -9,11 +9,17 @@ radius = 38.0526
 
 [node name="Merchant" instance=ExtResource("1_3lyyi")]
 script = ExtResource("2_oi2k7")
-product = Array[Dictionary]([])
+product = Array[Dictionary]([{
+"item_id": "",
+"price": 1,
+"quantity": 1
+}])
 object_name = "Nam Anh"
+texture = ExtResource("2_5x7vi")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_5x7vi")
+frame = 20
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_7iy3t")

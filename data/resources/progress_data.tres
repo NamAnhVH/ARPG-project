@@ -11,3 +11,5 @@ current_story = {
 current_progress = "start"
 current_main_quest = {}
 current_side_quest = ""
+current_main_quest_progress = 0
+current_side_quest_progress = 0
