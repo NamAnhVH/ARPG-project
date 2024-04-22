@@ -68,6 +68,8 @@ func _on_enemy_died(enemy):
 func check_enemy_type(enemy):
 	if enemy is SlimeCharacter and progress_data.current_main_quest.progress.combat.enemy == "slime":
 		return true
+	elif enemy is GremlinCharacter and progress_data.current_main_quest.progress.combat.enemy == "gremlin":
+		return true
 	return false
 
 func main_quest_finished(id: String):

@@ -10,6 +10,7 @@ class_name EnemyCharacter
 @export var exp_dropped: int
 
 @onready var move_idle_change_time : Timer = $Timers/MoveIdleChangeTime
+@onready var generate_random_position_time : Timer = $Timers/GenerateRandomPositionTime
 @onready var attack_cooldown_time: Timer = $Timers/AttackCooldownTime
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
 @onready var health_bar : ProgressBar = $HealthBar/HealthBar
@@ -56,6 +57,7 @@ func generate_random_position():
 	var offset = Vector2(cos(angle), sin(angle)) * max_active_area
 	if random_position.distance_to(first_position + offset) > 50:
 		random_position = first_position + offset
+		generate_random_position_time.start()
 	else:
 		generate_random_position()
 	if !is_chasing:
@@ -98,6 +100,9 @@ func _on_move_idle_change_time_timeout():
 	is_moving = !is_moving
 	move_idle_change_time.start()
 
+func _on_generate_random_position_time_timeout():
+	generate_random_position()
+
 func _die_finished():
 	SignalManager.gain_money.emit(money_dropped)
 	SignalManager.gain_exp.emit(exp_dropped)
@@ -121,6 +126,8 @@ func _on_is_attacked(damage_source):
 
 func _on_is_dead():
 	hitbox.queue_free()
+	damage_area.queue_free()
 	is_alive = false
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.set("parameters/conditions/is_dead", !is_alive)
+

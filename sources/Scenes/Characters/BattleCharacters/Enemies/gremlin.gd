@@ -11,10 +11,10 @@ func move_state():
 	var move_direction : Vector2
 	move_direction = navigation_agent.get_next_path_position() - global_position
 	move_direction = move_direction.normalized()
-	animation_tree.set("parameters/Move/blend_position", move_direction)
-	animation_tree.set("parameters/Idle/blend_position", move_direction)
-	animation_tree.set("parameters/conditions/is_moving", is_moving)
-	animation_tree.set("parameters/conditions/is_idling", !is_moving)
+	animation_tree.set("parameters/Move_idle/Move/blend_position", move_direction)
+	animation_tree.set("parameters/Move_idle/Idle/blend_position", move_direction)
+	animation_tree.set("parameters/Move_idle/conditions/is_moving", is_moving or is_chasing)
+	animation_tree.set("parameters/Move_idle/conditions/is_idling", !is_moving)
 	
 	if (!is_chasing and !is_moving and !is_ready_attack) or is_attacking or !is_alive or is_ready_attack:
 		move_direction = Vector2.ZERO

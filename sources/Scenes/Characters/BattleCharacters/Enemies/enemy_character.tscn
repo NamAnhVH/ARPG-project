@@ -15,6 +15,9 @@ list_item_dropped = Array[String]([])
 money_dropped = 0
 exp_dropped = 0
 
+[node name="Hitbox" parent="." index="0"]
+immunity_duration = 0.2
+
 [node name="DetectArea" type="Area2D" parent="." index="2"]
 
 [node name="AttackArea" parent="." index="3" instance=ExtResource("5_ksshh")]
@@ -30,6 +33,10 @@ autostart = true
 [node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="1"]
 autostart = true
 
+[node name="GenerateRandomPositionTime" type="Timer" parent="Timers" index="2"]
+wait_time = 5.0
+one_shot = true
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="8"]
 
 [node name="HealthBar" type="Node2D" parent="." index="9"]
@@ -42,3 +49,4 @@ z_index = 1
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
 [connection signal="timeout" from="Timers/MoveIdleChangeTime" to="." method="_on_move_idle_change_time_timeout"]
+[connection signal="timeout" from="Timers/GenerateRandomPositionTime" to="." method="_on_generate_random_position_time_timeout"]

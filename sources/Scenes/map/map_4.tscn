@@ -95,9 +95,26 @@ position = Vector2(738, -146)
 polygon = PackedVector2Array(47, 418, 47, 431, 62, 431, 62, 418)
 
 [node name="Gremlins" type="Node2D" parent="Enemies" index="0"]
+y_sort_enabled = true
 
 [node name="Gremlin" parent="Enemies/Gremlins" index="0" instance=ExtResource("3_8jqw7")]
-position = Vector2(155, 765)
+position = Vector2(118, 771)
+texture = ExtResource("4_f0qeu")
+
+[node name="Gremlin2" parent="Enemies/Gremlins" index="1" instance=ExtResource("3_8jqw7")]
+position = Vector2(69, 676)
+texture = ExtResource("4_f0qeu")
+
+[node name="Gremlin3" parent="Enemies/Gremlins" index="2" instance=ExtResource("3_8jqw7")]
+position = Vector2(189, 834)
+texture = ExtResource("4_f0qeu")
+
+[node name="Gremlin4" parent="Enemies/Gremlins" index="3" instance=ExtResource("3_8jqw7")]
+position = Vector2(76, 817)
+texture = ExtResource("4_f0qeu")
+
+[node name="Gremlin5" parent="Enemies/Gremlins" index="4" instance=ExtResource("3_8jqw7")]
+position = Vector2(129, 719)
 texture = ExtResource("4_f0qeu")
 
 [node name="NavigationRegion2D" parent="." index="12"]

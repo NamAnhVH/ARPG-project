@@ -1,7 +1,6 @@
 extends Area2D
 
 signal damaged(amount, knockback_strength, damage_source, attacker)
-signal immunity_ended()
 signal feature_damaged()
 
 @onready var immunity_timmer = $ImmunityTimer
@@ -25,9 +24,6 @@ func _on_area_entered(area):
 			damage(area.damage_amount, area.knockback_strength, area, area.attacker)
 		else:
 			feature_damaged.emit()
-
-func _on_immunity_timer_timeout():
-	immunity_ended.emit()
 
 
 

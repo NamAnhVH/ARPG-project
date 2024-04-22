@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dis6wr2xh52am"]
+[gd_scene load_steps=91 format=3 uid="uid://dis6wr2xh52am"]
 
 [ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy_character.tscn" id="1_fqxlq"]
 [ext_resource type="Texture2D" uid="uid://b0lrhvxsa1jhv" path="res://assets/monsters/gremlins/gremlin_v00.png" id="2_3x7cj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://sources/scenes/characters/battleCharacters/enemies/gremlin.gd" id="2_q3q0l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0fr4"]
+resource_local_to_scene = true
 shader = ExtResource("2_allb1")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(1, 1, 1, 1)
@@ -920,6 +921,18 @@ tracks/2/keys = {
 "method": &"_hurt_finished"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageArea/Attack:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_48oug"]
 resource_name = "hurt_left"
@@ -962,6 +975,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"_hurt_finished"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageArea/Attack:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6uwgv"]
@@ -1006,6 +1031,18 @@ tracks/2/keys = {
 "method": &"_hurt_finished"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageArea/Attack:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_kk4sc"]
 resource_name = "hurt_up"
@@ -1048,6 +1085,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"_hurt_finished"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageArea/Attack:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_y7g7n"]
@@ -1314,6 +1363,7 @@ states/Bite/position = Vector2(514, 63)
 states/Claw/node = SubResource("AnimationNodeBlendSpace2D_e4coe")
 states/Claw/position = Vector2(519, 135)
 transitions = ["Start", "Bite", SubResource("AnimationNodeStateMachineTransition_gsn3j"), "Start", "Claw", SubResource("AnimationNodeStateMachineTransition_2bn0l"), "Bite", "End", SubResource("AnimationNodeStateMachineTransition_t6tm7"), "Claw", "End", SubResource("AnimationNodeStateMachineTransition_m5ci1")]
+graph_offset = Vector2(2, -21)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1cewl"]
 animation = &"die_down"
@@ -1365,64 +1415,84 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sarkk"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2yu8s"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lppbu"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e460"]
 animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_njsue"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s8gu4"]
 animation = &"idle_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1a7c1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cgds7"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_0jy4o"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_sarkk")
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_d8pn8"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2yu8s")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_lppbu")
+blend_point_1/node = SubResource("AnimationNodeAnimation_1e460")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_njsue")
+blend_point_2/node = SubResource("AnimationNodeAnimation_s8gu4")
 blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_1a7c1")
+blend_point_3/node = SubResource("AnimationNodeAnimation_cgds7")
 blend_point_3/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nfs60"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u6r8h"]
 animation = &"move_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4sohe"]
-animation = &"move_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuvhd"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dw23m"]
 animation = &"move_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m72db"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kymgt"]
+animation = &"move_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0h38s"]
 animation = &"move_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2k1ah"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_nfs60")
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_g3ity"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_u6r8h")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_4sohe")
-blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_tuvhd")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_m72db")
+blend_point_1/node = SubResource("AnimationNodeAnimation_dw23m")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_kymgt")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_0h38s")
 blend_point_3/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8te3x"]
+advance_mode = 2
+advance_condition = &"is_idling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rte80"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2arld"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ni63v"]
+advance_mode = 2
+advance_condition = &"is_idling"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jerp4"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_d8pn8")
+states/Idle/position = Vector2(385, 39)
+states/Move/node = SubResource("AnimationNodeBlendSpace2D_g3ity")
+states/Move/position = Vector2(385, 127)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_8te3x"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_rte80"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_2arld"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_ni63v")]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nvgxa"]
 animation = &"look_around_idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ha4gu"]
-advance_mode = 2
-advance_condition = &"is_attacking"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_adhsw"]
+priority = 0
 advance_mode = 2
 advance_condition = &"is_attacked"
 
@@ -1431,65 +1501,52 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_dead"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yuk62"]
-advance_mode = 2
-advance_condition = &"is_attacked"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s1ukg"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g4mi1"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ppe1"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kfgew"]
+advance_mode = 2
+advance_condition = &"is_look_around_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w3ay5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0gb8j"]
 advance_mode = 2
 advance_condition = &"is_attacking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_asbcl"]
-advance_mode = 2
-advance_condition = &"is_moving"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r3pq4"]
-advance_mode = 2
-advance_condition = &"is_idling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xkgqb"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6sbka"]
-advance_mode = 2
-advance_condition = &"is_looking_around"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s6kln"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oq2mw"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_06odq"]
 advance_mode = 2
 advance_condition = &"is_attacked"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w6fcv"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q6wd8"]
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_alive"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vjiy8"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vfbon"]
 states/Attack/node = SubResource("AnimationNodeStateMachine_v36b1")
-states/Attack/position = Vector2(433, 102)
+states/Attack/position = Vector2(327, 93)
 states/Die/node = SubResource("AnimationNodeBlendSpace2D_3vwpt")
-states/Die/position = Vector2(787, 259)
+states/Die/position = Vector2(716, 189)
 states/End/position = Vector2(919, 253)
 states/Hurt/node = SubResource("AnimationNodeBlendSpace2D_0sie0")
-states/Hurt/position = Vector2(598, 259)
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_0jy4o")
-states/Idle/position = Vector2(297, 234)
-states/Move/node = SubResource("AnimationNodeBlendSpace2D_2k1ah")
-states/Move/position = Vector2(419, 360)
-states/Start/position = Vector2(136, 178)
+states/Hurt/position = Vector2(576, 189)
+states/Move_idle/node = SubResource("AnimationNodeStateMachine_jerp4")
+states/Move_idle/position = Vector2(296, 189)
+states/Start/position = Vector2(138, 189)
 states/look_around_idle/node = SubResource("AnimationNodeAnimation_nvgxa")
-states/look_around_idle/position = Vector2(161, 390)
-transitions = ["Move", "Attack", SubResource("AnimationNodeStateMachineTransition_ha4gu"), "Attack", "Hurt", SubResource("AnimationNodeStateMachineTransition_adhsw"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_eiijk"), "Move", "Hurt", SubResource("AnimationNodeStateMachineTransition_yuk62"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_s1ukg"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_2ppe1"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_asbcl"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_r3pq4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_xkgqb"), "Idle", "look_around_idle", SubResource("AnimationNodeStateMachineTransition_6sbka"), "look_around_idle", "Idle", SubResource("AnimationNodeStateMachineTransition_s6kln"), "Idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_oq2mw"), "Hurt", "Idle", SubResource("AnimationNodeStateMachineTransition_w6fcv")]
-graph_offset = Vector2(-100, 186)
+states/look_around_idle/position = Vector2(296, 298)
+transitions = ["Attack", "Hurt", SubResource("AnimationNodeStateMachineTransition_adhsw"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_eiijk"), "Start", "Move_idle", SubResource("AnimationNodeStateMachineTransition_g4mi1"), "Move_idle", "look_around_idle", SubResource("AnimationNodeStateMachineTransition_kfgew"), "look_around_idle", "Move_idle", SubResource("AnimationNodeStateMachineTransition_w3ay5"), "Move_idle", "Attack", SubResource("AnimationNodeStateMachineTransition_0gb8j"), "Move_idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_06odq"), "Hurt", "Move_idle", SubResource("AnimationNodeStateMachineTransition_q6wd8"), "Attack", "Move_idle", SubResource("AnimationNodeStateMachineTransition_vjiy8")]
+graph_offset = Vector2(-111, 30)
 
 [node name="Gremlin" instance=ExtResource("1_fqxlq")]
+y_sort_enabled = true
 script = ExtResource("2_q3q0l")
 max_active_area = 80
 damage_amount = 10
@@ -1563,17 +1620,17 @@ parameters/conditions/is_alive = false
 parameters/conditions/is_attacked = false
 parameters/conditions/is_attacking = false
 parameters/conditions/is_dead = false
-parameters/conditions/is_idling = false
-parameters/conditions/is_looking_around = false
-parameters/conditions/is_moving = false
+parameters/conditions/is_look_around_idle = false
 parameters/Attack/conditions/is_biting = false
 parameters/Attack/conditions/is_clawing = false
 parameters/Attack/Bite/blend_position = Vector2(0, 0)
 parameters/Attack/Claw/blend_position = Vector2(0, 0)
 parameters/Die/blend_position = Vector2(0, 0)
 parameters/Hurt/blend_position = Vector2(0, 0)
-parameters/Idle/blend_position = Vector2(-0.00807172, 1.1)
-parameters/Move/blend_position = Vector2(0, 0)
+parameters/Move_idle/conditions/is_idling = false
+parameters/Move_idle/conditions/is_moving = false
+parameters/Move_idle/Idle/blend_position = Vector2(0, 0)
+parameters/Move_idle/Move/blend_position = Vector2(0, 0)
 
 [node name="AttackCooldownTime" parent="Timers" index="0"]
 wait_time = 1.5
