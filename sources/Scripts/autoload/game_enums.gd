@@ -66,5 +66,8 @@ enum INDICATOR_TYPE {
 	EXP_INDICATOR
 }
 
-func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
+enum QUEST_TYPE {
+	NONE,
+	MAIN_QUEST,
+	SIDE_QUEST
+}

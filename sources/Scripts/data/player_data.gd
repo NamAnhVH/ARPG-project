@@ -23,6 +23,7 @@ func set_data(data):
 	money = data.money if data.has("money") else 0 
 	z_index = data.z_index if data.has("z_index") and data.z_index != 0 else 1
 	level = data.level if data.has("level") and level != 0 else 1
+	Global.player_level = level
 	experience = data.experience if data.has("experience") else 0
 	emit_changed()
 

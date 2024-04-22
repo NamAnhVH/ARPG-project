@@ -7,6 +7,7 @@
 
 [node name="EnemyCharacter" instance=ExtResource("1_ohiu0")]
 script = ExtResource("2_vofjr")
+max_active_area = 50
 texture = null
 damage_amount = 2
 knockback_strength = 3
@@ -26,6 +27,9 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="MoveIdleChangeTime" type="Timer" parent="Timers" index="1"]
+autostart = true
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="8"]
 
 [node name="HealthBar" type="Node2D" parent="." index="9"]
@@ -33,5 +37,8 @@ z_index = 1
 
 [node name="HealthBar" parent="HealthBar" index="0" instance=ExtResource("3_kebyl")]
 
+[connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
+[connection signal="is_dead" from="." to="." method="_on_is_dead"]
 [connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
+[connection signal="timeout" from="Timers/MoveIdleChangeTime" to="." method="_on_move_idle_change_time_timeout"]

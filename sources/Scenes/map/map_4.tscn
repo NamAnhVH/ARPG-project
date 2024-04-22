@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://etb0nlplthmp"]
+[gd_scene load_steps=6 format=3 uid="uid://etb0nlplthmp"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_p3317"]
+[ext_resource type="PackedScene" uid="uid://dis6wr2xh52am" path="res://sources/scenes/characters/battleCharacters/enemies/gremlin.tscn" id="3_8jqw7"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_tbmok"]
+[ext_resource type="Texture2D" uid="uid://b0lrhvxsa1jhv" path="res://assets/monsters/gremlins/gremlin_v00.png" id="4_f0qeu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y2fdd"]
 vertices = PackedVector2Array(443, 258, 363, 262, 328, 258, 328, 235, 368, 122, 473, 221, 473, 242, 897, 197, 916, 934, 899, 736, 896, 617, 282, 376, 84, 448, 71, 434, 177, 386, 583, 181, 685, 178, 802, 267, 781, 267, 501, 242, 501, 221, 823, 833, 856, 833, 566, 870, 566, 846, 855, 417, 855, 396, 662, 322, 712, 329, 543, 352, 631, 322, 326, 788, 326, 764, 336, 744, 452, 811, 426, 827, 391, 827, 833, 595, 809, 546, 809, 525, 824, 417, 156, 386, 71, 412, 856, 812, 824, 396, 802, 288, 833, 159, 222, 352, 243, 352, 177, 365, 294, 258, 285, 318, 243, 331, 222, 331, 612, 562, 604, 527, 623, 540, 708, 644, 292, 132, 291, 131, 242, 629, 186, 689, 132, 610, 132, 589, 107, 550, 111, 589, 83, 546, 83, 525, 701, 163, 807, 706, 823, 812, 688, 776, -81, 913, -81, 194, 58, 199, 40, 412, 537, 846, 537, 870, 426, 849, 62, 525, 40, 434, 506, 130, 601, 693, 567, 796, 748, 644, 775, 546, 781, 288, 662, 300, 631, 300, 459, 637, 601, 652, 432, 649, 775, 525, 780, 472, 774, 373, 361, 404, 510, 388, 532, 421, 490, 467, 426, 477, 313, 448, 398, 514, 314, 513, 371, 645, 391, 564, 562, 808, 701, 541, 156, 365, 166, 181, 188, 164, 215, 164, 83, 177, 336, 743, 298, 764, 391, 849, 298, 788, 111, 610, 241, 148, 294, 235, 62, 546)
@@ -92,6 +94,11 @@ polygon = PackedVector2Array(47, 418, 47, 431, 62, 431, 62, 418)
 position = Vector2(738, -146)
 polygon = PackedVector2Array(47, 418, 47, 431, 62, 431, 62, 418)
 
+[node name="Gremlins" type="Node2D" parent="Enemies" index="0"]
+
+[node name="Gremlin" parent="Enemies/Gremlins" index="0" instance=ExtResource("3_8jqw7")]
+position = Vector2(155, 765)
+texture = ExtResource("4_f0qeu")
+
 [node name="NavigationRegion2D" parent="." index="12"]
-visible = true
 navigation_polygon = SubResource("NavigationPolygon_y2fdd")

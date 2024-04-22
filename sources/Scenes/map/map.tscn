@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckb6kvjosdnlj"]
+[gd_scene load_steps=6 format=3 uid="uid://ckb6kvjosdnlj"]
 
 [ext_resource type="Script" path="res://sources/scripts/map/map.gd" id="1_rgvah"]
 [ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_nisv8"]
 [ext_resource type="Resource" uid="uid://rm4mjcfxpq7f" path="res://data/resources/progress_data.tres" id="2_om41u"]
+[ext_resource type="Script" path="res://sources/scripts/map/enemies.gd" id="4_eqgex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx28p"]
 size = Vector2(880, 880)
@@ -47,6 +48,7 @@ z_index = 3
 [node name="Enemies" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true
+script = ExtResource("4_eqgex")
 
 [node name="Npcs" type="Node2D" parent="."]
 z_index = 1
@@ -59,4 +61,11 @@ y_sort_enabled = true
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 
+[node name="Timer" type="Node" parent="."]
+
+[node name="EnemyRespawnTimer" type="Timer" parent="Timer"]
+wait_time = 10.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer/EnemyRespawnTimer" to="Enemies" method="_on_enemy_respawn_timer_timeout"]

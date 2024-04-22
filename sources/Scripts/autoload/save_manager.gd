@@ -12,8 +12,7 @@ func has_save_file(file_path):
 	return FileAccess.file_exists(file_path)
 
 func new_game():
-	
-	var file = FileAccess.open("user://new_game.dat", FileAccess.READ)
+	var file = FileAccess.open("res://data/json/new_game.dat", FileAccess.READ)
 	var data = file.get_var(true)
 	file.close()
 	

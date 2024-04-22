@@ -8,7 +8,7 @@
 script = ExtResource("2_q64dq")
 list_quest = Array[Dictionary]([{
 "id": "main_quest_1",
-"progress": "talk_to_villager_chief"
+"progress": "talk_to_Raven"
 }])
 object_name = "Raven"
 

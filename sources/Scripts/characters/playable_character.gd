@@ -25,7 +25,6 @@ const BIAS = Vector2(0, 5)
 var current_weapon : Item
 var current_extra_weapon : Item
 
-
 #State
 var is_unequip_weapon : bool = true
 var is_attacking : bool = false
@@ -97,7 +96,7 @@ func _unhandled_input(event):
 
 func _physics_process(_delta):
 	if !Global.paused:
-		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying:
+		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying and is_alive:
 			move_state()
 	else: 
 		if !is_attack_state:
@@ -177,11 +176,10 @@ func move_state():
 	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 24, move_weight)
 	move_and_slide()
 
-
 ##Function
 #Tấn công
 func attack():
-	damage_area.damage_amount = get_player_damage()
+	damage_area.damage_amount = get_player_damage() + attack_combo * 2
 	is_attacking = true
 	attack_timer.start()
 	mouse = (get_global_mouse_position() - global_position - BIAS).normalized()
@@ -344,7 +342,6 @@ func set_equipment_asset(asset_type: String):
 func set_player_data():
 	player_data.global_position = global_position
 	player_data.health = health
-	#player_data.max_health = max_health
 	player_data.z_index = z_index
 
 func set_collision_value():
@@ -375,7 +372,8 @@ func get_player_damage():
 func _on_attack_timer_timeout():
 	attack_combo = 0 
 
-func _on_is_attacked():
+func _on_is_attacked(damage_source):
+	animation_tree.set("parameters/Hurt/blend_position", damage_source.global_position - global_position)
 	animation_tree.set("parameters/conditions/is_attacked", true)
 
 func _on_is_dead():
@@ -455,7 +453,7 @@ func _on_unequip_item(equipment_type):
 		current_extra_weapon = null
 
 func _on_hitbox_damaged(amount, knockback_strength, damage_source, attacker):
-	if check_parry_direction(attacker):
+	if is_parrying and check_parry_direction(attacker):
 		if !counter_attack_timer.is_stopped():
 			attacker.hitbox.damaged.emit(get_player_damage(), 1, damage_area, self)
 		else:

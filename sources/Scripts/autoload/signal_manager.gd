@@ -76,14 +76,13 @@ signal luna_go_out
 
 #Story
 signal change_next_progress
-
 signal quest_updated
-signal accept_side_quest(quest: String)
 signal show_quest
 signal show_quest_description(quest: String, type: String)
 
 #Quest
 signal update_main_quest(quest: String)
+signal update_side_quest(quest: String)
 signal main_quest_finished(quest: String)
 signal main_quest_1_talk_to_guard
 

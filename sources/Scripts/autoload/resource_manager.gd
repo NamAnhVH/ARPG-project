@@ -114,7 +114,8 @@ var tscn = {
 }
 
 var character = {
-	"luna": preload("res://sources/scenes/characters/npcs/luna.tscn")
+	"luna": preload("res://sources/scenes/characters/npcs/luna.tscn"),
+	"slime": preload("res://sources/scenes/characters/battleCharacters/enemies/slime.tscn")
 }
 
 var world = {
@@ -547,7 +548,13 @@ var dialogue = {
 	"merchant": preload("res://dialogues/merchant.dialogue"),
 	"start_game": preload("res://dialogues/start_game.dialogue"),
 	"default": preload("res://dialogues/default.dialogue"),
-	"main_quest_1": preload("res://dialogues/main_quest_1.dialogue")
+	"main_quest_1": preload("res://dialogues/main_quest_1.dialogue"),
+	"main_quest_2": preload("res://dialogues/main_quest_2.dialogue"),
+	"main_quest_3": preload("res://dialogues/main_quest_3.dialogue"),
+	"main_quest_4": preload("res://dialogues/main_quest_4.dialogue"),
+	"side_quest_1": preload("res://dialogues/side_quest_1.dialogue"),
+	"side_quest_2": preload("res://dialogues/side_quest_2.dialogue")
+	
 }
 
 var colors = {

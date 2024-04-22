@@ -2,11 +2,5 @@
     "start_game":{
         "name": "start_game",
         "progress": ["start","choose_name_finished", "luna_go_out"]
-    },
-    "main_quest_1": {
-        "name": "main_quest_1"
-    },
-    "main_quest_2": {
-        "name": "main_quest_2"
     }
 }

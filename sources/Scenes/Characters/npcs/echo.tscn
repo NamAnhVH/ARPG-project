@@ -8,10 +8,22 @@
 script = ExtResource("2_dke78")
 list_quest = Array[Dictionary]([{
 "id": "main_quest_1",
-"progress": "talk_to_guard_1"
+"progress": "talk_to_Echo_1"
 }, {
 "id": "main_quest_1",
-"progress": "talk_to_guard_2"
+"progress": "talk_to_Echo_2"
+}, {
+"id": "main_quest_2",
+"progress": "talk_to_Echo_1"
+}, {
+"id": "main_quest_2",
+"progress": "talk_to_Echo_2"
+}, {
+"id": "side_quest_1",
+"progress": "talk_to_Echo_1"
+}, {
+"id": "side_quest_1",
+"progress": "talk_to_Echo_2"
 }])
 object_name = "echo"
 

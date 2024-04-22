@@ -6,4 +6,6 @@ var npc_name : String
 var current_map
 var paused : bool
 
+var player_level : int
+
 

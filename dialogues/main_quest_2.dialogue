@@ -1,0 +1,24 @@
+~ talk_to_echo_1
+Echo: Ah, {{Global.player_name}}, it's good to see you. We've heard of your skills. As tensions escalate and the threat of war grows, we need every able hand to help us prepare.
+Echo: It seems like the Gremlins are wreaking havoc in the northeast area of the village. They've been causing quite a lot of trouble for the villagers.
+{{Global.player_name}}: I understand, Echo. I'll head there right away.
+Echo: That's the spirit. Your bravery will be crucial in protecting our village.
+Echo: By the way, before you go, I suggest stopping by a few shops to stock up on supplies. It might come in handy out there.
+Echo: Best of luck.
+do SignalManager.update_main_quest.emit("main_quest_2")
+do Global.paused = false
+=> END
+
+~ talk_to_echo_2
+Echo: Welcome back, {{Global.player_name}}. Congratulations! You've completed the task admirably. Your assistance has made our village safer.
+Echo: Here's your reward. You've earned it.
+{{Global.player_name}}: Thank you, Echo. I'm glad I could help.
+do SignalManager.update_main_quest.emit("main_quest_2")
+do Global.paused = false
+=> END
+
+~ echo
+Echo: By the way, before you go, I suggest stopping by a few shops to stock up on supplies. It might come in handy out there.
+Echo: Best of luck.
+do Global.paused = false
+=> END

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cfm6b1e3g0xfq"
+path="res://.godot/imported/side_quest_2.dialogue-eaaaac8f6e50f7436f0749db1d6541bb.tres"
+
+[deps]
+
+source_file="res://dialogues/side_quest_2.dialogue"
+dest_files=["res://.godot/imported/side_quest_2.dialogue-eaaaac8f6e50f7436f0749db1d6541bb.tres"]
+
+[params]
+
+defaults=true

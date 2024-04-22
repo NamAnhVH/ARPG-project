@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var parent : SlimeCharacter = get_parent()
+@onready var parent = get_parent()
 
 func _on_body_entered(body):
 	if body is PlayableCharacter and parent.is_chasing:

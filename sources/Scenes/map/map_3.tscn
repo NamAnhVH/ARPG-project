@@ -41,75 +41,73 @@ polygon = PackedVector2Array(20, 756, -18, 771, 7, 868, 36, 866, 56, 879, 148, 8
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="2"]
 polygon = PackedVector2Array(397, 896, 395, 876, 372, 869, 367, 804, 417, 812, 419, 786, 560, 784, 559, 761, 313, 755, 274, 873, 285, 882, 359, 897)
 
-[node name="Slime" type="Node2D" parent="Enemies" index="0"]
+[node name="Slimes" type="Node2D" parent="Enemies" index="0"]
 y_sort_enabled = true
-position = Vector2(806, 740)
 
-[node name="Slime" parent="Enemies/Slime" index="0" instance=ExtResource("3_63m6b")]
-position = Vector2(-145, -118)
+[node name="Slime" parent="Enemies/Slimes" index="0" instance=ExtResource("3_63m6b")]
+position = Vector2(657, 600)
 texture = ExtResource("4_3uhrj")
 damage_amount = 1
 knockback_strength = 2
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime2" parent="Enemies/Slime" index="1" instance=ExtResource("3_63m6b")]
-position = Vector2(-76, 10)
+[node name="Slime2" parent="Enemies/Slimes" index="1" instance=ExtResource("3_63m6b")]
+position = Vector2(726, 728)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime3" parent="Enemies/Slime" index="2" instance=ExtResource("3_63m6b")]
-position = Vector2(-44, 68)
-texture = ExtResource("4_3uhrj")
-list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
-exp_dropped = 100
-
-[node name="Slime4" parent="Enemies/Slime" index="3" instance=ExtResource("3_63m6b")]
-position = Vector2(55, -87)
+[node name="Slime3" parent="Enemies/Slimes" index="2" instance=ExtResource("3_63m6b")]
+position = Vector2(758, 786)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime5" parent="Enemies/Slime" index="4" instance=ExtResource("3_63m6b")]
-position = Vector2(-157, 9)
+[node name="Slime4" parent="Enemies/Slimes" index="3" instance=ExtResource("3_63m6b")]
+position = Vector2(857, 631)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime6" parent="Enemies/Slime" index="5" instance=ExtResource("3_63m6b")]
-position = Vector2(16, 25)
+[node name="Slime5" parent="Enemies/Slimes" index="4" instance=ExtResource("3_63m6b")]
+position = Vector2(645, 727)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime7" parent="Enemies/Slime" index="6" instance=ExtResource("3_63m6b")]
-position = Vector2(-22, -44)
+[node name="Slime6" parent="Enemies/Slimes" index="5" instance=ExtResource("3_63m6b")]
+position = Vector2(818, 743)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime8" parent="Enemies/Slime" index="7" instance=ExtResource("3_63m6b")]
-position = Vector2(-73, -137)
+[node name="Slime7" parent="Enemies/Slimes" index="6" instance=ExtResource("3_63m6b")]
+position = Vector2(780, 674)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime9" parent="Enemies/Slime" index="8" instance=ExtResource("3_63m6b")]
-position = Vector2(16, -225)
+[node name="Slime8" parent="Enemies/Slimes" index="7" instance=ExtResource("3_63m6b")]
+position = Vector2(729, 581)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime10" parent="Enemies/Slime" index="9" instance=ExtResource("3_63m6b")]
-position = Vector2(-114, -59)
+[node name="Slime9" parent="Enemies/Slimes" index="8" instance=ExtResource("3_63m6b")]
+position = Vector2(818, 493)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime11" parent="Enemies/Slime" index="10" instance=ExtResource("3_63m6b")]
-position = Vector2(0, -140)
+[node name="Slime10" parent="Enemies/Slimes" index="9" instance=ExtResource("3_63m6b")]
+position = Vector2(688, 659)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime12" parent="Enemies/Slime" index="11" instance=ExtResource("3_63m6b")]
-position = Vector2(-84, -191)
+[node name="Slime11" parent="Enemies/Slimes" index="10" instance=ExtResource("3_63m6b")]
+position = Vector2(802, 578)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 
-[node name="Slime13" parent="Enemies/Slime" index="12" instance=ExtResource("3_63m6b")]
-position = Vector2(34, 97)
+[node name="Slime12" parent="Enemies/Slimes" index="11" instance=ExtResource("3_63m6b")]
+position = Vector2(718, 527)
+texture = ExtResource("4_3uhrj")
+list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
+
+[node name="Slime13" parent="Enemies/Slimes" index="12" instance=ExtResource("3_63m6b")]
+position = Vector2(836, 815)
 texture = ExtResource("4_3uhrj")
 list_item_dropped = Array[String](["sword_v00", "axe_v00", "spear_v00", "mace_v00", "healing_potion_v00", "bow_v00", "shield_v00", "quiver_v00", "stone"])
 

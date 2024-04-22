@@ -2,7 +2,7 @@ extends Character
 class_name BattleCharacter
 
 signal is_dead()
-signal is_attacked()
+signal is_attacked(damage_source)
 
 const KNOCKBACK_VELOCITY = 200
 
@@ -42,7 +42,6 @@ func set_health(value, _is_hitted: bool = false):
 	health = clamp(health - value, 0, max_health)
 	if health <= 0:
 		is_dead.emit()
-		hitbox.queue_free()
 	return value
 
 #Signal Function
@@ -50,7 +49,7 @@ func _on_hitbox_damaged(amount, knockback_strength, damage_source, attacker):
 	var damage_amount = set_health(amount, true)
 	if damage_source != null:
 		knockback(knockback_strength, damage_source.global_position)
-	is_attacked.emit()
+	is_attacked.emit(damage_source)
 	show_damage_indicator(damage_amount)
 
 func set_max_health(value):

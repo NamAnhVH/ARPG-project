@@ -2,26 +2,56 @@
 	"main_quest": {
 		"main_quest_1": {
 			"name": "A new start?",
-			"progress": ["talk_to_villager_chief", "talk_to_guard_1", {"name": "kill_5_slimes", "combat":{ "quantity": 5, "enemy": "slime"}}, "talk_to_guard_2"],
+			"progress": ["talk_to_Raven", "talk_to_Echo_1", {"name": "kill_5_slimes", "combat":{ "quantity": 5, "enemy": "slime"}}, "talk_to_Echo_2"],
 			"description": "Awakening in a strange land, the journey begins.",
+			"reward": {
+				"money": 20,
+				"exp": 20
+			},
+			"active_side_quest": ["side_quest_1", "side_quest_2"]
+		},
+		"main_quest_2": {
+			"name": "Upgrade time",
+			"progress": ["talk_to_Echo_1", {"name": "kill_10_gremlins", "combat":{ "quantity": 10, "enemy": "gremlin"}}, "talk_to_Echo_2"],
+			"description": "As tensions rise and the specter of war looms ever closer, it's time to bolster your strength and resources. Embark on a series of tasks to prepare yourself and your allies for the coming battle. From reinforcing fortifications to honing your combat skills, every action taken is crucial in the face of impending conflict.",
 			"reward": {
 				"money": 20,
 				"exp": 20
 			}
 		},
-		"main_quest_2": {
-			"name": "Second change",
-			"progress": ["talk_to_villager_chief", "talk_to_guard", "kill_5_slimes"],
-			"description": "Awakening in a strange land, the journey begins.",
+		"main_quest_3": {
+			"name": "Helping poor family",
+			"progress": ["talk_to_Diana_1", {"name": "collect_5_mushrooms", "collect": {"quantity": 5, "product": "mushroom"}}, "talk_to_Diana_2"],
+			"description": "You hear a family requesting help to find mushrooms to aid their sick daughter.",
 			"reward": {
-				"money": 20,
-				"exp": 20
+				"money": 5,
+				"exp": 30
+			}
+		},
+		"main_quest_4": {
+			"name": "Discover the ancient cave",
+			"progress": ["talk_to_Raven", "talk_to_Rio", "enter_the_cave"],
+			"description": "Rumors speak of an ancient cave hidden deep within the wilderness, said to hold secrets of untold riches and forgotten knowledge. Assemble your courage and seek out the village chief for guidance. Then, venture forth to locate the cave and uncover its mysteries. But beware, for dangers may lurk within its depths, guarding its secrets fiercely.",
+			"reward": {
+				"money": 50,
+				"exp": 50
 			}
 		}
 	},
 	"side_quest": {
-		"1": {
-			"name": "Thu thập nguyên liệu",
+		"side_quest_1": {
+			"name": "Journey for an Ancient Treasure",
+			"progress": ["talk_to_Echo_1", {"name": "find_the_chest", "find_treasure": "chest_v00"}, "talk_to_Echo_2"],
+			"description": "An ancient map is discovered in an abandoned house on the outskirts of the village. This map leads to a long-lost treasure hidden on a remote island. You're tasked with leading an expedition to search for this treasure, facing challenges from both the map and the environment.",
+			"reward": {
+				"money": 20,
+				"exp": 20
+			}
+		},
+		"side_quest_2": {
+			"name": "Gathering Ingredients",
+			"progress": ["talk_to_Luna", {"name": "collect_5_mushrooms", "collect": {"quantity": 5, "product": "mushroom"}}, "talk_to_Luna_2"],
+			"description": "Venture into the dense forest to collect rare herbs and mushrooms needed for a potent healing potion. The local healer has requested your aid, believing these ingredients hold the key to curing a mysterious illness plaguing the village. Keep your wits about you as the forest is teeming with both valuable flora and dangerous creatures.",
 			"reward": {
 				"money": 20,
 				"exp": 20

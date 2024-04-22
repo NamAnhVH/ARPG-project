@@ -18,7 +18,7 @@
         "stats":{
             "ATK": 7,
             "DEF": 2,
-            "LIFE_PONT": 14
+            "LIFE_POINT": 14
         },
         "exp" : 300
     },
@@ -31,6 +31,11 @@
         "exp" : 400
     },
     "5":{
+        "stats":{
+            "ATK": 9,
+            "DEF": 4,
+            "LIFE_POINT": 18
+        },
         "exp" : 500
     },
     "6":{

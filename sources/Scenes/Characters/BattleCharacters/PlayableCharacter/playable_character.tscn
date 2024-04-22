@@ -1,4 +1,4 @@
-[gd_scene load_steps=229 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=233 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/characters/playable_character.gd" id="2_muque"]
@@ -9077,7 +9077,30 @@ states/Stand/node = SubResource("AnimationNodeBlendSpace2D_r8aqn")
 states/Stand/position = Vector2(424, 74)
 transitions = ["Start", "Stand", SubResource("AnimationNodeStateMachineTransition_iac80"), "Stand", "Run", SubResource("AnimationNodeStateMachineTransition_kdrdf"), "Run", "Stand", SubResource("AnimationNodeStateMachineTransition_8dr7c")]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xinuh"]
+animation = &"die_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gvjxj"]
+animation = &"die_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p22kk"]
+animation = &"die_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yma3t"]
+animation = &"die_left"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_rjjw3"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_xinuh")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_gvjxj")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_p22kk")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_yma3t")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2q7y"]
 animation = &"hurt_down"
@@ -9170,10 +9193,6 @@ motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
-knockback_modifier = true
-move_weight = 0.2
-max_health = 10
-move_speed_unit = 5.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -9250,9 +9269,6 @@ libraries = {
 }
 
 [node name="AnimationTree" parent="." index="7"]
-libraries = {
-"": SubResource("AnimationLibrary_x6i1r")
-}
 tree_root = SubResource("AnimationNodeStateMachine_jywqs")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_attack_state_and_alive = false
@@ -9294,7 +9310,7 @@ parameters/Base/conditions/is_running = false
 parameters/Base/conditions/is_standing = false
 parameters/Base/Run/blend_position = Vector2(0, 0)
 parameters/Base/Stand/blend_position = Vector2(0, 1.09394)
-parameters/Die/blend_position = Vector2(0, 0)
+parameters/Die/blend_position = Vector2(-0.377578, -0.024229)
 parameters/Hurt/blend_position = Vector2(-0.341051, 0.111111)
 
 [node name="Interactable" type="Node2D" parent="." index="8"]
@@ -9333,7 +9349,7 @@ horizontal_alignment = 1
 one_shot = true
 
 [node name="ParryTimer" type="Timer" parent="Timer" index="1"]
-wait_time = 0.5
+wait_time = 0.3
 one_shot = true
 
 [node name="CounterAttackTimer" type="Timer" parent="Timer" index="2"]

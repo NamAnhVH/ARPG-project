@@ -15,6 +15,4 @@ func _ready():
 
 func interact():
 	Global.npc_name = object_name
-	SignalManager.show_dialogue.emit(StoryManager.progress_data.current_story.name, object_name)
-
-
+	SignalManager.show_dialogue.emit(StoryManager.progress_data.current_main_quest.id, object_name)

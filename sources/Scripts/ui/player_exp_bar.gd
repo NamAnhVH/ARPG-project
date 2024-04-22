@@ -12,6 +12,7 @@ func _on_gain_exp(_value):
 	var new_exp = value + _value
 	if new_exp >= max_value:
 		player_data.level += 1
+		Global.player_level = player_data.level
 		SignalManager.level_up.emit()
 		value = new_exp - max_value
 		max_value = ResourceManager.level_info[str(player_data.level)].exp

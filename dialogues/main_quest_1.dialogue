@@ -1,5 +1,4 @@
-~ talk_to_villager_chief
-
+~ talk_to_raven
 Raven: Hello there, friend.
 Raven: So, you're finally awake, huh? It's good to see you up and about.
 {{Global.player_name}}: Hello, Raven. Where exactly am I?
@@ -14,10 +13,9 @@ Raven: It seems they've encountered fierce creatures and strange occurrences in 
 {{Global.player_name}}: Sounds like trouble. I will go check a look.
 do SignalManager.update_main_quest.emit("main_quest_1")
 do Global.paused = false
-
 => END
 
-~ talk_to_guard_1
+~ talk_to_echo_1
 Echo: Hello, you've been sent by the village chief to help us, right?
 Echo: Currently, this place is being harassed by a bunch of slimes.
 Echo: Can you help me defeat them?
@@ -28,7 +26,7 @@ do SignalManager.main_quest_1_talk_to_guard.emit()
 do Global.paused = false
 => END
 
-~ talk_to_guard_2
+~ talk_to_echo_2
 Echo: Wow, you've already defeated them, huh? That was quick.
 Echo: Here's your reward for you.
 {{Global.player_name}}: Thank you.
@@ -51,5 +49,4 @@ Nova: Also, be careful when venturing outside the village, as there are many cre
 {{Global.player_name}}: Thank you.
 Nova: It seems like the village chief has some business to attend to. You should go meet him.
 do Global.paused = false
-
 => END

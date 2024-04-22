@@ -145,7 +145,7 @@ quest={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/merchant.dialogue", "res://dialogues/start_game.dialogue", "res://dialogues/default.dialogue", "res://dialogues/main_quest_1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/merchant.dialogue", "res://dialogues/start_game.dialogue", "res://dialogues/default.dialogue", "res://dialogues/main_quest_1.dialogue", "res://dialogues/main_quest_2.dialogue", "res://dialogues/side_quest_1.dialogue", "res://dialogues/main_quest_3.dialogue", "res://dialogues/main_quest_4.dialogue", "res://dialogues/side_quest_2.dialogue")
 
 [layer_names]
 
