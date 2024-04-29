@@ -62,8 +62,8 @@ func get_use_text():
 	pass
 
 func set_info(item_info):
-	item_info.add_line(ItemInfoLine.new("On use:", ResourceManager.colors[GameEnums.RARITY.COMMON]))
-	item_info.add_line(ItemInfoLine.new(get_use_text(), ResourceManager.colors[item.rarity]))
+	item_info.add_line(ItemInfoLine.new("On use:", GameEnums.RARITY.COMMON))
+	item_info.add_line(ItemInfoLine.new(get_use_text(), item.rarity))
 
 func set_can_use(value):
 	can_use = value

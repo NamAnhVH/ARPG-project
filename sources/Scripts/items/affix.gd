@@ -12,5 +12,5 @@ func _init(affix_id: String, data):
 	min_level = data.min_level
 	stat_ranges = []
 	
-	for stat_range_data in data.stat_ranges:
-		stat_ranges.append(StatRange.new(stat_range_data))
+	#for stat_range_data in data.stat_ranges:
+		#stat_ranges.append(StatRange.new(stat_range_data))

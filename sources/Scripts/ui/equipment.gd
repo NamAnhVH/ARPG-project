@@ -2,7 +2,7 @@ extends Inventory
 class_name Equipment
 
 func _init():
-	set_inventory_size(8)
+	set_inventory_size(9)
 
 func _ready():
 	for slot : EquipmentSlot in slot_container.get_children():
@@ -11,7 +11,6 @@ func _ready():
 	SignalManager.equipment_ready.emit()
 	for s in slots:
 		s.is_on_player = true
-
 
 func set_inventory_size(value):
 	inventory_size = value

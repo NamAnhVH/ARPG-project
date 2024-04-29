@@ -2,11 +2,10 @@ extends Node
 
 const ITEM_PATH : String = "res://data/json/items.json"
 const AFFIXES_PATH : String = "res://data/json/affixes.json"
-const RARE_NAMES_PATH : String = "res://data/json/rare_names.json"
 
 @onready var placeholders = {
-	GameEnums.EQUIPMENT_TYPE.HEAD : preload("res://assets/placeholders/placeholder_head.png"),
-	GameEnums.EQUIPMENT_TYPE.CHEST : preload("res://assets/placeholders/placeholder_chest.png"),
+	GameEnums.EQUIPMENT_TYPE.HELMET : preload("res://assets/placeholders/placeholder_helmet.png"),
+	GameEnums.EQUIPMENT_TYPE.ARMOR : preload("res://assets/placeholders/placeholder_armor.png"),
 	GameEnums.EQUIPMENT_TYPE.PANTS : preload("res://assets/placeholders/placeholder_pants.png"),
 	GameEnums.EQUIPMENT_TYPE.SHOES : preload("res://assets/placeholders/placeholder_shoes.png"),
 	GameEnums.EQUIPMENT_TYPE.WEAPON : preload("res://assets/placeholders/placeholder_weapon.png"),
@@ -15,8 +14,8 @@ const RARE_NAMES_PATH : String = "res://data/json/rare_names.json"
 }
 
 var equipment_names = {
-	GameEnums.EQUIPMENT_TYPE.HEAD: "Head",
-	GameEnums.EQUIPMENT_TYPE.CHEST: "Chest",
+	GameEnums.EQUIPMENT_TYPE.HELMET: "Helmet",
+	GameEnums.EQUIPMENT_TYPE.ARMOR: "Armor",
 	GameEnums.EQUIPMENT_TYPE.PANTS: "Pants",
 	GameEnums.EQUIPMENT_TYPE.SHOES: "Shoes",
 	GameEnums.EQUIPMENT_TYPE.WEAPON: "Weapon",
@@ -32,7 +31,7 @@ var type_names = {
 
 var items = {}
 var rare_names = {}
-var affix_groups = {}
+var affixes = []
 var usable = {
 	"healing": preload("res://sources/scripts/usable/item_healing.gd")
 }
@@ -41,35 +40,27 @@ func _init():
 	randomize()
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	#Item
 	var item_file = FileAccess.open(ITEM_PATH, FileAccess.READ)
 	items = JSON.parse_string(item_file.get_as_text())
 	item_file.close()
 	
-	#Item
+	#Affix
 	var affix_file = FileAccess.open(AFFIXES_PATH, FileAccess.READ)
-	var data = JSON.parse_string(affix_file.get_as_text())
+	var affixes = JSON.parse_string(affix_file.get_as_text())
 	affix_file.close()
-	for id in data:
-		affix_groups[id] = AffixGroup.new(id, data[id])
-	
-	#Rare Name
-	var rare_name_file = FileAccess.open(RARE_NAMES_PATH, FileAccess.READ)
-	rare_names = JSON.parse_string(rare_name_file.get_as_text())
-	rare_name_file.close()
 
 func get_item(id: String):
 	return Item.new(id, items[id])
 
-func get_items( items_data : Array ):
+func get_items(items_data : Array):
 	var items_array = []
 	for item_data in items_data:
-		items_array.append( get_item_from_data( item_data ) )
+		items_array.append(get_item_from_data(item_data))
 	return items_array
 
-func get_item_from_data( item_data ):
-	var item = get_item( item_data.id )
+func get_item_from_data(item_data):
+	var item = get_item(item_data.id)
 	item.quantity = item_data.quantity
 	if item_data.has("item_name"):
 		item.item_name = item_data.item_name
@@ -77,7 +68,7 @@ func get_item_from_data( item_data ):
 		item.rarity = item_data.rarity
 	if item_data.has("components"):
 		if item_data.components.has("base_stats"):
-			item.components.base_stats.scale = item_data.components.base_stats
+			item.components.base_stats = BaseStat.new(item_data.components.base_stats, item.rarity)
 		if item_data.components.has("affix_list"):
 			item.components.affix_list = AffixItemList.new(item_data.components.affix_list, item_data.rarity)
 		if item_data.components.has("legendary_stats"):
@@ -100,11 +91,9 @@ func rng_generate_rarity(ilevel) -> Item:
 	return generate_random_rarity(item, ilevel)
 
 func generate_random_rarity(item, ilevel):
-	item.components.base_stats.scale = randf()
-	
 	var rarity = GameEnums.RARITY.COMMON
 	var rng = randf()
-	if rng >= 0.99 and item.legendary_data:
+	if rng > 0.999 and item.legendary_data:
 		rarity = GameEnums.RARITY.LEGENDARY
 	elif rng >= 0.95:
 		rarity = GameEnums.RARITY.EPIC
@@ -127,11 +116,9 @@ func generate_rarity(item: Item, ilevel, rarity):
 	elif rarity == GameEnums.RARITY.EPIC:
 		item.rarity = GameEnums.RARITY.EPIC
 		number_of_affixes = 3
-		set_rare_name(item)
 	elif rarity == GameEnums.RARITY.RARE:
 		item.rarity = GameEnums.RARITY.RARE
 		number_of_affixes = 2
-		set_rare_name(item)
 	elif rarity == GameEnums.RARITY.UNCOMMON:
 		item.rarity = GameEnums.RARITY.UNCOMMON
 		number_of_affixes = 1
@@ -180,18 +167,10 @@ func get_random_affix_group(number_of_affixes, item_type, ilevel):
 func get_valid_affixes_group(affix_type, item_type, ilevel):
 	var valid_affixes : Array[AffixGroup] = []
 	
-	for id in affix_groups:
-		if affix_groups[id].type == affix_type and ilevel >= affix_groups[id].affixes.values()[0].min_level and affix_groups[id].apply_to.has(item_type):
-			valid_affixes.append(affix_groups[id])
+	for id in affixes:
+		if affixes[id].type == affix_type and ilevel >= affixes[id].affixes.values()[0].min_level and affixes[id].apply_to.has(item_type):
+			valid_affixes.append(affixes[id])
 	return valid_affixes
-
-func set_rare_name(item: Item):
-	var type = GameEnums.EQUIPMENT_TYPE.keys()[item.equipment_type]
-	var name_prefix_type = rare_names.prefix[type]
-	var name_prefix = name_prefix_type[randi() % name_prefix_type.size()]
-	var name_suffix_type = rare_names.suffix[type]
-	var name_suffix = name_suffix_type[randi() % name_suffix_type.size()]
-	item.item_name = name_prefix + " " + name_suffix
 
 func generate_legendary(item: Item):
 	var scales = []
@@ -201,7 +180,7 @@ func generate_legendary(item: Item):
 	
 func set_legendary(item, scales):
 	item.item_name = item.legendary_data.name
-	item.components["legendary_stats"] = ItemLegendaryStats.new(item.legendary_data.stats, scales)
+	item.components["base_stats"] = BaseStat.new(item.legendary_data.stats, GameEnums.RARITY.LEGENDARY)
 	if item.legendary_data.has("usable"):
 		set_usable(item, item.legendary_data)
 

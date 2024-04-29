@@ -31,6 +31,7 @@ func _on_item_changed():
 	lbl_crit_rate.text = str(player_data.get_stat(GameEnums.STAT.CRIT_RATE)) + "%"
 	lbl_crit_damage.text = str(player_data.get_stat(GameEnums.STAT.CRIT_DAMAGE)) + "%"
 	lbl_life_point.text = str(player_data.get_stat(GameEnums.STAT.LIFE_POINT))
+	SignalManager.item_changed.emit()
 
 func _on_inventory_opened():
 	show()

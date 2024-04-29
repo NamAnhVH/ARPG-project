@@ -28,6 +28,10 @@ func move_state():
 	velocity = lerp(velocity, move_direction * move_speed_unit * 24, move_weight)
 	move_and_slide()
 
+func generate_random_position():
+	is_moving = false
+	super.generate_random_position()
+
 func _on_clockwise_change_time_timeout():
 	is_clockwise = !is_clockwise
 	clockwise_change_time.start()
@@ -38,7 +42,7 @@ func _die_finished():
 	new_slime.texture = texture
 	new_slime.damage_amount = damage_amount
 	new_slime.knockback_strength = knockback_strength
-	new_slime.list_item_dropped = list_item_dropped
+	new_slime.level = level
 	new_slime.money_dropped = money_dropped
 	new_slime.exp_dropped = exp_dropped
 	new_slime.max_health = max_health

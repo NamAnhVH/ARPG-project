@@ -14,6 +14,7 @@ signal chest_opened(chest: Chest)
 signal chest_ready(chest: Chest)
 signal chest_closed(chest: Chest)
 signal content_changed()
+signal item_changed()
 
 #Shop
 signal set_shop(npc_name: String)

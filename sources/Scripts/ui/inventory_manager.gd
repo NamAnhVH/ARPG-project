@@ -13,7 +13,6 @@ var inventory: Inventory
 var equipment: Equipment
 var item_in_hand : Item = null
 
-
 #Build
 func _ready():
 	inventory = ResourceManager.get_instance("inventory")

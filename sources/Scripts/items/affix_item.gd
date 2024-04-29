@@ -16,7 +16,7 @@ func set_info(item_info, rarity):
 		var display = ResourceManager.stat_info[stat_range.stat].display
 		var value = stat_range.get_value(scale, stat_range.stat)
 		var text = display % str(value)
-		item_info.add_line(ItemInfoLine.new(text, ResourceManager.colors[rarity]))
+		item_info.add_line(ItemInfoLine.new(text, rarity))
 
 func get_data():
 	return {

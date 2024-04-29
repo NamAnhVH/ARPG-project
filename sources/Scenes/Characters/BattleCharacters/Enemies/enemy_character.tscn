@@ -7,11 +7,11 @@
 
 [node name="EnemyCharacter" instance=ExtResource("1_ohiu0")]
 script = ExtResource("2_vofjr")
+level = 1
 max_active_area = 50
 texture = null
 damage_amount = 2
 knockback_strength = 3
-list_item_dropped = Array[String]([])
 money_dropped = 0
 exp_dropped = 0
 

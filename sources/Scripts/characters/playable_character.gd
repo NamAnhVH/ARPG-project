@@ -19,7 +19,6 @@ const BIAS = Vector2(0, 5)
 @onready var interactable_area : Area2D = $InteractableArea
 @onready var interactable_labels : VBoxContainer = $Interactable/InteractableLabels
 @onready var detect_layer_area : DetectLayerArea = $DetectLayerArea
-@onready var current_map = get_parent()
 
  #Check trang bị hiện tại
 var current_weapon : Item
@@ -55,6 +54,7 @@ func _ready():
 	
 	SignalManager.heal_player.connect(set_health)
 	SignalManager.level_up.connect(_on_level_up)
+	SignalManager.item_changed.connect(_on_item_changed)
 
 	player_data.changed.connect(_on_data_changed)
 	
@@ -362,8 +362,7 @@ func _set_body_layer(base_index: int, one_hand_weapon_index: int, shield_index: 
 
 func get_player_damage():
 	var damage_amount = player_data.get_stat(GameEnums.STAT.ATK)
-	var rnd = randf()
-	if rnd < player_data.get_stat(GameEnums.STAT.CRIT_RATE) / 100:
+	if randf() < float(player_data.get_stat(GameEnums.STAT.CRIT_RATE)) / 100:
 		damage_amount += int(round(damage_amount * player_data.get_stat(GameEnums.STAT.CRIT_DAMAGE) / 100))
 	return damage_amount
 
@@ -399,7 +398,7 @@ func _on_interactable_area_body_exited(_body):
 func _on_item_dropped(item):
 	var floor_item = ResourceManager.tscn.floor_item.instantiate()
 	floor_item.item = item
-	current_map.floor_item.add_child(floor_item)
+	Global.current_map.floor_item.add_child(floor_item)
 	floor_item.global_position = global_position
 	floor_item.set_z_index(self.z_index)
 
@@ -408,9 +407,12 @@ func _on_data_changed():
 	player_data.global_position.y = fmod(fmod(player_data.global_position.y, 896) + 896, 896)
 	global_position = player_data.global_position
 	health = player_data.health
-	max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
+	#max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 	z_index = player_data.z_index
 	set_collision_value()
+
+func _on_item_changed():
+	max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 
 func _on_level_up():
 	max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT) 

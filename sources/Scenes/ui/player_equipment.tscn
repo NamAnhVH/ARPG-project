@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_1luco"]
 
 [node name="PlayerEquipment" type="NinePatchRect"]
-offset_right = 188.0
-offset_bottom = 189.0
+offset_right = 150.0
+offset_bottom = 173.0
 texture = ExtResource("1_kltso")
 region_rect = Rect2(32, 0, 24, 24)
 patch_margin_left = 16

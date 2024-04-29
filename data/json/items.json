@@ -9,25 +9,14 @@
 			{
 				"stat": "ATK",
 				"minimum": 10,
-				"maximum": 22
-			},
-			{
-				"stat": "CRIT_RATE",
-				"minimum": 5,
-				"maximum": 10
-			},
-			{
-				"stat": "CRIT_DAMAGE",
-				"minimum": 50,
-				"maximum": 100
+				"maximum": 25
 			}
 		],
 		"legendary": {
 			"name": "Favonius Blade",
 			"stats": [{
 				"stat": "ATK",
-				"minimum": 25,
-				"maximum": 25
+				"value": 45
 			}]
 		}
 	},
@@ -40,32 +29,27 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 28,
-				"maximum": 36
+				"minimum": 25,
+				"maximum": 35
 			},
 			{
 				"stat": "MOVE_SPEED",
-				"minimum": 2,
-				"maximum": 5
-			},
-			{
-				"stat": "CRIT_RATE",
-				"minimum": 10,
-				"maximum": 15
-			},
-			{
-				"stat": "CRIT_DAMAGE",
-				"minimum": 80,
-				"maximum": 120
+				"minimum": 1,
+				"maximum": 10
 			}
 		],
 		"legendary": {
 			"name": "Lion's Roar",
-			"stats": [{
-				"stat": "ATK",
-				"minimum": 40,
-				"maximum": 40
-			}]
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				}
+			]
 		}
 	},
 	"sword_v02": {
@@ -77,32 +61,45 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 35,
-				"maximum": 42
+				"minimum": 30,
+				"maximum": 60
 			},
 			{
 				"stat": "MOVE_SPEED",
-				"minimum": 3,
-				"maximum": 7
+				"minimum": 5,
+				"maximum": 15
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 15,
-				"maximum": 20
+				"minimum": 5,
+				"maximum": 7
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 100,
-				"maximum": 150
+				"minimum": 10,
+				"maximum": 20
 			}
 		],
 		"legendary": {
 			"name": "Sword of Descension",
-			"stats": [{
-				"stat": "ATK",
-				"minimum": 60,
-				"maximum": 60
-			}]
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 80
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 22
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 40
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				}
+			]
 		}
 	},
 	"sword_v03": {
@@ -114,32 +111,45 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 42,
-				"maximum": 48
+				"minimum": 60,
+				"maximum": 80
 			},
 			{
 				"stat": "MOVE_SPEED",
 				"minimum": 5,
-				"maximum": 10
+				"maximum": 15
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 20,
-				"maximum": 25
+				"minimum": 10,
+				"maximum": 15
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 120,
-				"maximum": 180
+				"minimum": 20,
+				"maximum": 40
 			}
 		],
 		"legendary": {
 			"name": "Freedom-Sworn",
-			"stats": [{
-				"stat": "ATK",
-				"minimum": 80,
-				"maximum": 80
-			}]
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 100
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				}
+			]
 		}
 	},
 	"sword_v04": {
@@ -151,32 +161,45 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 48,
-				"maximum": 55
+				"minimum": 80,
+				"maximum": 120
 			},
 			{
 				"stat": "MOVE_SPEED",
-				"minimum": 7,
-				"maximum": 12
+				"minimum": 15,
+				"maximum": 20
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 25,
-				"maximum": 30
+				"minimum": 15,
+				"maximum": 20
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 150,
-				"maximum": 200
+				"minimum": 40,
+				"maximum": 60
 			}
 		],
 		"legendary": {
 			"name": "Aquila Favonia",
-			"stats": [{
-				"stat": "ATK",
-				"minimum": 100,
-				"maximum": 100
-			}]
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 140
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 80
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 40
+				}
+			]
 		}
 	},
 	"axe_v00": {
@@ -188,20 +211,42 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 30,
-				"maximum": 39
+				"minimum": 10,
+				"maximum": 15
 			},
 			{
 				"stat": "CRIT_RATE",
 				"minimum": 5,
-				"maximum": 10
+				"maximum": 7
 			},
 			{
-				"stat": "CRIT_DAMAGE",
-				"minimum": 50,
-				"maximum": 100
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
 			}
-		]
+		],
+		"legendary": {
+			"name": "Factory Axe",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 22
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
 	},
 	"axe_v01": {
 		"name": "Iron Axe",
@@ -212,20 +257,51 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 35,
-				"maximum": 45
+				"minimum": 20,
+				"maximum": 25
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 10,
-				"maximum": 15
+				"minimum": 7,
+				"maximum": 10
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 80,
-				"maximum": 120
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
 			}
-		]
+		],
+		"legendary": {
+			"name": "Lighting Axe",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 70
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
 	},
 	"axe_v02": {
 		"name": "Silver Axe",
@@ -236,20 +312,51 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 40,
-				"maximum": 52
+				"minimum": 25,
+				"maximum": 40
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 15,
-				"maximum": 20
+				"minimum": 10,
+				"maximum": 15
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 100,
-				"maximum": 150
+				"minimum": 50,
+				"maximum": 60
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
 			}
-		]
+		],
+		"legendary": {
+			"name": "AXEEEE",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 60
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 80
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 15
+				}
+			]
+		}
 	},
 	"axe_v03": {
 		"name": "Snow-Tombed Axe",
@@ -260,20 +367,51 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 45,
-				"maximum": 57
+				"minimum": 40,
+				"maximum": 70
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 20,
-				"maximum": 25
+				"minimum": 15,
+				"maximum": 20
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 120,
-				"maximum": 180
+				"minimum": 60,
+				"maximum": 70
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
 			}
-		]
+		],
+		"legendary": {
+			"name": "Storm Axe",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 90
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 90
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
 	},
 	"axe_v04": {
 		"name": "Lithic Axe",
@@ -284,20 +422,51 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 50,
-				"maximum": 63
+				"minimum": 70,
+				"maximum": 130
 			},
 			{
 				"stat": "CRIT_RATE",
-				"minimum": 25,
-				"maximum": 30
+				"minimum": 20,
+				"maximum": 25
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 150,
-				"maximum": 200
+				"minimum": 70,
+				"maximum": 90
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 3
 			}
-		]
+		],
+		"legendary": {
+			"name": "Axe of Fortune",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 150
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 110
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				}
+			]
+		}
 	},
 	"mace_v00":{
 		"name": "Stone Mace",
@@ -308,15 +477,228 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Macebreaker",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"mace_v01":{
+		"name": "Shadowbane Mace",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Shadowbane Warhammer",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"mace_v02":{
+		"name": "Thunderstrike Mace",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 30,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_RATE",
 				"minimum": 1,
 				"maximum": 3
 			},
 			{
 				"stat": "CRIT_DAMAGE",
-				"minimum": 5,
-				"maximum": 8
+				"minimum": 40,
+				"maximum": 60
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
 			}
-		]
+		],
+		"legendary": {
+			"name": "Thunderstrike Maul",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 70
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 18
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 80
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"mace_v03":{
+		"name": "Nightfall Mace",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 60,
+				"maximum": 70
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 3,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 60,
+				"maximum": 80
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 3
+			}
+		],
+		"legendary": {
+			"name": "Nightfall Bludgeon",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 90
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 100
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				}
+			]
+		}
+	},
+	"mace_v04":{
+		"name": "Stormfury Mace",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "ONE_HAND_WEAPON",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 80,
+				"maximum": 100
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 80,
+				"maximum": 120
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 3,
+				"maximum": 4
+			}
+		],
+		"legendary": {
+			"name": "Nightfall Bludgeon",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 120
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 140
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 9
+				}
+			]
+		}
 	},
 	"spear_v00":{
 		"name": "Stone Spear",
@@ -327,13 +709,700 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 2,
-				"maximum": 5
+				"minimum": 5,
+				"maximum": 20
 			}
-		]
+		],
+		"legendary": {
+			"name": "Adamantine Seraphim",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				}
+			]
+		}
+	},
+	"spear_v01": {
+		"name": "Bronze Lance",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 20,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 30
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Sabre Pike",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				}
+			]
+		}
+	},
+	"spear_v02": {
+		"name": "Stone Point",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 35,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 30,
+				"maximum": 50
+			}
+		],
+		"legendary": {
+			"name": "Aetheric Glaive",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 70
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 70
+				}
+			]
+		}
+	},
+	"spear_v03": {
+		"name": "Iron Pike",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 50,
+				"maximum": 80
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 50,
+				"maximum": 70
+			}
+		],
+		"legendary": {
+			"name": "Sylvan Thorn Lance",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 100
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 90
+				}
+			]
+		}
+	},
+	"spear_v04": {
+		"name": "Steel Spear",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 80,
+				"maximum": 120
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 25,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 70,
+				"maximum": 100
+			}
+		],
+		"legendary": {
+			"name": "Ignition Point Spear",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 140
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 65
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 120
+				}
+			]
+		}
+	},
+	"heavy_spear_v00":{
+		"name": "Heavy Lance",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 7
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -25,
+				"maximum": -20
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Titan's Glaive",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 22
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"heavy_spear_v01":{
+		"name": "Stout Spear",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 25,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 7,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -25,
+				"maximum": -20
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Ogre's Impaler",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"heavy_spear_v02":{
+		"name": "Weighty Glaive",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 30,
+				"maximum": 60
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 40,
+				"maximum": 60
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Colossus Lance",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 80
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 80
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"heavy_spear_v03":{
+		"name": "Solid Halberd",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 60,
+				"maximum": 80
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 60,
+				"maximum": 80
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Ironclad Spear",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 100
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 100
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"heavy_spear_v04":{
+		"name": "Shadowbane Spear",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 80,
+				"maximum": 120
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 80,
+				"maximum": 120
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 3
+			}
+		],
+		"legendary": {
+			"name": "Behemoth Pike",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 140
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 140
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				}
+			]
+		}
+	},
+	"axe_spear_v00":{
+		"name": "Axial Spear",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Stormforge Halberd",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 35
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"axe_spear_v01":{
+		"name": "Halberd Axe",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Razorpike Axeblade",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"axe_spear_v02":{
+		"name": "Blade Pike",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 25,
+				"maximum": 40
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 3
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Thundercleave Lance",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 60
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 18
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 40
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"axe_spear_v03":{
+		"name": "Cleaving Lance",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 40,
+				"maximum": 70
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 3,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 3
+			}
+		],
+		"legendary": {
+			"name": "Tempest Edge Glaive",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 90
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				}
+			]
+		}
+	},
+	"axe_spear_v04":{
+		"name": "Edge Glaive",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "SPEAR",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 40,
+				"maximum": 70
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 3,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 3
+			}
+		],
+		"legendary": {
+			"name": "Warbeast Battlepike",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 150
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 80
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 9
+				}
+			]
+		}
 	},
 	"bow_v00": {
-		"name": "Wooden Bow",
+		"name": "Swiftshot Shortbow",
 		"type": "EQUIPMENT",
 		"equipment_type": "WEAPON",
 		"weapon_type": "BOW",
@@ -341,10 +1410,672 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 3,
+				"minimum": 5,
 				"maximum": 10
 			}
-		]
+		],
+		"legendary": {
+			"name": "Shadowstrike Swiftshot Bow",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 30
+				}
+			]
+		}
+	},
+	"bow_v01": {
+		"name": "Quickdraw Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 25
+			}
+		],
+		"legendary": {
+			"name": "Stormbringer Quickdraw Bow",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 45
+				}
+			]
+		}
+	},
+	"bow_v02": {
+		"name": "Fleetfoot Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 40
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Nightfall Fleetfoot",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 60
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"bow_v03": {
+		"name": "Rapidfire Shortbow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 40,
+				"maximum": 60
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Thunderbolt Rapidfire",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 70
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 80
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"bow_v04": {
+		"name": "Agile Archer",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 50,
+				"maximum": 70
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 60,
+				"maximum": 100
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Agile Archer",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 90
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 65
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 120
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"long_bow_v00": {
+		"name": "Longshot Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 25
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Stormseeker Longshot",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 45
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"long_bow_v01": {
+		"name": "Timber Longbow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 25,
+				"maximum": 40
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 50
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Dragonwood Longbow",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 60
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 70
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"long_bow_v02": {
+		"name": "Oakwood Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 50,
+				"maximum": 80
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 3
+			}
+		],
+		"legendary": {
+			"name": "Shadowsteel Oakbow",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 70
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 100
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				}
+			]
+		}
+	},
+	"long_bow_v03": {
+		"name": "Hunter's Longbow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 50,
+				"maximum": 70
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 80,
+				"maximum": 120
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 4
+			}
+		],
+		"legendary": {
+			"name": "Eagle's Eye Hunterbow",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 90
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 140
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 9
+				}
+			]
+		}
+	},
+	"long_bow_v04": {
+		"name": "Marksman's Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 70,
+				"maximum": 90
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 120,
+				"maximum": 160
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -5,
+				"maximum": -1
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 3,
+				"maximum": 4
+			}
+		],
+		"legendary": {
+			"name": "Celestial Marksman's Bow",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 110
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 180
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 9
+				}
+			]
+		}
+	},
+	"recurve_v00": {
+		"name": "Recurve Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"legendary": {
+			"name": "Stormbringer's Wrath Recurve",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				}
+			]
+		}
+	},
+	"recurve_v01": {
+		"name": "Willow Recurve",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 25,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Shadowsteel Serpent Recurve",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 40
+				}
+			]
+		}
+	},
+	"recurve_v02": {
+		"name": "Maplewood Recurve",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 35,
+				"maximum": 45
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 30
+			}
+		],
+		"legendary": {
+			"name": "Thunderclap Recurve",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 65
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 50
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				}
+			]
+		}
+	},
+	"recurve_v03": {
+		"name": "Ranger's Recurve",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 45,
+				"maximum": 65
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 35,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 30,
+				"maximum": 50
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Feather Recurve",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 85
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 65
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 70
+				}
+			]
+		}
+	},
+	"recurve_v04": {
+		"name": "Swiftwind Recurve",
+		"type": "EQUIPMENT",
+		"equipment_type": "WEAPON",
+		"weapon_type": "BOW",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 65,
+				"maximum": 85
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 50,
+				"maximum": 60
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 50,
+				"maximum": 70
+			}
+		],
+		"legendary": {
+			"name": "Celestial Serenity Recurve",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 105
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 75
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 90
+				}
+			]
+		}
 	},
 	"shield_v00": {
 		"name": "Wood Shield",
@@ -354,11 +2085,644 @@
 		"level": 1,
 		"base_stats": [
 			{
+				"stat": "LIFE_POINT",
+				"minimum": 5,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Stormguard Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				}
+			]
+		}
+	},
+	"shield_v01": {
+		"name": "Heater Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 50
+			},
+			{
 				"stat": "DEF",
-				"minimum": 2,
+				"minimum": 1,
 				"maximum": 5
 			}
-		]
+		],
+		"legendary": {
+			"name": "Dragonsteel Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 100
+				},
+				{
+					"stat": "DEF",
+					"value": 25
+				}
+			]
+		}
+	},
+	"shield_v02": {
+		"name": "Kite Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 50,
+				"maximum": 70
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			}
+		],
+		"legendary": {
+			"name": "Shadowforge Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 120
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"shield_v03": {
+		"name": "Tower Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 70,
+				"maximum": 120
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 30
+			}
+		],
+		"legendary": {
+			"name": "Aegis Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 170
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 70
+				}
+			]
+		}
+	},
+	"shield_v04": {
+		"name": "Buckler Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 120,
+				"maximum": 180
+			},
+			{
+				"stat": "DEF",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 3
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 30,
+				"maximum": 50
+			}
+		],
+		"legendary": {
+			"name": "Celestial Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 230
+				},
+				{
+					"stat": "DEF",
+					"value": 50
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 90
+				}
+			]
+		}
+	},
+	"heavy_shield_v00": {
+		"name": "Iron Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "DEF",
+				"minimum": 3,
+				"maximum": 8
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -25,
+				"maximum": -20
+			}
+		],
+		"legendary": {
+			"name": "Stormbreaker Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 28
+				}
+			]
+		}
+	},
+	"heavy_shield_v01": {
+		"name": "Steel Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "DEF",
+				"minimum": 8,
+				"maximum": 15
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 20
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -25,
+				"maximum": -15
+			}
+		],
+		"legendary": {
+			"name": "Dragonsteel Tower Shield",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 90
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 60
+				}
+			]
+		}
+	},
+	"heavy_shield_v02": {
+		"name": "Reinforced Bulwark",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 40,
+				"maximum": 65
+			},
+			{
+				"stat": "DEF",
+				"minimum": 15,
+				"maximum": 30
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 20,
+				"maximum": 50
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20 ,
+				"maximum": -15
+			}
+		],
+		"legendary": {
+			"name": "Shadowforge Bulwark",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 115
+				},
+				{
+					"stat": "DEF",
+					"value": 50
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 90
+				}
+			]
+		}
+	},
+	"heavy_shield_v03": {
+		"name": "Adamantite Guard",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 65,
+				"maximum": 110
+			},
+			{
+				"stat": "DEF",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 50,
+				"maximum": 70
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15 ,
+				"maximum": -10
+			}
+		],
+		"legendary": {
+			"name": "Celestial Guard",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 160
+				},
+				{
+					"stat": "DEF",
+					"value": 60
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 110
+				}
+			]
+		}
+	},
+	"heavy_shield_v04": {
+		"name": "Mithril Defender",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 110,
+				"maximum": 160
+			},
+			{
+				"stat": "DEF",
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 70,
+				"maximum": 120
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Mithril Defender",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 210
+				},
+				{
+					"stat": "DEF",
+					"value": 70
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 160
+				}
+			]
+		}
+	},
+	"knight_shield_v00": {
+		"name": "Knight's Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 6
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 1
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			}
+		],
+		"legendary": {
+			"name": "Knight's Honor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "DEF",
+					"value": 26
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 6
+				}
+			]
+		}
+	},
+	"knight_shield_v01": {
+		"name": "Templar Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 60
+			},
+			{
+				"stat": "DEF",
+				"minimum": 6,
+				"maximum": 12
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 2
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -10
+			}
+		],
+		"legendary": {
+			"name": "Templar's Valor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 110
+				},
+				{
+					"stat": "DEF",
+					"value": 32
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 7
+				}
+			]
+		}
+	},
+	"knight_shield_v02": {
+		"name": "Crusader Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 60,
+				"maximum": 80
+			},
+			{
+				"stat": "DEF",
+				"minimum": 12,
+				"maximum": 25
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 1,
+				"maximum": 3
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -10
+			}
+		],
+		"legendary": {
+			"name": "Crusader's Bastion",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 150
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 4
+				}
+			]
+		}
+	},
+	"knight_shield_v03": {
+		"name": "Royal Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 80,
+				"maximum": 150
+			},
+			{
+				"stat": "DEF",
+				"minimum": 25,
+				"maximum": 35
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 3
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			}
+		],
+		"legendary": {
+			"name": "Royal Guardian",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 200
+				},
+				{
+					"stat": "DEF",
+					"value": 55
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 8
+				}
+			]
+		}
+	},
+	"knight_shield_v04": {
+		"name": "Paladin Shield",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "SHIELD",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 150,
+				"maximum": 200
+			},
+			{
+				"stat": "DEF",
+				"minimum": 35,
+				"maximum": 45
+			},
+			{
+				"stat": "KNOCKBACK",
+				"minimum": 2,
+				"maximum": 4
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -5,
+				"maximum": -1
+			}
+		],
+		"legendary": {
+			"name": "Paladin's Defender",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 250
+				},
+				{
+					"stat": "DEF",
+					"value": 65
+				},
+				{
+					"stat": "KNOCKBACK",
+					"value": 9
+				}
+			]
+		}
 	},
 	"quiver_v00": {
 		"name": "Swiftshot Quiver",
@@ -368,11 +2732,2925 @@
 		"level": 1,
 		"base_stats": [
 			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Shadowweave Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				}
+			]
+		}
+	},
+	"quiver_v01": {
+		"name": "Cloth Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 2,
+				"maximum": 7
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Stormguard Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 22
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				}
+			]
+		}
+	},
+	"quiver_v02": {
+		"name": "Wooden Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 5,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Ironwood Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				}
+			]
+		}
+	},
+	"quiver_v03": {
+		"name": "Canvas Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 7,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 40
+			}
+		],
+		"legendary": {
+			"name": "Celestial Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 40
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 80
+				}
+			]
+		}
+	},
+	"quiver_v04": {
+		"name": "Woven Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 50,
+				"maximum": 70
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 30,
+				"maximum": 50
+			}
+		],
+		"legendary": {
+			"name": "Dragonhide Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 30
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 40
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 120
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 90
+				}
+			]
+		}
+	},
+	"quiver_v05": {
+		"name": "Hide Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 23
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 25
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 50,
+				"maximum": 80
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 40,
+				"maximum": 70
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 38
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 45
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 45
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 130
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 110
+				}
+			]
+		}
+	},
+	"quiver_v06": {
+		"name": "Fur Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 40
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 80,
+				"maximum": 100
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 50,
+				"maximum": 80
+			}
+		],
+		"legendary": {
+			"name": "Astral Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 45
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 150
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 120
+				}
+			]
+		}
+	},
+	"quiver_v07": {
+		"name": "Suede Quiver",
+		"type": "EQUIPMENT",
+		"equipment_type": "EXTRA_WEAPON",
+		"extra_weapon_type": "QUIVER",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 25,
+				"maximum": 30
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 40,
+				"maximum": 55
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 15,
+				"maximum": 30
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 70,
+				"maximum": 120
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 80,
+				"maximum": 120
+			}
+		],
+		"legendary": {
+			"name": "Obsidian Quiver",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 75
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 50
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 170
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 160
+				}
+			]
+		}
+	},
+	"helmet_v00": {
+		"name": "Leather Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Shadowweave Helmet",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 55
+				},
+				{
+					"stat": "DEF",
+					"value": 22
+				}
+			]
+		}
+	},
+	"helmet_v01": {
+		"name": "Hunter's Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Ranger's Hat",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 50
+				},
+				{
+					"stat": "DEF",
+					"value": 22
+				}
+			]
+		}
+	},
+	"helmet_v02": {
+		"name": "Red Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Crimson Bow",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 55
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 22
+				}
+			]
+		}
+	},
+	"helmet_v03": {
+		"name": "Blue Bow",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 60
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 5
+			}
+		],
+		"legendary": {
+			"name": "Azure Bow",
+			"stats": [
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 100
+				},
+				{
+					"stat": "DEF",
+					"value": 25
+				}
+			]
+		}
+	},
+	"helmet_v04": {
+		"name": "Light Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 5,
+				"maximum": 20
+			},
+			{
+				"stat": "DEF",
+				"minimum": 3,
+				"maximum": 8
+			}
+		],
+		"legendary": {
+			"name": "Nimble Light Helmet",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 28
+				}
+			]
+		}
+	},
+	"helmet_v05": {
+		"name": "Golden Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Gilded Golden Helmet",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 45
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				}
+			]
+		}
+	},
+	"helmet_v06": {
+		"name": "Diamond Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 25
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Prismatic Diamond Helmet",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 75
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			]
+		}
+	},
+	"helmet_v07": {
+		"name": "Phoenix Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "DEF",
+				"minimum": 3,
+				"maximum": 8
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Brigandine Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 50
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 40
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 28
+				}
+			]
+		}
+	},
+	"helmet_v08": {
+		"name": "Steel Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 50
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Adamantite Steel Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 100
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			]
+		}
+	},
+	"helmet_v09": {
+		"name": "Fortune Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Seraphic Helmet",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 90
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 80
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			]
+		}
+	},
+	"helmet_v10": {
+		"name": "Stormcloak Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 50,
+				"maximum": 100
+			},
+			{
+				"stat": "DEF",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"legendary": {
+			"name": "Thunderstorm Helmet",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 150
+				},
+				{
+					"stat": "DEF",
+					"value": 60
+				}
+			]
+		}
+	},
+	"helmet_v11": {
+		"name": "Aurora Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 25,
+				"maximum": 40
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 50
+			},
+			{
+				"stat": "DEF",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"legendary": {
+			"name": "Aurora Borealis Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 60
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 100
+				},
+				{
+					"stat": "DEF",
+					"value": 60
+				}
+			]
+		}
+	},
+	"helmet_v12": {
+		"name": "Shard Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 60
+			}
+		],
+		"legendary": {
+			"name": "Obisidian Shard Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 60
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 110
+				}
+			]
+		}
+	},
+	"helmet_v13": {
+		"name": "Astral Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 35,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 35
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -25,
+				"maximum": -15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 35,
+				"maximum": 65
+			}
+		],
+		"legendary": {
+			"name": "Mithril Astral Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 70
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 55
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 115
+				}
+			]
+		}
+	},
+	"helmet_v14": {
+		"name": "Tempest Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 35
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 100,
+				"maximum": 120
+			},
+			{
+				"stat": "DEF",
+				"minimum": 25,
+				"maximum": 30
+			}
+		],
+		"legendary": {
+			"name": "Lightning Tempest Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 55
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 170
+				},
+				{
+					"stat": "DEF",
+					"value": 50
+				}
+			]
+		}
+	},
+	"helmet_v15": {
+		"name": "Celestial Helmet",
+		"type": "EQUIPMENT",
+		"equipment_type": "HELMET",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 35
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 80,
+				"maximum": 100
+			},
+			{
+				"stat": "DEF",
+				"minimum": 30,
+				"maximum": 35
+			}
+		],
+		"legendary": {
+			"name": "Celestial Angel Helmet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 55
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 150
+				},
+				{
+					"stat": "DEF",
+					"value": 55
+				}
+			]
+		}
+	},
+	"armor_v00": {
+		"name": "Leather Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"legendary": {
+			"name": "Shadowweave Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 60
+				},
+				{
+					"stat": "DEF",
+					"value": 25
+				}
+			]
+		}
+	},
+	"armor_v01": {
+		"name": "Hunter's Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Ranger's Tabard",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 60
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			]
+		}
+	},
+	"armor_v02": {
+		"name": "Red Dress",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 2
+			}
+		],
+		"legendary": {
+			"name": "Crimson Dress",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 55
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 22
+				}
+			]
+		}
+	},
+	"armor_v03": {
+		"name": "Blue Dress",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 5,
+				"maximum": 60
+			},
+			{
+				"stat": "DEF",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"legendary": {
+			"name": "Azure Dress",
+			"stats": [
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 100
+				},
+				{
+					"stat": "DEF",
+					"value": 25
+				}
+			]
+		}
+	},
+	"armor_v04": {
+		"name": "Light Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Nimble Light Armor",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			]
+		}
+	},
+	"armor_v05": {
+		"name": "Golden Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 50
+			},
+			{
+				"stat": "DEF",
+				"minimum": 15,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Gilded Golden Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 100
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			]
+		}
+	},
+	"armor_v06": {
+		"name": "Diamond Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -10,
+				"maximum": -5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 40,
+				"maximum": 55
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Prismatic Diamond Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 105
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				}
+			]
+		}
+	},
+	"armor_v07": {
+		"name": "Phoenix Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 50,
+				"maximum": 60
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Brigandine Armor",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 110
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			]
+		}
+	},
+	"armor_v08": {
+		"name": "Steel Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 80,
+				"maximum": 120
+			},
+			{
+				"stat": "DEF",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"legendary": {
+			"name": "Adamantite Steel Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 170
+				},
+				{
+					"stat": "DEF",
+					"value": 60
+				}
+			]
+		}
+	},
+	"armor_v09": {
+		"name": "Fortune Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 70,
+				"maximum": 100
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 40,
+				"maximum": 50
+			},
+			{
+				"stat": "DEF",
+				"minimum": 15,
+				"maximum": 35
+			}
+		],
+		"legendary": {
+			"name": "Seraphic Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 150
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 90
+				},
+				{
+					"stat": "DEF",
+					"value": 55
+				}
+			]
+		}
+	},
+	"armor_v10": {
+		"name": "Stormcloak Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 70,
+				"maximum": 100
+			},
+			{
+				"stat": "DEF",
+				"minimum": 30,
+				"maximum": 35
+			}
+		],
+		"legendary": {
+			"name": "Thunderstorm Armor",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 150
+				},
+				{
+					"stat": "DEF",
+					"value": 55
+				}
+			]
+		}
+	},
+	"armor_v11": {
+		"name": "Aurora Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -15,
+				"maximum": -10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 120,
+				"maximum": 150
+			},
+			{
+				"stat": "DEF",
+				"minimum": 40,
+				"maximum": 50
+			}
+		],
+		"legendary": {
+			"name": "Aurora Borealis Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 200
+				},
+				{
+					"stat": "DEF",
+					"value": 70
+				}
+			]
+		}
+	},
+	"armor_v12": {
+		"name": "Shard Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -20,
+				"maximum": -15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 120,
+				"maximum": 180
+			},
+			{
+				"stat": "DEF",
+				"minimum": 50,
+				"maximum": 60
+			}
+		],
+		"legendary": {
+			"name": "Obisidian Shard Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 230
+				},
+				{
+					"stat": "DEF",
+					"value": 80
+				}
+			]
+		}
+	},
+	"armor_v13": {
+		"name": "Astral Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 35,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": -25,
+				"maximum": -15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 150,
+				"maximum": 200
+			},
+			{
+				"stat": "DEF",
+				"minimum": 55,
+				"maximum": 65
+			}
+		],
+		"legendary": {
+			"name": "Mithril Astral Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"minimum": 250
+				},
+				{
+					"stat": "DEF",
+					"value": 85
+				}
+			]
+		}
+	},
+	"armor_v14": {
+		"name": "Tempest Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 200,
+				"maximum": 250
+			},
+			{
+				"stat": "DEF",
+				"minimum": 60,
+				"maximum": 70
+			}
+		],
+		"legendary": {
+			"name": "Lightning Tempest Armor",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 300
+				},
+				{
+					"stat": "DEF",
+					"value": 90
+				}
+			]
+		}
+	},
+	"armor_v15": {
+		"name": "Celestial Armor",
+		"type": "EQUIPMENT",
+		"equipment_type": "ARMOR",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 200,
+				"maximum": 230
+			},
+			{
+				"stat": "DEF",
+				"minimum": 55,
+				"maximum": 65
+			}
+		],
+		"legendary": {
+			"name": "Celestial Angel Armor",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 280
+				},
+				{
+					"stat": "DEF",
+					"value": 85
+				}
+			]
+		}
+	},
+	"shoes_v00":{
+		"name": "Leather Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 1,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"legendary": {
+			"name": "Shadowweave Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				}
+			]
+		}
+	},
+	"shoes_v01":{
+		"name": "Hunter's Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Ranger's Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				}
+			]
+		}
+	},
+	"shoes_v02":{
+		"name": "Red Sandal",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 5,
+				"maximum": 20
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Crimson Sandal",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 60
+				}
+			]
+		}
+	},
+	"shoes_v03":{
+		"name": "Blue Sandal",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"legendary": {
+			"name": "Azure Sandal",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 80
+				}
+			]
+		}
+	},
+	"shoes_v04":{
+		"name": "Light Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Nimble Light Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 65
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				}
+			]
+		}
+	},
+	"shoes_v05":{
+		"name": "Golden Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Gilded Golden Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				}
+			]
+		}
+	},
+	"shoes_v06":{
+		"name": "Diamond Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "DEF",
+				"minimum": 15,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Prismatic Diamond Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 65
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			]
+		}
+	},
+	"shoes_v07":{
+		"name": "Phoenix Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Phoenix Brigandine Shoes",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 35
+				}
+			]
+		}
+	},
+	"shoes_v08":{
+		"name": "Steel Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"legendary": {
+			"name": "Adamantite Steel Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 80
+				}
+			]
+		}
+	},
+	"shoes_v09":{
+		"name": "Fortune Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Seraphic Shoes",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 40
+				}
+			]
+		}
+	},
+	"shoes_v10":{
+		"name": "Stormcloak Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Thunderstorm Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 40
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				}
+			]
+		}
+	},
+	"shoes_v11":{
+		"name": "Aurora Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Aurora Borealis Shoes",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			]
+		}
+	},
+	"shoes_v12":{
+		"name": "Shard Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 25,
+				"maximum": 40
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Obisidian Shard Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 90
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				}
+			]
+		}
+	},
+	"shoes_v13":{
+		"name": "Astral Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 35,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 35
+			},
+			{
+				"stat": "DEF",
+				"minimum": 20,
+				"maximum": 35
+			}
+		],
+		"legendary": {
+			"name": "Mithril Astral Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 85
+				},
+				{
+					"stat": "DEF",
+					"value": 55
+				}
+			]
+		}
+	},
+	"shoes_v14":{
+		"name": "Tempest Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 15,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Lightning Tempest Shoes",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 60
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			]
+		}
+	},
+	"shoes_v15":{
+		"name": "Celestial Shoes",
+		"type": "EQUIPMENT",
+		"equipment_type": "SHOES",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 30,
+				"maximum": 40
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"legendary": {
+			"name": "Celestial Angel Shoes",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 60
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			]
+		}
+	},
+	"necklace_v00":{
+		"name": "Pearl Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 1,
+		"base_stats": [
+			{
 				"stat": "ATK",
 				"minimum": 1,
 				"maximum": 5
 			}
-		]
+		],
+		"legendary": {
+			"name": "Oceanic Pearl Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 25
+				}
+			]
+		}
+	},
+	"necklace_v01":{
+		"name": "Chain Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"usable": {
+			"type": "crit_damage",
+			"data": {
+				"value": 5,
+				"effective_time": 10,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Shadowforged Chain Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				}
+			],
+			"usable": {
+				"type": "add_crit_damage",
+				"data": {
+					"value": 10,
+					"effective_time": 10,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v02":{
+		"name": "Rope Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"usable": {
+			"type": "add_crit_rate",
+			"data": {
+				"value": 3,
+				"effective_time": 10,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Stormcaller Rope Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 30
+				}
+			],
+			"usable": {
+				"type": "add_crit_rate",
+				"data": {
+					"value": 10,
+					"effective_time": 10,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v03":{
+		"name": "Choker Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 10
+			}
+		],
+		"usable": {
+			"type": "healing",
+			"data": {
+				"value": 10,
+				"cooldown": 60,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Velvet Choker Necklace",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 80
+				},
+				{
+					"stat": "DEF",
+					"value": 30
+				}
+			],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"value": 20,
+					"cooldown": 60,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v04":{
+		"name": "Beaded Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Starlight Beaded Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 35
+				}
+			]
+		}
+	},
+	"necklace_v05":{
+		"name": "Shell Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 50
+			},
+			{
+				"stat": "DEF",
+				"minimum": 15,
+				"maximum": 20
+			}
+		],
+		"legendary": {
+			"name": "Mermaid Shell Necklace",
+			"stats": [
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 100
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			]
+		}
+	},
+	"necklace_v06":{
+		"name": "Gold Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 15
+			}
+		],
+		"usable": {
+			"type": "add_atk",
+			"data": {
+				"value": 20,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Sunburst Gold Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 35
+				}
+			],
+			"usable": {
+				"type": "add_atk",
+				"data": {
+					"value": 20,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v07":{
+		"name": "Gemstone Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"usable": {
+			"type": "add_move_speed",
+			"data": {
+				"value": 15,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Celestial Gemstone Necklace",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 90
+				}
+			],
+			"usable": {
+				"type": "add_move_speed",
+				"data": {
+					"value": 20,
+					"effective_time": 20,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v08":{
+		"name": "Locket Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 30,
+				"maximum": 40
+			}
+		],
+		"usable": {
+			"type": "add_def",
+			"data": {
+				"value": 20,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Emerald Locket Necklace",
+			"stats": [
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 90
+				}
+			],
+			"usable": {
+				"type": "add_def",
+				"data": {
+					"value": 30,
+					"effective_time": 20,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v09":{
+		"name": "Crystal Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 35,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 30
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 50
+			}
+		],
+		"usable": {
+			"type": "healing",
+			"data": {
+				"value": 20,
+				"cooldown": 60,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Crystal Prism Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 50
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 100
+				}
+			],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"value": 40,
+					"cooldown": 60,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v10":{
+		"name": "Tribal Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 15,
+				"maximum": 35
+			}
+		],
+		"usable": {
+			"type": "add_crit_damage",
+			"data": {
+				"value": 20,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Tribal Spirit Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 55
+				}
+			],
+			"usable": {
+				"type": "add_crit_damage",
+				"data": {
+					"value": 40,
+					"effective_time": 20,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"necklace_v11":{
+		"name": "Braided Necklace",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 40
+			}
+		],
+		"usable": {
+			"type": "add_crit_rate",
+			"data": {
+				"value": 15,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Eternal Braided Necklace",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				}
+			],
+			"usable": {
+				"type": "add_crit_rate",
+				"data": {
+					"value": 25,
+					"effective_time": 20,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
 	},
 	"ring_v00":{
 		"name": "Dirty Ring",
@@ -382,35 +5660,880 @@
 		"base_stats": [
 			{
 				"stat": "ATK",
-				"minimum": 2,
+				"minimum": 1,
 				"maximum": 5
+			}
+		],
+		"legendary": {
+			"name": "Fresh Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 25
+				}
+			]
+		}
+	},
+	"ring_v01":{
+		"name": "Sapphire Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 1,
+				"maximum": 10
 			}
 		],
 		"usable": {
 			"type": "healing",
 			"data": {
-				"healing": 5,
-				"cooldown": 10,
+				"value": 10,
+				"cooldown": 60,
 				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Celestial Sapphire Circlet",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 25
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 60
+				}
+			],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"value": 20,
+					"cooldown": 60,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v02":{
+		"name": "Amethyst Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 5,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 1,
+				"maximum": 10
+			}
+		],
+		"usable": {
+			"type": "healing",
+			"data": {
+				"value": 10,
+				"cooldown": 60,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Diamond Dust Amethyst Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 25
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 50
+				}
+			],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"value": 20,
+					"cooldown": 60,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v03":{
+		"name": "Topaz Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 10,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 15
+			}
+		],
+		"legendary": {
+			"name": "Stormforged Topaz Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 35
+				}
+			]
+		}
+	},
+	"ring_v04":{
+		"name": "Platinum Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"usable": {
+			"type": "add_crit_damage",
+			"data": {
+				"value": 10,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Platinum Starlight Ring",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 35
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				}
+			],
+			"usable": {
+				"type": "add_crit_damage",
+				"data": {
+					"value": 10,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v05":{
+		"name": "Jade Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 15,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"usable": {
+			"type": "add_crit_rate",
+			"data": {
+				"value": 5,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Jade Dragon Ring",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 35
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				}
+			],
+			"usable": {
+				"type": "add_crit_rate",
+				"data": {
+					"value": 5,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v06":{
+		"name": "Lapis Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 1,
+				"maximum": 5
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"usable": {
+			"type": "healing",
+			"data": {
+				"value": 20,
+				"cooldown": 60,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Lapis Storm Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 20
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 70
+				}
+			],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"value": 30,
+					"cooldown": 60,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v07":{
+		"name": "Ivory Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 20,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "DEF",
+				"minimum": 5,
+				"maximum": 15
+			}
+		],
+		"usable": {
+			"type": "healing",
+			"data": {
+				"value": 20,
+				"cooldown": 60,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Ivory Spirit Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 35
+				},
+				{
+					"stat": "DEF",
+					"value": 35
+				}
+			],
+			"usable": {
+				"type": "healing",
+				"data": {
+					"value": 30,
+					"cooldown": 60,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v08":{
+		"name": "Turquoise Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 1,
+				"maximum": 10
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"usable": {
+			"type": "add_def",
+			"data": {
+				"value": 20,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Turquoise Serenity Ring",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 90
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 50
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			],
+			"usable": {
+				"type": "add_def",
+				"data": {
+					"value": 20,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v09":{
+		"name": "Crystal Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 25,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 10
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"usable": {
+			"type": "add_atk",
+			"data": {
+				"value": 20,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Quartz Crystal Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 40
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 25
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 40
+				}
+			],
+			"usable": {
+				"type": "add_atk",
+				"data": {
+					"value": 20,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v10":{
+		"name": "Emerald Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 40,
+				"maximum": 60
+			},
+			{
+				"stat": "BONUS_EXPERIENCE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "DEF",
+				"minimum": 10,
+				"maximum": 20
+			}
+		],
+		"usable": {
+			"type": "add_move_speed",
+			"data": {
+				"value": 20,
+				"effective_time": 30,
+				"cooldown": 180,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Seraphic Emerald Loop",
+			"stats": [
+				{
+					"stat": "LIFE_POINT",
+					"value": 110
+				},
+				{
+					"stat": "BONUS_EXPERIENCE",
+					"value": 60
+				},
+				{
+					"stat": "DEF",
+					"value": 40
+				}
+			],
+			"usable": {
+				"type": "add_move_speed",
+				"data": {
+					"value": 20,
+					"effective_time": 60,
+					"cooldown": 180,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v11":{
+		"name": "Ruby Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 30,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 5,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 15,
+				"maximum": 20
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 5
+			}
+		],
+		"usable": {
+			"usable": {
+				"type": "add_move_speed",
+				"data": {
+					"value": 15,
+					"effective_time": 40,
+					"cooldown": 180,
+					"unlimited_use": true
+				}
+			}
+		},
+		"legendary": {
+			"name": "Dragonfire Ruby Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 45
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 40
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 25
+				}
+			],
+			"usable": {
+				"usable": {
+					"type": "add_move_speed",
+					"data": {
+						"value": 15,
+						"effective_time": 100,
+						"cooldown": 180,
+						"unlimited_use": true
+					}
+				}
+			}
+		}
+	},
+	"ring_v12":{
+		"name": "Diamond Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 35,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 20,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 15,
+				"maximum": 25
+			},
+			{
+				"stat": "MOVE_SPEED",
+				"minimum": 1,
+				"maximum": 10
+			}
+		],
+		"usable": {
+			"type": "add_crit_damage",
+			"data": {
+				"value": 20,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Dragonfire Ruby Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 45
+				},
+				{
+					"stat": "MOVE_SPEED",
+					"value": 30
+				}
+			],
+			"usable": {
+				"type": "add_crit_damage",
+				"data": {
+					"value": 30,
+					"effective_time": 30,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v13":{
+		"name": "Amber Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 35,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 20,
+				"maximum": 35
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 15
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 25,
+				"maximum": 35
+			}
+		],
+		"usable": {
+			"type": "add_crit_rate",
+			"data": {
+				"value": 10,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Amber Glow Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 55
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 30
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 55
+				}
+			],
+			"usable": {
+				"type": "add_crit_rate",
+				"data": {
+					"value": 15,
+					"effective_time": 30,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v14":{
+		"name": "Sunstone Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "ATK",
+				"minimum": 30,
+				"maximum": 50
+			},
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 40
+			}
+		],
+		"usable": {
+			"type": "add_atk",
+			"data": {
+				"value": 40,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Sunburst Sunstone Ring",
+			"stats": [
+				{
+					"stat": "ATK",
+					"value": 70
+				},
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				}
+			],
+			"usable": {
+				"type": "add_atk",
+				"data": {
+					"value": 40,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
+			}
+		}
+	},
+	"ring_v15":{
+		"name": "Obsidian Ring",
+		"type": "EQUIPMENT",
+		"equipment_type": "ACCESSORY",
+		"level": 40,
+		"base_stats": [
+			{
+				"stat": "CRIT_RATE",
+				"minimum": 10,
+				"maximum": 20
+			},
+			{
+				"stat": "CRIT_DAMAGE",
+				"minimum": 20,
+				"maximum": 40
+			},
+			{
+				"stat": "LIFE_POINT",
+				"minimum": 50,
+				"maximum": 70
+			}
+		],
+		"usable": {
+			"type": "add_def",
+			"data": {
+				"value": 40,
+				"effective_time": 20,
+				"cooldown": 120,
+				"unlimited_use": true
+			}
+		},
+		"legendary": {
+			"name": "Obsidian Shadow Ring",
+			"stats": [
+				{
+					"stat": "CRIT_RATE",
+					"value": 35
+				},
+				{
+					"stat": "CRIT_DAMAGE",
+					"value": 60
+				},
+				{
+					"stat": "LIFE_POINT",
+					"value": 120
+				}
+			],
+			"usable": {
+				"type": "add_def",
+				"data": {
+					"value": 40,
+					"effective_time": 40,
+					"cooldown": 120,
+					"unlimited_use": true
+				}
 			}
 		}
 	},
 	"stone": {
 		"name": "Stone",
 		"type": "MATERIAL",
-		"stack_size": 3,
+		"stack_size": 99,
 		"level": 1
 	},
 	"gold":{
 		"name": "Gold",
 		"type": "MATERIAL",
 		"stack_size": 99,
-		"rarity": "RARE",
-		"level": 10,
-		"usable": {
-			"type": "upgrade",
-			"data": {}
-		}
+		"rarity": "UNCOMMON",
+		"level": 10
 	},
 	"healing_potion_v00":{
 		"name": "Small Healing Potion",
@@ -421,7 +6544,7 @@
 		"usable":{
 			"type": "healing",
 			"data": {
-				"healing": 10,
+				"value": 10,
 				"cooldown": 2
 			}
 		}
@@ -435,7 +6558,7 @@
 		"usable":{
 			"type": "healing",
 			"data": {
-				"healing": 50,
+				"value": 50,
 				"cooldown": 3
 			}
 		}
@@ -449,7 +6572,7 @@
 		"usable":{
 			"type": "healing",
 			"data": {
-				"healing": 100,
+				"value": 100,
 				"cooldown": 5
 			}
 		}
@@ -463,7 +6586,7 @@
 		"usable":{
 			"type": "healing",
 			"data": {
-				"healing": 150,
+				"value": 150,
 				"cooldown": 10
 			}
 		}
@@ -477,7 +6600,7 @@
 		"usable":{
 			"type": "healing",
 			"data": {
-				"healing": 200,
+				"value": 200,
 				"cooldown": 20
 			}
 		}

@@ -11,10 +11,12 @@ func display(slot):
 	
 	size.x = 0
 	global_position = slot.size + slot.global_position
-	item_name.text = slot.item.get_item_name()
+	item_name.text = slot.item.item_name
+	item_name.label_settings = ResourceManager.set_font(16, ResourceManager.colors[slot.item.rarity])
 	var rarity_name = GameEnums.RARITY.keys()[slot.item.rarity].capitalize()
-	var line_type = ItemInfoLine.new(rarity_name + " " + ItemManager.get_type_name(slot.item), ResourceManager.colors[slot.item.rarity])
+	var line_type = ItemInfoLine.new(rarity_name + " " + ItemManager.get_type_name(slot.item), slot.item.rarity)
 	line_container.add_child(line_type)
+	
 	
 	for c in slot.item.components.values():
 		c.set_info(self)

@@ -1,19 +1,7 @@
 {
-	"INTELLIGENCE": {
-		"name": "Intelligence",
-		"display": "+%s to Intelligence"
-	},
-	"ALL_STATS": {
-		"name": "All Stats",
-		"display": "+%s to All Stats"
-	},
 	"LIFE_POINT": {
 		"name": "Life Points",
 		"display": "+%s to Life Points"
-	},
-	"REGENERATION": {
-		"name": "Regeneration",
-		"display": "Regeneration +%s Life Points Per Second"
 	},
 	"ATK": {
 		"name": "ATK",
@@ -38,5 +26,9 @@
 	"MOVE_SPEED": {
 		"name": "Move Speed",
 		"display": "+%s to Move Speed"
+	},
+	"KNOCKBACK": {
+		"name": "Knockback",
+		"display": "+%s to Knockback"
 	}
 }

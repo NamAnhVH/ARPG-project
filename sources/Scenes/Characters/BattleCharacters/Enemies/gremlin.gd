@@ -14,7 +14,7 @@ func move_state():
 	animation_tree.set("parameters/Move_idle/Move/blend_position", move_direction)
 	animation_tree.set("parameters/Move_idle/Idle/blend_position", move_direction)
 	animation_tree.set("parameters/Move_idle/conditions/is_moving", is_moving or is_chasing)
-	animation_tree.set("parameters/Move_idle/conditions/is_idling", !is_moving)
+	animation_tree.set("parameters/Move_idle/conditions/is_idling", !is_moving and !is_chasing)
 	
 	if (!is_chasing and !is_moving and !is_ready_attack) or is_attacking or !is_alive or is_ready_attack:
 		move_direction = Vector2.ZERO
@@ -28,10 +28,6 @@ func attack_state():
 	animation_tree.set("parameters/Attack/Claw/blend_position", navigation_agent.target_position - global_position)
 	animation_tree.set("parameters/Attack/conditions/is_biting", rand_attack == 0)
 	animation_tree.set("parameters/Attack/conditions/is_clawing", rand_attack == 1)
-
-func generate_random_position():
-	super.generate_random_position()
-	is_moving = true
 
 func _attack_finished():
 	super._attack_finished()

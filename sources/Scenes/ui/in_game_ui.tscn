@@ -36,9 +36,9 @@ offset_bottom = 272.0
 visible = false
 layout_mode = 0
 offset_left = 46.0
-offset_top = 83.0
-offset_right = 233.0
-offset_bottom = 272.0
+offset_top = 86.0
+offset_right = 196.0
+offset_bottom = 259.0
 
 [node name="ChestContainer" parent="Window" instance=ExtResource("3_2a0vc")]
 visible = false
@@ -52,7 +52,7 @@ offset_bottom = 387.0
 visible = false
 layout_mode = 0
 offset_left = 47.0
-offset_top = 312.0
+offset_top = 270.0
 offset_right = 190.0
 offset_bottom = 434.0
 

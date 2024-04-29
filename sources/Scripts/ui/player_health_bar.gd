@@ -15,7 +15,7 @@ func _set_health(_health):
 	set_health(_health)
 
 func _init_health_bar():
-	max_value = player_data.max_health
+	max_value = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 	value = player_data.health
-	damage_bar.max_value = player_data.max_health
+	damage_bar.max_value = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 	damage_bar.value = player_data.health

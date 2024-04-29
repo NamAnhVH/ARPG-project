@@ -39,17 +39,10 @@ func _init(item_id: String, data):
 		if equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
 			extra_weapon_type = GameEnums.EXTRA_WEAPON_TYPE[data.extra_weapon_type]
 	
-	if data.has("rarity"):
-		rarity = GameEnums.RARITY[data.rarity]
-	
-	if data.has("stack_size"):
-		stack_size = data.stack_size
-	
-	if data.has("base_stats"):
-		components["base_stats"] = BaseStat.new(data.base_stats)
-	
-	if data.has("legendary"):
-		legendary_data = data.legendary
+	rarity = GameEnums.RARITY[data.rarity] if data.has("rarity") else GameEnums.RARITY.COMMON
+	if data.has("stack_size"): stack_size = data.stack_size
+	if data.has("base_stats"): components["base_stats"] = BaseStat.new(data.base_stats, rarity)
+	if data.has("legendary"): legendary_data = data.legendary
 
 func _ready():
 	lbl_quantity = ResourceManager.get_instance("quantity")
@@ -76,19 +69,6 @@ func add_item_quantity(value):
 	quantity = min(quantity + value, stack_size)
 	set_quantity(quantity)
 	return remainder
-
-func get_item_name():
-	if components.has("affix_list") and rarity != GameEnums.RARITY.COMMON:
-		var prefix = ""
-		var suffix = ""
-		
-		for affix_item in components.affix_list.affixes:
-			if affix_item.affix_group.type == GameEnums.AFFIX_TYPE.PREFIX:
-				prefix = affix_item.affix.affix_name
-			else:
-				suffix = affix_item.affix.affix_name
-		return("%s %s %s" % [prefix, item_name, suffix]).strip_edges()
-	return item_name
 
 func set_item_slot(value):
 	item_slot = value

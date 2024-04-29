@@ -1,443 +1,202 @@
-{
-    "damage": {
-		"type": "PREFIX",
-		"apply_to": [
-			"WEAPON",
-            "ACCESSORY",
-            "CHEST"
-		],
-		"affixes": {
-			"unblemished": {
-                "affix_name": "Unblemished",
-                "min_level": 1,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 1,
-                        "maximum": 2
-                    }
-                ]
-            },
-            "polished": {
-                "affix_name": "Polished",
-                "min_level": 8,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 3,
-                        "maximum": 5
-                    }
-                ]
-            },
-            "sharp": {
-                "affix_name": "Sharp",
-                "min_level": 12,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 6,
-                        "maximum": 10
-                    }
-                ]
-            },
-			"razor_sharp": {
-				"affix_name": "Razor Sharp",
-				"min_level": 25,
-				"stat_ranges": [{
-					"stat": "ATK",
-					"minimum": 11,
-					"maximum": 20
-				}]
-			},
-            "mighty": {
-                "affix_name": "Mighty",
-                "min_level": 16,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 10,
-                        "maximum": 13
-                    }
-                ]
-            },
-            "vicious": {
-                "affix_name": "Vicious",
-                "min_level": 20,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 13,
-                        "maximum": 15
-                    }
-                ]
-            },
-            "enchanted": {
-                "affix_name": "Enchanted",
-                "min_level": 25,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 15,
-                        "maximum": 19
-                    }
-                ]
-            },
-            "legendary": {
-                "affix_name": "Legendary",
-                "min_level": 30,
-                "stat_ranges": [
-                    {
-                        "stat": "ATK",
-                        "minimum": 19,
-                        "maximum": 22
-                    }
-                ]
-            }
-		}  
-	},
-	"life_point": {
-		"type": "PREFIX",
-		"apply_to": [
-            "HEAD",
-            "CHEST",
-            "PANTS",
-            "SHOES",
-            "ACCESSORY",
-            "EXTRA_WEAPON"
-		],
-		"affixes": {
-			"lifetime": {
-				"affix_name": "Lifetime",
+[
+	{
+		"stat": "ATK",
+		"affixes": [
+			{
 				"min_level": 1,
-				"stat_ranges": [{
-					"stat": "LIFE_POINT",
-					"minimum": 10,
-					"maximum": 30
-				}]
+				"maximum": 4
 			},
-            "vigorous": {
-				"affix_name": "Vigorous",
-				"min_level": 3,
-				"stat_ranges": [{
-					"stat": "LIFE_POINT",
-					"minimum": 30,
-					"maximum": 40
-				}]
+			{
+				"min_level": 10,
+				"maximum": 8
 			},
-            "lively": {
-				"affix_name": "Lively",
-				"min_level": 5,
-				"stat_ranges": [{
-					"stat": "DEF",
-					"minimum": 7,
-					"maximum": 12
-				}]
-			},
-            "sturdy": {
-                "affix_name": "Sturdy",
-                "min_level": 8,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 30,
-                        "maximum": 40
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 5,
-                        "maximum": 10
-                    }
-                ]
-            },
-            "fortified": {
-                "affix_name": "Fortified",
-                "min_level": 12,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 20,
-                        "maximum": 30
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 10,
-                        "maximum": 20
-                    }
-                ]
-            },
-            "exuberant": {
-				"affix_name": "Exuberant",
-				"min_level": 13,
-				"stat_ranges": [{
-					"stat": "LIFE_POINT",
-					"minimum": 30,
-					"maximum": 45
-				}]
-			},
-            "lifeblood": {
-				"affix_name": "Lifeblood",
-				"min_level": 15,
-				"stat_ranges": [{
-					"stat": "LIFE_POINT",
-					"minimum": 40,
-					"maximum": 60
-				}]
-			},
-			"sustaining": {
-				"affix_name": "Sustaining",
-				"min_level": 17,
-				"stat_ranges": [{
-					"stat": "LIFE_POINT",
-					"minimum": 60,
-					"maximum": 80
-				}]
-			},
-
-			"prevailing": {
-				"affix_name": "Prevailing",
+			{
 				"min_level": 20,
-				"stat_ranges": [{
-					"stat": "LIFE_POINT",
-					"minimum": 80,
-					"maximum": 100
-				}]
+				"maximum": 12
 			},
-            "robust": {
-                "affix_name": "Robust",
-                "min_level": 22,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 80,
-                        "maximum": 100
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 15,
-                        "maximum": 20
-                    }
-                ]
-            },
-            "enduring": {
-                "affix_name": "Enduring",
-                "min_level": 24,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 90,
-                        "maximum": 110
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 20,
-                        "maximum": 30
-                    }
-                ]
-            },
-            "resilient": {
-                "affix_name": "Resilient",
-                "min_level": 25,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 100,
-                        "maximum": 130
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 30,
-                        "maximum": 35
-                    }
-                ]
-            },
-            "tenacious": {
-                "affix_name": "Tenacious",
-                "min_level": 30,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 130,
-                        "maximum": 150
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 40,
-                        "maximum": 50
-                    }
-                ]
-            },
-            "indomitable": {
-                "affix_name": "Indomitable",
-                "min_level": 35,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 150,
-                        "maximum": 190
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 50,
-                        "maximum": 70
-                    }
-                ]
-            },
-            "adamant": {
-                "affix_name": "Adamant",
-                "min_level": 40,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 200,
-                        "maximum": 250
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 80,
-                        "maximum": 90
-                    }
-                ]
-            },
-            "invincible": {
-                "affix_name": "Invincible",
-                "min_level": 45,
-                "stat_ranges": [
-                    {
-                        "stat": "LIFE_POINT",
-                        "minimum": 300,
-                        "maximum": 400
-                    },
-                    {
-                        "stat": "DEF",
-                        "minimum": 100,
-                        "maximum": 150
-                    }
-                ]
-            }
-        }
+			{
+				"min_level": 30,
+				"maximum": 16
+			},
+			{
+				"min_level": 40,
+				"maximum": 20
+			}
+		]
 	},
-	"strength": {
-		"type": "SUFFIX",
-		"apply_to": [
-			"WEAPON",
-            "ACCESSORY",
-            "CHEST"
-		],
-		"affixes": {
-			"of_power": {
-				"affix_name": "of Power",
+	{
+		"stat": "DEF",
+		"affixes": [
+			{
 				"min_level": 1,
-				"stat_ranges": [{
-                    "stat": "CRIT_DAMAGE",
-                    "minimum": 15,
-                    "maximum": 20
-				}]
+				"maximum": 4
 			},
-			"of_might": {
-				"affix_name": "of Might",
-				"min_level": 6,
-				"stat_ranges": [                    {
-                    "stat": "CRIT_RATE",
-                    "minimum": 6,
-                    "maximum": 8
-                },
-                {
-                    "stat": "CRIT_DAMAGE",
-                    "minimum": 20,
-                    "maximum": 25
-                }]
+			{
+				"min_level": 10,
+				"maximum": 8
 			},
-			"of_courage": {
-				"affix_name": "of Courage",
-				"min_level": 14,
-				"stat_ranges": [                    {
-                    "stat": "CRIT_RATE",
-                    "minimum": 8,
-                    "maximum": 10
-                },
-                {
-                    "stat": "CRIT_DAMAGE",
-                    "minimum": 25,
-                    "maximum": 30
-                }]
-			},
-			"of_the_templars": {
-				"affix_name": "of The Templar",
+			{
 				"min_level": 20,
-				"stat_ranges": [
-                {
-                    "stat": "CRIT_RATE",
-                    "minimum": 10,
-                    "maximum": 12
-                },
-                {
-                    "stat": "CRIT_DAMAGE",
-                    "minimum": 30,
-                    "maximum": 35
-                }]
+				"maximum": 12
 			},
-			"of_the_Giants": {
-				"affix_name": "of The Giants",
-				"min_level": 17,
-				"stat_ranges": [
-                {
-                    "stat": "CRIT_RATE",
-                    "minimum": 12,
-                    "maximum": 15
-                },
-                {
-                    "stat": "CRIT_DAMAGE",
-                    "minimum": 35,
-                    "maximum": 40
-                }]
+			{
+				"min_level": 30,
+				"maximum": 16
+			},
+			{
+				"min_level": 40,
+				"maximum": 20
 			}
-		}
+		]
 	},
-	"experience": {
-		"type": "SUFFIX",
-		"apply_to": [
-            "WEAPON",
-			"ACCESSORY",
-            "PANTS",
-            "SHOES"
-		],
-		"affixes": {
-			"of_experience": {
-				"affix_name": "of Experience",
+	{
+		"stat": "CRIT_RATE",
+		"affixes": [
+			{
 				"min_level": 1,
-				"stat_ranges": [{
-					"stat": "BONUS_EXPERIENCE",
-					"minimum": 6,
-					"maximum": 15
-				}]
+				"maximum": 3
 			},
-			"of_participation": {
-				"affix_name": "of Participation",
-				"min_level": 15,
-				"stat_ranges": [{
-					"stat": "BONUS_EXPERIENCE",
-					"minimum": 16,
-					"maximum": 25
-				}]
+			{
+				"min_level": 10,
+				"maximum": 6
 			},
-			"of_know_how": {
-				"affix_name": "of Know-How",
-				"min_level": 25,
-				"stat_ranges": [{
-					"stat": "BONUS_EXPERIENCE",
-					"minimum": 26,
-					"maximum": 35
-				}]
+			{
+				"min_level": 20,
+				"maximum": 9
 			},
-			"of_proficiency": {
-				"affix_name": "of Proficiency",
-				"min_level": 35,
-				"stat_ranges": [{
-					"stat": "BONUS_EXPERIENCE",
-					"minimum": 36,
-					"maximum": 45
-				}]
+			{
+				"min_level": 30,
+				"maximum": 12
+			},
+			{
+				"min_level": 40,
+				"maximum": 15
 			}
-		}
+		]
+	},
+	{
+		"stat": "CRIT_DAMAGE",
+		"affixes": [
+			{
+				"min_level": 1,
+				"maximum": 4
+			},
+			{
+				"min_level": 10,
+				"maximum": 8
+			},
+			{
+				"min_level": 20,
+				"maximum": 12
+			},
+			{
+				"min_level": 30,
+				"maximum": 16
+			},
+			{
+				"min_level": 40,
+				"maximum": 20
+			}
+		]
+	},
+	{
+		"stat": "MOVE_SPEED",
+		"affixes": [
+			{
+				"min_level": 1,
+				"maximum": 4
+			},
+			{
+				"min_level": 10,
+				"maximum": 8
+			},
+			{
+				"min_level": 20,
+				"maximum": 12
+			},
+			{
+				"min_level": 30,
+				"maximum": 16
+			},
+			{
+				"min_level": 40,
+				"maximum": 20
+			}
+		]
+	},
+	{
+		"stat": "BONUS_EXPERIENCE",
+		"affixes": [
+			{
+				"min_level": 1,
+				"maximum": 5
+			},
+			{
+				"min_level": 10,
+				"maximum": 10
+			},
+			{
+				"min_level": 20,
+				"maximum": 20
+			},
+			{
+				"min_level": 30,
+				"maximum": 30
+			},
+			{
+				"min_level": 40,
+				"maximum": 40
+			}
+		]
+	},
+	{
+		"stat": "KNOCKBACK",
+		"affixes": [
+			{
+				"min_level": 1,
+				"maximum": 1
+			},
+			{
+				"min_level": 10,
+				"maximum": 2
+			},
+			{
+				"min_level": 20,
+				"maximum": 3
+			},
+			{
+				"min_level": 30,
+				"maximum": 4
+			},
+			{
+				"min_level": 40,
+				"maximum": 5
+			}
+		]
+	},
+	{
+		"stat": "LIFE_POINT",
+		"affixes": [
+			{
+				"min_level": 1,
+				"maximum": 10
+			},
+			{
+				"min_level": 10,
+				"maximum": 20
+			},
+			{
+				"min_level": 20,
+				"maximum": 30
+			},
+			{
+				"min_level": 30,
+				"maximum": 40
+			},
+			{
+				"min_level": 40,
+				"maximum": 50
+			}
+		]
 	}
-}
+]
