@@ -4,6 +4,7 @@ class_name EquipmentSlot
 @export var type : GameEnums.EQUIPMENT_TYPE
 
 @onready var placeholder : TextureRect = $Placeholder
+var is_on_player_equipment: bool
 
 func _ready():
 	is_ready = true

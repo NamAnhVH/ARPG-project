@@ -25,20 +25,20 @@ func _init(item_id: String, data):
 	size = Vector2(28, 28)
 	position = Vector2(2, 2)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	item_data = data
 	id = item_id
+	texture = ResourceManager.sprites[id]
+	
+	item_data = data
 	item_name = data.name
 	level = data.level
-	texture = ResourceManager.sprites[id]
 	type = GameEnums.ITEM_TYPE[data.type]
-	
 	if type == GameEnums.ITEM_TYPE.EQUIPMENT:
 		equipment_type = GameEnums.EQUIPMENT_TYPE[data.equipment_type]
 		if equipment_type == GameEnums.EQUIPMENT_TYPE.WEAPON:
 			weapon_type = GameEnums.WEAPON_TYPE[data.weapon_type]
 		if equipment_type == GameEnums.EQUIPMENT_TYPE.EXTRA_WEAPON:
 			extra_weapon_type = GameEnums.EXTRA_WEAPON_TYPE[data.extra_weapon_type]
-	
+
 	rarity = GameEnums.RARITY[data.rarity] if data.has("rarity") else GameEnums.RARITY.COMMON
 	if data.has("stack_size"): stack_size = data.stack_size
 	if data.has("base_stats"): components["base_stats"] = BaseStat.new(data.base_stats, rarity)

@@ -185,7 +185,8 @@ var tscn = {
 	"choose_name_panel": preload("res://sources/scenes/ui/choose_name_panel.tscn"),
 	"quest_available": preload("res://sources/scenes/ui/quest_available.tscn"),
 	"quest_slot": preload("res://sources/scenes/ui/quest_slot.tscn"),
-	"quest_description": preload("res://sources/scenes/ui/quest_description.tscn")
+	"quest_description": preload("res://sources/scenes/ui/quest_description.tscn"),
+	"buff_slot": preload("res://sources/scenes/usable/buff_slot.tscn")
 }
 
 var character = {
@@ -636,7 +637,9 @@ var colors = {
 	GameEnums.RARITY.COMMON : "000000",
 	GameEnums.RARITY.UNCOMMON : "009623",
 	GameEnums.RARITY.RARE : "0090FF",
+	GameEnums.RARITY.UNIQUE : "FF00FF",
 	GameEnums.RARITY.EPIC : "9C00FF",
+	GameEnums.RARITY.DIVINE : "FF4500",
 	GameEnums.RARITY.LEGENDARY : "FF0000",
 }
 

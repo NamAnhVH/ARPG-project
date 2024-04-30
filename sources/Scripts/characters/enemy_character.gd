@@ -70,7 +70,7 @@ func set_health(value, _is_hitted: bool = false):
 
 func drop_item():
 	var item = ItemManager.get_item(ItemManager.items.keys()[randi() % ItemManager.items.size()])
-	if level < item.level:
+	if level >= item.level:
 		if item.equipment_type != GameEnums.EQUIPMENT_TYPE.NONE:
 			ItemManager.generate_random_rarity(item, Global.player_level)
 		
@@ -79,6 +79,8 @@ func drop_item():
 		Global.current_map.floor_item.add_child(floor_item)
 		floor_item.global_position = global_position
 		floor_item.set_z_index(self.z_index)
+	else:
+		item.queue_free()
 
 func _on_detect_area_body_entered(body):
 	if body is PlayableCharacter:

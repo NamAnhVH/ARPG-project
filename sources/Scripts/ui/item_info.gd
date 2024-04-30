@@ -24,15 +24,15 @@ func display(slot):
 	var max_width = 0
 	var height = 0
 	for c in line_container.get_children():
-		height += c.size.y
+		height += c.size.y + 4
 		if c.size.x > max_width:
 			max_width = c.size.x + 20
 	size = Vector2(max_width, height)
 	if item_name.get_line_count() > 1:
 		max_width = 120
 		size = Vector2(max_width, height)
-	height += item_name.get_line_count() * 16
-	size = Vector2(max_width, height + 20)
+	height += item_name.get_line_count() * 20
+	size = Vector2(max_width, height)
 	if slot is HotbarSlot:
 			global_position += Vector2(0, -size.y)
 	
@@ -45,7 +45,8 @@ func display_shop_item(slot):
 	
 	size.x = 60
 	item_name.text = ItemManager.get_item_name(slot.item_id)
-	var line_type = ItemInfoLine.new(ItemManager.get_type_name_with_id(slot.item_id), ResourceManager.colors[GameEnums.RARITY.COMMON])
+	item_name.label_settings = ResourceManager.set_font(16, ResourceManager.colors[GameEnums.RARITY.COMMON])
+	var line_type = ItemInfoLine.new(ItemManager.get_type_name_with_id(slot.item_id), GameEnums.RARITY.COMMON)
 	line_container.add_child(line_type)
 	
 	var max_width = item_name.size.x

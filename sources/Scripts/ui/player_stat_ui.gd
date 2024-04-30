@@ -11,30 +11,21 @@ extends NinePatchRect
 @onready var lbl_life_point : Label = $StatContainer/VBoxContainer/LifePoint/Stat
 
 func _ready():
-	SignalManager.inventory_opened.connect(_on_inventory_opened)
-	SignalManager.inventory_closed.connect(_on_inventory_closed)
-	for s in InventoryManager.equipment.slots:
-		s.item_changed.connect(_on_item_changed)
+	SignalManager.inventory_opened.connect(show)
+	SignalManager.inventory_closed.connect(hide)
+	SignalManager.update_stat.connect(_on_update_stat)
 	SignalManager.level_up.connect(_on_level_up)
-	player_data.changed.connect(_on_item_changed)
 	_on_level_up()
-	_on_item_changed()
+	_on_update_stat()
 
 func _on_level_up():
 	lbl_level.text = str(player_data.level)
-	_on_item_changed()
+	_on_update_stat()
 
-func _on_item_changed():
+func _on_update_stat():
 	lbl_atk.text = str(player_data.get_stat(GameEnums.STAT.ATK))
 	lbl_move_speed.text = str(player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) + "%"
 	lbl_def.text = str(player_data.get_stat(GameEnums.STAT.DEF))
 	lbl_crit_rate.text = str(player_data.get_stat(GameEnums.STAT.CRIT_RATE)) + "%"
 	lbl_crit_damage.text = str(player_data.get_stat(GameEnums.STAT.CRIT_DAMAGE)) + "%"
 	lbl_life_point.text = str(player_data.get_stat(GameEnums.STAT.LIFE_POINT))
-	SignalManager.item_changed.emit()
-
-func _on_inventory_opened():
-	show()
-
-func _on_inventory_closed():
-	hide()

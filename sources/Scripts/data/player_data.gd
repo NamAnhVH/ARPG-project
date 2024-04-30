@@ -5,7 +5,6 @@ class_name PlayerData
 @export var inventory : Dictionary
 @export var equipment : Dictionary
 @export var health : int
-@export var max_health : int
 @export var money : int
 @export var z_index : int
 @export var experience : int = 0
@@ -19,12 +18,12 @@ func set_data(data):
 	player_name = data.player_name if data.has("player_name") else ""
 	Global.player_name = player_name
 	health = data.health if data.has("health") and data.health != 0 else 10
-	max_health = data.max_health if data.has("max_health") and data.max_health != 0 else 10
 	money = data.money if data.has("money") else 0 
 	z_index = data.z_index if data.has("z_index") and data.z_index != 0 else 1
 	level = data.level if data.has("level") and level != 0 else 1
 	Global.player_level = level
 	experience = data.experience if data.has("experience") else 0
+	SignalManager.update_stat.emit()
 	emit_changed()
 
 func get_data():
@@ -34,7 +33,6 @@ func get_data():
 		"equipment": equipment,
 		"player_name": player_name,
 		"health": health,
-		"max_health" : max_health,
 		"money": money,
 		"z_index": z_index,
 		"level": level,
@@ -54,5 +52,6 @@ func get_stat(stat):
 		stat_total += base_stats[stat]
 	
 	stat_total += InventoryManager.equipment.get_stat(stat)
+	stat_total += BuffEffectManager.get_stat(stat)
 	
 	return int(round(stat_total))

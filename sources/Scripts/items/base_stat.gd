@@ -10,6 +10,17 @@ func _init(data, rarity = GameEnums.RARITY.COMMON):
 		stats.append({"stat": stat.stat, "value": value})
 	item_rarity = rarity
 
+func add_affixes(affixes, rarity):
+	item_rarity = rarity
+	for affix in affixes:
+		var is_stat_existed: bool = false
+		for stat in stats:
+			if stat.stat == affix.stat:
+				is_stat_existed = true
+				stat.value += affix.value
+				break
+		if !is_stat_existed: stats.append(affix)
+
 func set_info(item_info):
 	for stat in stats:
 		var text = ResourceManager.stat_info[GameEnums.STAT[stat.stat]].display % stat.value

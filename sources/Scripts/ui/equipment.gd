@@ -10,7 +10,7 @@ func _ready():
 	
 	SignalManager.equipment_ready.emit()
 	for s in slots:
-		s.is_on_player = true
+		s.is_on_player_equipment = true
 
 func set_inventory_size(value):
 	inventory_size = value

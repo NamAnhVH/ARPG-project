@@ -28,6 +28,7 @@ StoryManager="*res://sources/scripts/autoload/story_manager.gd"
 Global="*res://sources/scripts/autoload/global.gd"
 SceneTransition="*res://sources/scenes/ui/scene_transition.tscn"
 DialogueManagerNode="*res://sources/scenes/managers/dialogue_manager_node.tscn"
+BuffEffectManager="*res://sources/scenes/managers/buff_effect_manager.tscn"
 
 [debug]
 

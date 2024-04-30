@@ -5111,7 +5111,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_damage",
+				"type": "buff_crit_damage",
 				"data": {
 					"value": 10,
 					"effective_time": 10,
@@ -5139,7 +5139,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_rate",
+			"type": "buff_crit_rate",
 			"data": {
 				"value": 3,
 				"effective_time": 10,
@@ -5160,7 +5160,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_rate",
+				"type": "buff_crit_rate",
 				"data": {
 					"value": 10,
 					"effective_time": 10,
@@ -5320,7 +5320,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_atk",
+			"type": "buff_atk",
 			"data": {
 				"value": 20,
 				"effective_time": 20,
@@ -5345,7 +5345,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_atk",
+				"type": "buff_atk",
 				"data": {
 					"value": 20,
 					"effective_time": 40,
@@ -5378,7 +5378,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_move_speed",
+			"type": "buff_move_speed",
 			"data": {
 				"value": 15,
 				"effective_time": 20,
@@ -5403,7 +5403,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_move_speed",
+				"type": "buff_move_speed",
 				"data": {
 					"value": 20,
 					"effective_time": 20,
@@ -5436,7 +5436,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_def",
+			"type": "buff_def",
 			"data": {
 				"value": 20,
 				"effective_time": 20,
@@ -5461,7 +5461,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_def",
+				"type": "buff_def",
 				"data": {
 					"value": 30,
 					"effective_time": 20,
@@ -5559,7 +5559,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_damage",
+			"type": "buff_crit_damage",
 			"data": {
 				"value": 20,
 				"effective_time": 20,
@@ -5584,7 +5584,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_damage",
+				"type": "buff_crit_damage",
 				"data": {
 					"value": 40,
 					"effective_time": 20,
@@ -5617,7 +5617,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_rate",
+			"type": "buff_crit_rate",
 			"data": {
 				"value": 15,
 				"effective_time": 20,
@@ -5642,7 +5642,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_rate",
+				"type": "buff_crit_rate",
 				"data": {
 					"value": 25,
 					"effective_time": 20,
@@ -5831,7 +5831,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_damage",
+			"type": "buff_crit_damage",
 			"data": {
 				"value": 10,
 				"effective_time": 20,
@@ -5856,7 +5856,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_damage",
+				"type": "buff_crit_damage",
 				"data": {
 					"value": 10,
 					"effective_time": 40,
@@ -5889,7 +5889,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_rate",
+			"type": "buff_crit_rate",
 			"data": {
 				"value": 5,
 				"effective_time": 20,
@@ -5914,7 +5914,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_rate",
+				"type": "buff_crit_rate",
 				"data": {
 					"value": 5,
 					"effective_time": 40,
@@ -6059,7 +6059,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_def",
+			"type": "buff_def",
 			"data": {
 				"value": 20,
 				"effective_time": 20,
@@ -6084,7 +6084,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_def",
+				"type": "buff_def",
 				"data": {
 					"value": 20,
 					"effective_time": 40,
@@ -6117,7 +6117,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_atk",
+			"type": "buff_atk",
 			"data": {
 				"value": 20,
 				"effective_time": 20,
@@ -6142,7 +6142,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_atk",
+				"type": "buff_atk",
 				"data": {
 					"value": 20,
 					"effective_time": 40,
@@ -6175,7 +6175,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_move_speed",
+			"type": "buff_move_speed",
 			"data": {
 				"value": 20,
 				"effective_time": 30,
@@ -6200,7 +6200,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_move_speed",
+				"type": "buff_move_speed",
 				"data": {
 					"value": 20,
 					"effective_time": 60,
@@ -6239,7 +6239,7 @@
 		],
 		"usable": {
 			"usable": {
-				"type": "add_move_speed",
+				"type": "buff_move_speed",
 				"data": {
 					"value": 15,
 					"effective_time": 40,
@@ -6270,7 +6270,7 @@
 			],
 			"usable": {
 				"usable": {
-					"type": "add_move_speed",
+					"type": "buff_move_speed",
 					"data": {
 						"value": 15,
 						"effective_time": 100,
@@ -6309,7 +6309,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_damage",
+			"type": "buff_crit_damage",
 			"data": {
 				"value": 20,
 				"effective_time": 20,
@@ -6338,7 +6338,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_damage",
+				"type": "buff_crit_damage",
 				"data": {
 					"value": 30,
 					"effective_time": 30,
@@ -6371,7 +6371,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_crit_rate",
+			"type": "buff_crit_rate",
 			"data": {
 				"value": 10,
 				"effective_time": 20,
@@ -6396,7 +6396,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_crit_rate",
+				"type": "buff_crit_rate",
 				"data": {
 					"value": 15,
 					"effective_time": 30,
@@ -6429,7 +6429,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_atk",
+			"type": "buff_atk",
 			"data": {
 				"value": 40,
 				"effective_time": 20,
@@ -6454,7 +6454,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_atk",
+				"type": "buff_atk",
 				"data": {
 					"value": 40,
 					"effective_time": 40,
@@ -6487,7 +6487,7 @@
 			}
 		],
 		"usable": {
-			"type": "add_def",
+			"type": "buff_def",
 			"data": {
 				"value": 40,
 				"effective_time": 20,
@@ -6512,7 +6512,7 @@
 				}
 			],
 			"usable": {
-				"type": "add_def",
+				"type": "buff_def",
 				"data": {
 					"value": 40,
 					"effective_time": 40,

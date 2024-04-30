@@ -54,7 +54,7 @@ func _ready():
 	
 	SignalManager.heal_player.connect(set_health)
 	SignalManager.level_up.connect(_on_level_up)
-	SignalManager.item_changed.connect(_on_item_changed)
+	SignalManager.update_stat.connect(_on_update_stat)
 
 	player_data.changed.connect(_on_data_changed)
 	
@@ -173,7 +173,7 @@ func move_state():
 			animation_tree.set("parameters/Attack_state/conditions/is_idling", true)
 
 	#Vecto di chuyen
-	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 24, move_weight)
+	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 16, move_weight)
 	move_and_slide()
 
 ##Function
@@ -407,11 +407,10 @@ func _on_data_changed():
 	player_data.global_position.y = fmod(fmod(player_data.global_position.y, 896) + 896, 896)
 	global_position = player_data.global_position
 	health = player_data.health
-	#max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 	z_index = player_data.z_index
 	set_collision_value()
 
-func _on_item_changed():
+func _on_update_stat():
 	max_health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 
 func _on_level_up():

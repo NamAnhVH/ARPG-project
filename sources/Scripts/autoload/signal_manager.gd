@@ -14,7 +14,6 @@ signal chest_opened(chest: Chest)
 signal chest_ready(chest: Chest)
 signal chest_closed(chest: Chest)
 signal content_changed()
-signal item_changed()
 
 #Shop
 signal set_shop(npc_name: String)
@@ -28,7 +27,6 @@ signal item_dropped(item: Item)
 
 #PlayableCharacter
 signal player_life_changed(health, max_health)
-signal heal_player(healing_amount)
 signal equip_item(item)
 signal unequip_item(equipment_type)
 signal gain_money(value: int)
@@ -36,6 +34,10 @@ signal gain_exp(value: int)
 signal level_up()
 signal choose_player_name
 signal player_name(player_name: String)
+
+#Item usage
+signal heal_player(amount)
+signal buff_player(amount, type, effective_time)
 
 #Enemy
 signal enemy_died(enemy)
@@ -58,11 +60,11 @@ signal clear_hidden_node()
 #SaveManager
 signal close_file_saving_container
 signal update_file_saving_container
-signal saving_game()
+signal saving_game
 
 #Change scene
-signal scene_transition_fade_out()
-signal scene_transition_fade_in()
+signal scene_transition_fade_out
+signal scene_transition_fade_in
 signal scene_transition_fade_in_finished
 
 #Dialogue
@@ -71,6 +73,9 @@ signal show_dialogue(dialogue: String, branch: String)
 #Game
 signal pause_game
 signal resume_game
+
+#Stat
+signal update_stat
 
 #NPC Behavior
 signal luna_go_out
@@ -87,6 +92,3 @@ signal update_side_quest(quest: String)
 signal main_quest_finished(quest: String)
 signal main_quest_1_talk_to_guard
 
-
-func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS

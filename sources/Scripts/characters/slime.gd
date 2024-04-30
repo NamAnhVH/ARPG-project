@@ -1,7 +1,6 @@
 extends EnemyCharacter
 class_name SlimeCharacter
 
-
 @onready var clockwise_change_time : Timer = $Timers/ClockwiseChangeTime
 @onready var base : Sprite2D = $Body/Base
 @onready var attack_effect : Sprite2D = $Body/AttackEffect

@@ -12,10 +12,13 @@ var is_in_cooldown : bool = false
 var can_use : bool = false : set = set_can_use, get = get_can_use
 var can_always_use : bool = false
 var on_use_text = ""
+var amount
+var type
 
 var item : Item
 
-func _init(data, parent_item: Item):
+func _init(data, parent_item: Item, usable_type):
+	type = usable_type
 	item = parent_item
 	set_data(data)
 	item.item_placed_in_player_inventory.connect(_on_item_placed_in_player_inventory)
@@ -29,11 +32,9 @@ func _process(delta):
 		is_in_cooldown = false
 
 func set_data(data):
-	if data.has("unlimited_use"):
-		unlimited_use = data.unlimited_use
-	
-	if data.has("cooldown"):
-		cooldown = data.cooldown
+	amount = data.value
+	if data.has("unlimited_use"): unlimited_use = data.unlimited_use
+	if data.has("cooldown"): cooldown = data.cooldown
 
 func use():
 	if get_can_use() and !is_in_cooldown:
@@ -70,5 +71,4 @@ func set_can_use(value):
 	can_use_changed.emit(get_can_use())
 
 func get_can_use():
-	return (can_use or can_always_use) and item.item_slot and item.item_slot.is_on_player
-
+	return (can_use or can_always_use) and item.item_slot and item.item_slot is EquipmentSlot and item.item_slot.is_on_player_equipment

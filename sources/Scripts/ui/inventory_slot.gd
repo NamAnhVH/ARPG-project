@@ -1,8 +1,6 @@
 extends TextureRect
 class_name InventorySlot
 
-signal item_changed()
-
 @onready var item_container : Control = $ItemContainer
 
 var item : Item : set = set_item
@@ -25,7 +23,7 @@ func set_item(new_item: Item):
 		new_item.item_slot = self
 	
 	item = new_item
-	item_changed.emit()
+	SignalManager.update_stat.emit()
 
 func accept_item(new_item):
 	return new_item and !item

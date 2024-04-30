@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgshcrkqdt58q"]
+
+[ext_resource type="Script" path="res://sources/scripts/manager/buff_effect_manager.gd" id="1_psvk1"]
+
+[node name="BuffEffectManager" type="Node"]
+script = ExtResource("1_psvk1")

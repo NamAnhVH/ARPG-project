@@ -12,11 +12,9 @@ func _unhandled_input(event):
 		if !is_open_inventory:
 			SignalManager.inventory_opened.emit()
 			is_open_inventory = true
-			window.mouse_filter = Control.MOUSE_FILTER_STOP
 		else:
 			SignalManager.inventory_closed.emit()
 			is_open_inventory = false
-			window.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_setting_pressed():
 	var setting_container = ResourceManager.get_instance("setting_container")

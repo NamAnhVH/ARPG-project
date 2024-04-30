@@ -1,12 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccsv3662j4b8c"]
+[gd_scene load_steps=3 format=3 uid="uid://ccsv3662j4b8c"]
 
 [ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="1_13xpk"]
 [ext_resource type="Script" path="res://sources/scripts/ui/item_info.gd" id="2_7nrdc"]
-[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="2_kcpej"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7p8ca"]
-font = ExtResource("2_kcpej")
-font_color = Color(0, 0, 0, 1)
 
 [node name="ItemInfo" type="NinePatchRect"]
 offset_right = 97.0
@@ -27,7 +22,6 @@ offset_bottom = 13.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 text = "item name"
-label_settings = SubResource("LabelSettings_7p8ca")
 horizontal_alignment = 1
 autowrap_mode = 2
 
