@@ -1,18 +1,18 @@
 extends Node
 
 #Inventory
-signal inventory_opened()
-signal inventory_ready()
-signal inventory_closed()
-signal get_inventory_data()
+signal inventory_opened
+signal inventory_ready
+signal inventory_closed
+signal get_inventory_data
 signal set_inventory_data(inventory: Inventory)
 signal equipment_ready()
 signal get_equipment_data()
 signal set_equipment_data(equipment: Equipment)
 signal hotbar_ready(hotbar: Hotbar)
-signal chest_opened(chest: Chest)
+signal chest_opened(chest: InteractableChest)
 signal chest_ready(chest: Chest)
-signal chest_closed(chest: Chest)
+signal chest_closed(chest: InteractableChest)
 signal content_changed()
 
 #Shop
@@ -23,6 +23,8 @@ signal shop_ready(shop: Shop)
 signal buy_item(price: int)
 
 #Interactable
+signal open_chest(chest: InteractableChest)
+signal chest_updated(chest: InteractableChest)
 signal item_dropped(item: Item)
 
 #PlayableCharacter
@@ -31,7 +33,7 @@ signal equip_item(item)
 signal unequip_item(equipment_type)
 signal gain_money(value: int)
 signal gain_exp(value: int)
-signal level_up()
+signal level_up
 signal choose_player_name
 signal player_name(player_name: String)
 

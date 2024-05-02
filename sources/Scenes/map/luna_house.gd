@@ -5,6 +5,7 @@ func _ready():
 
 func _on_scene_transition_fade_in_finished():
 	if process_data.current_story.name == "start_game":
+		SaveManager.create_new_game_file()
 		var luna = ResourceManager.get_character("luna")
 		luna.global_position = Vector2(86,90)
 		npcs.add_child(luna)

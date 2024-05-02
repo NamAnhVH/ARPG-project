@@ -1,7 +1,8 @@
 extends Node
 
-@export var player_data : PlayerData = preload("res://data/resources/player_data.tres")
-@export var progress_data : ProgressData = preload("res://data/resources/progress_data.tres")
+@onready var player_data : PlayerData = preload("res://data/resources/player_data.tres")
+@onready var progress_data : ProgressData = preload("res://data/resources/progress_data.tres")
+@onready var world_data : WorldData = preload("res://data/resources/world_data.tres")
 
 func _ready():
 	SignalManager.player_name.connect(_on_player_name)
@@ -9,6 +10,8 @@ func _ready():
 	SignalManager.update_main_quest.connect(_on_update_main_quest)
 	SignalManager.update_side_quest.connect(_on_update_side_quest)
 	SignalManager.enemy_died.connect(_on_enemy_died)
+	SignalManager.open_chest.connect(_on_open_chest)
+	SignalManager.level_up.connect(_on_level_up)
 
 func _on_change_next_progress():
 	if progress_data.current_story.has("progress"):
@@ -39,6 +42,12 @@ func _on_update_main_quest(id: String):
 		var next_progress_index = quest.progress.find(progress_data.current_main_quest.progress) + 1
 		if next_progress_index < quest.progress.size():
 			progress_data.current_main_quest.progress = quest.progress[next_progress_index]
+			if progress_data.current_main_quest.progress is Dictionary:
+				if (progress_data.current_main_quest.progress.has("level_up") \
+				and progress_data.current_main_quest.progress.level_up <= player_data.level) \
+				or (progress_data.current_main_quest.progress.has("find_treasure") \
+				and world_data.chest_opened.find(progress_data.current_main_quest.progress.find_treasure) != -1):
+					_on_update_main_quest(id)
 		else:
 			main_quest_finished(id)
 	else:
@@ -48,9 +57,13 @@ func _on_update_main_quest(id: String):
 func _on_update_side_quest(id: String):
 	var quest = ResourceManager.quest_info.side_quest[id]
 	if progress_data.current_side_quest.has(id):
-		var next_progress_index = quest.progress.find(progress_data.current_side_quest.id.progress) + 1
+		var next_progress_index = quest.progress.find(progress_data.current_side_quest[id].progress) + 1
 		if next_progress_index < quest.progress.size():
-			progress_data.current_main_quest.progress = quest.progress[next_progress_index]
+			progress_data.current_side_quest[id].progress = quest.progress[next_progress_index]
+			if progress_data.current_side_quest[id].progress is Dictionary \
+			and progress_data.current_side_quest[id].progress.has("level_up") \
+			and progress_data.current_side_quest[id].progress.level_up <= player_data.level:
+				_on_update_side_quest(id)
 		else:
 			side_quest_finished(id)
 	else:
@@ -58,19 +71,55 @@ func _on_update_side_quest(id: String):
 	SignalManager.quest_updated.emit()
 
 func _on_enemy_died(enemy):
-	if progress_data.current_main_quest.progress is Dictionary and progress_data.current_main_quest.progress.has("combat"):
-		if check_enemy_type(enemy):
+	if progress_data.current_main_quest.progress is Dictionary \
+	and progress_data.current_main_quest.progress.has("combat"):
+		if check_enemy(enemy):
 			progress_data.current_main_quest_progress += 1
 			if progress_data.current_main_quest_progress >= progress_data.current_main_quest.progress.combat.quantity:
 				progress_data.current_main_quest_progress = 0
 				_on_update_main_quest(progress_data.current_main_quest.id)
+	for side_quest in progress_data.current_side_quest:
+		if progress_data.current_side_quest[side_quest].progress is Dictionary \
+		and progress_data.current_side_quest[side_quest].progress.has("combat"):
+			if check_enemy(enemy, side_quest):
+				pass
 
-func check_enemy_type(enemy):
-	if enemy is SlimeCharacter and progress_data.current_main_quest.progress.combat.enemy == "slime":
-		return true
-	elif enemy is GremlinCharacter and progress_data.current_main_quest.progress.combat.enemy == "gremlin":
-		return true
+func check_enemy(enemy, quest = ""):
+	if quest.is_empty():
+		if enemy is SlimeCharacter and progress_data.current_main_quest.progress.combat.enemy == "slime":
+			return true
+		elif enemy is GremlinCharacter and progress_data.current_main_quest.progress.combat.enemy == "gremlin":
+			return true
+	else:
+		if enemy is SlimeCharacter and progress_data.current_side_quest[quest].progress.combat.enemy == "slime":
+			return true
+		elif enemy is GremlinCharacter and progress_data.current_side_quest[quest].progress.combat.enemy == "gremlin":
+			return true
 	return false
+
+func _on_level_up():
+	if progress_data.current_main_quest.progress is Dictionary \
+	and progress_data.current_main_quest.progress.has("level_up") \
+	and progress_data.current_main_quest.progress.level_up <= player_data.level:
+		_on_update_main_quest(progress_data.current_main_quest.id)
+	for side_quest in progress_data.current_side_quest.progress:
+		if progress_data.current_side_quest[side_quest].progress is Dictionary \
+		and progress_data.current_side_quest[side_quest].has("level_up") \
+		and progress_data.current_side_quest[side_quest].progress.level_up <= player_data.level:
+			_on_update_side_quest(side_quest)
+
+func _on_open_chest(chest: InteractableChest):
+	if world_data.chest_opened.has(chest.id):
+		world_data.chest_opened.merge({chest.id: {}})
+	if progress_data.current_main_quest.progress is Dictionary \
+	and progress_data.current_main_quest.progress.has("find_treasure") \
+	and progress_data.current_main_quest.progress.find_treasure == chest.id:
+		_on_update_main_quest(progress_data.current_main_quest.id)
+	for side_quest in progress_data.current_side_quest:
+		if progress_data.current_side_quest[side_quest].progress is Dictionary \
+		and progress_data.current_side_quest[side_quest].has("find_treasure") \
+		and progress_data.current_side_quest[side_quest].progress.find_treasure == chest.id:
+			_on_update_side_quest(side_quest)
 
 func main_quest_finished(id: String):
 	var quest = ResourceManager.quest_info.main_quest[id]
@@ -101,3 +150,4 @@ func side_quest_finished(id: String):
 		SignalManager.gain_exp.emit(quest.reward.exp) 
 	progress_data.side_quest_finished.append(id)
 	progress_data.current_side_quest.erase(id)
+

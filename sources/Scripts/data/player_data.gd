@@ -45,6 +45,9 @@ func get_stat(stat):
 	var base_stats = {
 		GameEnums.STAT.ATK : current_level_stats.ATK if current_level_stats.has("ATK") else 0,
 		GameEnums.STAT.DEF : current_level_stats.DEF if current_level_stats.has("DEF") else 0,
+		GameEnums.STAT.CRIT_RATE: current_level_stats.CRIT_RATE if current_level_stats.has("CRIT_RATE") else 0,
+		GameEnums.STAT.CRIT_DAMAGE: current_level_stats.CRIT_DAMAGE if current_level_stats.has("CRIT_DAMAGE") else 0,
+		GameEnums.STAT.MOVE_SPEED: current_level_stats.MOVE_SPEED if current_level_stats.has("MOVE_SPEED") else 0,
 		GameEnums.STAT.LIFE_POINT : current_level_stats.LIFE_POINT if current_level_stats.has("LIFE_POINT") else 0,
 	}
 	

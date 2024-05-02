@@ -12,7 +12,7 @@
 		},
 		"main_quest_2": {
 			"name": "Upgrade time",
-			"progress": ["talk_to_Echo_1", {"name": "kill_10_gremlins", "combat":{ "quantity": 10, "enemy": "gremlin"}}, "talk_to_Echo_2"],
+			"progress": ["talk_to_Echo_1", {"name": "reach_level_5", "level_up": 5}, {"name": "kill_10_gremlins", "combat":{ "quantity": 10, "enemy": "gremlin"}}, "talk_to_Echo_2"],
 			"description": "As tensions rise and the specter of war looms ever closer, it's time to bolster your strength and resources. Embark on a series of tasks to prepare yourself and your allies for the coming battle. From reinforcing fortifications to honing your combat skills, every action taken is crucial in the face of impending conflict.",
 			"reward": {
 				"money": 20,
@@ -21,7 +21,7 @@
 		},
 		"main_quest_3": {
 			"name": "Helping poor family",
-			"progress": ["talk_to_Diana_1", {"name": "collect_5_mushrooms", "collect": {"quantity": 5, "product": "mushroom"}}, "talk_to_Diana_2"],
+			"progress": [{"name": "reach_level_10", "level_up": 10}, "talk_to_Diana_1", {"name": "collect_5_mushrooms", "collect": {"quantity": 5, "product": "mushroom"}}, "talk_to_Diana_2"],
 			"description": "You hear a family requesting help to find mushrooms to aid their sick daughter.",
 			"reward": {
 				"money": 5,
@@ -41,7 +41,7 @@
 	"side_quest": {
 		"side_quest_1": {
 			"name": "Journey for an Ancient Treasure",
-			"progress": ["talk_to_Echo_1", {"name": "find_the_chest", "find_treasure": "chest_v00"}, "talk_to_Echo_2"],
+			"progress": ["talk_to_Echo", {"name": "find_the_chest", "find_treasure": "chest_v00"}],
 			"description": "An ancient map is discovered in an abandoned house on the outskirts of the village. This map leads to a long-lost treasure hidden on a remote island. You're tasked with leading an expedition to search for this treasure, facing challenges from both the map and the environment.",
 			"reward": {
 				"money": 20,

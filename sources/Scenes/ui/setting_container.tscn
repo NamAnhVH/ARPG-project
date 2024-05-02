@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_uingq"]
 [ext_resource type="Script" path="res://sources/scripts/ui/setting_container.gd" id="2_8pm3r"]
 [ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_kyj1o"]
-[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="3_4cbis"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="3_4cbis"]
 
 [node name="SettingContainer" type="NinePatchRect"]
 anchors_preset = 15

@@ -166,6 +166,7 @@ var sprites = {
 
 var tscn = {
 	"inventory_slot" : preload("res://sources/scenes/ui/inventory_slot.tscn"),
+	"chest_slot": preload("res://sources/scenes/ui/chest_slot.tscn"),
 	"hotbar_slot": preload("res://sources/scenes/ui/hotbar_slot.tscn"),
 	"floor_item": preload("res://sources/scenes/interactables/floor_item.tscn"),
 	"cooldown": preload("res://sources/scenes/usable/cooldown.tscn"),
@@ -185,13 +186,15 @@ var tscn = {
 	"choose_name_panel": preload("res://sources/scenes/ui/choose_name_panel.tscn"),
 	"quest_available": preload("res://sources/scenes/ui/quest_available.tscn"),
 	"quest_slot": preload("res://sources/scenes/ui/quest_slot.tscn"),
+	"quest_name": preload("res://sources/scenes/ui/quest_name.tscn"),
 	"quest_description": preload("res://sources/scenes/ui/quest_description.tscn"),
 	"buff_slot": preload("res://sources/scenes/usable/buff_slot.tscn")
 }
 
 var character = {
 	"luna": preload("res://sources/scenes/characters/npcs/luna.tscn"),
-	"slime": preload("res://sources/scenes/characters/battleCharacters/enemies/slime.tscn")
+	"slime": preload("res://sources/scenes/characters/battleCharacters/enemies/slime.tscn"),
+	"gremlin": preload("res://sources/scenes/characters/battleCharacters/enemies/gremlin.tscn")
 }
 
 var world = {

@@ -37,15 +37,6 @@ func _on_clockwise_change_time_timeout():
 
 func _die_finished():
 	var new_slime : SlimeCharacter = ResourceManager.get_character("slime")
-	new_slime.max_active_area = max_active_area
-	new_slime.texture = texture
-	new_slime.damage_amount = damage_amount
-	new_slime.knockback_strength = knockback_strength
-	new_slime.level = level
-	new_slime.money_dropped = money_dropped
-	new_slime.exp_dropped = exp_dropped
-	new_slime.max_health = max_health
-	new_slime.move_speed_unit = move_speed_unit
-	new_slime.global_position = first_position - get_parent().global_position
+	get_enemy_data(new_slime)
 	get_parent().get_parent().enemies_respawn.append(new_slime)
 	super._die_finished()

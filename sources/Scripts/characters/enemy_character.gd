@@ -68,9 +68,21 @@ func set_health(value, _is_hitted: bool = false):
 		health_bar.set_health(health)
 	return value
 
+func get_enemy_data(new_enemy):
+	new_enemy.max_active_area = max_active_area
+	new_enemy.texture = texture
+	new_enemy.damage_amount = damage_amount
+	new_enemy.knockback_strength = knockback_strength
+	new_enemy.level = level
+	new_enemy.money_dropped = money_dropped
+	new_enemy.exp_dropped = exp_dropped
+	new_enemy.max_health = max_health
+	new_enemy.move_speed_unit = move_speed_unit
+	new_enemy.global_position = first_position - get_parent().global_position
+
 func drop_item():
 	var item = ItemManager.get_item(ItemManager.items.keys()[randi() % ItemManager.items.size()])
-	if level >= item.level:
+	if level >= item.level and level - 10 <= item.level:
 		if item.equipment_type != GameEnums.EQUIPMENT_TYPE.NONE:
 			ItemManager.generate_random_rarity(item, Global.player_level)
 		

@@ -1,8 +1,6 @@
 extends Inventory
 class_name Chest
 
-var is_open : bool = false
-
 func _init():
 	pass
 
@@ -14,6 +12,6 @@ func _ready():
 func set_inventory_size(value):
 	inventory_size = value
 	for s in inventory_size:
-		var slot = ResourceManager.tscn.inventory_slot.instantiate()
+		var slot = ResourceManager.get_instance("chest_slot")
 		slots.append(slot)
 

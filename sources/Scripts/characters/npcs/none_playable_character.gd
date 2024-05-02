@@ -5,7 +5,7 @@ class_name NonePlayableCharacter
 @export var texture : Texture2D
 
 @onready var sprite : Sprite2D = $Sprite2D
-@onready var quest : Node2D = $Quest
+@onready var quest_icon : Node2D = $QuestIcon
 
 var action = "talk"
 

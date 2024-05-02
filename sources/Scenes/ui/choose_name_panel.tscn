@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmxrmiim303yk"]
 
 [ext_resource type="Script" path="res://sources/scripts/ui/choose_name_panel.gd" id="1_0xogv"]
-[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="1_3we0l"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="1_3we0l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbf7v"]
 content_margin_left = 0.0

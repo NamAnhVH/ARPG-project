@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwtfwck88i78u"]
+
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="1_thu3s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrlci"]
+font = ExtResource("1_thu3s")
+font_size = 30
+font_color = Color(1, 0.270588, 0, 1)
+
+[node name="QuestName" type="Label"]
+custom_minimum_size = Vector2(160, 0)
+text = "A new start?"
+label_settings = SubResource("LabelSettings_jrlci")
+horizontal_alignment = 1
+autowrap_mode = 2

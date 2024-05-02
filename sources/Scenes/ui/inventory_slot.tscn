@@ -6,7 +6,6 @@
 [node name="InventorySlot" type="TextureRect"]
 texture = ExtResource("1_3468s")
 script = ExtResource("2_4jk5j")
-item_container_path = NodePath("ItemContainer")
 
 [node name="ItemContainer" type="Control" parent="."]
 layout_mode = 1

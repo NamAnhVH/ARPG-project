@@ -92,7 +92,7 @@ func generate_random_rarity(item, ilevel):
 	var rng = randf()
 	if rng > 0.999 and item.legendary_data:
 		rarity = GameEnums.RARITY.LEGENDARY
-	elif rng <= 0.98:
+	elif rng >= 0.98:
 		rarity = GameEnums.RARITY.DIVINE
 	elif rng >= 0.95:
 		rarity = GameEnums.RARITY.EPIC 

@@ -1,13 +1,12 @@
-~ this_is_a_node_title
+~ talk_to_echo
+Echo: I heard that behind the weapons shop, there's a hidden chest.
+Echo: If you have time, I think you should take a look.
+{{Global.player_name}}: ok, I'll check it out.
+do SignalManager.update_side_quest.emit("side_quest_1")
+do Global.paused = false
+=> END
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
-
+~ echo
+Echo: Hurry up, someone might take all the items in there before you.
+do Global.paused = false
 => END

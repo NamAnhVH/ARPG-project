@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceoaxipf1lm53"]
 
 [ext_resource type="Script" path="res://sources/scripts/gameSetup/start_game.gd" id="1_mavdt"]
-[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="2_e2yhe"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="2_e2yhe"]
 [ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="3_21m0g"]
 
 [node name="StartGame" type="Node2D"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbturink06uhj" path="res://assets/ui/quest_container.png" id="1_frvx0"]
 [ext_resource type="Script" path="res://sources/scripts/ui/quest_container.gd" id="2_wnxgx"]
-[ext_resource type="Theme" uid="uid://c1pun7k44cj4g" path="res://data/resources/quest_button.tres" id="3_oae0d"]
+[ext_resource type="Theme" uid="uid://c1pun7k44cj4g" path="res://data/resources/theme/quest_button.tres" id="3_oae0d"]
 
 [node name="QuestContainer" type="TextureRect"]
 anchors_preset = 8
@@ -47,6 +47,7 @@ offset_left = 13.0
 offset_top = 53.0
 offset_right = -229.0
 offset_bottom = -13.0
+horizontal_scroll_mode = 0
 
 [node name="ListQuest" type="VBoxContainer" parent="ListQuestContainer"]
 layout_mode = 2

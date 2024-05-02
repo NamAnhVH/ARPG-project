@@ -20,10 +20,7 @@ list_quest = Array[Dictionary]([{
 "progress": "talk_to_Echo_2"
 }, {
 "id": "side_quest_1",
-"progress": "talk_to_Echo_1"
-}, {
-"id": "side_quest_1",
-"progress": "talk_to_Echo_2"
+"progress": "talk_to_Echo"
 }])
 object_name = "echo"
 

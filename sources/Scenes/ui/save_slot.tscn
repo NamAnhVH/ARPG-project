@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4lnf61ggpcpa"]
 
-[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="1_rp2po"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="1_rp2po"]
 [ext_resource type="Script" path="res://sources/scripts/ui/save_slot.gd" id="2_kof65"]
 
 [node name="SaveSlot" type="Button"]

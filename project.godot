@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="ARPG project"
+config/name="Journal of Rediscovery"
 run/main_scene="res://sources/scenes/gameSetup/start_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.png"
 
 [autoload]
 

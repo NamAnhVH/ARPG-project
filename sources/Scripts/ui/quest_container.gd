@@ -52,6 +52,9 @@ func _on_show_quest_description(id: String, type: String):
 		lbl.queue_free()
 	
 	var quest = ResourceManager.quest_info[type][id]
+	var quest_name = ResourceManager.get_instance("quest_name")
+	quest_name.text = quest.name
+	quest_description.add_child(quest_name)
 	if quest.has("description"):
 		var description = ResourceManager.get_instance("quest_description")
 		description.text = quest.description
@@ -64,32 +67,52 @@ func _on_show_quest_description(id: String, type: String):
 				var text = format_string(progress)
 				lbl_progress.text = text
 				quest_description.add_child(lbl_progress)
-				if type == "main_quest":
-					if StoryManager.progress_data.main_quest_finished.find(id) == -1:
-						if !StoryManager.progress_data.current_main_quest.has("progress") or (StoryManager.progress_data.current_main_quest.progress is String and StoryManager.progress_data.current_main_quest.progress == progress):
-							break
-				elif type == "side_quest":
-					if StoryManager.progress_data.side_quest_finished.find(id) == -1:
-						if !StoryManager.progress_data.current_side_quest.has("progress") or (StoryManager.progress_data.current_side_quest.progress is String and StoryManager.progress_data.current_side_quest.progress == progress):
-							break
-			if progress is Dictionary:
+				if type == "main_quest" \
+				and StoryManager.progress_data.main_quest_finished.find(id) == -1:
+					if !StoryManager.progress_data.current_main_quest.has("progress") \
+					or (StoryManager.progress_data.current_main_quest.progress is String \
+					and StoryManager.progress_data.current_main_quest.progress == progress):
+						break
+				elif type == "side_quest" \
+				and StoryManager.progress_data.side_quest_finished.find(id) == -1:
+					if !StoryManager.progress_data.current_side_quest[id].has("progress") \
+					or (StoryManager.progress_data.current_side_quest[id].progress is String \
+					and StoryManager.progress_data.current_side_quest[id].progress == progress):
+						break
+			elif progress is Dictionary:
 				var text = format_string(progress.name)
 				lbl_progress.text = text
 				if type == "main_quest":
-					if StoryManager.progress_data.current_main_quest.progress is Dictionary and StoryManager.progress_data.current_main_quest.progress == progress:
-						var quantity = progress.combat.quantity if progress.has("combat") else progress.collect.quantity
-						lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(quantity) + " )"
-					quest_description.add_child(lbl_progress)
+					if StoryManager.progress_data.current_main_quest.progress is Dictionary \
+					and StoryManager.progress_data.current_main_quest.progress == progress:
+						var target
+						if progress.has("level_up") or progress.has("find_treasure"): 
+							pass
+						else:
+							if progress.has("combat"): target = progress.combat.quantity
+							elif progress.has("collect"): target = progress.collect.quantity
+							lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(target) + " )"
+						quest_description.add_child(lbl_progress)
 					if StoryManager.progress_data.main_quest_finished.find(id) == -1:
-						if !StoryManager.progress_data.current_main_quest.has("progress") or (StoryManager.progress_data.current_main_quest.progress is Dictionary and StoryManager.progress_data.current_main_quest.progress.name == progress.name):
+						if !StoryManager.progress_data.current_main_quest.has("progress") \
+						or (StoryManager.progress_data.current_main_quest.progress is Dictionary \
+						and StoryManager.progress_data.current_main_quest.progress.name == progress.name):
 							break
 				elif type == "side_quest":
-					if StoryManager.progress_data.current_side_quest.progress is Dictionary and StoryManager.progress_data.current_side_quest.progress == progress:
-						var quantity = progress.combat.quantity if progress.has("combat") else progress.collect.quantity
-						lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(quantity) + " )"
-					quest_description.add_child(lbl_progress)
+					if StoryManager.progress_data.current_side_quest[id].progress is Dictionary \
+					and StoryManager.progress_data.current_side_quest[id].progress == progress:
+						var target
+						if progress.has("level_up") or progress.has("find_treasure"): 
+							pass
+						else:
+							if progress.has("combat"): target = progress.combat.quantity
+							elif progress.has("collect"): target = progress.collect.quantity
+							lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_side_quest_progress) + " / " + str(target) + " )"
+						quest_description.add_child(lbl_progress)
 					if StoryManager.progress_data.side_quest_finished.find(id) == -1:
-						if !StoryManager.progress_data.current_side_quest.has("progress") or (StoryManager.progress_data.current_side_quest.progress is Dictionary and StoryManager.progress_data.current_side_quest.progress.name == progress.name):
+						if !StoryManager.progress_data.current_side_quest.has("progress") \
+						or (StoryManager.progress_data.current_side_quest.progress is Dictionary \
+						and StoryManager.progress_data.current_side_quest.progress.name == progress.name):
 							break
 	
 	if quest.has("reward"):
@@ -111,7 +134,7 @@ func format_string(string: String):
 	var result = ""
 	var words = string.split("_")
 	for i in range(words.size()):
-		if i == words.size() - 1 and words[i].to_int() != 0:
+		if i == words.size() - 1 and words[i].to_int() != 0 and words[i - 1] != "level":
 			continue
 		result += words[i]
 		if i < words.size() - 1: 

@@ -33,3 +33,9 @@ func _attack_finished():
 	super._attack_finished()
 	animation_tree.set("parameters/Attack/conditions/is_biting", false)
 	animation_tree.set("parameters/Attack/conditions/is_clawing", false)
+
+func _die_finished():
+	var new_gremlin : GremlinCharacter = ResourceManager.get_character("gremlin")
+	get_enemy_data(new_gremlin)
+	get_parent().get_parent().enemies_respawn.append(new_gremlin)
+	super._die_finished()

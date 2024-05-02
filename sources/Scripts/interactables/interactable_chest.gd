@@ -1,20 +1,20 @@
 extends Area2D
 class_name InteractableChest
 
-@export var items : Array[String]
+@export var world_data : WorldData
+@export var id : String
+@export var items : Array
 @export_range(0, 14) var frame : int
 
 @onready var sprite : Sprite2D = $Sprite2D
 
-var chest : Chest
+
 var action = "open"
 var object_name = "Chest"
+var is_open: bool = false
 
 func _ready():
-	chest = ResourceManager.get_instance("chest")
 	set_sprite()
-	set_items()
-	InventoryManager.add_hidden_node(chest)
 
 func set_sprite():
 	if frame < 5:
@@ -24,19 +24,25 @@ func set_sprite():
 	elif frame < 15:
 		sprite.frame = frame + 10
 
-func set_items():
-	for i in items:
-		chest.add_item(ItemManager.get_item(i))
+func set_items(chest: Chest):
+	if world_data.chest_opened.has(id):
+		var items_data = world_data.chest_opened[id]
+		for i in items_data:
+			chest.add_item(ItemManager.get_item_from_data(items_data[i]))
+	else:
+		for i in items:
+			chest.add_item(ItemManager.get_item(i))
 
 func interact():
-	if !chest.is_open:
-		SignalManager.chest_opened.emit(chest)
+	if !is_open:
+		SignalManager.open_chest.emit(self)
+		SignalManager.chest_opened.emit(self)
 		sprite.frame += 5
 	else:
-		SignalManager.chest_closed.emit(chest)
+		SignalManager.chest_closed.emit(self)
 		sprite.frame -= 5
 
 func out_of_range():
-	if chest.is_open:
-		SignalManager.chest_closed.emit(chest)
+	if is_open:
+		SignalManager.chest_closed.emit(self)
 		sprite.frame -= 5

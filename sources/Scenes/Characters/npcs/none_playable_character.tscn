@@ -23,4 +23,4 @@ position = Vector2(0, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_o3rad")
 
-[node name="Quest" type="Node2D" parent="." index="4"]
+[node name="QuestIcon" type="Node2D" parent="." index="4"]

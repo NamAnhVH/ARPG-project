@@ -8,68 +8,423 @@
     },
     "2":{
         "stats":{
-            "ATK": 6,
+            "ATK": 5,
             "DEF": 1,
-            "LIFE_POINT": 12
+            "LIFE_POINT": 10
         },
         "exp" : 200
     },
     "3":{
         "stats":{
-            "ATK": 7,
-            "DEF": 2,
-            "LIFE_POINT": 14
+            "ATK": 5,
+            "DEF": 1,
+            "LIFE_POINT": 12
         },
         "exp" : 300
     },
     "4":{
         "stats":{
-            "ATK": 8,
-            "DEF": 3,
-            "LIFE_POINT": 16
+            "ATK": 5,
+            "DEF": 1,
+            "MOVE_SPEED": 1,
+            "LIFE_POINT": 12
         },
         "exp" : 400
     },
     "5":{
         "stats":{
-            "ATK": 9,
-            "DEF": 4,
-            "LIFE_POINT": 18
+            "ATK": 5,
+            "DEF": 1,
+            "CRIT_RATE": 1,
+            "CRIT_DAMAGE": 1,
+            "MOVE_SPEED": 1,
+            "LIFE_POINT": 12
         },
         "exp" : 500
     },
     "6":{
+        "stats":{
+            "ATK": 5,
+            "DEF": 2,
+            "CRIT_RATE": 1,
+            "CRIT_DAMAGE": 1,
+            "MOVE_SPEED": 1,
+            "LIFE_POINT": 12
+        },
         "exp" : 600
     },
     "7":{
+        "stats":{
+            "ATK": 6,
+            "DEF": 2,
+            "CRIT_RATE": 1,
+            "CRIT_DAMAGE": 1,
+            "MOVE_SPEED": 1,
+            "LIFE_POINT": 12
+        },
         "exp" : 700
     },
     "8":{
+        "stats":{
+            "ATK": 7,
+            "DEF": 2,
+            "CRIT_RATE": 1,
+            "CRIT_DAMAGE": 1,
+            "MOVE_SPEED": 1,
+            "LIFE_POINT": 12
+        },
         "exp" : 800
     },
     "9":{
+        "stats":{
+            "ATK": 7,
+            "DEF": 2,
+            "CRIT_RATE": 1,
+            "CRIT_DAMAGE": 1,
+            "MOVE_SPEED": 1,
+            "LIFE_POINT": 14
+        },
         "exp" : 900
     },
     "10":{
+        "stats":{
+            "ATK": 8,
+            "DEF": 3,
+            "CRIT_RATE": 2,
+            "CRIT_DAMAGE": 2,
+            "MOVE_SPEED": 2,
+            "LIFE_POINT": 16
+        },
         "exp" : 1000
     },
     "11":{
+        "stats":{
+            "ATK": 8,
+            "DEF": 4,
+            "CRIT_RATE": 2,
+            "CRIT_DAMAGE": 2,
+            "MOVE_SPEED": 2,
+            "LIFE_POINT": 16
+        },
         "exp" : 1100
     },
     "12":{
+        "stats":{
+            "ATK": 8,
+            "DEF": 4,
+            "CRIT_RATE": 2,
+            "CRIT_DAMAGE": 2,
+            "MOVE_SPEED": 2,
+            "LIFE_POINT": 18
+        },
         "exp" : 1200
     },
     "13":{
+        "stats":{
+            "ATK": 9,
+            "DEF": 4,
+            "CRIT_RATE": 2,
+            "CRIT_DAMAGE": 2,
+            "MOVE_SPEED": 2,
+            "LIFE_POINT": 18
+        },
         "exp" : 1300
     },
     "14":{
+        "stats":{
+            "ATK": 9,
+            "DEF": 4,
+            "CRIT_RATE": 2,
+            "CRIT_DAMAGE": 3,
+            "MOVE_SPEED": 2,
+            "LIFE_POINT": 18
+        },
         "exp" : 1400
     },
     "15":{
+        "stats":{
+            "ATK": 10,
+            "DEF": 5,
+            "CRIT_RATE": 3,
+            "CRIT_DAMAGE": 4,
+            "MOVE_SPEED": 3,
+            "LIFE_POINT": 20
+        },
         "exp" : 1500
     },
     "16":{
+        "stats":{
+            "ATK": 10,
+            "DEF": 5,
+            "CRIT_RATE": 3,
+            "CRIT_DAMAGE": 4,
+            "MOVE_SPEED": 3,
+            "LIFE_POINT": 22
+        },
         "exp" : 1600
+    },
+    "17":{
+        "stats":{
+            "ATK": 10,
+            "DEF": 6,
+            "CRIT_RATE": 3,
+            "CRIT_DAMAGE": 4,
+            "MOVE_SPEED": 3,
+            "LIFE_POINT": 22
+        },
+        "exp" : 1700
+    },
+    "18":{
+        "stats":{
+            "ATK": 11,
+            "DEF": 6,
+            "CRIT_RATE": 3,
+            "CRIT_DAMAGE": 4,
+            "MOVE_SPEED": 3,
+            "LIFE_POINT": 22
+        },
+        "exp" : 1800
+    },
+    "19":{
+        "stats":{
+            "ATK": 11,
+            "DEF": 6,
+            "CRIT_RATE": 4,
+            "CRIT_DAMAGE": 4,
+            "MOVE_SPEED": 3,
+            "LIFE_POINT": 22
+        },
+        "exp" : 1900
+    },
+    "20":{
+        "stats":{
+            "ATK": 11,
+            "DEF": 7,
+            "CRIT_RATE": 5,
+            "CRIT_DAMAGE": 5,
+            "MOVE_SPEED": 4,
+            "LIFE_POINT": 24
+        },
+        "exp" : 2000
+    },
+    "21":{
+        "stats":{
+            "ATK": 12,
+            "DEF": 7,
+            "CRIT_RATE": 5,
+            "CRIT_DAMAGE": 5,
+            "MOVE_SPEED": 4,
+            "LIFE_POINT": 24
+        },
+        "exp" : 2100
+    },
+    "22":{
+        "stats":{
+            "ATK": 12,
+            "DEF": 7,
+            "CRIT_RATE": 5,
+            "CRIT_DAMAGE": 5,
+            "MOVE_SPEED": 4,
+            "LIFE_POINT": 26
+        },
+        "exp" : 2200
+    },
+    "23":{
+        "stats":{
+            "ATK": 12,
+            "DEF": 8,
+            "CRIT_RATE": 5,
+            "CRIT_DAMAGE": 5,
+            "MOVE_SPEED": 4,
+            "LIFE_POINT": 26
+        },
+        "exp" : 2300
+    },
+    "24":{
+        "stats":{
+            "ATK": 13,
+            "DEF": 8,
+            "CRIT_RATE": 5,
+            "CRIT_DAMAGE": 5,
+            "MOVE_SPEED": 4,
+            "LIFE_POINT": 26
+        },
+        "exp" : 2400
+    },
+    "25":{
+        "stats":{
+            "ATK": 14,
+            "DEF": 9,
+            "CRIT_RATE": 6,
+            "CRIT_DAMAGE": 6,
+            "MOVE_SPEED": 5,
+            "LIFE_POINT": 28
+        },
+        "exp" : 2500
+    },
+    "26":{
+        "stats":{
+            "ATK": 14,
+            "DEF": 9,
+            "CRIT_RATE": 6,
+            "CRIT_DAMAGE": 7,
+            "MOVE_SPEED": 5,
+            "LIFE_POINT": 28
+        },
+        "exp" : 2600
+    },
+    "27":{
+        "stats":{
+            "ATK": 14,
+            "DEF": 9,
+            "CRIT_RATE": 6,
+            "CRIT_DAMAGE": 8,
+            "MOVE_SPEED": 5,
+            "LIFE_POINT": 28
+        },
+        "exp" : 2700
+    },
+    "28":{
+        "stats":{
+            "ATK": 14,
+            "DEF": 9,
+            "CRIT_RATE": 6,
+            "CRIT_DAMAGE": 9,
+            "MOVE_SPEED": 5,
+            "LIFE_POINT": 28
+        },
+        "exp" : 2800
+    },
+    "29":{
+        "stats":{
+            "ATK": 14,
+            "DEF": 9,
+            "CRIT_RATE": 6,
+            "CRIT_DAMAGE": 10,
+            "MOVE_SPEED": 5,
+            "LIFE_POINT": 28
+        },
+        "exp" : 2900
+    },
+    "30":{
+        "stats":{
+            "ATK": 15,
+            "DEF": 10,
+            "CRIT_RATE": 7,
+            "CRIT_DAMAGE": 11,
+            "MOVE_SPEED": 6,
+            "LIFE_POINT": 30
+        },
+        "exp" : 3000
+    },
+    "31":{
+        "stats":{
+            "ATK": 16,
+            "DEF": 10,
+            "CRIT_RATE": 7,
+            "CRIT_DAMAGE": 11,
+            "MOVE_SPEED": 6,
+            "LIFE_POINT": 30
+        },
+        "exp" : 3100
+    },
+    "32":{
+        "stats":{
+            "ATK": 16,
+            "DEF": 11,
+            "CRIT_RATE": 7,
+            "CRIT_DAMAGE": 11,
+            "MOVE_SPEED": 6,
+            "LIFE_POINT": 30
+        },
+        "exp" : 3200
+    },
+    "33":{
+        "stats":{
+            "ATK": 16,
+            "DEF": 11,
+            "CRIT_RATE": 7,
+            "CRIT_DAMAGE": 11,
+            "MOVE_SPEED": 7,
+            "LIFE_POINT": 30
+        },
+        "exp" : 3300
+    },
+    "34":{
+        "stats":{
+            "ATK": 16,
+            "DEF": 11,
+            "CRIT_RATE": 7,
+            "CRIT_DAMAGE": 12,
+            "MOVE_SPEED": 7,
+            "LIFE_POINT": 32
+        },
+        "exp" : 3400
+    },
+    "35":{
+        "stats":{
+            "ATK": 17,
+            "DEF": 12,
+            "CRIT_RATE": 8,
+            "CRIT_DAMAGE": 13,
+            "MOVE_SPEED": 8,
+            "LIFE_POINT": 34
+        },
+        "exp" : 3500
+    },
+    "36":{
+        "stats":{
+            "ATK": 18,
+            "DEF": 12,
+            "CRIT_RATE": 8,
+            "CRIT_DAMAGE": 13,
+            "MOVE_SPEED": 8,
+            "LIFE_POINT": 34
+        },
+        "exp" : 3600
+    },
+    "37":{
+        "stats":{
+            "ATK": 18,
+            "DEF": 12,
+            "CRIT_RATE": 8,
+            "CRIT_DAMAGE": 14,
+            "MOVE_SPEED": 8,
+            "LIFE_POINT": 34
+        },
+        "exp" : 3700
+    },
+    "38":{
+        "stats":{
+            "ATK": 18,
+            "DEF": 12,
+            "CRIT_RATE": 9,
+            "CRIT_DAMAGE": 14,
+            "MOVE_SPEED": 9,
+            "LIFE_POINT": 34
+        },
+        "exp" : 3800
+    },
+    "39":{
+        "stats":{
+            "ATK": 18,
+            "DEF": 13,
+            "CRIT_RATE": 9,
+            "CRIT_DAMAGE": 14,
+            "MOVE_SPEED": 9,
+            "LIFE_POINT": 34
+        },
+        "exp" : 3900
+    },
+    "40":{
+        "stats":{
+            "ATK": 20,
+            "DEF": 15,
+            "CRIT_RATE": 10,
+            "CRIT_DAMAGE": 15,
+            "MOVE_SPEED": 10,
+            "LIFE_POINT": 40
+        },
+        "exp" : 4000
     }
-
 }

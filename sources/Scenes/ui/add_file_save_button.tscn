@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bptndbs7ljlya"]
 
-[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/button.tres" id="1_tof45"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="1_tof45"]
 [ext_resource type="Script" path="res://sources/scripts/ui/add_file_save_button.gd" id="2_j5mik"]
 
 [node name="AddFileSaveButton" type="Button"]
