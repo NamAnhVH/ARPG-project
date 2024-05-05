@@ -14,6 +14,7 @@ class_name EnemyCharacter
 @onready var attack_cooldown_time: Timer = $Timers/AttackCooldownTime
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
 @onready var health_bar : ProgressBar = $HealthBar/HealthBar
+
 @onready var first_position = global_position
 @onready var random_position = first_position
 
@@ -143,3 +144,5 @@ func _on_is_dead():
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.set("parameters/conditions/is_dead", !is_alive)
 
+func set_texture(value):
+	texture = value

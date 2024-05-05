@@ -33,9 +33,9 @@ size = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6cac"]
 radius = 14.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnrn4"]
-radius = 7.0
-height = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxcbr"]
+radius = 5.0
+height = 14.0
 
 [sub_resource type="Animation" id="Animation_rvpgc"]
 length = 0.001
@@ -169,7 +169,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ul8uk"]
@@ -9192,6 +9192,7 @@ motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
+move_speed_unit = 20.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 
@@ -9231,12 +9232,12 @@ collision_mask = 0
 shape = SubResource("CapsuleShape2D_enwvx")
 
 [node name="DamageArea" parent="." index="2"]
-visible = false
 collision_layer = 1048576
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea" index="0"]
 polygon = PackedVector2Array(-14, 13, -13, 22, -3, 30, 12, 30, 21, 22, 22, 13)
+disabled = true
 
 [node name="DetectLayerArea" parent="." index="3" instance=ExtResource("3_2bnah")]
 visible = false
@@ -9256,10 +9257,9 @@ position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_t6cac")
 
 [node name="CollisionShape2D" parent="." index="5"]
-visible = false
-position = Vector2(0, 5)
+position = Vector2(0, 7)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_nnrn4")
+shape = SubResource("CapsuleShape2D_gxcbr")
 
 [node name="AnimationPlayer" parent="." index="6"]
 libraries = {

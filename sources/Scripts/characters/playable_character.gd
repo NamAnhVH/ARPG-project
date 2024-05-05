@@ -288,7 +288,7 @@ func set_player_asset(asset_type: String):
 	if current_weapon:
 		base.texture = ResourceManager.player_character_texture[current_weapon.weapon_type][asset_type][player_base_id]
 	else:
-		base.texture = ResourceManager.player_character_texture.base.stand_move_push[player_base_id]
+		base.texture = ResourceManager.player_character_texture[GameEnums.WEAPON_TYPE.ONE_HAND_WEAPON][asset_type][player_base_id]
 	set_equipment_asset(asset_type)
 
 func remove_equipment_asset(equipment_type):

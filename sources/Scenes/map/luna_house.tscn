@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://wtduyrkmu5np"]
+[gd_scene load_steps=8 format=3 uid="uid://wtduyrkmu5np"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_52otv"]
 [ext_resource type="TileSet" uid="uid://b38v88sd4p5yy" path="res://tileset/inside_house.tres" id="2_gcyjm"]
 [ext_resource type="Script" path="res://sources/scenes/map/luna_house.gd" id="2_yn1lj"]
+[ext_resource type="Resource" uid="uid://rm4mjcfxpq7f" path="res://data/resources/progress_data.tres" id="3_yymp5"]
 [ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="4_xmsgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayepm"]
@@ -17,6 +18,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="LunaHouse" instance=ExtResource("1_52otv")]
 script = ExtResource("2_yn1lj")
 map_id = "luna_house"
+progress_data = ExtResource("3_yymp5")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 disabled = true

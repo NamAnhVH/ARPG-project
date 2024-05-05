@@ -54,7 +54,7 @@ signal upgrade_item()
 signal has_upgradable_item(value)
 
 #Map
-signal change_map(map_id: String)
+signal change_map(map: Map)
 signal change_world(map_id: String, location: Vector2)
 signal set_player()
 signal clear_hidden_node()

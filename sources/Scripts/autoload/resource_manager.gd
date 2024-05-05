@@ -188,7 +188,9 @@ var tscn = {
 	"quest_slot": preload("res://sources/scenes/ui/quest_slot.tscn"),
 	"quest_name": preload("res://sources/scenes/ui/quest_name.tscn"),
 	"quest_description": preload("res://sources/scenes/ui/quest_description.tscn"),
-	"buff_slot": preload("res://sources/scenes/usable/buff_slot.tscn")
+	"buff_slot": preload("res://sources/scenes/usable/buff_slot.tscn"),
+	"dungeon_map": preload("res://sources/scenes/tileMap/dungeon_map.tscn"),
+	"health_bar": preload("res://sources/scenes/ui/health_bar.tscn")
 }
 
 var character = {
@@ -225,7 +227,9 @@ var world = {
 	"map_23": preload("res://sources/scenes/map/map_23.tscn"),
 	"map_24": preload("res://sources/scenes/map/map_24.tscn"),
 	"map_25": preload("res://sources/scenes/map/map_25.tscn"),
-	"luna_house": preload("res://sources/scenes/map/luna_house.tscn")
+	"luna_house": preload("res://sources/scenes/map/luna_house.tscn"),
+	"dungeon": preload("res://sources/scenes/map/dungeon.tscn"),
+	"dungeon_main": preload("res://sources/scenes/map/dungeon_main.tscn")
 }
 
 var resources = {
@@ -691,3 +695,4 @@ func get_map(id):
 
 func get_character(id):
 	return character[id].instantiate()
+

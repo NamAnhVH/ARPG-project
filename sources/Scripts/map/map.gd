@@ -2,7 +2,7 @@ extends Node2D
 class_name Map
 
 @export var map_id : String
-@export var process_data : ProgressData
+@export var progress_data : ProgressData
 
 @onready var playable_character = get_node("/root/main/PlayableCharacter")
 @onready var enemies : Node2D = $Enemies
@@ -16,4 +16,4 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body is PlayableCharacter:
-		SignalManager.change_map.emit(map_id)
+		SignalManager.change_map.emit(self)

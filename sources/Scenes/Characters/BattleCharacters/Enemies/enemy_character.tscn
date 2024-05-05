@@ -23,7 +23,7 @@ immunity_duration = 0.2
 [node name="AttackArea" parent="." index="3" instance=ExtResource("5_ksshh")]
 collision_layer = 0
 
-[node name="Timers" type="Node" parent="." index="7"]
+[node name="Timers" type="Node" parent="." index="6"]
 
 [node name="AttackCooldownTime" type="Timer" parent="Timers" index="0"]
 wait_time = 2.0
@@ -37,9 +37,9 @@ autostart = true
 wait_time = 5.0
 one_shot = true
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="8"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="7"]
 
-[node name="HealthBar" type="Node2D" parent="." index="9"]
+[node name="HealthBar" type="Node2D" parent="." index="8"]
 z_index = 1
 
 [node name="HealthBar" parent="HealthBar" index="0" instance=ExtResource("3_kebyl")]

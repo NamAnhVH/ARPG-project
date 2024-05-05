@@ -29,9 +29,8 @@ radius = 109.115
 [sub_resource type="CircleShape2D" id="CircleShape2D_iu6t6"]
 radius = 23.0217
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_meu4h"]
-radius = 4.0
-height = 14.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_mppku"]
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_7cxyj"]
 length = 0.001
@@ -1185,6 +1184,7 @@ max_health = 100
 move_speed_unit = 1.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
+position = Vector2(0, -8)
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_soqsy")
@@ -1202,7 +1202,7 @@ vframes = 8
 frame = 57
 
 [node name="Hitbox" parent="." index="1"]
-visible = false
+position = Vector2(0, -8)
 collision_layer = 0
 collision_mask = 1048576
 
@@ -1212,7 +1212,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8yn02")
 
 [node name="DamageArea" parent="." index="2"]
-visible = false
+position = Vector2(0, -8)
 collision_layer = 65536
 collision_mask = 0
 
@@ -1228,29 +1228,45 @@ shape = SubResource("CapsuleShape2D_rkf5e")
 disabled = true
 
 [node name="DetectArea" parent="." index="3"]
-visible = false
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" index="0"]
 shape = SubResource("CircleShape2D_t86bi")
 
 [node name="AttackArea" parent="." index="4"]
-visible = false
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_iu6t6")
 
 [node name="CollisionShape2D" parent="." index="5"]
-visible = false
-position = Vector2(0, 2)
+position = Vector2(0, -3)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_meu4h")
+shape = SubResource("CircleShape2D_mppku")
 
 [node name="AnimationPlayer" parent="." index="6"]
 libraries = {
 "": SubResource("AnimationLibrary_54iju")
 }
 
-[node name="AnimationTree" parent="." index="7"]
+[node name="AttackCooldownTime" parent="Timers" index="0"]
+wait_time = 3.5
+
+[node name="ClockwiseChangeTime" type="Timer" parent="Timers" index="1"]
+wait_time = 2.0
+autostart = true
+
+[node name="HealthBar" parent="." index="9"]
+position = Vector2(0, -8)
+
+[node name="HealthBar" parent="HealthBar" index="0"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = -9.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationTree" parent="." index="10"]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_j8518")
 anim_player = NodePath("../AnimationPlayer")
@@ -1261,18 +1277,5 @@ parameters/conditions/is_dead = false
 parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Hurt/blend_position = Vector2(0, 0)
 parameters/Move_idle/blend_position = Vector2(0, 0)
-
-[node name="AttackCooldownTime" parent="Timers" index="0"]
-wait_time = 3.5
-
-[node name="ClockwiseChangeTime" type="Timer" parent="Timers" index="1"]
-wait_time = 2.0
-autostart = true
-
-[node name="HealthBar" parent="HealthBar" index="0"]
-offset_left = -11.0
-offset_top = -19.0
-offset_right = 11.0
-offset_bottom = -17.0
 
 [connection signal="timeout" from="Timers/ClockwiseChangeTime" to="." method="_on_clockwise_change_time_timeout"]

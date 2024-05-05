@@ -28,9 +28,8 @@ radius = 151.013
 [sub_resource type="CircleShape2D" id="CircleShape2D_gb5hg"]
 radius = 22.0227
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f68xr"]
-radius = 7.0
-height = 22.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4cpjq"]
+radius = 6.0
 
 [sub_resource type="Animation" id="Animation_mvsm2"]
 length = 0.001
@@ -1602,17 +1601,28 @@ visible = false
 shape = SubResource("CircleShape2D_gb5hg")
 
 [node name="CollisionShape2D" parent="." index="5"]
-visible = false
-position = Vector2(0, -7)
+position = Vector2(0, -5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_f68xr")
+shape = SubResource("CircleShape2D_4cpjq")
 
 [node name="AnimationPlayer" parent="." index="6"]
 libraries = {
 "": SubResource("AnimationLibrary_uhkk1")
 }
 
-[node name="AnimationTree" parent="." index="7"]
+[node name="AttackCooldownTime" parent="Timers" index="0"]
+wait_time = 1.5
+
+[node name="MoveIdleChangeTime" parent="Timers" index="1"]
+wait_time = 5.0
+
+[node name="HealthBar" parent="HealthBar" index="0"]
+offset_left = -15.0
+offset_top = -34.0
+offset_right = 15.0
+offset_bottom = -32.0
+
+[node name="AnimationTree" parent="." index="10"]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_vfbon")
 anim_player = NodePath("../AnimationPlayer")
@@ -1631,15 +1641,3 @@ parameters/Move_idle/conditions/is_idling = false
 parameters/Move_idle/conditions/is_moving = false
 parameters/Move_idle/Idle/blend_position = Vector2(0, 0)
 parameters/Move_idle/Move/blend_position = Vector2(0, 0)
-
-[node name="AttackCooldownTime" parent="Timers" index="0"]
-wait_time = 1.5
-
-[node name="MoveIdleChangeTime" parent="Timers" index="1"]
-wait_time = 5.0
-
-[node name="HealthBar" parent="HealthBar" index="0"]
-offset_left = -15.0
-offset_top = -34.0
-offset_right = 15.0
-offset_bottom = -32.0

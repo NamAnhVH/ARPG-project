@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwql54h0spflw"]
+
+[ext_resource type="TileSet" uid="uid://daltvbwi01833" path="res://tileset/dungeon.tres" id="1_bs3hd"]
+
+[node name="DungeonMap" type="TileMap"]
+tile_set = ExtResource("1_bs3hd")
+format = 2
+layer_0/name = "ground"
+layer_1/name = "floor"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "roof"
+layer_2/tile_data = PackedInt32Array()
