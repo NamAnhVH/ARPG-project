@@ -18,8 +18,8 @@ var wall_atlas = [
 func _ready():
 	noise = FastNoiseLite.new()
 	noise.frequency = 0.05
-	for i in range(500):
-		slimes.append(ResourceManager.get_character("slime"))
-	for i in range(100):
-		gremlins.append(ResourceManager.get_character("gremlin"))
+	#for i in range(500):
+		#slimes.append(ResourceManager.get_character("slime"))
+	#for i in range(100):
+		#gremlins.append(ResourceManager.get_character("gremlin"))
 

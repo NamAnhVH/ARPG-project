@@ -63,45 +63,77 @@ func generate_world(current_map: Map):
 					map.queue_free()
 				else:
 					current_world.append(map_position)
+		
 		if current_world.find(current_map_position + Vector2i(0, -1)) == -1:
 			var map_up : Dungeon = ResourceManager.get_map("dungeon")
 			map_up.map_position = (current_map_position + Vector2i(0, -1)) * DUNGEON_SIZE
 			map_up.global_position = map_up.map_position * 16
+			map_up.map_down = current_map
+			current_map.map_up = map_up
 			call_deferred("add_child", map_up)
-		if current_world.find(current_map_position + Vector2i(1, -1)) == -1:
-			var map_right_up : Dungeon = ResourceManager.get_map("dungeon")
-			map_right_up.map_position = (current_map_position + Vector2i(1, -1)) * DUNGEON_SIZE
-			map_right_up.global_position = map_right_up.map_position * 16
-			call_deferred("add_child", map_right_up)
+			
 		if current_world.find(current_map_position + Vector2i(1, 0)) == -1:
 			var map_right : Dungeon = ResourceManager.get_map("dungeon")
 			map_right.map_position = (current_map_position + Vector2i(1, 0)) * DUNGEON_SIZE
 			map_right.global_position = map_right.map_position * 16
+			map_right.map_left = current_map
+			current_map.map_right = map_right
 			call_deferred("add_child",map_right)
-		if current_world.find(current_map_position + Vector2i(1, 1)) == -1:
-			var map_right_down : Dungeon = ResourceManager.get_map("dungeon")
-			map_right_down.map_position = (current_map_position + Vector2i(1, 1)) * DUNGEON_SIZE
-			map_right_down.global_position = map_right_down.map_position * 16
-			call_deferred("add_child", map_right_down)
+		
 		if current_world.find(current_map_position + Vector2i(0, 1)) == -1:
 			var map_down : Dungeon = ResourceManager.get_map("dungeon")
 			map_down.map_position = (current_map_position + Vector2i(0, 1)) * DUNGEON_SIZE
 			map_down.global_position = map_down.map_position * 16
+			map_down.map_up = current_map
+			current_map.map_down = map_down
 			call_deferred("add_child", map_down)
-		if current_world.find(current_map_position + Vector2i(-1, 1)) == -1:
-			var map_left_down : Dungeon = ResourceManager.get_map("dungeon")
-			map_left_down.map_position = (current_map_position + Vector2i(-1, 1)) * DUNGEON_SIZE
-			map_left_down.global_position = map_left_down.map_position * 16
-			call_deferred("add_child", map_left_down)
+		
 		if current_world.find(current_map_position + Vector2i(-1, 0)) == -1:
 			var map_left : Dungeon = ResourceManager.get_map("dungeon")
 			map_left.map_position = (current_map_position + Vector2i(-1, 0)) * DUNGEON_SIZE
 			map_left.global_position = map_left.map_position * 16
+			map_left.map_right = current_map
+			current_map.map_left = map_left
 			call_deferred("add_child", map_left)
+			
+		if current_world.find(current_map_position + Vector2i(1, -1)) == -1:
+			var map_right_up : Dungeon = ResourceManager.get_map("dungeon")
+			map_right_up.map_position = (current_map_position + Vector2i(1, -1)) * DUNGEON_SIZE
+			map_right_up.global_position = map_right_up.map_position * 16
+			map_right_up.map_left = current_map.map_up
+			current_map.map_up.map_right = map_right_up
+			map_right_up.map_down = current_map.map_right
+			current_map.map_right.map_up = map_right_up
+			call_deferred("add_child", map_right_up)
+			
+		if current_world.find(current_map_position + Vector2i(1, 1)) == -1:
+			var map_right_down : Dungeon = ResourceManager.get_map("dungeon")
+			map_right_down.map_position = (current_map_position + Vector2i(1, 1)) * DUNGEON_SIZE
+			map_right_down.global_position = map_right_down.map_position * 16
+			map_right_down.map_up = current_map.map_right
+			current_map.map_right.map_down = map_right_down
+			map_right_down.map_left = current_map.map_down
+			current_map.map_down.map_right = map_right_down
+			call_deferred("add_child", map_right_down)
+			
+		if current_world.find(current_map_position + Vector2i(-1, 1)) == -1:
+			var map_left_down : Dungeon = ResourceManager.get_map("dungeon")
+			map_left_down.map_position = (current_map_position + Vector2i(-1, 1)) * DUNGEON_SIZE
+			map_left_down.global_position = map_left_down.map_position * 16
+			map_left_down.map_right = current_map.map_down
+			current_map.map_left.map_down = map_left_down
+			map_left_down.map_up = current_map.map_left
+			current_map.map_down.map_left = map_left_down
+			call_deferred("add_child", map_left_down)
+			
 		if current_world.find(current_map_position + Vector2i(-1, -1)) == -1:
 			var map_left_up : Dungeon = ResourceManager.get_map("dungeon")
 			map_left_up.map_position = (current_map_position + Vector2i(-1, -1)) * DUNGEON_SIZE
 			map_left_up.global_position = map_left_up.map_position * 16
+			map_left_up.map_down = current_map.map_left
+			current_map.map_left.map_up = map_left_up
+			map_left_up.map_right = current_map.map_up
+			current_map.map_up.map_left = map_left_up
 			call_deferred("add_child", map_left_up)
 	else:
 		var current_map_info = ResourceManager.map_info[current_map.map_id]

@@ -69,7 +69,7 @@ polygon = PackedVector2Array(273, 508, 326, 458, 328, 493, 274, 541)
 
 [node name="ChangeWorldArea" parent="ChangeWorld" index="0" instance=ExtResource("5_wioqe")]
 position = Vector2(-1, -5)
-map_id = "dungeon"
+map_id = "dungeon_main"
 location = Vector2(100, 100)
 next_z_index = 1
 
