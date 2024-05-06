@@ -22,10 +22,8 @@ shape = SubResource("RectangleShape2D_hx28p")
 y_sort_enabled = true
 format = 2
 
-[node name="Camera" parent="." node_paths=PackedStringArray("top_position", "bottom_position") instance=ExtResource("2_nisv8")]
+[node name="Camera" parent="." instance=ExtResource("2_nisv8")]
 position = Vector2(0, -12)
-top_position = NodePath("")
-bottom_position = NodePath("")
 
 [node name="ChangeLayerArea" type="Node2D" parent="."]
 
