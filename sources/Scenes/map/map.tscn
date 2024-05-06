@@ -5,14 +5,14 @@
 [ext_resource type="Script" path="res://sources/scripts/map/enemies.gd" id="4_eqgex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx28p"]
-size = Vector2(464, 466)
+resource_local_to_scene = true
+size = Vector2(880, 880)
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rgvah")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(448, 448)

@@ -90,7 +90,7 @@ func generate_enemy():
 	#spawn slime
 	for i in randi_range(1, 5):
 		var enemy = DungeonManager.slimes.pop_front()
-		if enemy:
+		if enemy != null:
 			enemy.global_position = broken_path_tiles.pick_random() * 16
 			enemy.texture = preload("res://assets/monsters/slimes/slime_v01.png")
 			slimes.call_deferred("add_child", enemy)
@@ -106,13 +106,6 @@ func generate_enemy():
 func generate_finish():
 	thread.wait_to_finish()
 	add_child(tile_map)
-	#navigation_region.add_child(tile_map)
-	#var new_navigation_mesh = NavigationPolygon.new()
-	#var new_vertices = PackedVector2Array([Vector2(0, 0), Vector2(0, 480), Vector2(480, 480), Vector2(480, 0)])
-	#new_navigation_mesh.vertices = new_vertices
-	#var new_polygon_indices = PackedInt32Array([0, 1, 2, 3])
-	#new_navigation_mesh.add_polygon(new_polygon_indices)
-	#navigation_region.navigation_polygon = new_navigation_mesh
 
 func is_beside_hole(tile):
 	return hole_tiles.find(tile + Vector2i(0, -1)) != -1 \
@@ -124,3 +117,12 @@ func is_beside_hole(tile):
 	or hole_tiles.find(tile + Vector2i(-1, 0)) != -1 \
 	or hole_tiles.find(tile + Vector2i(-1, -1)) != -1
 
+func remove_enemy():
+	for enemy_type in enemies.get_children():
+		if enemy_type:
+			for enemy in enemy_type.get_children():
+				enemy_type.remove_child(enemy)
+				if enemy is SlimeCharacter:
+					DungeonManager.slimes.append(enemy)
+				elif enemy is GremlinCharacter:
+					DungeonManager.gremlins.append(enemy)

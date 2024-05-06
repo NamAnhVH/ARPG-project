@@ -60,6 +60,7 @@ func generate_world(current_map: Map):
 				var map_position = format_map_id_to_vector(map.map_id)
 				if abs(map_position.x - current_map_position.x) >= 2 \
 				or abs(map_position.y - current_map_position.y) >= 2:
+					map.remove_enemy()
 					map.queue_free()
 				else:
 					current_world.append(map_position)

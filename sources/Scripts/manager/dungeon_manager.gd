@@ -16,10 +16,13 @@ var wall_atlas = [
 	Vector2i(29, 11), Vector2i(29, 12)]
 
 func _ready():
+	SignalManager.generate_dungeon.connect(_on_generate_dungeon)
+
+func _on_generate_dungeon():
 	noise = FastNoiseLite.new()
 	noise.frequency = 0.05
-	for i in range(500):
+	for i in range(50):
 		slimes.append(ResourceManager.get_character("slime"))
-	for i in range(100):
+	for i in range(30):
 		gremlins.append(ResourceManager.get_character("gremlin"))
 

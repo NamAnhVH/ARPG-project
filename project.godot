@@ -44,8 +44,8 @@ general/balloon_path="res://sources/scenes/ui/balloon.tscn"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=450
+window/size/viewport_width=3000
+window/size/viewport_height=3000
 window/size/mode=3
 window/stretch/mode="canvas_items"
 

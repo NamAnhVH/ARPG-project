@@ -58,6 +58,7 @@ signal change_map(map: Map)
 signal change_world(map_id: String, location: Vector2)
 signal set_player()
 signal clear_hidden_node()
+signal generate_dungeon
 
 #SaveManager
 signal close_file_saving_container

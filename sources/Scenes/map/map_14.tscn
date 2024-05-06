@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4ik43xe8t2d3"]
+[gd_scene load_steps=11 format=3 uid="uid://c4ik43xe8t2d3"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_c2geq"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="2_e5yut"]
 [ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="5_wioqe"]
 [ext_resource type="Script" path="res://sources/scripts/core/stair_area.gd" id="7_rbppq"]
 [ext_resource type="Script" path="res://sources/scripts/core/change_layer_area.gd" id="7_u14xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l2qh"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2mub"]
 size = Vector2(30, 62)
@@ -19,6 +23,9 @@ size = Vector2(14, 14)
 
 [node name="Map14" instance=ExtResource("1_c2geq")]
 map_id = "map_14"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_6l2qh")
 
 [node name="TileMap" parent="." index="1"]
 tile_set = ExtResource("2_e5yut")

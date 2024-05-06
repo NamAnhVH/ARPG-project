@@ -26,6 +26,8 @@ func _on_fade_out_started():
 	Global.paused = true
 
 func _on_fade_out_finished():
+	if (map_id == "dungeon_main"):
+		SignalManager.generate_dungeon.emit()
 	SignalManager.change_world.emit(map_id, location, next_z_index)
 	SignalManager.set_player.emit()
 

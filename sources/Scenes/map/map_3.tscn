@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv2ivqdntsvlc"]
+[gd_scene load_steps=7 format=3 uid="uid://bv2ivqdntsvlc"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_xf0ur"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_6j6yg"]
 [ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/characters/battleCharacters/enemies/slime.tscn" id="3_63m6b"]
 [ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="4_3uhrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u80q"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2sbmu"]
 vertices = PackedVector2Array(82, 485, 102, 503, 28, 534, 5, 885, 4, 872, 25, 878, 382, 862, 378, 818, 427, 826, 405, 869, 177, 569, 175, 558, 244, 555, 9, 752, 6, 209, 28, 210, 19, 623, 871, 360, 726, 359, 728, 211, 892, 211, 118, 389, 121, 392, 119, 394, 94, 405, 892, 890, 405, 884, 435, 796, 569, 792, 591, 540, 591, 524, 641, 523, 244, 429, 223, 426, 224, 416, 278, 415, 250, 442, 316, 442, 312, 261, 284, 341, 118, 405, 158, 884, 161, 830, 212, 822, 260, 883, 745, 493, 750, 474, 792, 475, 796, 460, 878, 460, 569, 745, 168, 769, 154, 767, 148, 732, 178, 757, 154, 194, 200, 192, 118, 342, 104, 245, 335, 247, 205, 180, 311, 180, 335, 193, 62, 245, 253, 542, 386, 544, 401, 564, 97, 622, 125, 575, 662, 495, 541, 564, 553, 545, 115, 740, 104, 752, 303, 743, 198, 758, 277, 887, 218, 776)
@@ -13,6 +17,9 @@ source_geometry_group_name = &"navigation"
 
 [node name="Map3" instance=ExtResource("1_xf0ur")]
 map_id = "map_3"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_3u80q")
 
 [node name="TileMap" parent="." index="1"]
 tile_set = ExtResource("3_6j6yg")
@@ -42,62 +49,27 @@ polygon = PackedVector2Array(20, 756, -18, 771, 7, 868, 36, 866, 56, 879, 148, 8
 polygon = PackedVector2Array(397, 896, 395, 876, 372, 869, 367, 804, 417, 812, 419, 786, 560, 784, 559, 761, 313, 755, 274, 873, 285, 882, 359, 897)
 
 [node name="Slimes" type="Node2D" parent="Enemies" index="0"]
-y_sort_enabled = true
 
 [node name="Slime" parent="Enemies/Slimes" index="0" instance=ExtResource("3_63m6b")]
-position = Vector2(657, 600)
+position = Vector2(684, 583)
 texture = ExtResource("4_3uhrj")
-damage_amount = 1
-knockback_strength = 2
+max_health = 10
 
 [node name="Slime2" parent="Enemies/Slimes" index="1" instance=ExtResource("3_63m6b")]
-position = Vector2(726, 728)
+position = Vector2(773, 669)
 texture = ExtResource("4_3uhrj")
+max_health = 10
 
 [node name="Slime3" parent="Enemies/Slimes" index="2" instance=ExtResource("3_63m6b")]
-position = Vector2(758, 786)
+position = Vector2(696, 691)
 texture = ExtResource("4_3uhrj")
+max_health = 10
 
 [node name="Slime4" parent="Enemies/Slimes" index="3" instance=ExtResource("3_63m6b")]
-position = Vector2(857, 631)
+position = Vector2(614, 643)
 texture = ExtResource("4_3uhrj")
+max_health = 10
 
-[node name="Slime5" parent="Enemies/Slimes" index="4" instance=ExtResource("3_63m6b")]
-position = Vector2(645, 727)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime6" parent="Enemies/Slimes" index="5" instance=ExtResource("3_63m6b")]
-position = Vector2(818, 743)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime7" parent="Enemies/Slimes" index="6" instance=ExtResource("3_63m6b")]
-position = Vector2(780, 674)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime8" parent="Enemies/Slimes" index="7" instance=ExtResource("3_63m6b")]
-position = Vector2(729, 581)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime9" parent="Enemies/Slimes" index="8" instance=ExtResource("3_63m6b")]
-position = Vector2(818, 493)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime10" parent="Enemies/Slimes" index="9" instance=ExtResource("3_63m6b")]
-position = Vector2(688, 659)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime11" parent="Enemies/Slimes" index="10" instance=ExtResource("3_63m6b")]
-position = Vector2(802, 578)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime12" parent="Enemies/Slimes" index="11" instance=ExtResource("3_63m6b")]
-position = Vector2(718, 527)
-texture = ExtResource("4_3uhrj")
-
-[node name="Slime13" parent="Enemies/Slimes" index="12" instance=ExtResource("3_63m6b")]
-position = Vector2(836, 815)
-texture = ExtResource("4_3uhrj")
-
-[node name="NavigationRegion2D" parent="." index="12"]
+[node name="NavigationRegion2D" parent="." index="11"]
 visible = true
 navigation_polygon = SubResource("NavigationPolygon_2sbmu")
