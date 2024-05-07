@@ -190,7 +190,8 @@ var tscn = {
 	"quest_description": preload("res://sources/scenes/ui/quest_description.tscn"),
 	"buff_slot": preload("res://sources/scenes/usable/buff_slot.tscn"),
 	"dungeon_map": preload("res://sources/scenes/tileMap/dungeon_map.tscn"),
-	"health_bar": preload("res://sources/scenes/ui/health_bar.tscn")
+	"health_bar": preload("res://sources/scenes/ui/health_bar.tscn"),
+	"input_button": preload("res://sources/scenes/ui/input_button.tscn")
 }
 
 var character = {

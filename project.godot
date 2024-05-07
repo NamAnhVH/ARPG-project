@@ -44,9 +44,8 @@ general/balloon_path="res://sources/scenes/ui/balloon.tscn"
 
 [display]
 
-window/size/viewport_width=3000
-window/size/viewport_height=3000
-window/size/mode=3
+window/size/viewport_width=800
+window/size/viewport_height=450
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -135,7 +134,7 @@ hotbar_5={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194443,"key_label":0,"unicode":53,"echo":false,"script":null)
 ]
 }
-dodge={
+parry={
 "deadzone": 0.5,
 "events": [null, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]

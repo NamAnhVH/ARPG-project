@@ -108,7 +108,29 @@ theme = ExtResource("3_4cbis")
 text = "Close
 "
 
+[node name="InputSetting" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 24.0
+offset_right = 640.0
+offset_bottom = 430.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InputSetting"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="InputSetting/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResetButton" type="Button" parent="InputSetting"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_4cbis")
+text = "Reset to default"
+
 [connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="InputSetting/ResetButton" to="." method="_on_reset_button_pressed"]

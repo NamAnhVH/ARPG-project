@@ -7,6 +7,7 @@ func _ready():
 	hide()
 
 func display(interactable):
-	lbl_action.text = "Press 'e' to " + interactable.action
+	var interact_button = InputMap.action_get_events("interact")[0]
+	lbl_action.text = "Press " + interact_button.as_text().trim_suffix(" (Physical)") + " to " + interactable.action
 	lbl_name.text = interactable.object_name
 	show()
