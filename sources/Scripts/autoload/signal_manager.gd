@@ -14,6 +14,7 @@ signal chest_opened(chest: InteractableChest)
 signal chest_ready(chest: Chest)
 signal chest_closed(chest: InteractableChest)
 signal content_changed()
+signal inventory_add_item(item: Item)
 
 #Shop
 signal set_shop(npc_name: String)
@@ -21,6 +22,11 @@ signal shop_opened(list_item : Array[ShopItem])
 signal shop_closed()
 signal shop_ready(shop: Shop)
 signal buy_item(price: int)
+
+#Upgrade
+signal upgrade_opened
+signal upgrade_closed
+signal upgrade_ready(upgrade: Upgrade)
 
 #Interactable
 signal open_chest(chest: InteractableChest)

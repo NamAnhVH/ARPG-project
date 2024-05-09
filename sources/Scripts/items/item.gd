@@ -15,6 +15,7 @@ var extra_weapon_type: GameEnums.EXTRA_WEAPON_TYPE
 var stack_size : int = 1
 var quantity: int = 1 : set = set_quantity
 var level: int = 1
+var upgrade_level : int = 0
 var components = {}
 var lbl_quantity : Label
 var legendary_data
@@ -80,13 +81,19 @@ func destroy():
 	else:
 		queue_free()
 
+func upgrade():
+	upgrade_level += 1
+	components["base_stats"].upgrade()
+	
+
 func get_data():
 	var data = {
 		"id": id,
 		"item_name": item_name,
 		"rarity": rarity,
 		"quantity": quantity,
-		"components": {}
+		"components": {},
+		"upgrade_level": upgrade_level
 		}
 	
 	for c in components:

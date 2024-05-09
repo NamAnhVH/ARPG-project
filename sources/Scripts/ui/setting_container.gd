@@ -1,6 +1,6 @@
 extends NinePatchRect
 
-@onready var action_list : VBoxContainer = $InputSetting/ScrollContainer/ActionList
+@onready var action_list : VBoxContainer = $TabContainer/Controls/InputSetting/ScrollContainer/ActionList
 
 var is_remapping : bool = false
 var action_to_remap
@@ -100,3 +100,15 @@ func _on_quit_game_pressed():
 
 func _on_reset_button_pressed():
 	create_action_list()
+
+func _on_full_screen_button_toggled(toggled_on):
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _on_vsync_button_toggled(toggled_on):
+	if toggled_on:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

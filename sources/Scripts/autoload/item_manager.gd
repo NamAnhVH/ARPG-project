@@ -70,6 +70,8 @@ func get_item_from_data(item_data):
 	if item_data.has("components"):
 		if item_data.components.has("base_stats"):
 			item.components.base_stats = BaseStat.new(item_data.components.base_stats, item.rarity)
+	if item_data.has("upgrade_level"):
+		item.upgrade_level = item_data.upgrade_level
 	return item
 
 func get_item_name(id: String):

@@ -24,14 +24,18 @@ func _ready():
 	SignalManager.hotbar_ready.connect(_on_hotbar_ready)
 	SignalManager.chest_ready.connect(_on_chest_ready)
 	SignalManager.shop_ready.connect(_on_shop_ready)
+	SignalManager.upgrade_ready.connect(_on_upgrade_ready)
 	
 	item_void.gui_input.connect(_on_void_gui_input)
 	
 	SignalManager.get_inventory_data.connect(_get_inventory_data)
 	SignalManager.get_equipment_data.connect(_get_equipment_data)
 	
+	SignalManager.inventory_add_item.connect(_on_inventory_add_item)
+	
 	InventoryManager.add_hidden_node(inventory)
 	InventoryManager.add_hidden_node(equipment)
+
 
 func _process(delta):
 	if item_in_hand:
@@ -103,6 +107,15 @@ func _on_shop_ready(shop: Shop):
 		s.slot.mouse_entered.connect(_on_mouse_entered_shop_slot.bind(s.slot))
 		s.slot.mouse_exited.connect(_on_mouse_exited_slot)
 		s.slot.gui_input.connect(_on_gui_input_shop_slot.bindv([s]))
+
+func _on_upgrade_ready(upgrade: Upgrade):
+	upgrade.upgrade_slot.mouse_entered.connect(_on_mouse_entered_slot.bind(upgrade.upgrade_slot))
+	upgrade.upgrade_slot.mouse_exited.connect(_on_mouse_exited_slot)
+	upgrade.upgrade_slot.gui_input.connect(_on_gui_input_slot.bindv([upgrade.upgrade_slot]))
+	
+	upgrade.material_slot.mouse_entered.connect(_on_mouse_entered_slot.bind(upgrade.material_slot))
+	upgrade.material_slot.mouse_exited.connect(_on_mouse_exited_slot)
+	upgrade.material_slot.gui_input.connect(_on_gui_input_slot.bindv([upgrade.material_slot]))
 
 func _on_mouse_entered_slot(slot: InventorySlot):
 	if slot.item:
@@ -176,3 +189,6 @@ func _on_void_gui_input(event):
 func _on_clear_hidden_node():
 	for c in hidden_nodes.get_children():
 		c.queue_free()
+
+func _on_inventory_add_item(item: Item):
+	inventory.add_item(item)

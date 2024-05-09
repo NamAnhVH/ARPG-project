@@ -1,5 +1,6 @@
 extends Node
 
+const UPGRADE_PATH = "res://data/json/upgrade.json"
 const STAT_PATH = "res://data/json/stats.json"
 const LEVEL_PATH = "res://data/json/level.json"
 const MAP_PATH = "res://data/json/map.json"
@@ -651,6 +652,7 @@ var colors = {
 	GameEnums.RARITY.LEGENDARY : "FF0000",
 }
 
+var upgrade_info = {}
 var stat_info = {}
 var level_info = {}
 var map_info = {}
@@ -658,9 +660,12 @@ var quest_info = {}
 var story_info = []
 
 func _ready():
+	var upgrade_file = FileAccess.open(UPGRADE_PATH, FileAccess.READ)
+	upgrade_info = JSON.parse_string(upgrade_file.get_as_text())
+	upgrade_file.close()
+	
 	var file = FileAccess.open(STAT_PATH, FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
-	
 	for stat in data:
 		stat_info[GameEnums.STAT[stat]] = data[stat]
 	file.close()

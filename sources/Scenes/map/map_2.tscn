@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxpao04e0hu7u"]
+[gd_scene load_steps=5 format=3 uid="uid://dxpao04e0hu7u"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_ui75u"]
 [ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/interactables/interactable_chest.tscn" id="3_3geg1"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_m7eq4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxhfw"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
+
 [node name="Map2" instance=ExtResource("1_ui75u")]
 map_id = "map_2"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_oxhfw")
 
 [node name="TileMap" parent="." index="1"]
 tile_set = ExtResource("3_m7eq4")
@@ -33,10 +40,10 @@ polygon = PackedVector2Array(-20, 864, -9, 878, 19, 893, 30, 893, 31, 865, 51, 8
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="4"]
 polygon = PackedVector2Array(723, 851, 723, 868, 830, 851, 900, 833, 894, 812, 840, 821, 835, 806, 882, 793, 878, 771, 917, 756, 892, 717, 859, 725, 783, 772, 786, 795, 739, 814)
 
-[node name="Chest" parent="." index="11"]
+[node name="Chest" parent="." index="10"]
 y_sort_enabled = true
 
 [node name="InteractableChest" parent="Chest" index="0" instance=ExtResource("3_3geg1")]
 position = Vector2(453, 757)
 id = "chest_v00"
-items = Array[String](["shield_v00", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00"])
+items = ["shield_v00", "healing_potion_v00", "healing_potion_v00", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone"]

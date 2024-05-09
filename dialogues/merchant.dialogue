@@ -6,6 +6,7 @@
 	do SignalManager.set_shop.emit(Global.npc_name)
 - Upgrade an item
 	{{Global.npc_name}}: Ah, looking to enhance something? Let's see what we can do.
+	do SignalManager.upgrade_opened.emit()
 - No, thanks 
 	{{Global.npc_name}}: Ok bye.
 do Global.paused = false

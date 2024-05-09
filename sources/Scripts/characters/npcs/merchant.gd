@@ -16,3 +16,4 @@ func open_shop(npc_name: String):
 
 func out_of_range():
 	SignalManager.shop_closed.emit()
+	SignalManager.upgrade_closed.emit()

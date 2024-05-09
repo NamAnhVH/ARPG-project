@@ -3,7 +3,7 @@ class_name InteractableChest
 
 @export var world_data : WorldData
 @export var id : String
-@export var items : Array
+@export var items : Array[String]
 @export_range(0, 14) var frame : int
 
 @onready var sprite : Sprite2D = $Sprite2D

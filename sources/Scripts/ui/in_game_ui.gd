@@ -3,17 +3,18 @@ extends CanvasLayer
 @onready var window : Control = $Window
 @onready var quest_container = $Window/QuestContainer
 
-var is_open_inventory : bool = false
 var is_open_setting : bool = false
 
 var setting_container
 
 func _ready():
 	SignalManager.choose_player_name.connect(_on_choose_player_name)
+	SignalManager.upgrade_opened.connect(open_inventory)
+	SignalManager.shop_opened.connect(open_inventory)
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE and event.is_pressed():
-		if !quest_container.is_open and !is_open_inventory:
+		if !quest_container.is_open and !Global.is_inventory_opened:
 			if !is_open_setting:
 				_on_setting_pressed()
 			else:
@@ -21,21 +22,26 @@ func _unhandled_input(event):
 		else:
 			if quest_container.is_open:
 				quest_container.show_container()
-			if is_open_inventory:
-				SignalManager.inventory_closed.emit()
-				is_open_inventory = false
+			if Global.is_inventory_opened:
+				close_inventory()
 	
 	if !is_open_setting:
 		if event.is_action_pressed("quest"):
 			quest_container.show_container()
 			
 		if event.is_action_pressed("inventory"):
-			if !is_open_inventory:
-				SignalManager.inventory_opened.emit()
-				is_open_inventory = true
+			if !Global.is_inventory_opened:
+				open_inventory()
 			else:
-				SignalManager.inventory_closed.emit()
-				is_open_inventory = false
+				close_inventory()
+
+func open_inventory(para = null):
+	SignalManager.inventory_opened.emit()
+	Global.is_inventory_opened = true
+
+func close_inventory():
+	SignalManager.inventory_closed.emit()
+	Global.is_inventory_opened = false
 
 func _on_setting_pressed():
 	is_open_setting = true

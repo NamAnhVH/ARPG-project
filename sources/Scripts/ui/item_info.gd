@@ -12,6 +12,9 @@ func display(slot):
 	size.x = 0
 	global_position = slot.size + slot.global_position
 	item_name.text = slot.item.item_name
+	if slot.item.upgrade_level > 0:
+		item_name.text += " +" + str(slot.item.upgrade_level)
+		
 	item_name.label_settings = ResourceManager.set_font(16, ResourceManager.colors[slot.item.rarity])
 	var rarity_name = GameEnums.RARITY.keys()[slot.item.rarity].capitalize()
 	var line_type = ItemInfoLine.new(rarity_name + " " + ItemManager.get_type_name(slot.item), slot.item.rarity)

@@ -8,4 +8,5 @@ var paused : bool
 
 var player_level : int
 
+var is_inventory_opened : bool
 
