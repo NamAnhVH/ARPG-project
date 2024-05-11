@@ -1178,13 +1178,11 @@ graph_offset = Vector2(50, -10)
 [node name="Slime" instance=ExtResource("1_dcox8")]
 y_sort_enabled = true
 script = ExtResource("2_fxcpq")
-money_dropped = 10
-exp_dropped = 10
-max_health = 100
 move_speed_unit = 1.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
-position = Vector2(0, -8)
+y_sort_enabled = true
+position = Vector2(0, -3)
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_soqsy")
@@ -1202,7 +1200,8 @@ vframes = 8
 frame = 57
 
 [node name="Hitbox" parent="." index="1"]
-position = Vector2(0, -8)
+visible = false
+position = Vector2(0, -3)
 collision_layer = 0
 collision_mask = 1048576
 
@@ -1212,7 +1211,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8yn02")
 
 [node name="DamageArea" parent="." index="2"]
-position = Vector2(0, -8)
+visible = false
+position = Vector2(0, -3)
 collision_layer = 65536
 collision_mask = 0
 
@@ -1228,19 +1228,22 @@ shape = SubResource("CapsuleShape2D_rkf5e")
 disabled = true
 
 [node name="DetectArea" parent="." index="3"]
-position = Vector2(0, -8)
+visible = false
+position = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" index="0"]
 shape = SubResource("CircleShape2D_t86bi")
 
 [node name="AttackArea" parent="." index="4"]
-position = Vector2(0, -8)
+visible = false
+position = Vector2(0, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_iu6t6")
 
 [node name="CollisionShape2D" parent="." index="5"]
-position = Vector2(0, -3)
+visible = false
+position = Vector2(0, 2)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_mppku")
 
@@ -1257,7 +1260,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="HealthBar" parent="." index="9"]
-position = Vector2(0, -8)
+position = Vector2(0, -3)
 
 [node name="HealthBar" parent="HealthBar" index="0"]
 offset_left = -10.0

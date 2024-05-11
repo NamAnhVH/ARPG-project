@@ -8,12 +8,13 @@ const KNOCKBACK_VELOCITY = 200
 
 @export var knockback_modifier: bool = true
 @export var move_weight: float = 0.2: set = set_move_weight
-@export var max_health : int = 10 : set = set_max_health
+
 
 @onready var health : int = max_health
 @onready var hitbox : Area2D = $Hitbox
-@onready var damage_area : Area2D = $DamageArea
+@onready var damage_area : DamageArea = $DamageArea
 
+var max_health : int = 10 : set = set_max_health
 
 var is_alive : bool = true
 

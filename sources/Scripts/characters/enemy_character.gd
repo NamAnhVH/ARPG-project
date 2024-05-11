@@ -3,11 +3,6 @@ class_name EnemyCharacter
 
 @export var level = 1
 @export var max_active_area = 50
-@export var texture : Texture2D
-@export var damage_amount : int = 2
-@export var knockback_strength: int = 3
-@export var money_dropped: int
-@export var exp_dropped: int
 
 @onready var move_idle_change_time : Timer = $Timers/MoveIdleChangeTime
 @onready var generate_random_position_time : Timer = $Timers/GenerateRandomPositionTime
@@ -17,6 +12,11 @@ class_name EnemyCharacter
 
 @onready var first_position = global_position
 @onready var random_position = first_position
+
+var damage_amount : int = 2
+var knockback_strength: int = 3
+var money_dropped: int
+var exp_dropped: int
 
 var is_moving : bool = false
 var is_chasing : bool = false
@@ -30,6 +30,8 @@ func _ready():
 	health_bar.init_health(health)
 	damage_area.damage_amount = damage_amount
 	damage_area.knockback_strength = knockback_strength
+	set_base_texture()
+	set_stat()
 
 func _physics_process(delta):
 	if !Global.paused:
@@ -69,9 +71,14 @@ func set_health(value, _is_hitted: bool = false):
 		health_bar.set_health(health)
 	return value
 
+func set_base_texture():
+	pass
+
+func set_stat():
+	pass
+
 func get_enemy_data(new_enemy):
 	new_enemy.max_active_area = max_active_area
-	new_enemy.texture = texture
 	new_enemy.damage_amount = damage_amount
 	new_enemy.knockback_strength = knockback_strength
 	new_enemy.level = level
@@ -143,6 +150,3 @@ func _on_is_dead():
 	is_alive = false
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.set("parameters/conditions/is_dead", !is_alive)
-
-func set_texture(value):
-	texture = value

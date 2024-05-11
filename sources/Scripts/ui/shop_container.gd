@@ -8,6 +8,7 @@ func _ready():
 	SignalManager.shop_closed.connect(_on_shop_closed)
 
 func _on_shop_opened(new_list_item: Array[Dictionary]):
+	Global.is_shop_opened = true
 	for item in new_list_item:
 		var shop_slot_container = ResourceManager.get_instance("shop_slot_container")
 		shop_slot_container.price = item.price
@@ -18,6 +19,7 @@ func _on_shop_opened(new_list_item: Array[Dictionary]):
 	SignalManager.shop_ready.emit(self)
 
 func _on_shop_closed():
+	Global.is_shop_opened = false
 	hide()
 	for item in list_item_container.get_children():
 		item.queue_free()

@@ -5,11 +5,6 @@ class_name SlimeCharacter
 @onready var base : Sprite2D = $Body/Base
 @onready var attack_effect : Sprite2D = $Body/AttackEffect
 
-func _ready():
-	super._ready()
-	base.texture = texture
-	attack_effect.texture = texture
-
 func move_state():
 	var move_direction : Vector2
 	move_direction = navigation_agent.get_next_path_position() - global_position
@@ -30,6 +25,17 @@ func move_state():
 func generate_random_position():
 	is_moving = false
 	super.generate_random_position()
+
+func set_base_texture():
+	base.texture = ResourceManager.get_slime_texture(level)
+	attack_effect.texture = base.texture
+
+func set_stat():
+	damage_amount = level * 4
+	max_health = level * 50
+	knockback_strength = 3
+	money_dropped = level * 5
+	exp_dropped = level * 10
 
 func _on_clockwise_change_time_timeout():
 	is_clockwise = !is_clockwise

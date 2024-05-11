@@ -11,8 +11,7 @@ process_mode = 3
 y_sort_enabled = true
 
 [node name="PlayableCharacter" parent="." instance=ExtResource("2_u0g7d")]
-z_index = 1
-y_sort_enabled = true
+position = Vector2(405, 225)
 
 [node name="WorldManager" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -21,3 +20,4 @@ player_data = ExtResource("3_5dv0b")
 world_data = ExtResource("4_77d44")
 
 [node name="InGameUI" parent="." instance=ExtResource("6_uughu")]
+layer = 2

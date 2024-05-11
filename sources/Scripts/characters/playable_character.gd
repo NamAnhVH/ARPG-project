@@ -83,9 +83,9 @@ func _unhandled_input(event):
 			
 		#Nhấn phím đỡ đòn
 		if is_attack_state and !is_attacking and parry_timer.is_stopped():
-			if event.get_action_strength("dodge"):
+			if event.get_action_strength("parry"):
 				is_parrying = true
-			elif event.is_action_released("dodge"):
+			elif event.is_action_released("parry"):
 				if is_parrying:
 					is_parrying = false
 					parry_timer.start()
@@ -177,6 +177,7 @@ func move_state():
 #Tấn công
 func attack():
 	damage_area.damage_amount = get_player_damage() + attack_combo * 2
+	damage_area.knockback_strength = player_data.get_stat(GameEnums.STAT.KNOCKBACK)
 	is_attacking = true
 	attack_timer.start()
 	mouse = (get_global_mouse_position() - global_position - BIAS).normalized()
@@ -516,6 +517,8 @@ func _sheath_finished():
 	animation_tree.set("parameters/Attack_state/conditions/is_sheathing", is_sheathing)
 
 func _hurt_started():
+	is_drawing = false
+	is_sheathing = false
 	is_hurting = true
 
 func _hurt_finished():

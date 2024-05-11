@@ -15,5 +15,9 @@ func open_shop(npc_name: String):
 		SignalManager.shop_opened.emit(product)
 
 func out_of_range():
-	SignalManager.shop_closed.emit()
-	SignalManager.upgrade_closed.emit()
+	if Global.is_shop_opened:
+		SignalManager.shop_closed.emit()
+	elif Global.is_upgrade_opened:
+		SignalManager.upgrade_closed.emit()
+	elif Global.is_sell_item_opened:
+		SignalManager.sell_item_closed.emit()

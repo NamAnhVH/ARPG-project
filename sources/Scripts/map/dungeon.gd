@@ -92,7 +92,6 @@ func generate_enemy():
 		var enemy = DungeonManager.slimes.pop_front()
 		if enemy != null:
 			enemy.global_position = broken_path_tiles.pick_random() * 16
-			enemy.texture = preload("res://assets/monsters/slimes/slime_v01.png")
 			slimes.call_deferred("add_child", enemy)
 	#spawn gremlin
 	for i in randi_range(0, 3):
@@ -100,7 +99,6 @@ func generate_enemy():
 			var enemy = DungeonManager.gremlins.pop_front()
 			if enemy:
 				enemy.global_position = broken_path_tiles.pick_random() * 16
-				enemy.texture = preload("res://assets/monsters/gremlins/gremlin_v00.png")
 				gremlins.call_deferred("add_child", enemy)
 
 func generate_finish():

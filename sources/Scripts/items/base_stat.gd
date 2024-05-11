@@ -24,9 +24,9 @@ func add_affixes(affixes, rarity):
 func upgrade():
 	var stat_upgrade_index = randi_range(0, stats.size() - 1)
 	match GameEnums.STAT[stats[stat_upgrade_index].stat]:
-		GameEnums.STAT.ATK or GameEnums.STAT.DEF or GameEnums.STAT.CRIT_DAMAGE or GameEnums.STAT.MOVE_SPEED:
+		GameEnums.STAT.ATK, GameEnums.STAT.DEF, GameEnums.STAT.CRIT_DAMAGE, GameEnums.STAT.MOVE_SPEED:
 			stats[stat_upgrade_index].value += 2
-		GameEnums.STAT.CRIT_RATE:
+		GameEnums.STAT.CRIT_RATE, GameEnums.STAT.KNOCKBACK:
 			stats[stat_upgrade_index].value += 1
 		GameEnums.STAT.LIFE_POINT:
 			stats[stat_upgrade_index].value += 5

@@ -22,6 +22,9 @@ signal shop_opened(list_item : Array[ShopItem])
 signal shop_closed()
 signal shop_ready(shop: Shop)
 signal buy_item(price: int)
+signal sell_item_opened
+signal sell_item_closed
+signal sell_item_ready
 
 #Upgrade
 signal upgrade_opened

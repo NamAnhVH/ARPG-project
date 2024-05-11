@@ -31,7 +31,7 @@ func _on_update_quest():
 	var quest_interact = check_interact()
 	if quest_interact:
 		var quest_available : QuestAvailable = ResourceManager.get_instance("quest_available")
-		if quest_interact == GameEnums.QUEST_TYPE.MAIN_QUEST:
+		if quest_interact is GameEnums.QUEST_TYPE and quest_interact == GameEnums.QUEST_TYPE.MAIN_QUEST:
 			quest_available.quest_type = quest_interact
 		else:
 			quest_available.quest_type = GameEnums.QUEST_TYPE.SIDE_QUEST

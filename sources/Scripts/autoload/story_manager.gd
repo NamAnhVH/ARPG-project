@@ -43,10 +43,8 @@ func _on_update_main_quest(id: String):
 		if next_progress_index < quest.progress.size():
 			progress_data.current_main_quest.progress = quest.progress[next_progress_index]
 			if progress_data.current_main_quest.progress is Dictionary:
-				if (progress_data.current_main_quest.progress.has("level_up") \
-				and progress_data.current_main_quest.progress.level_up <= player_data.level) \
-				or (progress_data.current_main_quest.progress.has("find_treasure") \
-				and world_data.chest_opened.find(progress_data.current_main_quest.progress.find_treasure) != -1):
+				if (progress_data.current_main_quest.progress.has("level_up") and progress_data.current_main_quest.progress.level_up <= player_data.level) \
+				or (progress_data.current_main_quest.progress.has("find_treasure") and world_data.chest_opened.has(progress_data.current_main_quest.progress.find_treasure)):
 					_on_update_main_quest(id)
 		else:
 			main_quest_finished(id)
@@ -60,10 +58,10 @@ func _on_update_side_quest(id: String):
 		var next_progress_index = quest.progress.find(progress_data.current_side_quest[id].progress) + 1
 		if next_progress_index < quest.progress.size():
 			progress_data.current_side_quest[id].progress = quest.progress[next_progress_index]
-			if progress_data.current_side_quest[id].progress is Dictionary \
-			and progress_data.current_side_quest[id].progress.has("level_up") \
-			and progress_data.current_side_quest[id].progress.level_up <= player_data.level:
-				_on_update_side_quest(id)
+			if progress_data.current_side_quest[id].progress is Dictionary:
+				if (progress_data.current_side_quest[id].progress.has("level_up") and progress_data.current_side_quest[id].progress.level_up <= player_data.level) \
+				or (progress_data.current_side_quest[id].progress.has("find_treasure") and world_data.chest_opened.has(progress_data.current_side_quest[id].progress.find_treasure)):
+					_on_update_side_quest(id)
 		else:
 			side_quest_finished(id)
 	else:
@@ -102,7 +100,7 @@ func _on_level_up():
 	and progress_data.current_main_quest.progress.has("level_up") \
 	and progress_data.current_main_quest.progress.level_up <= player_data.level:
 		_on_update_main_quest(progress_data.current_main_quest.id)
-	for side_quest in progress_data.current_side_quest.progress:
+	for side_quest in progress_data.current_side_quest:
 		if progress_data.current_side_quest[side_quest].progress is Dictionary \
 		and progress_data.current_side_quest[side_quest].has("level_up") \
 		and progress_data.current_side_quest[side_quest].progress.level_up <= player_data.level:
@@ -117,7 +115,7 @@ func _on_open_chest(chest: InteractableChest):
 		_on_update_main_quest(progress_data.current_main_quest.id)
 	for side_quest in progress_data.current_side_quest:
 		if progress_data.current_side_quest[side_quest].progress is Dictionary \
-		and progress_data.current_side_quest[side_quest].has("find_treasure") \
+		and progress_data.current_side_quest[side_quest].progress.has("find_treasure") \
 		and progress_data.current_side_quest[side_quest].progress.find_treasure == chest.id:
 			_on_update_side_quest(side_quest)
 

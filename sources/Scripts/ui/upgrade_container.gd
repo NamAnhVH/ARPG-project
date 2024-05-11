@@ -11,7 +11,7 @@ var material_required
 var material_available : Item
 
 func _ready():
-	SignalManager.upgrade_opened.connect(show)
+	SignalManager.upgrade_opened.connect(_on_upgrade_opened)
 	SignalManager.upgrade_closed.connect(_on_upgrade_closed)
 	SignalManager.upgrade_ready.emit(self)
 	
@@ -38,7 +38,12 @@ func update_label(item):
 	else:
 		label.text = ""
 
+func _on_upgrade_opened():
+	Global.is_upgrade_opened = true
+	show()
+
 func _on_upgrade_closed():
+	Global.is_upgrade_opened = false
 	if upgrade_slot.item:
 		var item = upgrade_slot.item
 		upgrade_slot.set_item(null)

@@ -639,7 +639,29 @@ var dialogue = {
 	"main_quest_4": preload("res://dialogues/main_quest_4.dialogue"),
 	"side_quest_1": preload("res://dialogues/side_quest_1.dialogue"),
 	"side_quest_2": preload("res://dialogues/side_quest_2.dialogue")
-	
+}
+
+var slimes_texture = {
+	1 : preload("res://assets/monsters/slimes/slime_v01.png"),
+	2 : preload("res://assets/monsters/slimes/slime_v02.png"),
+	3 : preload("res://assets/monsters/slimes/slime_v03.png"),
+	4 : preload("res://assets/monsters/slimes/slime_v04.png"),
+	5 : preload("res://assets/monsters/slimes/slime_v05.png"),
+	6 : preload("res://assets/monsters/slimes/slime_v06.png"),
+	7 : preload("res://assets/monsters/slimes/slime_v07.png"),
+	8 : preload("res://assets/monsters/slimes/slime_v08.png"),
+	9 : preload("res://assets/monsters/slimes/slime_v09.png"),
+	10 : preload("res://assets/monsters/slimes/slime_v10.png"),
+}
+
+var gremlins_texture = {
+	1: preload("res://assets/monsters/gremlins/gremlin_v01.png"),
+	2: preload("res://assets/monsters/gremlins/gremlin_v02.png"),
+	3: preload("res://assets/monsters/gremlins/gremlin_v03.png"),
+	4: preload("res://assets/monsters/gremlins/gremlin_v04.png"),
+	5: preload("res://assets/monsters/gremlins/gremlin_v05.png"),
+	6: preload("res://assets/monsters/gremlins/gremlin_v06.png"),
+	7: preload("res://assets/monsters/gremlins/gremlin_v07.png")
 }
 
 var colors = {
@@ -702,3 +724,8 @@ func get_map(id):
 func get_character(id):
 	return character[id].instantiate()
 
+func get_slime_texture(level):
+	return slimes_texture[level / 5 + 1]
+
+func get_gremlin_texture(level):
+	return gremlins_texture[level / 6 + 1]

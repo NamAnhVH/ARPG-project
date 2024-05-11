@@ -4,6 +4,9 @@
 - Buy some items
 	{{Global.npc_name}}: Sure thing, take a look at what we have available.
 	do SignalManager.set_shop.emit(Global.npc_name)
+- Sell some items
+	{{Global.npc_name}}: Okay, let see what you have for me.
+	do SignalManager.sell_item_opened.emit()
 - Upgrade an item
 	{{Global.npc_name}}: Ah, looking to enhance something? Let's see what we can do.
 	do SignalManager.upgrade_opened.emit()

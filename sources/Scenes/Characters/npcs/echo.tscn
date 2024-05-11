@@ -22,7 +22,7 @@ list_quest = Array[Dictionary]([{
 "id": "side_quest_1",
 "progress": "talk_to_Echo"
 }])
-object_name = "echo"
+object_name = "Echo"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_e6agy")

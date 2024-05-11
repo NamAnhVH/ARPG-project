@@ -9,7 +9,7 @@ func _ready():
 	_init_exp_bar()
 
 func _on_gain_exp(_value):
-	var new_exp = value + _value
+	var new_exp = value + roundi(_value * (100 + player_data.get_stat(GameEnums.STAT.BONUS_EXPERIENCE) * 1.0) / 100)
 	if new_exp >= max_value:
 		player_data.level += 1
 		Global.player_level = player_data.level

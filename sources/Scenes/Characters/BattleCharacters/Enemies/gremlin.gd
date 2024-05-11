@@ -3,10 +3,6 @@ class_name GremlinCharacter
 
 @onready var body : Sprite2D = $Body
 
-func _ready():
-	super._ready()
-	body.texture = texture
-
 func move_state():
 	var move_direction : Vector2
 	move_direction = navigation_agent.get_next_path_position() - global_position
@@ -28,6 +24,13 @@ func attack_state():
 	animation_tree.set("parameters/Attack/Claw/blend_position", navigation_agent.target_position - global_position)
 	animation_tree.set("parameters/Attack/conditions/is_biting", rand_attack == 0)
 	animation_tree.set("parameters/Attack/conditions/is_clawing", rand_attack == 1)
+
+func set_stat():
+	damage_amount = level * 5
+	max_health = level * 100
+	knockback_strength = 4
+	money_dropped = level * 8
+	exp_dropped = level * 15
 
 func _attack_finished():
 	super._attack_finished()

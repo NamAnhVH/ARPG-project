@@ -9185,6 +9185,8 @@ font = ExtResource("7_h2tvk")
 font_size = 10
 
 [node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(0, -12)
 collision_layer = 2147483648
 collision_mask = 2147483648
@@ -9192,7 +9194,6 @@ motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
-move_speed_unit = 20.0
 
 [node name="Body" type="Node2D" parent="." index="0"]
 

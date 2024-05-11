@@ -84,7 +84,6 @@ func destroy():
 func upgrade():
 	upgrade_level += 1
 	components["base_stats"].upgrade()
-	
 
 func get_data():
 	var data = {

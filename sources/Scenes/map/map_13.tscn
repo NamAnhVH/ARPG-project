@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqwsdscgqcmtc"]
+[gd_scene load_steps=9 format=3 uid="uid://cqwsdscgqcmtc"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_ka0sk"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="2_wsygs"]
@@ -7,11 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://c8gmdyn4qgvur" path="res://sources/scenes/characters/npcs/raven.tscn" id="5_7ytr6"]
 [ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/scenes/characters/npcs/merchant.tscn" id="6_h3jjj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myggx"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cc1v"]
 size = Vector2(14, 14)
 
 [node name="Map13" instance=ExtResource("1_ka0sk")]
 map_id = "map_13"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_myggx")
 
 [node name="TileMap" parent="." index="1"]
 tile_set = ExtResource("2_wsygs")
@@ -159,5 +166,8 @@ product = Array[Dictionary]([{
 "item_id": "healing_potion_v00",
 "price": 10,
 "quantity": 2
+}, {
+"item_id": "stone",
+"price": 20
 }])
 object_name = "Bob"

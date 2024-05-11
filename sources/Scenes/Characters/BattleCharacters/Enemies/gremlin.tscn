@@ -1,9 +1,9 @@
 [gd_scene load_steps=91 format=3 uid="uid://dis6wr2xh52am"]
 
 [ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy_character.tscn" id="1_fqxlq"]
-[ext_resource type="Texture2D" uid="uid://b0lrhvxsa1jhv" path="res://assets/monsters/gremlins/gremlin_v00.png" id="2_3x7cj"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="2_allb1"]
 [ext_resource type="Script" path="res://sources/scenes/characters/battleCharacters/enemies/gremlin.gd" id="2_q3q0l"]
+[ext_resource type="Texture2D" uid="uid://b0lrhvxsa1jhv" path="res://assets/monsters/gremlins/gremlin_v01.png" id="4_nmhti"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0fr4"]
 resource_local_to_scene = true
@@ -1548,16 +1548,11 @@ graph_offset = Vector2(-111, 30)
 y_sort_enabled = true
 script = ExtResource("2_q3q0l")
 max_active_area = 80
-damage_amount = 10
-knockback_strength = 5
-money_dropped = 40
-exp_dropped = 30
-max_health = 300
 
 [node name="Body" type="Sprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_b0fr4")
 position = Vector2(0, -14)
-texture = ExtResource("2_3x7cj")
+texture = ExtResource("4_nmhti")
 hframes = 8
 vframes = 10
 

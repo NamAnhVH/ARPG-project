@@ -92,14 +92,15 @@ func _on_show_quest_description(id: String, type: String):
 							if progress.has("combat"): target = progress.combat.quantity
 							elif progress.has("collect"): target = progress.collect.quantity
 							lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(target) + " )"
-						quest_description.add_child(lbl_progress)
+					quest_description.add_child(lbl_progress)
 					if StoryManager.progress_data.main_quest_finished.find(id) == -1:
 						if !StoryManager.progress_data.current_main_quest.has("progress") \
 						or (StoryManager.progress_data.current_main_quest.progress is Dictionary \
 						and StoryManager.progress_data.current_main_quest.progress.name == progress.name):
 							break
 				elif type == "side_quest":
-					if StoryManager.progress_data.current_side_quest[id].progress is Dictionary \
+					if StoryManager.progress_data.current_side_quest.has(id) \
+					and StoryManager.progress_data.current_side_quest[id].progress is Dictionary \
 					and StoryManager.progress_data.current_side_quest[id].progress == progress:
 						var target
 						if progress.has("level_up") or progress.has("find_treasure"): 
@@ -108,7 +109,7 @@ func _on_show_quest_description(id: String, type: String):
 							if progress.has("combat"): target = progress.combat.quantity
 							elif progress.has("collect"): target = progress.collect.quantity
 							lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_side_quest_progress) + " / " + str(target) + " )"
-						quest_description.add_child(lbl_progress)
+					quest_description.add_child(lbl_progress)
 					if StoryManager.progress_data.side_quest_finished.find(id) == -1:
 						if !StoryManager.progress_data.current_side_quest.has("progress") \
 						or (StoryManager.progress_data.current_side_quest.progress is Dictionary \
@@ -126,6 +127,10 @@ func _on_show_quest_description(id: String, type: String):
 			quest_description.add_child(experience)
 	
 	if StoryManager.progress_data.main_quest_finished.find(id) != -1:
+		var finished = ResourceManager.get_instance("quest_description")
+		finished.text = "Quest finished"
+		quest_description.add_child(finished)
+	if StoryManager.progress_data.side_quest_finished.find(id) != -1:
 		var finished = ResourceManager.get_instance("quest_description")
 		finished.text = "Quest finished"
 		quest_description.add_child(finished)

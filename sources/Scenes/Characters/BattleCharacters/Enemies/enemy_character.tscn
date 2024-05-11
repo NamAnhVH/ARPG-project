@@ -9,11 +9,6 @@
 script = ExtResource("2_vofjr")
 level = 1
 max_active_area = 50
-texture = null
-damage_amount = 2
-knockback_strength = 3
-money_dropped = 0
-exp_dropped = 0
 
 [node name="Hitbox" parent="." index="0"]
 immunity_duration = 0.2

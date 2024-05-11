@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://csi3yn4a0ult4"]
+
+[ext_resource type="Shader" path="res://sources/scripts/shaders/cloud.gdshader" id="1_agkty"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qvj2x"]
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wancg"]
+width = 800
+height = 450
+seamless = true
+seamless_blend_skirt = 0.75
+noise = SubResource("FastNoiseLite_qvj2x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7xns"]
+shader = ExtResource("1_agkty")
+shader_parameter/density = 1.0
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_wancg")
+
+[node name="Cloud" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(800, 450)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
+material = SubResource("ShaderMaterial_k7xns")
+custom_minimum_size = Vector2(800, 450)
+offset_right = 800.0
+offset_bottom = 450.0

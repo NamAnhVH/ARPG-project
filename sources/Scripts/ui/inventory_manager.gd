@@ -25,6 +25,7 @@ func _ready():
 	SignalManager.chest_ready.connect(_on_chest_ready)
 	SignalManager.shop_ready.connect(_on_shop_ready)
 	SignalManager.upgrade_ready.connect(_on_upgrade_ready)
+	SignalManager.sell_item_ready.connect(_on_sell_item_ready)
 	
 	item_void.gui_input.connect(_on_void_gui_input)
 	
@@ -107,6 +108,12 @@ func _on_shop_ready(shop: Shop):
 		s.slot.mouse_entered.connect(_on_mouse_entered_shop_slot.bind(s.slot))
 		s.slot.mouse_exited.connect(_on_mouse_exited_slot)
 		s.slot.gui_input.connect(_on_gui_input_shop_slot.bindv([s]))
+
+func _on_sell_item_ready(sell: SellItem):
+	for slot in sell.slot_container.get_children():
+		slot.mouse_entered.connect(_on_mouse_entered_slot.bind(slot))
+		slot.mouse_exited.connect(_on_mouse_exited_slot)
+		slot.gui_input.connect(_on_gui_input_slot.bindv([slot]))
 
 func _on_upgrade_ready(upgrade: Upgrade):
 	upgrade.upgrade_slot.mouse_entered.connect(_on_mouse_entered_slot.bind(upgrade.upgrade_slot))

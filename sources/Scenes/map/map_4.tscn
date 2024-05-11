@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://etb0nlplthmp"]
+[gd_scene load_steps=6 format=3 uid="uid://etb0nlplthmp"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_p3317"]
 [ext_resource type="PackedScene" uid="uid://dis6wr2xh52am" path="res://sources/scenes/characters/battleCharacters/enemies/gremlin.tscn" id="3_8jqw7"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_tbmok"]
-[ext_resource type="Texture2D" uid="uid://b0lrhvxsa1jhv" path="res://assets/monsters/gremlins/gremlin_v00.png" id="4_f0qeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vbsk"]
 resource_local_to_scene = true
@@ -105,22 +104,19 @@ position = Vector2(738, -146)
 polygon = PackedVector2Array(47, 418, 47, 431, 62, 431, 62, 418)
 
 [node name="Gremlins" type="Node2D" parent="Enemies" index="0"]
+y_sort_enabled = true
 
 [node name="Gremlin" parent="Enemies/Gremlins" index="0" instance=ExtResource("3_8jqw7")]
 position = Vector2(124, 816)
-texture = ExtResource("4_f0qeu")
 
 [node name="Gremlin2" parent="Enemies/Gremlins" index="1" instance=ExtResource("3_8jqw7")]
 position = Vector2(61, 773)
-texture = ExtResource("4_f0qeu")
 
 [node name="Gremlin3" parent="Enemies/Gremlins" index="2" instance=ExtResource("3_8jqw7")]
 position = Vector2(148, 742)
-texture = ExtResource("4_f0qeu")
 
 [node name="Gremlin4" parent="Enemies/Gremlins" index="3" instance=ExtResource("3_8jqw7")]
 position = Vector2(90, 673)
-texture = ExtResource("4_f0qeu")
 
 [node name="NavigationRegion2D" parent="." index="11"]
 navigation_polygon = SubResource("NavigationPolygon_y2fdd")
