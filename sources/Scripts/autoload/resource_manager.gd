@@ -158,6 +158,14 @@ var sprites = {
 	"copper": preload("res://assets/items/copper.png"),
 	"silver": preload("res://assets/items/silver.png"),
 	"gold": preload("res://assets/items/gold.png"),
+	"mushroom_v01": preload("res://assets/items/mushroom_v01.png"),
+	"mushroom_v02": preload("res://assets/items/mushroom_v02.png"),
+	"mushroom_v03": preload("res://assets/items/mushroom_v03.png"),
+	"mushroom_v04": preload("res://assets/items/mushroom_v04.png"),
+	"mushroom_v05": preload("res://assets/items/mushroom_v05.png"),
+	"mushroom_v06": preload("res://assets/items/mushroom_v06.png"),
+	"mushroom_v07": preload("res://assets/items/mushroom_v07.png"),
+	"mushroom_v08": preload("res://assets/items/mushroom_v08.png"),
 	"healing_potion_v00": preload("res://assets/items/healing_potion_v00.png"),
 	"healing_potion_v01": preload("res://assets/items/healing_potion_v01.png"),
 	"healing_potion_v02": preload("res://assets/items/healing_potion_v02.png"),
@@ -198,7 +206,8 @@ var tscn = {
 var character = {
 	"luna": preload("res://sources/scenes/characters/npcs/luna.tscn"),
 	"slime": preload("res://sources/scenes/characters/battleCharacters/enemies/slime.tscn"),
-	"gremlin": preload("res://sources/scenes/characters/battleCharacters/enemies/gremlin.tscn")
+	"gremlin": preload("res://sources/scenes/characters/battleCharacters/enemies/gremlin.tscn"),
+	"mushroom": preload("res://sources/scenes/characters/battleCharacters/enemies/mushroom.tscn")
 }
 
 var world = {
@@ -664,6 +673,14 @@ var gremlins_texture = {
 	7: preload("res://assets/monsters/gremlins/gremlin_v07.png")
 }
 
+var mushrooms_texture = {
+	1: preload("res://assets/monsters/mushrooms/mushroom_v01.png"),
+	2: preload("res://assets/monsters/mushrooms/mushroom_v02.png"),
+	3: preload("res://assets/monsters/mushrooms/mushroom_v03.png"),
+	5: preload("res://assets/monsters/mushrooms/mushroom_v05.png"),
+	6: preload("res://assets/monsters/mushrooms/mushroom_v06.png"),
+}
+
 var colors = {
 	GameEnums.RARITY.COMMON : "000000",
 	GameEnums.RARITY.UNCOMMON : "009623",
@@ -729,3 +746,6 @@ func get_slime_texture(level):
 
 func get_gremlin_texture(level):
 	return gremlins_texture[level / 6 + 1]
+
+func get_mushroom_texture(level):
+	return mushrooms_texture[level / 5 + 1]

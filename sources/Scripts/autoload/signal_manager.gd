@@ -102,5 +102,5 @@ signal show_quest_description(quest: String, type: String)
 signal update_main_quest(quest: String)
 signal update_side_quest(quest: String)
 signal main_quest_finished(quest: String)
-signal main_quest_1_talk_to_guard
+signal main_quest_1_talk_to_echo_1
 

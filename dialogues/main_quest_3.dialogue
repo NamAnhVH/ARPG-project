@@ -1,13 +1,31 @@
-~ this_is_a_node_title
+~ talk_to_diana_1
+Diana: Hello young man, could you help this old lady?
+{{Global.player_name}}: Of course, what's the matter?
+Diana: My grandchild is seriously ill, but we are too poor to afford proper treatment.
+Diana: Could you help me pick some medicinal mushrooms to make medicine?
+{{Global.player_name}}: Sure, where can I pick them?
+Diana: Go to the northwest of the village, you'll find the area where the mushroom monsters grow.
+Diana: Defeat them and you can get the mushs.
+Diana: Moreover, be careful around that area, there are many monsters lurking around.
+{{Global.player_name}}: Ok, I'll do it.
+Diana: Thank you very much, good luck to you.
+do SignalManager.update_main_quest.emit("main_quest_3")
+do Global.paused = false
+=> END
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ talk_to_diana_2
+Diana: Have you picked enough mushroom spots?
+{{Global.player_name}}: Here they are.
+Diana: Thank you so much.
+Diana: Here's your reward.
+{{Global.player_name}}: Thank you.
+do SignalManager.update_main_quest.emit("main_quest_3")
+do Global.paused = false
+=> END
 
+~ diana
+Diana: Have you picked enough mushroom spots?
+{{Global.player_name}}: Sorry, I'll go find them right away.
+Diana: Thank you and good luck.
+do Global.paused = false
 => END

@@ -50,6 +50,10 @@ func _on_update_main_quest(id: String):
 			main_quest_finished(id)
 	else:
 		progress_data.current_main_quest = {"id": id, "progress": quest.progress[0]}
+		if progress_data.current_main_quest.progress is Dictionary:
+			if (progress_data.current_main_quest.progress.has("level_up") and progress_data.current_main_quest.progress.level_up <= player_data.level) \
+			or (progress_data.current_main_quest.progress.has("find_treasure") and world_data.chest_opened.has(progress_data.current_main_quest.progress.find_treasure)):
+				_on_update_main_quest(id)
 	SignalManager.quest_updated.emit()
 
 func _on_update_side_quest(id: String):

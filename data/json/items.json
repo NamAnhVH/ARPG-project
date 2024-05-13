@@ -5090,7 +5090,7 @@
 			}
 		],
 		"usable": {
-			"type": "crit_damage",
+			"type": "buff_crit_damage",
 			"data": {
 				"value": 5,
 				"effective_time": 10,
@@ -6535,6 +6535,118 @@
 		"rarity": "UNCOMMON",
 		"level": 10
 	},
+	"mushroom_v01": {
+		"unique_drop": true,
+		"name": "Chanterelle",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 1,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 5,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v02": {
+		"unique_drop": true,
+		"name": "Porcini",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 5,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 10,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v03": {
+		"unique_drop": true,
+		"name": "Morel",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 10,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 15,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v04": {
+		"unique_drop": true,
+		"name": "Shiitake",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 15,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 20,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v05": {
+		"unique_drop": true,
+		"name": "Oyster",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 20,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 25,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v06": {
+		"unique_drop": true,
+		"name": "Enoki",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 25,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 30,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v07": {
+		"unique_drop": true,
+		"name": "Portobello",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 30,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 35,
+				"cooldown": 2
+			}
+		}
+	},
+	"mushroom_v08": {
+		"unique_drop": true,
+		"name": "Lion's Mane",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"level": 35,
+		"usable":{
+			"type": "healing",
+			"data": {
+				"value": 40,
+				"cooldown": 2
+			}
+		}
+	},
 	"healing_potion_v00":{
 		"name": "Small Healing Potion",
 		"type": "CONSUMABLE",
@@ -6544,8 +6656,8 @@
 		"usable":{
 			"type": "healing",
 			"data": {
-				"value": 10,
-				"cooldown": 2
+				"value": 20,
+				"cooldown": 10
 			}
 		}
 	},
@@ -6559,7 +6671,7 @@
 			"type": "healing",
 			"data": {
 				"value": 50,
-				"cooldown": 3
+				"cooldown": 10
 			}
 		}
 	},
@@ -6573,7 +6685,7 @@
 			"type": "healing",
 			"data": {
 				"value": 100,
-				"cooldown": 5
+				"cooldown": 15
 			}
 		}
 	},
@@ -6587,7 +6699,7 @@
 			"type": "healing",
 			"data": {
 				"value": 150,
-				"cooldown": 10
+				"cooldown": 15
 			}
 		}
 	},

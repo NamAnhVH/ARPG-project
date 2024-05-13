@@ -1,7 +1,8 @@
 extends BattleCharacter
 class_name EnemyCharacter
 
-@export var level = 1
+@export var min_level = 1
+@export var max_level = 10
 @export var max_active_area = 50
 
 @onready var move_idle_change_time : Timer = $Timers/MoveIdleChangeTime
@@ -13,10 +14,9 @@ class_name EnemyCharacter
 @onready var first_position = global_position
 @onready var random_position = first_position
 
-var damage_amount : int = 2
-var knockback_strength: int = 3
 var money_dropped: int
 var exp_dropped: int
+var level
 
 var is_moving : bool = false
 var is_chasing : bool = false
@@ -25,13 +25,12 @@ var is_attacking : bool = false
 var is_clockwise : bool = false
 
 func _ready():
+	level = randi_range(min_level, max_level)
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.active = true
-	health_bar.init_health(health)
-	damage_area.damage_amount = damage_amount
-	damage_area.knockback_strength = knockback_strength
 	set_base_texture()
 	set_stat()
+	health_bar.init_health(health)
 
 func _physics_process(delta):
 	if !Global.paused:
@@ -75,22 +74,16 @@ func set_base_texture():
 	pass
 
 func set_stat():
-	pass
+	health = max_health
 
 func get_enemy_data(new_enemy):
-	new_enemy.max_active_area = max_active_area
-	new_enemy.damage_amount = damage_amount
-	new_enemy.knockback_strength = knockback_strength
-	new_enemy.level = level
-	new_enemy.money_dropped = money_dropped
-	new_enemy.exp_dropped = exp_dropped
-	new_enemy.max_health = max_health
-	new_enemy.move_speed_unit = move_speed_unit
+	new_enemy.min_level = min_level
+	new_enemy.max_level = max_level
 	new_enemy.global_position = first_position - get_parent().global_position
 
 func drop_item():
 	var item = ItemManager.get_item(ItemManager.items.keys()[randi() % ItemManager.items.size()])
-	if level >= item.level and level - 10 <= item.level:
+	if level >= item.level and level - 10 <= item.level and !item.unique_drop:
 		if item.equipment_type != GameEnums.EQUIPMENT_TYPE.NONE:
 			ItemManager.generate_random_rarity(item, Global.player_level)
 		

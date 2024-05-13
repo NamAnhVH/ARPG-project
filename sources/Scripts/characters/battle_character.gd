@@ -10,12 +10,11 @@ const KNOCKBACK_VELOCITY = 200
 @export var move_weight: float = 0.2: set = set_move_weight
 
 
-@onready var health : int = max_health
+var health : int
 @onready var hitbox : Area2D = $Hitbox
 @onready var damage_area : DamageArea = $DamageArea
 
-var max_health : int = 10 : set = set_max_health
-
+var max_health : int : set = set_max_health
 var is_alive : bool = true
 
 ##Build

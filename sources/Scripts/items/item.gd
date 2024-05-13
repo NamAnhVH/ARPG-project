@@ -21,6 +21,7 @@ var lbl_quantity : Label
 var legendary_data
 var item_slot : set = set_item_slot
 var item_data
+var unique_drop : bool = false
 
 func _init(item_id: String, data):
 	size = Vector2(28, 28)
@@ -44,6 +45,7 @@ func _init(item_id: String, data):
 	if data.has("stack_size"): stack_size = data.stack_size
 	if data.has("base_stats"): components["base_stats"] = BaseStat.new(data.base_stats, rarity)
 	if data.has("legendary"): legendary_data = data.legendary
+	if data.has("unique_drop"): unique_drop = data.unique_drop
 
 func _ready():
 	lbl_quantity = ResourceManager.get_instance("quantity")

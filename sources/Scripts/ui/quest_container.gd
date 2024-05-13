@@ -84,14 +84,9 @@ func _on_show_quest_description(id: String, type: String):
 				lbl_progress.text = text
 				if type == "main_quest":
 					if StoryManager.progress_data.current_main_quest.progress is Dictionary \
-					and StoryManager.progress_data.current_main_quest.progress == progress:
-						var target
-						if progress.has("level_up") or progress.has("find_treasure"): 
-							pass
-						else:
-							if progress.has("combat"): target = progress.combat.quantity
-							elif progress.has("collect"): target = progress.collect.quantity
-							lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(target) + " )"
+					and StoryManager.progress_data.current_main_quest.progress == progress \
+					and progress.has("combat"):
+						lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(progress.combat.quantity) + " )"
 					quest_description.add_child(lbl_progress)
 					if StoryManager.progress_data.main_quest_finished.find(id) == -1:
 						if !StoryManager.progress_data.current_main_quest.has("progress") \
@@ -101,14 +96,9 @@ func _on_show_quest_description(id: String, type: String):
 				elif type == "side_quest":
 					if StoryManager.progress_data.current_side_quest.has(id) \
 					and StoryManager.progress_data.current_side_quest[id].progress is Dictionary \
-					and StoryManager.progress_data.current_side_quest[id].progress == progress:
-						var target
-						if progress.has("level_up") or progress.has("find_treasure"): 
-							pass
-						else:
-							if progress.has("combat"): target = progress.combat.quantity
-							elif progress.has("collect"): target = progress.collect.quantity
-							lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_side_quest_progress) + " / " + str(target) + " )"
+					and StoryManager.progress_data.current_side_quest[id].progress == progress \
+					and progress.has("combat"):
+						lbl_progress.text = lbl_progress.text + " ( " + str(StoryManager.progress_data.current_side_quest_progress) + " / " + str(progress.combat.quantity) + " )"
 					quest_description.add_child(lbl_progress)
 					if StoryManager.progress_data.side_quest_finished.find(id) == -1:
 						if !StoryManager.progress_data.current_side_quest.has("progress") \

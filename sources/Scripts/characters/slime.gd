@@ -31,11 +31,12 @@ func set_base_texture():
 	attack_effect.texture = base.texture
 
 func set_stat():
-	damage_amount = level * 4
+	damage_area.damage_amount = level * 4
 	max_health = level * 50
-	knockback_strength = 3
-	money_dropped = level * 5
-	exp_dropped = level * 10
+	damage_area.knockback_strength = 3
+	money_dropped = level * 3
+	exp_dropped = level * 5
+	super.set_stat()
 
 func _on_clockwise_change_time_timeout():
 	is_clockwise = !is_clockwise

@@ -1542,7 +1542,7 @@ states/Start/position = Vector2(138, 189)
 states/look_around_idle/node = SubResource("AnimationNodeAnimation_nvgxa")
 states/look_around_idle/position = Vector2(296, 298)
 transitions = ["Attack", "Hurt", SubResource("AnimationNodeStateMachineTransition_adhsw"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_eiijk"), "Start", "Move_idle", SubResource("AnimationNodeStateMachineTransition_g4mi1"), "Move_idle", "look_around_idle", SubResource("AnimationNodeStateMachineTransition_kfgew"), "look_around_idle", "Move_idle", SubResource("AnimationNodeStateMachineTransition_w3ay5"), "Move_idle", "Attack", SubResource("AnimationNodeStateMachineTransition_0gb8j"), "Move_idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_06odq"), "Hurt", "Move_idle", SubResource("AnimationNodeStateMachineTransition_q6wd8"), "Attack", "Move_idle", SubResource("AnimationNodeStateMachineTransition_vjiy8")]
-graph_offset = Vector2(-111, 30)
+graph_offset = Vector2(-98, 73)
 
 [node name="Gremlin" instance=ExtResource("1_fqxlq")]
 y_sort_enabled = true

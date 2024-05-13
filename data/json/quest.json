@@ -2,7 +2,7 @@
 	"main_quest": {
 		"main_quest_1": {
 			"name": "A new start?",
-			"progress": ["talk_to_Raven", "talk_to_Echo_1", {"name": "kill_5_slimes", "combat":{ "quantity": 5, "enemy": "slime"}}, "talk_to_Echo_2"],
+			"progress": ["talk_to_Raven", "talk_to_Echo_1", {"name": "kill_20_slimes", "combat":{ "quantity": 20, "enemy": "slime"}}, "talk_to_Echo_2"],
 			"description": "Awakening in a strange land, the journey begins.",
 			"reward": {
 				"money": 20,
@@ -12,16 +12,16 @@
 		},
 		"main_quest_2": {
 			"name": "Upgrade time",
-			"progress": ["talk_to_Echo_1", {"name": "reach_level_5", "level_up": 5}, {"name": "kill_10_gremlins", "combat":{ "quantity": 10, "enemy": "gremlin"}}, "talk_to_Echo_2"],
+			"progress": ["talk_to_Echo_1", {"name": "reach_level_3", "level_up": 3}, {"name": "kill_20_gremlins", "combat":{ "quantity": 20, "enemy": "gremlin"}}, "talk_to_Echo_2"],
 			"description": "As tensions rise and the specter of war looms ever closer, it's time to bolster your strength and resources. Embark on a series of tasks to prepare yourself and your allies for the coming battle. From reinforcing fortifications to honing your combat skills, every action taken is crucial in the face of impending conflict.",
 			"reward": {
-				"money": 20,
-				"exp": 20
+				"money": 50,
+				"exp": 50
 			}
 		},
 		"main_quest_3": {
 			"name": "Helping poor family",
-			"progress": [{"name": "reach_level_10", "level_up": 10}, "talk_to_Diana_1", {"name": "collect_5_mushrooms", "collect": {"quantity": 5, "product": "mushroom"}}, "talk_to_Diana_2"],
+			"progress": [{"name": "reach_level_5", "level_up": 5}, "talk_to_Diana_1", {"name": "collect_10_Porcini", "collect": {"quantity": 10, "product": "mushroom_v02"}}, "talk_to_Diana_2"],
 			"description": "You hear a family requesting help to find mushrooms to aid their sick daughter.",
 			"reward": {
 				"money": 5,

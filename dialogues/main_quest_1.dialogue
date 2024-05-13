@@ -22,7 +22,7 @@ Echo: Can you help me defeat them?
 {{Global.player_name}}: Do you have any weapons I can borrow?
 Echo: Okay, here you go.
 do SignalManager.update_main_quest.emit("main_quest_1")
-do SignalManager.main_quest_1_talk_to_guard.emit()
+do SignalManager.main_quest_1_talk_to_echo_1.emit()
 do Global.paused = false
 => END
 

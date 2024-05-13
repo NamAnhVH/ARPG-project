@@ -7,7 +7,8 @@
 
 [node name="EnemyCharacter" instance=ExtResource("1_ohiu0")]
 script = ExtResource("2_vofjr")
-level = 1
+min_level = 1
+max_level = 10
 max_active_area = 50
 
 [node name="Hitbox" parent="." index="0"]

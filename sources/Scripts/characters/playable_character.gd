@@ -170,13 +170,14 @@ func move_state():
 			animation_tree.set("parameters/Attack_state/conditions/is_idling", true)
 
 	#Vecto di chuyen
-	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 16, move_weight)
+	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 18, move_weight)
 	move_and_slide()
 
 ##Function
 #Tấn công
 func attack():
 	damage_area.damage_amount = get_player_damage() + attack_combo * 2
+	damage_area.damage_amount = 1000
 	damage_area.knockback_strength = player_data.get_stat(GameEnums.STAT.KNOCKBACK)
 	is_attacking = true
 	attack_timer.start()
