@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr51bs1uwwgk1"]
+
+[ext_resource type="Texture2D" uid="uid://cbturink06uhj" path="res://assets/ui/quest_container.png" id="1_frvx0"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/quest/quest_container.gd" id="2_wnxgx"]
+[ext_resource type="Theme" uid="uid://c1pun7k44cj4g" path="res://data/resources/theme/quest_button.tres" id="3_oae0d"]
+
+[node name="QuestContainer" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -171.5
+offset_right = 228.5
+offset_bottom = 171.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_frvx0")
+script = ExtResource("2_wnxgx")
+
+[node name="MainQuest" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 121.0
+offset_bottom = 49.0
+theme = ExtResource("3_oae0d")
+text = "Main Quest"
+
+[node name="SideQuest" type="Button" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 11.0
+offset_right = 219.0
+offset_bottom = 49.0
+theme = ExtResource("3_oae0d")
+text = "Side Quest
+"
+
+[node name="ListQuestContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 53.0
+offset_right = -229.0
+offset_bottom = -13.0
+horizontal_scroll_mode = 0
+
+[node name="ListQuest" type="VBoxContainer" parent="ListQuestContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.5
+offset_top = 18.5
+offset_right = -17.5
+offset_bottom = -14.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="QuestDescription" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="MainQuest" to="." method="_on_main_quest_pressed"]
+[connection signal="pressed" from="SideQuest" to="." method="_on_side_quest_pressed"]

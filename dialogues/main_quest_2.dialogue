@@ -6,7 +6,7 @@ Echo: That's the spirit. Your bravery will be crucial in protecting our village.
 Echo: By the way, before you go, I suggest stopping by a few shops to stock up on supplies. It might come in handy out there.
 Echo: Best of luck.
 do SignalManager.update_main_quest.emit("main_quest_2")
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ talk_to_echo_2
@@ -14,11 +14,11 @@ Echo: Welcome back, {{Global.player_name}}. Congratulations! You've completed th
 Echo: Here's your reward. You've earned it.
 {{Global.player_name}}: Thank you, Echo. I'm glad I could help.
 do SignalManager.update_main_quest.emit("main_quest_2")
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ echo
 Echo: By the way, before you go, I suggest stopping by a few shops to stock up on supplies. It might come in handy out there.
 Echo: Best of luck.
-do Global.paused = false
+set Global.paused = false
 => END

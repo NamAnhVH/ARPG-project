@@ -3,10 +3,10 @@ Echo: I heard that behind the weapons shop, there's a hidden chest.
 Echo: If you have time, I think you should take a look.
 {{Global.player_name}}: ok, I'll check it out.
 do SignalManager.update_side_quest.emit("side_quest_1")
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ echo
 Echo: Hurry up, someone might take all the items in there before you.
-do Global.paused = false
+set Global.paused = false
 => END

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm8ioreu85dku"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_vefyd"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/chest/chest_container.gd" id="2_c2xri"]
+[ext_resource type="Resource" uid="uid://ux1xcdadgxto" path="res://data/resources/world_data.tres" id="3_mmdjw"]
+
+[node name="ChestContainer" type="NinePatchRect"]
+offset_right = 207.0
+offset_bottom = 96.0
+texture = ExtResource("1_vefyd")
+region_rect = Rect2(32, 0, 24, 24)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_c2xri")
+world_data = ExtResource("3_mmdjw")

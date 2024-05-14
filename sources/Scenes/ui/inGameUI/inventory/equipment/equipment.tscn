@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=3 uid="uid://e8vwuv8nj76"]
+
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="1_yq4i7"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/equipment/equipment.gd" id="2_5cbbj"]
+[ext_resource type="PackedScene" uid="uid://ddpr87bordd6n" path="res://sources/scenes/ui/inGameUI/inventory/equipment/equipment_slot.tscn" id="3_ul6kg"]
+
+[node name="Equipment" type="NinePatchRect"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 142.0
+offset_bottom = 165.0
+texture = ExtResource("1_yq4i7")
+region_rect = Rect2(160, 0, 24, 24)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("2_5cbbj")
+inventory_size = 10
+
+[node name="SlotContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Helmet" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.5
+offset_top = 20.0
+offset_right = 15.5
+offset_bottom = 52.0
+grow_horizontal = 2
+type = 1
+
+[node name="Armor" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.5
+offset_top = 62.0
+offset_right = 15.5
+offset_bottom = 94.0
+grow_horizontal = 2
+type = 2
+
+[node name="Shoes" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.5
+offset_top = 103.0
+offset_right = 15.5
+offset_bottom = 135.0
+grow_horizontal = 2
+type = 4
+
+[node name="Weapon" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 20.0
+offset_right = -26.0
+offset_bottom = 52.0
+grow_horizontal = 2
+type = 5
+
+[node name="ExtraWeapon" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 62.0
+offset_right = -26.0
+offset_bottom = 94.0
+grow_horizontal = 2
+type = 6
+
+[node name="Accessory" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 57.0
+offset_bottom = 52.0
+grow_horizontal = 2
+type = 7
+
+[node name="Accessory2" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 25.0
+offset_top = 63.0
+offset_right = 57.0
+offset_bottom = 95.0
+grow_horizontal = 2
+type = 7
+
+[node name="Accessory3" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 25.0
+offset_top = 103.0
+offset_right = 57.0
+offset_bottom = 135.0
+grow_horizontal = 2
+type = 7
+
+[node name="Accessory4" parent="SlotContainer" instance=ExtResource("3_ul6kg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 103.0
+offset_right = -26.0
+offset_bottom = 135.0
+grow_horizontal = 2
+type = 7

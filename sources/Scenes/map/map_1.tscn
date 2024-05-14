@@ -60,22 +60,27 @@ y_sort_enabled = true
 [node name="Mushroom" parent="Enemies/Mushrooms" index="0" instance=ExtResource("3_n841c")]
 position = Vector2(651, 355)
 min_level = 4
+max_level = 7
 
 [node name="Mushroom2" parent="Enemies/Mushrooms" index="1" instance=ExtResource("3_n841c")]
 position = Vector2(612, 362)
 min_level = 4
+max_level = 7
 
 [node name="Mushroom3" parent="Enemies/Mushrooms" index="2" instance=ExtResource("3_n841c")]
 position = Vector2(652, 405)
 min_level = 4
+max_level = 7
 
 [node name="Mushroom4" parent="Enemies/Mushrooms" index="3" instance=ExtResource("3_n841c")]
 position = Vector2(502, 512)
 min_level = 4
+max_level = 7
 
 [node name="Mushroom5" parent="Enemies/Mushrooms" index="4" instance=ExtResource("3_n841c")]
 position = Vector2(504, 408)
 min_level = 4
+max_level = 7
 
 [node name="NavigationRegion2D" parent="." index="11"]
 navigation_polygon = SubResource("NavigationPolygon_j5xxm")

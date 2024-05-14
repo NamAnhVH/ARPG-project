@@ -199,3 +199,22 @@ func _on_clear_hidden_node():
 
 func _on_inventory_add_item(item: Item):
 	inventory.add_item(item)
+
+func is_have_items_for_quest(quest_id,type_quest):
+	var items = []
+	if type_quest == GameEnums.QUEST_TYPE.MAIN_QUEST:
+		items = StoryManager.progress_data.current_main_quest.progress.give
+	if type_quest == GameEnums.QUEST_TYPE.SIDE_QUEST:
+		items = StoryManager.progress_data.current_side_quest[quest_id].progress.give
+	for item in items:
+		for slot: InventorySlot in inventory.slots:
+			if slot.item and slot.item.id == item.item_id:
+				if slot.item.quantity == item.quantity:
+					slot.set_item(null)
+					items.erase(item)
+					break
+				elif slot.item.quantity > item.quantity:
+					slot.item.quantity -= item.quantity
+					items.erase(item)
+					break
+	return true if items.is_empty() else false

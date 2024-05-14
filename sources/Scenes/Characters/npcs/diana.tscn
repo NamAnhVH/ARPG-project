@@ -6,10 +6,7 @@
 [node name="Diana" instance=ExtResource("1_gt0mf")]
 list_quest = Array[Dictionary]([{
 "id": "main_quest_3",
-"progress": "talk_to_Diana_1"
-}, {
-"id": "main_quest_3",
-"progress": "talk_to_Diana_2"
+"progress": "talk_to_Diana"
 }])
 
 [node name="Sprite2D" parent="." index="0"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bovrlwjuq4e20"]
+
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="1_8558l"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/inventory.gd" id="2_apfb3"]
+[ext_resource type="PackedScene" uid="uid://dtvt1rrdqlf6i" path="res://sources/scenes/ui/money.tscn" id="3_nc1uw"]
+
+[node name="Inventory" type="NinePatchRect"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 282.0
+offset_bottom = 180.0
+texture = ExtResource("1_8558l")
+region_rect = Rect2(160, 8, 24, 16)
+patch_margin_left = 8
+patch_margin_right = 16
+patch_margin_bottom = 8
+script = ExtResource("2_apfb3")
+
+[node name="SlotContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 270.0
+offset_bottom = 170.0
+columns = 7
+
+[node name="Money" parent="." instance=ExtResource("3_nc1uw")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0

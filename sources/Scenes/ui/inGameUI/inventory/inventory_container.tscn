@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba3ckafpos0op"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_qygom"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/inventory_container.gd" id="2_2r4ul"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_gfxkb"]
+[ext_resource type="FontFile" uid="uid://del1en3qo0ujb" path="res://font/Pixel Sans Serif.ttf" id="3_8be7h"]
+[ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_j6cnb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wc8fc"]
+line_spacing = 0.0
+font = ExtResource("3_8be7h")
+font_size = 10
+font_color = Color(0.827451, 0.54902, 0.203922, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InventoryContainer" type="NinePatchRect"]
+offset_right = 284.0
+offset_bottom = 197.0
+texture = ExtResource("1_qygom")
+region_rect = Rect2(32, 0, 24, 24)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_2r4ul")
+player_data = ExtResource("3_j6cnb")
+
+[node name="TitleContainer" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = -20.0
+offset_right = 62.5
+offset_bottom = 9.0
+grow_horizontal = 2
+texture = ExtResource("1_qygom")
+region_rect = Rect2(0, 0, 24, 24)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 13
+
+[node name="LabelContainer" type="NinePatchRect" parent="TitleContainer"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 117.0
+offset_bottom = 21.0
+texture = ExtResource("2_gfxkb")
+region_rect = Rect2(128, 0, 24, 24)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="TitleContainer/LabelContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -8.0
+offset_right = 45.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventory"
+label_settings = SubResource("LabelSettings_wc8fc")

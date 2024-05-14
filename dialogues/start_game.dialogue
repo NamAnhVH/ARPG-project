@@ -24,14 +24,14 @@ do SignalManager.choose_player_name.emit()
 {{Global.player_name}}: How about {{Global.player_name}}?
 Luna: That's a nice name.
 Luna: See ya.
-do Global.paused = false
+set Global.paused = false
 do SignalManager.luna_go_out.emit()
 do SignalManager.change_next_progress.emit()
 => END
 
 ~ luna_go_out
 {{Global.player_name}}: Hmm, I think I should step outside for a bit.
-do Global.paused = false
+set Global.paused = false
 do SignalManager.change_next_progress.emit()
 do SignalManager.update_main_quest.emit("main_quest_1")
 

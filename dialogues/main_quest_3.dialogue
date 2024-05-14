@@ -1,4 +1,4 @@
-~ talk_to_diana_1
+~ talk_to_diana
 Diana: Hello young man, could you help this old lady?
 {{Global.player_name}}: Of course, what's the matter?
 Diana: My grandchild is seriously ill, but we are too poor to afford proper treatment.
@@ -10,12 +10,28 @@ Diana: Moreover, be careful around that area, there are many monsters lurking ar
 {{Global.player_name}}: Ok, I'll do it.
 Diana: Thank you very much, good luck to you.
 do SignalManager.update_main_quest.emit("main_quest_3")
-do Global.paused = false
+set Global.paused = false
 => END
 
-~ talk_to_diana_2
-Diana: Have you picked enough mushroom spots?
-{{Global.player_name}}: Here they are.
+~ diana
+if StoryManager.progress_data.current_main_quest.progress.has("give")
+	Diana: Have you picked enough mushroom spots?
+	if InventoryManager.is_have_items_for_quest("main_quest_3",GameEnums.QUEST_TYPE.MAIN_QUEST)
+		=> have_items
+	else
+		=> not_have_items
+else
+	=> not_in_progress
+
+=> END
+
+~ not_in_progress
+Diana: You seem not so strong.
+Diana: See me again until you are strong enough.
+set Global.paused = false
+=> END
+
+~ have_items
 Diana: Thank you so much.
 Diana: Here's your reward.
 {{Global.player_name}}: Thank you.
@@ -23,8 +39,7 @@ do SignalManager.update_main_quest.emit("main_quest_3")
 do Global.paused = false
 => END
 
-~ diana
-Diana: Have you picked enough mushroom spots?
+~ not_have_items
 {{Global.player_name}}: Sorry, I'll go find them right away.
 Diana: Thank you and good luck.
 do Global.paused = false

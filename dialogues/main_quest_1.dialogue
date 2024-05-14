@@ -12,7 +12,7 @@ Raven: Speaking of challenges, one of our guards reported trouble brewing to the
 Raven: It seems they've encountered fierce creatures and strange occurrences in that area.
 {{Global.player_name}}: Sounds like trouble. I will go check a look.
 do SignalManager.update_main_quest.emit("main_quest_1")
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ talk_to_echo_1
@@ -23,7 +23,7 @@ Echo: Can you help me defeat them?
 Echo: Okay, here you go.
 do SignalManager.update_main_quest.emit("main_quest_1")
 do SignalManager.main_quest_1_talk_to_echo_1.emit()
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ talk_to_echo_2
@@ -31,13 +31,13 @@ Echo: Wow, you've already defeated them, huh? That was quick.
 Echo: Here's your reward for you.
 {{Global.player_name}}: Thank you.
 do SignalManager.update_main_quest.emit("main_quest_1")
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ raven
 Raven: Hurry up, head north of the village. There are some troubles up there.
 {{Global.player_name}}: Ok, I'm on my way.
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ nova
@@ -48,5 +48,5 @@ Nova: Our village is located right in the center of the island.
 Nova: Also, be careful when venturing outside the village, as there are many creatures lurking around.
 {{Global.player_name}}: Thank you.
 Nova: It seems like the village chief has some business to attend to. You should go meet him.
-do Global.paused = false
+set Global.paused = false
 => END

@@ -21,7 +21,7 @@
 		},
 		"main_quest_3": {
 			"name": "Helping poor family",
-			"progress": [{"name": "reach_level_5", "level_up": 5}, "talk_to_Diana_1", {"name": "collect_10_Porcini", "collect": {"quantity": 10, "product": "mushroom_v02"}}, "talk_to_Diana_2"],
+			"progress": [{"name": "reach_level_6", "level_up": 6}, "talk_to_Diana", {"name": "give_10_Porcini", "give": [{"quantity": 10, "item_id": "mushroom_v02"}]} ],
 			"description": "You hear a family requesting help to find mushrooms to aid their sick daughter.",
 			"reward": {
 				"money": 5,
@@ -50,7 +50,7 @@
 		},
 		"side_quest_2": {
 			"name": "Gathering Ingredients",
-			"progress": ["talk_to_Luna", {"name": "collect_5_mushrooms", "collect": {"quantity": 5, "product": "mushroom"}}, "talk_to_Luna_2"],
+			"progress": ["talk_to_Luna", {"name": "give_5_mushrooms", "give": [{"quantity": 5, "item_id": "mushroom_v00"}]}],
 			"description": "Venture into the dense forest to collect rare herbs and mushrooms needed for a potent healing potion. The local healer has requested your aid, believing these ingredients hold the key to curing a mysterious illness plaguing the village. Keep your wits about you as the forest is teeming with both valuable flora and dangerous creatures.",
 			"reward": {
 				"money": 20,

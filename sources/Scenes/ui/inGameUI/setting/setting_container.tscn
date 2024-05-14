@@ -1,0 +1,239 @@
+[gd_scene load_steps=13 format=3 uid="uid://caxwneo7qtynf"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_uingq"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/setting/setting_container.gd" id="2_8pm3r"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_kyj1o"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="3_4cbis"]
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="5_6seok"]
+[ext_resource type="Texture2D" uid="uid://bkj04buac1yfx" path="res://assets/ui/Buttons_1x.png" id="6_tjnd3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rspxp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_if8xx"]
+texture = ExtResource("6_tjnd3")
+texture_margin_left = 3.0
+texture_margin_top = 9.0
+texture_margin_right = 3.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(1, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_klgbf"]
+texture = ExtResource("6_tjnd3")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(1, 17, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0c6uf"]
+texture = ExtResource("6_tjnd3")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(1, 1, 14, 14)
+
+[sub_resource type="Theme" id="Theme_s6m7g"]
+TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
+TabContainer/font_sizes/font_size = 30
+TabContainer/fonts/font = ExtResource("5_6seok")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_rspxp")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_if8xx")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_klgbf")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_0c6uf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqj2j"]
+font = ExtResource("5_6seok")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="SettingContainer" type="NinePatchRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_uingq")
+region_rect = Rect2(0, 0, 24, 23)
+patch_margin_left = 8
+patch_margin_top = 12
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_8pm3r")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kyj1o")
+region_rect = Rect2(160, 0, 24, 24)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 305.0
+offset_top = -60.0
+offset_right = 378.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4cbis")
+text = "Close
+"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 20.0
+offset_right = -19.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_s6m7g")
+tab_alignment = 1
+
+[node name="Graphics" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+scrolling_enabled = false
+scroll_to_selected = false
+
+[node name="GraphicSetting" type="VBoxContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -119.5
+offset_right = 154.0
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Graphics/GraphicSetting"]
+layout_mode = 2
+
+[node name="FullScreen" type="Label" parent="TabContainer/Graphics/GraphicSetting/HBoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
+label_settings = SubResource("LabelSettings_cqj2j")
+
+[node name="FullScreenButton" type="CheckButton" parent="TabContainer/Graphics/GraphicSetting/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Graphics/GraphicSetting"]
+layout_mode = 2
+
+[node name="VSync" type="Label" parent="TabContainer/Graphics/GraphicSetting/HBoxContainer2"]
+layout_mode = 2
+text = "Vsync"
+label_settings = SubResource("LabelSettings_cqj2j")
+
+[node name="VsyncButton" type="CheckButton" parent="TabContainer/Graphics/GraphicSetting/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="InputSetting" type="VBoxContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 738.0
+offset_bottom = 318.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/InputSetting"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="TabContainer/Controls/InputSetting/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResetButton" type="Button" parent="TabContainer/Controls/InputSetting"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("3_4cbis")
+text = "Reset to default"
+
+[node name="Game" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GameSetting" type="HBoxContainer" parent="TabContainer/Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.5
+offset_top = -22.5
+offset_right = 223.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SaveGame" type="Button" parent="TabContainer/Game/GameSetting"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_4cbis")
+text = "Save Game"
+
+[node name="Space" type="Control" parent="TabContainer/Game/GameSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LoadGame" type="Button" parent="TabContainer/Game/GameSetting"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_4cbis")
+text = "Load Game
+"
+
+[node name="Space2" type="Control" parent="TabContainer/Game/GameSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuitGame" type="Button" parent="TabContainer/Game/GameSetting"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_4cbis")
+text = "Quit Game
+"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="toggled" from="TabContainer/Graphics/GraphicSetting/HBoxContainer/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="toggled" from="TabContainer/Graphics/GraphicSetting/HBoxContainer2/VsyncButton" to="." method="_on_vsync_button_toggled"]
+[connection signal="pressed" from="TabContainer/Controls/InputSetting/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="TabContainer/Game/GameSetting/SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="TabContainer/Game/GameSetting/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="TabContainer/Game/GameSetting/QuitGame" to="." method="_on_quit_game_pressed"]

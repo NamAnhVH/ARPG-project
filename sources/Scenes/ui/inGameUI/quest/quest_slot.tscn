@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://o5001m2hlmfb"]
+
+[ext_resource type="Theme" uid="uid://c1pun7k44cj4g" path="res://data/resources/theme/quest_button.tres" id="1_velc6"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/quest/quest_slot.gd" id="2_fgxx4"]
+
+[node name="QuestSlot" type="Button"]
+theme = ExtResource("1_velc6")
+text = "Name"
+text_overrun_behavior = 4
+script = ExtResource("2_fgxx4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

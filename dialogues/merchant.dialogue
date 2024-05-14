@@ -11,6 +11,6 @@
 	do SignalManager.upgrade_opened.emit()
 - No, thanks 
 	{{Global.npc_name}}: Ok bye.
-do Global.paused = false
+set Global.paused = false
 	
 => END

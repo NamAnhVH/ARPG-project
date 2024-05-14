@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://do6t1y1a2safn"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_ct5da"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/setting/file_saving_container.gd" id="2_kkfa5"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_st40p"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="3_gv3if"]
+
+[node name="FileSavingContainer" type="NinePatchRect"]
+offset_left = 78.0
+offset_top = 39.0
+offset_right = 655.0
+offset_bottom = 384.0
+texture = ExtResource("1_ct5da")
+region_rect = Rect2(64, 0, 24, 23)
+patch_margin_left = 8
+patch_margin_top = 12
+patch_margin_right = 8
+patch_margin_bottom = 7
+script = ExtResource("2_kkfa5")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_st40p")
+region_rect = Rect2(0, 0, 24, 24)
+patch_margin_left = 7
+patch_margin_top = 8
+patch_margin_right = 6
+patch_margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 568.0
+offset_bottom = 280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ListFileSave" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 286.0
+offset_right = 547.0
+offset_bottom = 331.0
+theme = ExtResource("3_gv3if")
+text = "Close"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

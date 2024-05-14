@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhagkd1c6uibr"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_58tgx"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/player_stat_ui.gd" id="2_7q5t6"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="3_iqx7b"]
+[ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_kesae"]
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="4_krkwq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgsdr"]
+font = ExtResource("4_krkwq")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="PlayerStatUI" type="NinePatchRect"]
+offset_right = 145.0
+offset_bottom = 143.0
+texture = ExtResource("1_58tgx")
+region_rect = Rect2(32, 0, 24, 24)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_7q5t6")
+player_data = ExtResource("3_kesae")
+
+[node name="StatContainer" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iqx7b")
+region_rect = Rect2(128, 0, 24, 24)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/Level"]
+layout_mode = 2
+text = "Level
+"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/Level"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="AttackDamage" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/AttackDamage"]
+layout_mode = 2
+text = "Attack Damage"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/AttackDamage"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+horizontal_alignment = 2
+
+[node name="MoveSpeed" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/MoveSpeed"]
+layout_mode = 2
+text = "Move Speed"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/MoveSpeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+horizontal_alignment = 2
+
+[node name="Defence" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/Defence"]
+layout_mode = 2
+text = "Defence"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/Defence"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+horizontal_alignment = 2
+
+[node name="CritRate" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/CritRate"]
+layout_mode = 2
+text = "Crit Rate"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/CritRate"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+horizontal_alignment = 2
+
+[node name="CritDamage" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/CritDamage"]
+layout_mode = 2
+text = "Crit Damage"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/CritDamage"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+horizontal_alignment = 2
+
+[node name="LifePoint" type="HBoxContainer" parent="StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatContainer/VBoxContainer/LifePoint"]
+layout_mode = 2
+text = "Life Point"
+label_settings = SubResource("LabelSettings_fgsdr")
+
+[node name="Stat" type="Label" parent="StatContainer/VBoxContainer/LifePoint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+label_settings = SubResource("LabelSettings_fgsdr")
+horizontal_alignment = 2
