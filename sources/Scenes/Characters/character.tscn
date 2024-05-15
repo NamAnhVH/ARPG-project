@@ -10,3 +10,7 @@ script = ExtResource("1_lij52")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Footstep" type="AudioStreamPlayer2D" parent="Audio"]

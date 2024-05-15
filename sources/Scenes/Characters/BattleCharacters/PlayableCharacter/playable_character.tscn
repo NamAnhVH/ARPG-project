@@ -1,12 +1,21 @@
-[gd_scene load_steps=232 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=241 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/characters/playable_character.gd" id="2_muque"]
 [ext_resource type="PackedScene" uid="uid://ba00tp4ce2gpf" path="res://sources/scenes/core/detect_layer_area.tscn" id="3_2bnah"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="3_7x3km"]
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_b1dd0"]
+[ext_resource type="AudioStream" uid="uid://bsir04u8ktc3b" path="res://sound/sword_slash_1.mp3" id="6_15hsr"]
 [ext_resource type="Script" path="res://sources/scripts/interactables/interactable_labels.gd" id="6_g3p5i"]
+[ext_resource type="AudioStream" uid="uid://dr8og415w1olr" path="res://sound/draw.mp3" id="6_sngyu"]
 [ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="7_h2tvk"]
+[ext_resource type="AudioStream" uid="uid://tc6jgtvcp3wr" path="res://sound/bow.mp3" id="7_kesyx"]
+[ext_resource type="AudioStream" uid="uid://cl7hawiq0kkci" path="res://sound/sword_slash_2.mp3" id="7_lbm3s"]
+[ext_resource type="AudioStream" uid="uid://b1knftlu75vi4" path="res://sound/hurt.mp3" id="7_rqvp6"]
+[ext_resource type="AudioStream" uid="uid://ejb5ko88y2yx" path="res://sound/shield_bash.mp3" id="8_ctgeu"]
+[ext_resource type="AudioStream" uid="uid://dv5atprj8rivj" path="res://sound/player_footstep.mp3" id="9_auq70"]
+[ext_resource type="AudioStream" uid="uid://d3qfc1hynpvtl" path="res://sound/thrust_1.mp3" id="11_ak01j"]
+[ext_resource type="AudioStream" uid="uid://cv8xyqj7wn5wl" path="res://sound/thrust_2.mp3" id="12_twuej"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qv6ah"]
 shader = ExtResource("3_7x3km")
@@ -1009,7 +1018,8 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_lkq8e"]
 resource_name = "draw_down"
-length = 0.3
+length = 0.4
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1017,7 +1027,7 @@ tracks/0/path = NodePath("Body/Base:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1029,7 +1039,7 @@ tracks/1/path = NodePath("Body/OneHandWeapon:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1041,7 +1051,7 @@ tracks/2/path = NodePath("Body/Shield:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1053,7 +1063,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1070,7 +1080,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [5, 4, 3, 2, 1, 0],
@@ -1090,7 +1100,7 @@ tracks/5/path = NodePath("Body/Spear:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1102,7 +1112,7 @@ tracks/6/path = NodePath("Body/Bow:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1114,7 +1124,7 @@ tracks/7/path = NodePath("Body/Quiver:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1133,10 +1143,26 @@ tracks/8/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Audio/SoundEffect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 1.22183,
+"start_offset": 0.13,
+"stream": ExtResource("6_sngyu")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hbh48"]
 resource_name = "draw_left"
-length = 0.3
+length = 0.4
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1144,7 +1170,7 @@ tracks/0/path = NodePath("Body/Base:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [24, 25, 26]
@@ -1156,7 +1182,7 @@ tracks/1/path = NodePath("Body/OneHandWeapon:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [24, 25, 26]
@@ -1168,7 +1194,7 @@ tracks/2/path = NodePath("Body/Shield:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [24, 25, 26]
@@ -1180,7 +1206,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1197,7 +1223,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [5, 4, 3, 2, 1, 0],
@@ -1217,7 +1243,7 @@ tracks/5/path = NodePath("Body/Spear:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [24, 25, 26]
@@ -1229,7 +1255,7 @@ tracks/6/path = NodePath("Body/Bow:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [24, 25, 26]
@@ -1241,7 +1267,7 @@ tracks/7/path = NodePath("Body/Quiver:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [24, 25, 26]
@@ -1260,10 +1286,26 @@ tracks/8/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Audio/SoundEffect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 1.22183,
+"start_offset": 0.13,
+"stream": ExtResource("6_sngyu")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_63evt"]
 resource_name = "draw_right"
-length = 0.3
+length = 0.4
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1271,7 +1313,7 @@ tracks/0/path = NodePath("Body/Base:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [16, 17, 18]
@@ -1283,7 +1325,7 @@ tracks/1/path = NodePath("Body/OneHandWeapon:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [16, 17, 18]
@@ -1295,7 +1337,7 @@ tracks/2/path = NodePath("Body/Shield:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [16, 17, 18]
@@ -1307,7 +1349,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1324,7 +1366,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [5, 4, 3, 2, 1, 0],
@@ -1344,7 +1386,7 @@ tracks/5/path = NodePath("Body/Spear:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [16, 17, 18]
@@ -1356,7 +1398,7 @@ tracks/6/path = NodePath("Body/Bow:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [16, 17, 18]
@@ -1368,7 +1410,7 @@ tracks/7/path = NodePath("Body/Quiver:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [16, 17, 18]
@@ -1387,10 +1429,26 @@ tracks/8/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Audio/SoundEffect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 1.2218,
+"start_offset": 0.13,
+"stream": ExtResource("6_sngyu")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_1e3oa"]
 resource_name = "draw_up"
-length = 0.3
+length = 0.4
+step = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1398,7 +1456,7 @@ tracks/0/path = NodePath("Body/Base:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [8, 9, 10]
@@ -1410,7 +1468,7 @@ tracks/1/path = NodePath("Body/OneHandWeapon:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [8, 9, 10]
@@ -1422,7 +1480,7 @@ tracks/2/path = NodePath("Body/Shield:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [8, 9, 10]
@@ -1434,7 +1492,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1451,7 +1509,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [0, 1, 2, 3, 4, 5],
@@ -1471,7 +1529,7 @@ tracks/5/path = NodePath("Body/Spear:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [8, 9, 10]
@@ -1483,7 +1541,7 @@ tracks/6/path = NodePath("Body/Bow:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [8, 9, 10]
@@ -1495,7 +1553,7 @@ tracks/7/path = NodePath("Body/Quiver:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [8, 9, 10]
@@ -1514,6 +1572,21 @@ tracks/8/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Audio/SoundEffect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 1.2218,
+"start_offset": 0.13,
+"stream": ExtResource("6_sngyu")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_2gfch"]
 resource_name = "hurt_down"
@@ -1672,6 +1745,21 @@ tracks/11/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Audio/SoundEffect")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.485313,
+"start_offset": 0.363441,
+"stream": ExtResource("7_rqvp6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/12/use_blend = true
 
 [sub_resource type="Animation" id="Animation_x2glq"]
 resource_name = "hurt_left"
@@ -1830,6 +1918,21 @@ tracks/11/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Audio/SoundEffect")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.4853,
+"start_offset": 0.3634,
+"stream": ExtResource("7_rqvp6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/12/use_blend = true
 
 [sub_resource type="Animation" id="Animation_pr6yn"]
 resource_name = "hurt_right"
@@ -1988,6 +2091,21 @@ tracks/11/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Audio/SoundEffect")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.4853,
+"start_offset": 0.3634,
+"stream": ExtResource("7_rqvp6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/12/use_blend = true
 
 [sub_resource type="Animation" id="Animation_a1fv5"]
 resource_name = "hurt_up"
@@ -2146,6 +2264,21 @@ tracks/11/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Audio/SoundEffect")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.4853,
+"start_offset": 0.3634,
+"stream": ExtResource("7_rqvp6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/12/use_blend = true
 
 [sub_resource type="Animation" id="Animation_4cx1a"]
 resource_name = "idle_down"
@@ -4517,6 +4650,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_ctgeu")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_llt63"]
 resource_name = "shield_bash_left"
@@ -4632,6 +4780,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_ctgeu")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ol66g"]
 resource_name = "shield_bash_right"
@@ -4747,6 +4910,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_ctgeu")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bhmk7"]
 resource_name = "shield_bash_up"
@@ -4859,6 +5037,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_ctgeu")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bd87c"]
 resource_name = "shoot_down"
@@ -4958,6 +5151,21 @@ tracks/6/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.465,
+"start_offset": 0.00714966,
+"stream": ExtResource("7_kesyx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_15cki"]
 resource_name = "shoot_left"
@@ -5060,6 +5268,21 @@ tracks/6/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.465,
+"start_offset": 0.0071,
+"stream": ExtResource("7_kesyx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_r6kxx"]
 resource_name = "shoot_left_up"
@@ -5162,6 +5385,21 @@ tracks/6/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.465,
+"start_offset": 0.0071,
+"stream": ExtResource("7_kesyx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_yj4m2"]
 resource_name = "shoot_right"
@@ -5264,6 +5502,21 @@ tracks/6/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.465,
+"start_offset": 0.0071,
+"stream": ExtResource("7_kesyx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ko4im"]
 resource_name = "shoot_right_up"
@@ -5366,6 +5619,21 @@ tracks/6/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.465,
+"start_offset": 0.0071,
+"stream": ExtResource("7_kesyx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_imbxy"]
 resource_name = "shoot_up"
@@ -5465,6 +5733,21 @@ tracks/6/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.465,
+"start_offset": 0.0071,
+"stream": ExtResource("7_kesyx")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_wa7wq"]
 resource_name = "slash_down_spear"
@@ -5562,6 +5845,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_n3k5t"]
 resource_name = "slash_down_sword_shield_1"
@@ -5674,10 +5972,26 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mgu2b"]
 resource_name = "slash_down_sword_shield_2"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -5786,6 +6100,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_lbm3s")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6prje"]
 resource_name = "slash_left_spear"
@@ -5886,6 +6215,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_8ukeu"]
 resource_name = "slash_left_sword_shield_1"
@@ -6001,10 +6345,26 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_65w3t"]
 resource_name = "slash_left_sword_shield_2"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -6110,6 +6470,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_lbm3s")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_s8a74"]
 resource_name = "slash_right_spear"
@@ -6210,6 +6585,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_v3you"]
 resource_name = "slash_right_sword_shield_1"
@@ -6325,10 +6715,26 @@ tracks/7/keys = {
 "update": 1,
 "values": [PackedVector2Array(11, 16, -10, 16, -16, 11, -16, 8, 4, 8, 11, -6, 7, -21, 18, -21, 30, -10, 30, 2, 25, 11)]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_8i5af"]
 resource_name = "slash_right_sword_shield_2"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -6434,6 +6840,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_lbm3s")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ch6in"]
 resource_name = "slash_up_spear"
@@ -6534,6 +6955,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_f4r5l"]
 resource_name = "slash_up_sword_shield_1"
@@ -6646,10 +7082,26 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_15hsr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6jlc0"]
 resource_name = "slash_up_sword_shield_2"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -6758,6 +7210,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_lbm3s")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_xmpjf"]
 resource_name = "stand_down"
@@ -7267,6 +7734,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.104462,
+"start_offset": 0.052231,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_yp8ro"]
 resource_name = "thrust_down_spear_2"
@@ -7364,6 +7846,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_twuej")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jec2f"]
 resource_name = "thrust_down_sword_shield"
@@ -7479,6 +7976,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_m6kls"]
 resource_name = "thrust_left_spear_1"
@@ -7576,6 +8088,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.1045,
+"start_offset": 0.0522,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_opfve"]
 resource_name = "thrust_left_spear_2"
@@ -7673,6 +8200,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [PackedVector2Array(-6, -4, -6, 10, -29, 10, -35, 3, -25, -4)]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_twuej")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_sddp5"]
 resource_name = "thrust_left_sword_shield"
@@ -7785,6 +8327,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_10ppi"]
 resource_name = "thrust_right_spear_1"
@@ -7882,6 +8439,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.1045,
+"start_offset": 0.0522,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_g3xjy"]
 resource_name = "thrust_right_spear_2"
@@ -7979,6 +8551,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_twuej")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dwgwe"]
 resource_name = "thrust_right_sword_shield"
@@ -8091,6 +8678,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="Animation" id="Animation_g7mn6"]
 resource_name = "thrust_up_spear_1"
@@ -8191,6 +8793,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.1045,
+"start_offset": 0.0522,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_e52jn"]
 resource_name = "thrust_up_spear_2"
@@ -8291,6 +8908,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audio/SoundEffect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_twuej")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mepkw"]
 resource_name = "thrust_up_sword_shield"
@@ -8403,6 +9035,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audio/SoundEffect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_ak01j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x6i1r"]
 _data = {
@@ -9354,6 +10001,14 @@ one_shot = true
 [node name="CounterAttackTimer" type="Timer" parent="Timer" index="2"]
 wait_time = 0.5
 one_shot = true
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+position = Vector2(0, -12)
+bus = &"SFX"
+
+[node name="Footstep" parent="Audio" index="1"]
+stream = ExtResource("9_auq70")
+bus = &"SFX"
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]

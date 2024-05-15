@@ -31,6 +31,7 @@ SceneTransition="*res://sources/scenes/ui/scene_transition.tscn"
 DialogueManagerNode="*res://sources/scenes/managers/dialogue_manager_node.tscn"
 BuffEffectManager="*res://sources/scenes/managers/buff_effect_manager.tscn"
 DungeonManager="*res://sources/scripts/manager/dungeon_manager.gd"
+SoundManager="*res://sources/scenes/managers/sound_manager.tscn"
 
 [debug]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://21cvg3txxqi6"]
+
+[ext_resource type="Script" path="res://sources/scripts/manager/sound_manager.gd" id="1_a0i10"]
+[ext_resource type="AudioStream" uid="uid://tmd0lyhtsuqy" path="res://sound/start_game_background.mp3" id="2_p2ui4"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_a0i10")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p2ui4")
+volume_db = -10.0
+pitch_scale = 0.8
+autoplay = true
+bus = &"Music"

@@ -19,6 +19,7 @@ const BIAS = Vector2(0, 5)
 @onready var interactable_area : Area2D = $InteractableArea
 @onready var interactable_labels : VBoxContainer = $Interactable/InteractableLabels
 @onready var detect_layer_area : DetectLayerArea = $DetectLayerArea
+@onready var sound_effect : AudioStreamPlayer2D = $Audio/SoundEffect
 
  #Check trang bị hiện tại
 var current_weapon : Item
@@ -95,6 +96,8 @@ func _physics_process(_delta):
 	if !Global.paused:
 		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying and is_alive:
 			move_state()
+		else:
+			footstep.stop()
 	else: 
 		if !is_attack_state:
 			animation_tree.set("parameters/Base/conditions/is_running", false)
@@ -144,6 +147,8 @@ func move_state():
 	
 	#Animation
 	if move_input != Vector2.ZERO:
+		if !footstep.playing:
+			footstep.play()
 		animation_tree.set("parameters/Base/Stand/blend_position", move_input)
 		animation_tree.set("parameters/Base/Run/blend_position", move_input)
 		
@@ -161,7 +166,9 @@ func move_state():
 			animation_tree.set("parameters/Attack_state/Sheath/blend_position", move_input)
 			animation_tree.set("parameters/Attack_state/conditions/is_moving", true)
 			animation_tree.set("parameters/Attack_state/conditions/is_idling", false)
+			
 	else:
+		footstep.stop()
 		if !is_attack_state:
 			animation_tree.set("parameters/Base/conditions/is_running", false)
 			animation_tree.set("parameters/Base/conditions/is_standing", true)
@@ -458,6 +465,8 @@ func _on_hitbox_damaged(amount, knockback_strength, damage_source, attacker):
 			attacker.hitbox.damaged.emit(get_player_damage(), 1, damage_area, self)
 		else:
 			super._on_hitbox_damaged(0, 0, damage_source, attacker)
+		sound_effect.stream = ResourceManager.get_music("parry")
+		sound_effect.play()
 	else:
 		super._on_hitbox_damaged(amount, knockback_strength, damage_source, attacker)
 

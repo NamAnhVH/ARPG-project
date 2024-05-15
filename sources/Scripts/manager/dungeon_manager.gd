@@ -3,6 +3,7 @@ extends Node
 var noise : FastNoiseLite
 var slimes = []
 var gremlins = []
+var mushrooms = []
 
 var wall_atlas = [
 	Vector2i(8, 10), Vector2i(8, 9), Vector2i(8, 8), Vector2i(8, 7), Vector2i(8, 6),
@@ -20,9 +21,12 @@ func _ready():
 
 func _on_generate_dungeon():
 	noise = FastNoiseLite.new()
+	noise.seed = randi()
 	noise.frequency = 0.05
-	for i in range(50):
+	for i in range(15):
 		slimes.append(ResourceManager.get_character("slime"))
-	for i in range(30):
+	for i in range(5):
 		gremlins.append(ResourceManager.get_character("gremlin"))
+	for i in range(10):
+		mushrooms.append(ResourceManager.get_character("mushroom"))
 

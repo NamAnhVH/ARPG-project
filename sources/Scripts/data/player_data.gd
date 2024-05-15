@@ -11,8 +11,11 @@ class_name PlayerData
 @export var level : int = 1
 @export var player_name : String
 
-func set_data(data):
-	global_position = data.global_position
+func set_data(data, current_map):
+	if current_map == "dungeon":
+		global_position = Vector2(232,380)
+	else:
+		global_position = data.global_position
 	inventory = data.inventory
 	equipment = data.equipment
 	player_name = data.player_name if data.has("player_name") else ""

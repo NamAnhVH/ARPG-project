@@ -681,6 +681,12 @@ var mushrooms_texture = {
 	6: preload("res://assets/monsters/mushrooms/mushroom_v06.png"),
 }
 
+var musics = {
+	"start_game": preload("res://sound/start_game_background.mp3"),
+	"in_game": preload("res://sound/in_game_background.mp3"),
+	"parry": preload("res://sound/parry.mp3")
+}
+
 var colors = {
 	GameEnums.RARITY.COMMON : "000000",
 	GameEnums.RARITY.UNCOMMON : "009623",
@@ -749,3 +755,6 @@ func get_gremlin_texture(level):
 
 func get_mushroom_texture(level):
 	return mushrooms_texture[level / 5 + 1]
+
+func get_music(music):
+	return musics[music]

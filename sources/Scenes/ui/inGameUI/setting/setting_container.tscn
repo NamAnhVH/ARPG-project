@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://caxwneo7qtynf"]
+[gd_scene load_steps=21 format=3 uid="uid://caxwneo7qtynf"]
 
 [ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_uingq"]
 [ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/setting/setting_container.gd" id="2_8pm3r"]
@@ -48,6 +48,44 @@ TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_0c6uf")
 font = ExtResource("5_6seok")
 font_size = 40
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a1gv"]
+atlas = ExtResource("6_tjnd3")
+region = Rect2(88, 24, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npvnf"]
+atlas = ExtResource("6_tjnd3")
+region = Rect2(80, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8r37"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a1gv")
+}],
+"loop": true,
+"name": &"muted",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npvnf")
+}],
+"loop": true,
+"name": &"unmuted",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umda5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xl3c8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l38ci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd7kg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlh4w"]
 
 [node name="SettingContainer" type="NinePatchRect"]
 anchors_preset = 15
@@ -128,10 +166,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -119.5
-offset_right = 154.0
-offset_bottom = 146.5
+offset_left = -160.5
+offset_top = -133.0
+offset_right = 160.5
+offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -184,6 +222,74 @@ focus_mode = 0
 theme = ExtResource("3_4cbis")
 text = "Reset to default"
 
+[node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SoundSetting" type="VBoxContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -126.0
+offset_right = 160.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Sound/SoundSetting"]
+layout_mode = 2
+
+[node name="BackgroundMusic" type="Label" parent="TabContainer/Sound/SoundSetting/HBoxContainer"]
+layout_mode = 2
+text = "Background Music"
+label_settings = SubResource("LabelSettings_cqj2j")
+
+[node name="BackgroundMusicSprite" type="AnimatedSprite2D" parent="TabContainer/Sound/SoundSetting/HBoxContainer"]
+position = Vector2(271.25, 15.75)
+scale = Vector2(3.81249, 3.8125)
+sprite_frames = SubResource("SpriteFrames_p8r37")
+animation = &"muted"
+
+[node name="BackgroundButton" type="Button" parent="TabContainer/Sound/SoundSetting/HBoxContainer/BackgroundMusicSprite"]
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = 3.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_umda5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xl3c8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l38ci")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fd7kg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xlh4w")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Sound/SoundSetting"]
+layout_mode = 2
+
+[node name="SoundEffect" type="Label" parent="TabContainer/Sound/SoundSetting/HBoxContainer2"]
+layout_mode = 2
+text = "Sound Effect"
+label_settings = SubResource("LabelSettings_cqj2j")
+
+[node name="SoundEffectSprite" type="AnimatedSprite2D" parent="TabContainer/Sound/SoundSetting/HBoxContainer2"]
+position = Vector2(270.883, 14.25)
+scale = Vector2(3.72071, 3.6875)
+sprite_frames = SubResource("SpriteFrames_p8r37")
+animation = &"unmuted"
+
+[node name="SoundEffectButton" type="Button" parent="TabContainer/Sound/SoundSetting/HBoxContainer2/SoundEffectSprite"]
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = 3.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_umda5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xl3c8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l38ci")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fd7kg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xlh4w")
+
 [node name="Game" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
@@ -234,6 +340,8 @@ text = "Quit Game
 [connection signal="toggled" from="TabContainer/Graphics/GraphicSetting/HBoxContainer/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
 [connection signal="toggled" from="TabContainer/Graphics/GraphicSetting/HBoxContainer2/VsyncButton" to="." method="_on_vsync_button_toggled"]
 [connection signal="pressed" from="TabContainer/Controls/InputSetting/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="TabContainer/Sound/SoundSetting/HBoxContainer/BackgroundMusicSprite/BackgroundButton" to="." method="_on_background_button_pressed"]
+[connection signal="pressed" from="TabContainer/Sound/SoundSetting/HBoxContainer2/SoundEffectSprite/SoundEffectButton" to="." method="_on_sound_effect_button_pressed"]
 [connection signal="pressed" from="TabContainer/Game/GameSetting/SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="TabContainer/Game/GameSetting/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="TabContainer/Game/GameSetting/QuitGame" to="." method="_on_quit_game_pressed"]

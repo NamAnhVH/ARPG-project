@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready():
 	SignalManager.close_file_saving_container.connect(_on_close_file_saving_container)
+	SoundManager.play_start_game_background_music()
 
 func _on_close_file_saving_container():
 	control.mouse_filter = Control.MOUSE_FILTER_STOP

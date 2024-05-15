@@ -6,7 +6,10 @@ class_name WorldData
 var chest_opened = {}
 
 func set_data(data):
-	current_map = data.current_map
+	if data.current_map == "dungeon":
+		current_map = "map_14"
+	else:
+		current_map = data.current_map
 	chest_opened = data.chest_opened if data.has("chest_opened") else []
 	emit_changed()
 

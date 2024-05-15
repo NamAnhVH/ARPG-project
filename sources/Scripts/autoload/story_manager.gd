@@ -88,14 +88,22 @@ func _on_enemy_died(enemy):
 
 func check_enemy(enemy, quest = ""):
 	if quest.is_empty():
-		if enemy is SlimeCharacter and progress_data.current_main_quest.progress.combat.enemy == "slime":
+		if enemy is SlimeCharacter and progress_data.current_main_quest.progress.combat.enemy == "slime" \
+		and progress_data.current_main_quest.progress.combat.min_level <= enemy.level \
+		and progress_data.current_main_quest.progress.combat.max_level >= enemy.level:
 			return true
-		elif enemy is GremlinCharacter and progress_data.current_main_quest.progress.combat.enemy == "gremlin":
+		elif enemy is GremlinCharacter and progress_data.current_main_quest.progress.combat.enemy == "gremlin" \
+		and progress_data.current_main_quest.progress.combat.min_level <= enemy.level \
+		and progress_data.current_main_quest.progress.combat.max_level >= enemy.level :
 			return true
 	else:
-		if enemy is SlimeCharacter and progress_data.current_side_quest[quest].progress.combat.enemy == "slime":
+		if enemy is SlimeCharacter and progress_data.current_side_quest[quest].progress.combat.enemy == "slime" \
+		and progress_data.current_side_quest[quest].progress.combat.min_level <= enemy.level \
+		and progress_data.current_side_quest[quest].progress.combat.max_level >= enemy.level:
 			return true
-		elif enemy is GremlinCharacter and progress_data.current_side_quest[quest].progress.combat.enemy == "gremlin":
+		elif enemy is GremlinCharacter and progress_data.current_side_quest[quest].progress.combat.enemy == "gremlin" \
+		and progress_data.current_side_quest[quest].progress.combat.min_level <= enemy.level \
+		and progress_data.current_side_quest[quest].progress.combat.max_level >= enemy.level:
 			return true
 	return false
 

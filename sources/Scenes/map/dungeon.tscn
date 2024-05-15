@@ -20,13 +20,17 @@ layer_0/name = "ground"
 layer_0/z_index = -1
 layer_1/name = "floor"
 layer_1/tile_data = PackedInt32Array()
-layer_2/name = "hole"
+layer_2/name = "roof"
+layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Slimes" type="Node2D" parent="Enemies" index="0"]
 y_sort_enabled = true
 
 [node name="Gremlins" type="Node2D" parent="Enemies" index="1"]
+y_sort_enabled = true
+
+[node name="Mushrooms" type="Node2D" parent="Enemies" index="2"]
 y_sort_enabled = true
 
 [node name="NavigationRegion2D" parent="." index="11"]

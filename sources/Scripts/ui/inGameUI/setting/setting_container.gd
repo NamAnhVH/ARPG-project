@@ -1,6 +1,13 @@
 extends NinePatchRect
 
 @onready var action_list : VBoxContainer = $TabContainer/Controls/InputSetting/ScrollContainer/ActionList
+@onready var background_music_sprite : AnimatedSprite2D = $TabContainer/Sound/SoundSetting/HBoxContainer/BackgroundMusicSprite
+@onready var sound_effect_sprite : AnimatedSprite2D = $TabContainer/Sound/SoundSetting/HBoxContainer2/SoundEffectSprite
+@onready var fullscreen_button : Button = $TabContainer/Graphics/GraphicSetting/HBoxContainer/FullScreenButton
+@onready var vsync_button : Button = $TabContainer/Graphics/GraphicSetting/HBoxContainer2/VsyncButton
+
+@onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
+@onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 
 var is_remapping : bool = false
 var action_to_remap
@@ -24,8 +31,30 @@ var input_actions = {
 }
 
 func _ready():
+	set_graphic_setting_container()
+	set_sound_setting_container()
 	SignalManager.close_file_saving_container.connect(_on_close_file_saving_container)
 	create_action_list()
+
+func set_graphic_setting_container():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		fullscreen_button.button_pressed = true
+	else:
+		fullscreen_button.button_pressed = false
+	if DisplayServer.window_get_vsync_mode() == DisplayServer.VSYNC_ENABLED:
+		vsync_button.button_pressed = true
+	else:
+		vsync_button.button_pressed = false
+
+func set_sound_setting_container():
+	if AudioServer.is_bus_mute(MUSIC_BUS_ID):
+		background_music_sprite.play("muted")
+	else:
+		background_music_sprite.play("unmuted")
+	if AudioServer.is_bus_mute(SFX_BUS_ID):
+		sound_effect_sprite.play("muted")
+	else:
+		sound_effect_sprite.play("unmuted")
 
 func create_action_list():
 	InputMap.load_from_project_settings()
@@ -112,3 +141,19 @@ func _on_vsync_button_toggled(toggled_on):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
+func _on_background_button_pressed():
+	if background_music_sprite.animation == "muted":
+		background_music_sprite.play("unmuted")
+		AudioServer.set_bus_mute(MUSIC_BUS_ID, false)
+	elif background_music_sprite.animation == "unmuted":
+		background_music_sprite.play("muted")
+		AudioServer.set_bus_mute(MUSIC_BUS_ID, true)
+
+func _on_sound_effect_button_pressed():
+	if sound_effect_sprite.animation == "muted":
+		sound_effect_sprite.play("unmuted")
+		AudioServer.set_bus_mute(MUSIC_BUS_ID, false)
+	elif sound_effect_sprite.animation == "unmuted":
+		sound_effect_sprite.play("muted")
+		AudioServer.set_bus_mute(SFX_BUS_ID, true)

@@ -9,7 +9,7 @@ class_name GameData
 
 func set_data(data):
 	#setting_data.set_data(data.setting_data)
-	player_data.set_data(data.player_data)
+	player_data.set_data(data.player_data, data.world_data.current_map)
 	world_data.set_data(data.world_data)
 	progress_data.set_data(data.progress_data)
 	emit_changed()
