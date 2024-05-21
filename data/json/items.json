@@ -6528,12 +6528,33 @@
 		"stack_size": 99,
 		"level": 1
 	},
-	"gold":{
-		"name": "Gold",
+	"copper": {
+		"name": "Copper",
 		"type": "MATERIAL",
 		"stack_size": 99,
 		"rarity": "UNCOMMON",
 		"level": 10
+	},
+	"iron": {
+		"name": "Copper",
+		"type": "MATERIAL",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 20
+	},
+	"silver": {
+		"name": "Silver",
+		"type": "MATERIAL",
+		"stack_size": 99,
+		"rarity": "UNIQUE",
+		"level": 30
+	},
+	"gold":{
+		"name": "Gold",
+		"type": "MATERIAL",
+		"stack_size": 99,
+		"rarity": "EPIC",
+		"level": 40
 	},
 	"mushroom_v01": {
 		"unique_drop": true,

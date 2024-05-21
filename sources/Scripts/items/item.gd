@@ -28,7 +28,7 @@ func _init(item_id: String, data):
 	position = Vector2(2, 2)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	id = item_id
-	texture = ResourceManager.sprites[id]
+	texture = ResourceManager.items[id]
 	
 	item_data = data
 	item_name = data.name

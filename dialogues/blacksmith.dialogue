@@ -1,0 +1,19 @@
+~ start
+{{Global.npc_name}}: [[Hi|Hello|Greetings]], welcome to my forge!
+{{Global.npc_name}}: I'm {{Global.npc_name}}, the blacksmith.
+{{Global.npc_name}}: Here, I provide the finest materials and forge weapons to your specifications. Whether you need raw materials or a custom-made weapon, I'm here to help.
+{{Global.npc_name}}: How can I assist you today?
+- Buy some items
+	{{Global.npc_name}}: Sure thing, take a look at what we have available.
+	do SignalManager.set_shop.emit(Global.npc_name)
+- Sell some items
+	{{Global.npc_name}}: Okay, let see what you have for me.
+	do SignalManager.sell_item_opened.emit()
+- Upgrade an item
+	{{Global.npc_name}}: Ah, looking to enhance something? Let's see what we can do.
+	do SignalManager.upgrade_opened.emit()
+- No, thanks 
+	{{Global.npc_name}}: Ok bye.
+set Global.paused = false
+	
+=> END

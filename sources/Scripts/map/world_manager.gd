@@ -66,8 +66,10 @@ func generate_world(current_map: Map):
 					current_world.append(map_position)
 		if current_world.find(current_map_position + Vector2i(0, -1)) == -1:
 			var map_up : Dungeon
-			if current_map_position + Vector2i(0, -1) == Vector2i.ZERO:
+			if current_map_position + Vector2i(0, -1) == DungeonManager.special_map["dungeon_main"]:
 				map_up = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(0, -1) == DungeonManager.special_map["boss_gremlin"]:
+				map_up = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_up = ResourceManager.get_map("dungeon")
 			map_up.map_position = (current_map_position + Vector2i(0, -1)) * DUNGEON_SIZE
@@ -75,8 +77,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child", map_up)
 		if current_world.find(current_map_position + Vector2i(1, -1)) == -1:
 			var map_right_up : Dungeon
-			if current_map_position + Vector2i(1, -1) == Vector2i.ZERO:
+			if current_map_position + Vector2i(1, -1) == DungeonManager.special_map["dungeon_main"]:
 				map_right_up = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(1, -1) == DungeonManager.special_map["boss_gremlin"]:
+				map_right_up = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_right_up = ResourceManager.get_map("dungeon")
 			map_right_up.map_position = (current_map_position + Vector2i(1, -1)) * DUNGEON_SIZE
@@ -84,8 +88,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child", map_right_up)
 		if current_world.find(current_map_position + Vector2i(1, 0)) == -1:
 			var map_right : Dungeon
-			if current_map_position + Vector2i(1, 0) == Vector2i.ZERO:
+			if current_map_position + Vector2i(1, 0) == DungeonManager.special_map["dungeon_main"]:
 				map_right = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(1, 0) == DungeonManager.special_map["boss_gremlin"]:
+				map_right = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_right = ResourceManager.get_map("dungeon")
 			map_right.map_position = (current_map_position + Vector2i(1, 0)) * DUNGEON_SIZE
@@ -93,8 +99,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child",map_right)
 		if current_world.find(current_map_position + Vector2i(1, 1)) == -1:
 			var map_right_down : Dungeon
-			if current_map_position + Vector2i(1, 1) == Vector2i.ZERO:
+			if current_map_position + Vector2i(1, 1) == DungeonManager.special_map["dungeon_main"]:
 				map_right_down = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(1, 1) == DungeonManager.special_map["boss_gremlin"]:
+				map_right_down = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_right_down = ResourceManager.get_map("dungeon")
 			map_right_down.map_position = (current_map_position + Vector2i(1, 1)) * DUNGEON_SIZE
@@ -102,8 +110,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child", map_right_down)
 		if current_world.find(current_map_position + Vector2i(0, 1)) == -1:
 			var map_down : Dungeon
-			if current_map_position + Vector2i(0, 1) == Vector2i.ZERO:
+			if current_map_position + Vector2i(0, 1) == DungeonManager.special_map["dungeon_main"]:
 				map_down = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(0, 1) == DungeonManager.special_map["boss_gremlin"]:
+				map_down = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_down = ResourceManager.get_map("dungeon")
 			map_down.map_position = (current_map_position + Vector2i(0, 1)) * DUNGEON_SIZE
@@ -111,8 +121,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child", map_down)
 		if current_world.find(current_map_position + Vector2i(-1, 1)) == -1:
 			var map_left_down : Dungeon
-			if current_map_position + Vector2i(-1, 1) == Vector2i.ZERO:
+			if current_map_position + Vector2i(-1, 1) == DungeonManager.special_map["dungeon_main"]:
 				map_left_down = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(-1, 1) == DungeonManager.special_map["boss_gremlin"]:
+				map_left_down = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_left_down = ResourceManager.get_map("dungeon")
 			map_left_down.map_position = (current_map_position + Vector2i(-1, 1)) * DUNGEON_SIZE
@@ -120,8 +132,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child", map_left_down)
 		if current_world.find(current_map_position + Vector2i(-1, 0)) == -1:
 			var map_left : Dungeon
-			if current_map_position + Vector2i(-1, 0) == Vector2i.ZERO:
+			if current_map_position + Vector2i(-1, 0) == DungeonManager.special_map["dungeon_main"]:
 				map_left = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(-1, 0) == DungeonManager.special_map["boss_gremlin"]:
+				map_left = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_left = ResourceManager.get_map("dungeon")
 			map_left.map_position = (current_map_position + Vector2i(-1, 0)) * DUNGEON_SIZE
@@ -129,8 +143,10 @@ func generate_world(current_map: Map):
 			call_deferred("add_child", map_left)
 		if current_world.find(current_map_position + Vector2i(-1, -1)) == -1:
 			var map_left_up : Dungeon
-			if current_map_position + Vector2i(-1, -1) == Vector2i.ZERO:
+			if current_map_position + Vector2i(-1, -1) == DungeonManager.special_map["dungeon_main"]:
 				map_left_up = ResourceManager.get_map("dungeon_main")
+			elif current_map_position + Vector2i(-1, 0) == DungeonManager.special_map["boss_gremlin"]:
+				map_left_up = ResourceManager.get_map("boss_gremlin")
 			else:
 				map_left_up = ResourceManager.get_map("dungeon")
 			map_left_up.map_position = (current_map_position + Vector2i(-1, -1)) * DUNGEON_SIZE
@@ -181,9 +197,14 @@ func generate_world(current_map: Map):
 			call_deferred("add_child",map_left_up)
 
 func format_map_id_to_vector(map_id) -> Vector2i:
-	if map_id and map_id != "dungeon_main":
-		var values = map_id.replace("(", "").replace(")", "").split(",")
-		var vector = Vector2i(int(values[0]), int(values[1]))
-		return vector
-	else:
-		return Vector2i.ZERO
+	if map_id:
+		if map_id == "dungeon_main":
+			return DungeonManager.special_map["dungeon_main"]
+		elif map_id == "boss_gremlin_area":
+			return DungeonManager.special_map["boss_gremlin"]
+		else:
+			var values = map_id.replace("(", "").replace(")", "").split(",")
+			var vector = Vector2i(int(values[0]), int(values[1]))
+			return vector
+	return Vector2i.ZERO
+

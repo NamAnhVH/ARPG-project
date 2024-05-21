@@ -1,4 +1,5 @@
 extends NonePlayableCharacter
+class_name Merchant
 
 @export var product : Array[Dictionary] = [{"item_id": "", "price": 1, "quantity": 1}]
 

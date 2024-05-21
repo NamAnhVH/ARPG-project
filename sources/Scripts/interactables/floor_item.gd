@@ -14,7 +14,7 @@ func _ready():
 		item = ItemManager.get_item(item_id)
 	
 	object_name = item.item_name
-	sprite.texture = ResourceManager.sprites[item.id]
+	sprite.texture = ResourceManager.items[item.id]
 	InventoryManager.add_hidden_node(item)
 
 func interact():

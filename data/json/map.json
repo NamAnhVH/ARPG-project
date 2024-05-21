@@ -223,5 +223,26 @@
     },
     "dungeon": {
 
+    },
+    "sword_shield_shop":{
+
+    },
+    "spear_shop":{
+
+    },
+    "bow_shop":{
+
+    },
+    "armor_shop":{
+
+    },
+    "accessory_shop":{
+
+    },
+    "potion_shop":{
+
+    },
+    "smithing_upgrade":{
+        
     }
 }

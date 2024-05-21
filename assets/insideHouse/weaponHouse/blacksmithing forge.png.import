@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqjuukemsjvt0"
-path="res://.godot/imported/home interiors, timber roof.png-8a0c9f4f50a7c06b32fe4f08cc1dba37.ctex"
+uid="uid://d3k2xp2eex2rx"
+path="res://.godot/imported/blacksmithing forge.png-cb7c454b330fb2f77d0ae6f79b9e9c3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/inside_house/home interiors, timber roof.png"
-dest_files=["res://.godot/imported/home interiors, timber roof.png-8a0c9f4f50a7c06b32fe4f08cc1dba37.ctex"]
+source_file="res://assets/insideHouse/weaponHouse/blacksmithing forge.png"
+dest_files=["res://.godot/imported/blacksmithing forge.png-cb7c454b330fb2f77d0ae6f79b9e9c3f.ctex"]
 
 [params]
 

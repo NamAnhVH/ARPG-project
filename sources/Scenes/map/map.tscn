@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckb6kvjosdnlj"]
+[gd_scene load_steps=4 format=3 uid="uid://ckb6kvjosdnlj"]
 
 [ext_resource type="Script" path="res://sources/scripts/map/map.gd" id="1_rgvah"]
-[ext_resource type="PackedScene" uid="uid://dfl15570xkx7b" path="res://sources/scenes/core/camera.tscn" id="2_nisv8"]
 [ext_resource type="Script" path="res://sources/scripts/map/enemies.gd" id="4_eqgex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx28p"]
@@ -21,9 +20,6 @@ shape = SubResource("RectangleShape2D_hx28p")
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 format = 2
-
-[node name="Camera" parent="." instance=ExtResource("2_nisv8")]
-position = Vector2(0, -12)
 
 [node name="ChangeLayerArea" type="Node2D" parent="."]
 

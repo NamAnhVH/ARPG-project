@@ -7,7 +7,7 @@ extends Node2D
 var is_pause : bool = false
 
 func _process(delta):
-	for slime: SlimeCharacter in enemies.get_children():
+	for slime: Slime in enemies.get_children():
 		if is_instance_valid(slime) and slime.is_chasing:
 			slime.navigation_agent.target_position = playable_character.global_position
 

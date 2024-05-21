@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5p0qff55rxs6"
-path="res://.godot/imported/cozy furnishings 32x32.png-3fdee4d26b44e83df1cb728658d6d867.ctex"
+uid="uid://dyqwk44e48ess"
+path="res://.godot/imported/npc dancer B v00.png-2112dcc3bcb9e527309c4d7d00cce8dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/inside_house/cozy furnishings 32x32.png"
-dest_files=["res://.godot/imported/cozy furnishings 32x32.png-3fdee4d26b44e83df1cb728658d6d867.ctex"]
+source_file="res://assets/npcs/npc dancer B v00.png"
+dest_files=["res://.godot/imported/npc dancer B v00.png-2112dcc3bcb9e527309c4d7d00cce8dd.ctex"]
 
 [params]
 

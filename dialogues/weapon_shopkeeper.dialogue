@@ -1,0 +1,35 @@
+~ start
+if Global.npc_name == "Aric" or Global.npc_name == "Thorin" or Global.npc_name == "Aiden":
+	{{Global.npc_name}}: [[Hi|Hello|Greetings]], welcome to my weapon shop!
+	{{Global.npc_name}}: I'm {{Global.npc_name}}, the owner of this fine establishment.
+	if Global.npc_name == "Aric":
+		{{Global.npc_name}}: We specialize in high-quality weapons, including swords, axes, maces, and shields. You'll find everything you need here to gear up for your next adventure.
+	elif Global.npc_name == "Thorin":
+		{{Global.npc_name}}: We specialize in high-quality spears. You'll find everything you need here to gear up for your next adventure.
+	elif Global.npc_name == "Aiden":
+		{{Global.npc_name}}: We specialize in high-quality bows. You'll find everything you need here to gear up for your next adventure.
+elif Global.npc_name == "Elara":
+	{{Global.npc_name}}: [[Hi|Hello|Welcome]], welcome to my jewelry shop!
+	{{Global.npc_name}}: I'm {{Global.npc_name}}, the owner of this exquisite boutique.
+	{{Global.npc_name}}: We offer a stunning selection of high-quality jewelry, from elegant necklaces and bracelets to dazzling rings and earrings. Whether you're looking for something timeless or a modern masterpiece, you'll find it here.
+elif Global.npc_name == "Garrick":
+	{{Global.npc_name}}: [[Hi|Hello|Greetings]], welcome to my armor shop!
+	{{Global.npc_name}}: I'm {{Global.npc_name}}, the owner of this fine establishment.
+	{{Global.npc_name}}: We pride ourselves on providing top-tier armor, from sturdy helmets and breastplates to durable gauntlets and greaves.
+	{{Global.npc_name}}: Whether you're preparing for battle or seeking protection on your travels, we've got you covered.
+elif Global.npc_name == "Aishia":
+	{{Global.npc_name}}: [[Hi|Hello|Greetings]], welcome to my potion shop!
+	{{Global.npc_name}}: I'm {{Global.npc_name}}, the owner and master alchemist.
+	{{Global.npc_name}}: We offer a wide variety of potions, from healing elixirs to powerful enhancers. Whatever your needs, you'll find the perfect potion to aid you on your journey here.
+{{Global.npc_name}}: Is there anything I can assist you with today?
+- Buy some items
+	{{Global.npc_name}}: Sure thing, take a look at what we have available.
+	do SignalManager.set_shop.emit(Global.npc_name)
+- Sell some items
+	{{Global.npc_name}}: Okay, let see what you have for me.
+	do SignalManager.sell_item_opened.emit()
+- No, thanks 
+	{{Global.npc_name}}: Ok bye.
+set Global.paused = false
+	
+=> END

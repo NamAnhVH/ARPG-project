@@ -1,22 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfq1tjn3b14n5"]
 
-[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_ohiu0"]
-[ext_resource type="Script" path="res://sources/scripts/characters/enemy_character.gd" id="2_vofjr"]
-[ext_resource type="PackedScene" uid="uid://b6hrbjx21cb25" path="res://sources/scenes/ui/health_bar.tscn" id="3_kebyl"]
-[ext_resource type="PackedScene" uid="uid://bxdman2p7uqju" path="res://sources/scenes/core/attack_area.tscn" id="5_ksshh"]
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_k1l2v"]
+[ext_resource type="Script" path="res://sources/scripts/characters/enemies/enemy.gd" id="2_ml5vh"]
+[ext_resource type="PackedScene" uid="uid://bxdman2p7uqju" path="res://sources/scenes/core/attack_area.tscn" id="3_6svna"]
+[ext_resource type="PackedScene" uid="uid://b6hrbjx21cb25" path="res://sources/scenes/ui/health_bar.tscn" id="4_3gpgh"]
 
-[node name="EnemyCharacter" instance=ExtResource("1_ohiu0")]
-script = ExtResource("2_vofjr")
-min_level = 1
-max_level = 10
-max_active_area = 50
+[node name="Enemy" instance=ExtResource("1_k1l2v")]
+script = ExtResource("2_ml5vh")
 
 [node name="Hitbox" parent="." index="0"]
 immunity_duration = 0.2
 
 [node name="DetectArea" type="Area2D" parent="." index="2"]
 
-[node name="AttackArea" parent="." index="3" instance=ExtResource("5_ksshh")]
+[node name="AttackArea" parent="." index="3" instance=ExtResource("3_6svna")]
 collision_layer = 0
 
 [node name="Timers" type="Node" parent="." index="6"]
@@ -39,7 +36,7 @@ avoidance_enabled = true
 [node name="HealthBar" type="Node2D" parent="." index="8"]
 z_index = 1
 
-[node name="HealthBar" parent="HealthBar" index="0" instance=ExtResource("3_kebyl")]
+[node name="HealthBar" parent="HealthBar" index="0" instance=ExtResource("4_3gpgh")]
 
 [connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
 [connection signal="is_dead" from="." to="." method="_on_is_dead"]

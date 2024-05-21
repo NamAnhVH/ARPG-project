@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://b0upfsff385pf"
+path="res://.godot/imported/weapon_shopkeeper.dialogue-a452359601369474a8e3da8544d6bae7.tres"
+
+[deps]
+
+source_file="res://dialogues/weapon_shopkeeper.dialogue"
+dest_files=["res://.godot/imported/weapon_shopkeeper.dialogue-a452359601369474a8e3da8544d6bae7.tres"]
+
+[params]
+
+defaults=true

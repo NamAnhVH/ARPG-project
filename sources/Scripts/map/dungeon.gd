@@ -7,44 +7,24 @@ class_name Dungeon
 @onready var gremlins = $Enemies/Gremlins
 @onready var mushrooms = $Enemies/Mushrooms
 @onready var navigation_region = $NavigationRegion2D
- 
-var border_up
-var border_right
-var border_down
-var border_left
 
 var tile_map : TileMap
 
 var map_position : Vector2i = Vector2i.ZERO
-var source_id = 0
-
-var path_atlas = [Vector2i(4,1), Vector2i(4,2), Vector2i(4,3), Vector2i(4,4)]
 
 var path_tiles = []
-
 var broken_path_tiles = []
-var broken_path_terrain = 0
-var spawn_enemies = []
-
 var wall_tiles = []
-var wall_ground_terrain = 0
-
 var roof_tiles = []
-var roof_terrain = 0
-
-var ground_layer = 0
-var floor_layer = 1
-var roof_layer = 2
+var spawn_enemies = []
 
 var thread : Thread
 
-
 func _ready():
 	if map_id == "dungeon_main":
-		border_up = 15
-		border_left = 15
-		border_right = 15
-		border_down = 15
+		pass
+	elif map_id == "boss_gremlin_area":
+		pass
 	else:
 		tile_map = ResourceManager.get_instance("dungeon_map")
 		generate_tiles()
@@ -68,22 +48,22 @@ func generate_tiles():
 func generate_map():
 	for path in path_tiles:
 		if !is_beside_wall(path):
-			tile_map.set_cell(ground_layer, path, 0, path_atlas.pick_random())
+			tile_map.set_cell(DungeonManager.ground_layer, path, 0, DungeonManager.path_atlas.pick_random())
 		else:
-			tile_map.set_cell(ground_layer, path, 0, Vector2i(4,0))
-	tile_map.set_cells_terrain_connect(ground_layer, broken_path_tiles, 0, broken_path_terrain)
-	tile_map.set_cells_terrain_connect(ground_layer, wall_tiles, 2, wall_ground_terrain)
-	tile_map.set_cells_terrain_connect(roof_layer, roof_tiles, 1, roof_terrain)
+			tile_map.set_cell(DungeonManager.ground_layer, path, 0, Vector2i(4,0))
+	tile_map.set_cells_terrain_connect(DungeonManager.ground_layer, broken_path_tiles, 0, DungeonManager.broken_path_terrain)
+	tile_map.set_cells_terrain_connect(DungeonManager.ground_layer, wall_tiles, 2, DungeonManager.wall_ground_terrain)
+	tile_map.set_cells_terrain_connect(DungeonManager.roof_layer, roof_tiles, 1, DungeonManager.roof_terrain)
 	for x in range(-1, 30):
 		if tile_map:
-			tile_map.erase_cell(ground_layer, Vector2i(x, -3))
-			tile_map.erase_cell(ground_layer, Vector2i(x, 30))
-			tile_map.erase_cell(roof_layer, Vector2i(x, -1 - 3))
-			tile_map.erase_cell(roof_layer, Vector2i(x, 30 - 3))
-			tile_map.erase_cell(ground_layer, Vector2i(-1, x))
-			tile_map.erase_cell(ground_layer, Vector2i(30, x))
-			tile_map.erase_cell(roof_layer, Vector2i(-1, x - 3))
-			tile_map.erase_cell(roof_layer, Vector2i(30, x - 3))
+			tile_map.erase_cell(DungeonManager.ground_layer, Vector2i(x, -3))
+			tile_map.erase_cell(DungeonManager.ground_layer, Vector2i(x, 30))
+			tile_map.erase_cell(DungeonManager.roof_layer, Vector2i(x, -1 - 3))
+			tile_map.erase_cell(DungeonManager.roof_layer, Vector2i(x, 30 - 3))
+			tile_map.erase_cell(DungeonManager.ground_layer, Vector2i(-1, x))
+			tile_map.erase_cell(DungeonManager.ground_layer, Vector2i(30, x))
+			tile_map.erase_cell(DungeonManager.roof_layer, Vector2i(-1, x - 3))
+			tile_map.erase_cell(DungeonManager.roof_layer, Vector2i(30, x - 3))
 		
 	call_deferred("generate_finish")
 
@@ -134,12 +114,12 @@ func is_beside_wall(tile):
 
 func remove_enemy():
 	for enemy_type in enemies.get_children():
-		if enemy_type:
+		if enemy_type is Node2D:
 			for enemy in enemy_type.get_children():
 				enemy_type.remove_child(enemy)
-				if enemy is SlimeCharacter:
+				if enemy is Slime:
 					DungeonManager.slimes.append(enemy)
-				elif enemy is GremlinCharacter:
+				elif enemy is Gremlin:
 					DungeonManager.gremlins.append(enemy)
-				elif enemy is MushroomCharacter:
+				elif enemy is Mushroom:
 					DungeonManager.mushrooms.append(enemy)

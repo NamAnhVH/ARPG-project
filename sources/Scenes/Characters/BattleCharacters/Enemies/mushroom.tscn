@@ -1,7 +1,7 @@
 [gd_scene load_steps=72 format=3 uid="uid://dpvlhydyd0o7b"]
 
-[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy_character.tscn" id="1_p06r0"]
-[ext_resource type="Script" path="res://sources/scripts/characters/mushroom.gd" id="2_phm2v"]
+[ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy.tscn" id="1_p06r0"]
+[ext_resource type="Script" path="res://sources/scripts/characters/enemies/minions/mushroom.gd" id="2_phm2v"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="3_urahx"]
 [ext_resource type="Texture2D" uid="uid://dpg5wyhad813p" path="res://assets/monsters/mushrooms/mushroom_v01.png" id="4_qnk0y"]
 

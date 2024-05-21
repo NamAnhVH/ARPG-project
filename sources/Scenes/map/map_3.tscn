@@ -58,7 +58,7 @@ y_sort_enabled = true
 
 [node name="Slime" parent="Enemies/Slimes" index="0" instance=ExtResource("3_63m6b")]
 position = Vector2(684, 583)
-max_level = 3
+max_level = 2
 
 [node name="Slime2" parent="Enemies/Slimes" index="1" instance=ExtResource("3_63m6b")]
 position = Vector2(773, 669)

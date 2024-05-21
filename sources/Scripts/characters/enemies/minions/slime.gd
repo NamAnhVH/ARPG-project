@@ -1,9 +1,11 @@
-extends EnemyCharacter
-class_name SlimeCharacter
+extends Minion
+class_name Slime
 
 @onready var clockwise_change_time : Timer = $Timers/ClockwiseChangeTime
 @onready var base : Sprite2D = $Body/Base
 @onready var attack_effect : Sprite2D = $Body/AttackEffect
+
+var is_clockwise : bool = false
 
 func move_state():
 	var move_direction : Vector2
@@ -43,7 +45,7 @@ func _on_clockwise_change_time_timeout():
 	clockwise_change_time.start()
 
 func _die_finished():
-	var new_slime : SlimeCharacter = ResourceManager.get_character("slime")
+	var new_slime : Slime = ResourceManager.get_character("slime")
 	get_enemy_data(new_slime)
 	get_parent().get_parent().enemies_respawn.append(new_slime)
 	super._die_finished()

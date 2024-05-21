@@ -17,10 +17,6 @@ var health : int
 var max_health : int : set = set_max_health
 var is_alive : bool = true
 
-##Build
-func _ready():
-	super._ready()
-
 ##Function
 func knockback(knockback_strength, damage_source_position: Vector2):
 	var normal = (global_position - damage_source_position).normalized()

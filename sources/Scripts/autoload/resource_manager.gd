@@ -7,7 +7,7 @@ const MAP_PATH = "res://data/json/map.json"
 const QUEST_PATH = "res://data/json/quest.json"
 const STORY_PATH = "res://data/json/story.json"
 
-var sprites = {
+var items = {
 	"sword_v00": preload("res://assets/items/sword_v00.png"),
 	"sword_v01": preload("res://assets/items/sword_v01.png"),
 	"sword_v02": preload("res://assets/items/sword_v02.png"),
@@ -239,8 +239,16 @@ var world = {
 	"map_24": preload("res://sources/scenes/map/map_24.tscn"),
 	"map_25": preload("res://sources/scenes/map/map_25.tscn"),
 	"luna_house": preload("res://sources/scenes/map/luna_house.tscn"),
+	"sword_shield_shop": preload("res://sources/scenes/map/shops/sword_shield_shop.tscn"),
+	"spear_shop": preload("res://sources/scenes/map/shops/spear_shop.tscn"),
+	"bow_shop": preload("res://sources/scenes/map/shops/bow_shop.tscn"),
+	"accessory_shop": preload("res://sources/scenes/map/shops/accessory_shop.tscn"),
+	"armor_shop": preload("res://sources/scenes/map/shops/armor_shop.tscn"),
+	"potion_shop": preload("res://sources/scenes/map/shops/potion_shop.tscn"),
+	"smithing_upgrade": preload("res://sources/scenes/map/shops/smithing_upgrade.tscn"),
 	"dungeon": preload("res://sources/scenes/map/dungeon.tscn"),
-	"dungeon_main": preload("res://sources/scenes/map/dungeon_main.tscn")
+	"dungeon_main": preload("res://sources/scenes/map/dungeon_main.tscn"),
+	"boss_gremlin": preload("res://sources/scenes/map/dungeons/boss_gremlin_area.tscn"),
 }
 
 var resources = {
@@ -640,6 +648,8 @@ var arrow_texture = {
 
 var dialogue = {
 	"merchant": preload("res://dialogues/merchant.dialogue"),
+	"weapon_shopkeeper": preload("res://dialogues/weapon_shopkeeper.dialogue"),
+	"blacksmith": preload("res://dialogues/blacksmith.dialogue"),
 	"start_game": preload("res://dialogues/start_game.dialogue"),
 	"default": preload("res://dialogues/default.dialogue"),
 	"main_quest_1": preload("res://dialogues/main_quest_1.dialogue"),
@@ -677,8 +687,11 @@ var mushrooms_texture = {
 	1: preload("res://assets/monsters/mushrooms/mushroom_v01.png"),
 	2: preload("res://assets/monsters/mushrooms/mushroom_v02.png"),
 	3: preload("res://assets/monsters/mushrooms/mushroom_v03.png"),
+	4: preload("res://assets/monsters/mushrooms/mushroom_v04.png"),
 	5: preload("res://assets/monsters/mushrooms/mushroom_v05.png"),
 	6: preload("res://assets/monsters/mushrooms/mushroom_v06.png"),
+	7: preload("res://assets/monsters/mushrooms/mushroom_v07.png"),
+	8: preload("res://assets/monsters/mushrooms/mushroom_v08.png"),
 }
 
 var musics = {
@@ -748,13 +761,13 @@ func get_character(id):
 	return character[id].instantiate()
 
 func get_slime_texture(level):
-	return slimes_texture[level / 5 + 1]
+	return slimes_texture[level / 7 + 1]
 
 func get_gremlin_texture(level):
-	return gremlins_texture[level / 6 + 1]
+	return gremlins_texture[level / 9 + 1]
 
 func get_mushroom_texture(level):
-	return mushrooms_texture[level / 5 + 1]
+	return mushrooms_texture[level / 8 + 1]
 
 func get_music(music):
 	return musics[music]

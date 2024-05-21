@@ -43,12 +43,13 @@ var current_interactable
 
 ##Build
 func _ready():
-	super._ready()
 	SignalManager.equip_item.connect(_on_equip_item)
 	SignalManager.unequip_item.connect(_on_unequip_item)
 	
 	##Xoá sau
 	SignalManager.set_player.connect(_on_data_changed)
+	
+	SignalManager.item_dropped.connect(_on_item_dropped)
 	
 	#SignalManager.gain_money.connect(_on_gain_money)
 	#SignalManager.gain_exp.connect(_on_gain_exp)
@@ -124,7 +125,8 @@ func _process(_delta):
 			set_player_data()
 		
 		parry()
-
+	else:
+		footstep.stop()
 
 ##State Function
 #Trạng thái di chuyển của nhân vật

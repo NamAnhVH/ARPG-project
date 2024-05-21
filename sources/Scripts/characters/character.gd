@@ -5,8 +5,6 @@ class_name Character
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var footstep : AudioStreamPlayer2D = $Audio/Footstep
 
-func _ready():
-	SignalManager.item_dropped.connect(_on_item_dropped)
 
 func set_move_speed_unit(value: float):
 	move_speed_unit = value

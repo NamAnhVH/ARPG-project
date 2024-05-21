@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=28 format=3 uid="uid://dh33ifmar3w5i"]
+[gd_resource type="TileSet" load_steps=30 format=3 uid="uid://dh33ifmar3w5i"]
 
 [ext_resource type="Texture2D" uid="uid://bi2u8sirs7gho" path="res://assets/tilesets/house/home exteriors, timber roof v2.png" id="1_0elly"]
 [ext_resource type="Texture2D" uid="uid://bphqf1voyeahc" path="res://assets/tilesets/summer forest.png" id="2_wcwak"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cuj7b4pkexm6j" path="res://assets/tilesets/village/village accessories 80x96.png" id="6_3ivtn"]
 [ext_resource type="Texture2D" uid="uid://c8p5mbqvmbk6j" path="res://assets/tilesets/village/bonus merchant goods.png" id="7_n73ur"]
 [ext_resource type="Texture2D" uid="uid://bx7qsapx37wck" path="res://assets/tilesets/wall/low stone wall 16x16.png" id="8_s5r3g"]
+[ext_resource type="Texture2D" uid="uid://ly500atgpvph" path="res://assets/tilesets/village/village accessories 16x16.png" id="9_ber2w"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ax2hm"]
 tile_data = PackedInt32Array(0, 2, 25, 65536, 2, 25, 131072, 2, 31, 1, 262146, 26, 65537, 262146, 27, 131073, 983042, 30, 2, 262146, 26, 65538, 262146, 27, 131074, 720898, 30, 3, 327682, 26, 65539, 327682, 27, 131075, 983042, 30, 65540, 2, 27, 131076, 2, 28, 196612, 2, 31, 65541, 65538, 27, 131077, 65538, 28, 196613, 983042, 30, 65542, 393218, 26, 131078, 393218, 27, 196614, 983042, 30, 65543, 1441794, 25, 131079, 1441794, 26, 196615, 1441794, 30, 262151, 1441794, 31, 65544, 1507330, 25, 131080, 1507330, 26, 196616, 1507330, 30, 262152, 1507330, 31, 65545, 1572866, 25, 131081, 1572866, 26, 196617, 1572866, 30, 262153, 1572866, 31, 65546, 1638402, 25, 131082, 1638402, 26, 196618, 1638402, 30, 262154, 1638402, 31, 65547, 327682, 26, 131083, 327682, 27, 196619, 851970, 30, 65548, 1245186, 27, 131084, 1245186, 28, 196620, 1245186, 30, 65549, 1310722, 27, 131085, 1310722, 28, 196621, 1310722, 30)
@@ -2274,6 +2275,53 @@ texture = ExtResource("8_s5r3g")
 5:3/0 = 0
 6:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sc0ll"]
+texture = ExtResource("9_ber2w")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+
 [resource]
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "stone_path"
@@ -2294,6 +2342,7 @@ sources/4 = SubResource("TileSetAtlasSource_48s5v")
 sources/5 = SubResource("TileSetAtlasSource_t2amc")
 sources/6 = SubResource("TileSetAtlasSource_mhhhc")
 sources/7 = SubResource("TileSetAtlasSource_1h4as")
+sources/8 = SubResource("TileSetAtlasSource_sc0ll")
 pattern_0 = SubResource("TileMapPattern_ax2hm")
 pattern_1 = SubResource("TileMapPattern_wbjy5")
 pattern_2 = SubResource("TileMapPattern_5r6sb")

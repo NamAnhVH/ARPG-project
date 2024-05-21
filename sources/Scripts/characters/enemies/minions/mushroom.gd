@@ -1,5 +1,5 @@
-extends EnemyCharacter
-class_name MushroomCharacter
+extends Minion
+class_name Mushroom
 
 @onready var body : Sprite2D = $Body
 @onready var running_timer : Timer = $Timers/RunningTimer
@@ -54,7 +54,7 @@ func set_base_texture():
 	drop_mushroom_id = body.texture.resource_path.split("/")[-1].replace(".png", "")
 
 func _die_finished():
-	var new_mushroom : MushroomCharacter = ResourceManager.get_character("mushroom")
+	var new_mushroom : Mushroom = ResourceManager.get_character("mushroom")
 	get_enemy_data(new_mushroom)
 	get_parent().get_parent().enemies_respawn.append(new_mushroom)
 	super._die_finished()

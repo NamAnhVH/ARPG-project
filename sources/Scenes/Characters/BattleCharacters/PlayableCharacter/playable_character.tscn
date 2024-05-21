@@ -9842,7 +9842,9 @@ script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
 
-[node name="Body" type="Node2D" parent="." index="0"]
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+[node name="Body" type="Node2D" parent="." index="1"]
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_qv6ah")
@@ -9871,7 +9873,7 @@ vframes = 8
 hframes = 8
 vframes = 8
 
-[node name="Hitbox" parent="." index="1"]
+[node name="Hitbox" parent="." index="2"]
 visible = false
 collision_layer = 0
 collision_mask = 0
@@ -9879,7 +9881,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="1"]
 shape = SubResource("CapsuleShape2D_enwvx")
 
-[node name="DamageArea" parent="." index="2"]
+[node name="DamageArea" parent="." index="3"]
 collision_layer = 1048576
 collision_mask = 0
 
@@ -9887,7 +9889,7 @@ collision_mask = 0
 polygon = PackedVector2Array(-14, 13, -13, 22, -3, 30, 12, 30, 21, 22, 22, 13)
 disabled = true
 
-[node name="DetectLayerArea" parent="." index="3" instance=ExtResource("3_2bnah")]
+[node name="DetectLayerArea" parent="." index="4" instance=ExtResource("3_2bnah")]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectLayerArea" index="0"]
@@ -9895,7 +9897,7 @@ visible = false
 position = Vector2(0, 6.625)
 shape = SubResource("RectangleShape2D_3hd0t")
 
-[node name="InteractableArea" type="Area2D" parent="." index="4"]
+[node name="InteractableArea" type="Area2D" parent="." index="5"]
 visible = false
 collision_layer = 0
 collision_mask = 256
@@ -9904,17 +9906,17 @@ collision_mask = 256
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_t6cac")
 
-[node name="CollisionShape2D" parent="." index="5"]
+[node name="CollisionShape2D" parent="." index="6"]
 position = Vector2(0, 7)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_gxcbr")
 
-[node name="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" parent="." index="7"]
 libraries = {
 "": SubResource("AnimationLibrary_x6i1r")
 }
 
-[node name="AnimationTree" parent="." index="7"]
+[node name="AnimationTree" parent="." index="8"]
 tree_root = SubResource("AnimationNodeStateMachine_jywqs")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_attack_state_and_alive = false
@@ -9959,7 +9961,7 @@ parameters/Base/Stand/blend_position = Vector2(0, 1.09394)
 parameters/Die/blend_position = Vector2(-0.377578, -0.024229)
 parameters/Hurt/blend_position = Vector2(-0.341051, 0.111111)
 
-[node name="Interactable" type="Node2D" parent="." index="8"]
+[node name="Interactable" type="Node2D" parent="." index="9"]
 z_index = 10
 
 [node name="InteractableLabels" type="VBoxContainer" parent="Interactable" index="0"]
@@ -9989,7 +9991,7 @@ text = "object name"
 label_settings = SubResource("LabelSettings_o6v7j")
 horizontal_alignment = 1
 
-[node name="Timer" type="Node" parent="." index="9"]
+[node name="Timer" type="Node" parent="." index="10"]
 
 [node name="AttackTimer" type="Timer" parent="Timer" index="0"]
 one_shot = true

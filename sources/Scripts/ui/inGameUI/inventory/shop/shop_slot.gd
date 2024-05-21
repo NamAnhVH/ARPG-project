@@ -9,4 +9,4 @@ var quantity
 
 func _ready():
 	lbl_quantity.text = str(quantity) if quantity > 1 else ""
-	item.texture = ResourceManager.sprites[item_id]
+	item.texture = ResourceManager.items[item_id]

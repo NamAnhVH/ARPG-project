@@ -15,7 +15,6 @@ product = Array[Dictionary]([{
 "quantity": 1
 }])
 object_name = "Nam Anh"
-texture = ExtResource("2_5x7vi")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_5x7vi")

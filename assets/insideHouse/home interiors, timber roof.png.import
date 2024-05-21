@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfk8xggtsm0ed"
-path="res://.godot/imported/cozy furnishings 16x32.png-38439cb970b922919f59856785123eff.ctex"
+uid="uid://bqjuukemsjvt0"
+path="res://.godot/imported/home interiors, timber roof.png-3544b08f59aac6cf96425c733ef76953.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/inside_house/cozy furnishings 16x32.png"
-dest_files=["res://.godot/imported/cozy furnishings 16x32.png-38439cb970b922919f59856785123eff.ctex"]
+source_file="res://assets/insideHouse/home interiors, timber roof.png"
+dest_files=["res://.godot/imported/home interiors, timber roof.png-3544b08f59aac6cf96425c733ef76953.ctex"]
 
 [params]
 

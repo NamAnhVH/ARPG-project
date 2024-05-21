@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b38v88sd4p5yy"]
 
-[ext_resource type="Texture2D" uid="uid://bqjuukemsjvt0" path="res://assets/inside_house/home interiors, timber roof.png" id="1_a0651"]
-[ext_resource type="Texture2D" uid="uid://dfk8xggtsm0ed" path="res://assets/inside_house/cozy furnishings 16x32.png" id="2_6dewm"]
-[ext_resource type="Texture2D" uid="uid://5p0qff55rxs6" path="res://assets/inside_house/cozy furnishings 32x32.png" id="3_3jko8"]
+[ext_resource type="Texture2D" uid="uid://bqjuukemsjvt0" path="res://assets/insideHouse/home interiors, timber roof.png" id="1_a0651"]
+[ext_resource type="Texture2D" uid="uid://dfk8xggtsm0ed" path="res://assets/insideHouse/cozy furnishings 16x32.png" id="2_6dewm"]
+[ext_resource type="Texture2D" uid="uid://5p0qff55rxs6" path="res://assets/insideHouse/cozy furnishings 32x32.png" id="3_3jko8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03gdv"]
 texture = ExtResource("1_a0651")

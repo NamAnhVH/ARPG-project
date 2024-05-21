@@ -1,5 +1,5 @@
-extends EnemyCharacter
-class_name GremlinCharacter
+extends Minion
+class_name Gremlin
 
 @onready var body : Sprite2D = $Body
 
@@ -42,7 +42,7 @@ func _attack_finished():
 	animation_tree.set("parameters/Attack/conditions/is_clawing", false)
 
 func _die_finished():
-	var new_gremlin : GremlinCharacter = ResourceManager.get_character("gremlin")
+	var new_gremlin : Gremlin = ResourceManager.get_character("gremlin")
 	get_enemy_data(new_gremlin)
 	get_parent().get_parent().enemies_respawn.append(new_gremlin)
 	super._die_finished()
