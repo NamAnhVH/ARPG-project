@@ -45,6 +45,7 @@ signal gain_exp(value: int)
 signal level_up
 signal choose_player_name
 signal player_name(player_name: String)
+signal player_dead
 
 #Item usage
 signal heal_player(amount)
@@ -104,3 +105,6 @@ signal update_side_quest(quest: String)
 signal main_quest_finished(quest: String)
 signal main_quest_1_talk_to_echo_1
 
+#Boss
+signal set_boss(boss: Boss)
+signal new_boss_health(health)

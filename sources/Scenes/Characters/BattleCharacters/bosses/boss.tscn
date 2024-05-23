@@ -7,6 +7,8 @@
 
 [node name="Boss" instance=ExtResource("1_eeah3")]
 script = ExtResource("2_613pe")
+damage_amount = 10
+max_health = 0
 
 [node name="HurtAnimation" type="AnimationPlayer" parent="." index="4"]
 libraries = {
@@ -21,3 +23,6 @@ one_shot = true
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="7"]
+
+[connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
+[connection signal="is_dead" from="." to="." method="_on_is_dead"]

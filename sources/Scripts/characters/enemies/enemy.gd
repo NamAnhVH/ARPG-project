@@ -17,6 +17,7 @@ var is_attacking : bool = false
 func _ready():
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.active = true
+	set_stat()
 
 func _physics_process(delta):
 	if !Global.paused:
@@ -39,6 +40,9 @@ func attack_state():
 
 func drop_item():
 	pass
+
+func set_stat():
+	health = max_health
 
 func _on_detect_area_body_entered(body):
 	if body is PlayableCharacter:

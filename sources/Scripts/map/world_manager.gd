@@ -6,8 +6,6 @@ const DUNGEON_SIZE : int = 30
 @export var player_data : PlayerData
 @export var world_data : WorldData
 
-
-
 func _ready():
 	SignalManager.change_world.connect(_on_change_world)
 	SignalManager.change_map.connect(_on_change_map)

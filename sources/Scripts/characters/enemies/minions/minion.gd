@@ -46,9 +46,6 @@ func get_enemy_data(new_enemy):
 func set_base_texture():
 	pass
 
-func set_stat():
-	health = max_health
-
 func set_health(value, _is_hitted: bool = false):
 	super.set_health(value)
 	if health_bar:

@@ -14,6 +14,7 @@ script = ExtResource("1_18d2v")
 
 [node name="PlayableCharacter" parent="." instance=ExtResource("2_u0g7d")]
 position = Vector2(405, 225)
+max_health = 0
 
 [node name="WorldManager" type="Node2D" parent="."]
 y_sort_enabled = true

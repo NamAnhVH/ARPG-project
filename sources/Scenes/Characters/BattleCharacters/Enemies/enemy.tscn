@@ -7,6 +7,7 @@
 
 [node name="Enemy" instance=ExtResource("1_k1l2v")]
 script = ExtResource("2_ml5vh")
+max_health = 0
 
 [node name="Hitbox" parent="." index="0"]
 immunity_duration = 0.2

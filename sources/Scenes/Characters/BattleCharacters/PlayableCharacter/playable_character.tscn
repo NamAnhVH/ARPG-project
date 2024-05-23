@@ -285,6 +285,20 @@ tracks/7/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_die_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_jnu5k"]
 resource_name = "die_left"
@@ -390,6 +404,20 @@ tracks/7/keys = {
 "method": &"set_player_asset"
 }]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_die_finished"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7p66e"]
 resource_name = "die_right"
@@ -493,6 +521,20 @@ tracks/7/keys = {
 "values": [{
 "args": ["change_state"],
 "method": &"set_player_asset"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_die_finished"
 }]
 }
 
@@ -601,6 +643,20 @@ tracks/7/keys = {
 "values": [{
 "args": ["change_state"],
 "method": &"set_player_asset"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_die_finished"
 }]
 }
 
@@ -9841,8 +9897,12 @@ motion_mode = 1
 script = ExtResource("2_muque")
 player_data = ExtResource("3_b1dd0")
 player_base_id = "humn_v00"
+max_health = 0
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D" index="0"]
+current = true
 
 [node name="Body" type="Node2D" parent="." index="1"]
 

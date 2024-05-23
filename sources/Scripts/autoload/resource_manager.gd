@@ -200,7 +200,8 @@ var tscn = {
 	"buff_slot": preload("res://sources/scenes/usable/buff_slot.tscn"),
 	"dungeon_map": preload("res://sources/scenes/tileMap/dungeon_map.tscn"),
 	"health_bar": preload("res://sources/scenes/ui/health_bar.tscn"),
-	"input_button": preload("res://sources/scenes/ui/input_button.tscn")
+	"input_button": preload("res://sources/scenes/ui/input_button.tscn"),
+	"stone_drop": preload("res://sources/scenes/core/stone_drop.tscn")
 }
 
 var character = {
@@ -646,6 +647,15 @@ var arrow_texture = {
 	"quiver_v07": preload("res://assets/weapons/bow/attack/arrow/quiver_v07.png")
 }
 
+var stone_drop_texture = [
+	preload("res://assets/ui/stone_drop_v00.png"),
+	preload("res://assets/ui/stone_drop_v01.png"),
+	preload("res://assets/ui/stone_drop_v02.png"),
+	preload("res://assets/ui/stone_drop_v03.png"),
+	preload("res://assets/ui/stone_drop_v04.png"),
+	preload("res://assets/ui/stone_drop_v05.png"),
+]
+
 var dialogue = {
 	"merchant": preload("res://dialogues/merchant.dialogue"),
 	"weapon_shopkeeper": preload("res://dialogues/weapon_shopkeeper.dialogue"),
@@ -768,6 +778,9 @@ func get_gremlin_texture(level):
 
 func get_mushroom_texture(level):
 	return mushrooms_texture[level / 8 + 1]
+
+func get_stone_drop(index):
+	return stone_drop_texture[index]
 
 func get_music(music):
 	return musics[music]

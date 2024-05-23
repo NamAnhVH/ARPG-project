@@ -6,10 +6,17 @@
 [ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="3_gv3if"]
 
 [node name="FileSavingContainer" type="NinePatchRect"]
-offset_left = 78.0
-offset_top = 39.0
-offset_right = 655.0
-offset_bottom = 384.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.5
+offset_top = -172.5
+offset_right = 288.5
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_ct5da")
 region_rect = Rect2(64, 0, 24, 23)
 patch_margin_left = 8

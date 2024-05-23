@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ded1w1y1piutp"]
+[gd_scene load_steps=16 format=3 uid="uid://ded1w1y1piutp"]
 
 [ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/in_game_ui.gd" id="1_wya8l"]
 [ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/ui/inGameUI/inventory/inventory_container.tscn" id="2_tcsoq"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dr51bs1uwwgk1" path="res://sources/scenes/ui/inGameUI/quest/quest_container.tscn" id="11_8try7"]
 [ext_resource type="PackedScene" uid="uid://dei5ho0n26akj" path="res://sources/scenes/ui/inGameUI/inventory/upgrade/upgrade_container.tscn" id="12_f1f3q"]
 [ext_resource type="PackedScene" uid="uid://bqg72tv4dae8x" path="res://sources/scenes/ui/inGameUI/inventory/shop/sell_item_container.tscn" id="13_o01l2"]
+[ext_resource type="PackedScene" uid="uid://dxqcbi6x6448" path="res://sources/scenes/ui/inGameUI/boss_health_bar.tscn" id="14_jx7sr"]
+[ext_resource type="PackedScene" uid="uid://dp8hdc1nu63a4" path="res://sources/scenes/ui/inGameUI/died_screen.tscn" id="15_yf2wq"]
 
 [node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_wya8l")
@@ -29,10 +31,10 @@ mouse_filter = 2
 [node name="InventoryContainer" parent="Window" instance=ExtResource("2_tcsoq")]
 visible = false
 layout_mode = 1
-offset_left = 247.0
-offset_top = 84.0
-offset_right = 537.0
-offset_bottom = 272.0
+offset_left = 260.0
+offset_top = 101.0
+offset_right = 550.0
+offset_bottom = 289.0
 
 [node name="PlayerEquipment" parent="Window" instance=ExtResource("3_dog6p")]
 visible = false
@@ -47,9 +49,9 @@ visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = 299.0
-offset_top = 291.0
+offset_top = 295.0
 offset_right = 506.0
-offset_bottom = 387.0
+offset_bottom = 391.0
 
 [node name="PlayerStatUI" parent="Window" instance=ExtResource("5_iukkp")]
 visible = false
@@ -114,5 +116,19 @@ visible = false
 layout_mode = 1
 offset_top = -126.0
 offset_bottom = 35.0
+
+[node name="BossHealthBar" parent="Window" instance=ExtResource("14_jx7sr")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172.5
+offset_top = 59.0
+offset_right = 172.5
+offset_bottom = 78.0
+grow_horizontal = 2
+
+[node name="DiedScreen" parent="Window" instance=ExtResource("15_yf2wq")]
+layout_mode = 1
 
 [connection signal="pressed" from="Window/Setting" to="." method="_on_setting_pressed"]

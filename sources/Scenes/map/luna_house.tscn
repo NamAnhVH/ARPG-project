@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://wtduyrkmu5np"]
+[gd_scene load_steps=9 format=3 uid="uid://wtduyrkmu5np"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_52otv"]
 [ext_resource type="TileSet" uid="uid://b38v88sd4p5yy" path="res://tileset/inside_house.tres" id="2_gcyjm"]
 [ext_resource type="Script" path="res://sources/scenes/map/luna_house.gd" id="2_yn1lj"]
 [ext_resource type="Resource" uid="uid://rm4mjcfxpq7f" path="res://data/resources/progress_data.tres" id="3_yymp5"]
 [ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="4_xmsgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3onls"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayepm"]
 size = Vector2(33, 20)
@@ -21,6 +25,7 @@ map_id = "luna_house"
 progress_data = ExtResource("3_yymp5")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_3onls")
 disabled = true
 
 [node name="TileMap" parent="." index="1"]
@@ -46,5 +51,5 @@ shape = SubResource("RectangleShape2D_ayepm")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="0"]
 polygon = PackedVector2Array(225, -8, 225, 111, 64, 111, 64, 99, 34, 99, 34, 81, 64, 81, 64, 70, 32, 70, 32, -8, 16, -33, 16, 127, 241, 127, 241, -33, 16, -33, 32, -8)
 
-[node name="NavigationRegion2D" parent="." index="12"]
+[node name="NavigationRegion2D" parent="." index="10"]
 navigation_polygon = SubResource("NavigationPolygon_384u8")

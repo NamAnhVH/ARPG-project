@@ -186,7 +186,6 @@ func move_state():
 #Tấn công
 func attack():
 	damage_area.damage_amount = get_player_damage() + attack_combo * 2
-	damage_area.damage_amount = 1000
 	damage_area.knockback_strength = player_data.get_stat(GameEnums.STAT.KNOCKBACK)
 	is_attacking = true
 	attack_timer.start()
@@ -538,4 +537,6 @@ func _hurt_finished():
 	is_hurting = false
 	animation_tree.set("parameters/conditions/is_attacked", false)
 
+func _die_finished():
+	SignalManager.player_dead.emit()
 
