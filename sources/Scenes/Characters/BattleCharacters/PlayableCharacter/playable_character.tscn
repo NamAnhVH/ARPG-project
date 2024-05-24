@@ -1,10 +1,11 @@
-[gd_scene load_steps=241 format=3 uid="uid://b33jnnf4nai64"]
+[gd_scene load_steps=250 format=3 uid="uid://b33jnnf4nai64"]
 
 [ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/scenes/characters/battleCharacters/battle_character.tscn" id="1_54hdu"]
 [ext_resource type="Script" path="res://sources/scripts/characters/playable_character.gd" id="2_muque"]
 [ext_resource type="PackedScene" uid="uid://ba00tp4ce2gpf" path="res://sources/scenes/core/detect_layer_area.tscn" id="3_2bnah"]
 [ext_resource type="Shader" uid="uid://ddda3xf5q8xct" path="res://sources/scripts/shaders/hurt_flash.tres" id="3_7x3km"]
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_b1dd0"]
+[ext_resource type="Texture2D" uid="uid://c6cfb6nhaiu8r" path="res://assets/characters/swordAndShieldBase/moveIdle/humn_v00.png" id="5_nq4pb"]
 [ext_resource type="AudioStream" uid="uid://bsir04u8ktc3b" path="res://sound/sword_slash_1.mp3" id="6_15hsr"]
 [ext_resource type="Script" path="res://sources/scripts/interactables/interactable_labels.gd" id="6_g3p5i"]
 [ext_resource type="AudioStream" uid="uid://dr8og415w1olr" path="res://sound/draw.mp3" id="6_sngyu"]
@@ -662,6 +663,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_ybev0"]
 resource_name = "dodge_down"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -669,10 +671,10 @@ tracks/0/path = NodePath("Body/Base:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [4]
+"values": [40, 41, 40]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -681,10 +683,10 @@ tracks/1/path = NodePath("Body/OneHandWeapon:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [4]
+"values": [40, 41, 40]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -693,319 +695,10 @@ tracks/2/path = NodePath("Body/Shield:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [4]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [1, 2, 3, 4, 5, 0],
-"method": &"_set_body_layer"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Spear:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Bow:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/Quiver:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["change_state"],
-"method": &"set_player_asset"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_upcmo"]
-resource_name = "dodge_left"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Base:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [28]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/OneHandWeapon:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [28]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Shield:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [28]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [1, 3, 2, 4, 5, 0],
-"method": &"_set_body_layer"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Spear:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [28]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Bow:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [28]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/Quiver:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [28]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["change_state"],
-"method": &"set_player_asset"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_ltfxk"]
-resource_name = "dodge_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Base:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/OneHandWeapon:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Shield:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [1, 3, 2, 4, 5, 0],
-"method": &"_set_body_layer"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Spear:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Bow:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body/Quiver:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["change_state"],
-"method": &"set_player_asset"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_4uw1k"]
-resource_name = "dodge_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Base:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/OneHandWeapon:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Shield:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
+"values": [40, 41, 40]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -1028,10 +721,10 @@ tracks/4/path = NodePath("Body/Spear:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [12]
+"values": [40, 41, 40]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1040,10 +733,10 @@ tracks/5/path = NodePath("Body/Bow:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [12]
+"values": [40, 41, 40]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1052,10 +745,10 @@ tracks/6/path = NodePath("Body/Quiver:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [12]
+"values": [40, 41, 40]
 }
 tracks/7/type = "method"
 tracks/7/imported = false
@@ -1067,8 +760,376 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["change_state"],
+"args": ["move_idle"],
 "method": &"set_player_asset"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_dodge_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_upcmo"]
+resource_name = "dodge_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [48, 49, 48]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/OneHandWeapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [48, 49, 48]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Shield:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [48, 49, 48]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1, 3, 2, 4, 5, 0],
+"method": &"_set_body_layer"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [48, 49, 48]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Bow:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [48, 49, 48]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/Quiver:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [48, 49, 48]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["move_idle"],
+"method": &"set_player_asset"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_dodge_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ltfxk"]
+resource_name = "dodge_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 57, 56]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/OneHandWeapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 57, 56]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Shield:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 57, 56]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1, 3, 2, 4, 5, 0],
+"method": &"_set_body_layer"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 57, 56]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Bow:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 57, 56]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/Quiver:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [56, 57, 56]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["move_idle"],
+"method": &"set_player_asset"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_dodge_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4uw1k"]
+resource_name = "dodge_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [32, 33, 32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/OneHandWeapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [32, 33, 32]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Shield:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [32, 33, 32]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1, 2, 3, 4, 5, 0],
+"method": &"_set_body_layer"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Spear:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [32, 33, 32]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Bow:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [32, 33, 32]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body/Quiver:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [32, 33, 32]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["move_idle"],
+"method": &"set_player_asset"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_dodge_finished"
 }]
 }
 
@@ -9506,6 +9567,31 @@ states/Sword_shield_attack/node = SubResource("AnimationNodeStateMachine_cl1rr")
 states/Sword_shield_attack/position = Vector2(479, 65)
 transitions = ["Start", "Sword_shield_attack", SubResource("AnimationNodeStateMachineTransition_b7mne"), "Sword_shield_attack", "End", SubResource("AnimationNodeStateMachineTransition_cemd5"), "Start", "Spear_attack", SubResource("AnimationNodeStateMachineTransition_ksknl"), "Spear_attack", "End", SubResource("AnimationNodeStateMachineTransition_lh7jm"), "Start", "Bow_attack", SubResource("AnimationNodeStateMachineTransition_cu160"), "Bow_attack", "End", SubResource("AnimationNodeStateMachineTransition_6x7hh")]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4atkh"]
+animation = &"dodge_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ilupy"]
+animation = &"dodge_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ymc3"]
+animation = &"dodge_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mexi3"]
+animation = &"dodge_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_g8ygy"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_4atkh")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ilupy")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_3ymc3")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_mexi3")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mdnv3"]
 animation = &"draw_down"
 
@@ -9693,9 +9779,23 @@ advance_condition = &"is_parrying"
 advance_mode = 2
 advance_condition = &"is_parrying"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e0ms3"]
+advance_mode = 2
+advance_condition = &"is_dodging"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vm5b4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_86sd8"]
+advance_mode = 2
+advance_condition = &"is_dodging"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g3rdt"]
 states/Attack/node = SubResource("AnimationNodeStateMachine_ojfrg")
 states/Attack/position = Vector2(645, 136)
+states/Dodge/node = SubResource("AnimationNodeBlendSpace2D_g8ygy")
+states/Dodge/position = Vector2(198, 334.571)
 states/Draw/node = SubResource("AnimationNodeBlendSpace2D_17tri")
 states/Draw/position = Vector2(161, 153)
 states/End/position = Vector2(719, 324)
@@ -9704,12 +9804,12 @@ states/Idle/position = Vector2(421, 160)
 states/Move/node = SubResource("AnimationNodeBlendSpace2D_mnvh6")
 states/Move/position = Vector2(421, 290)
 states/Parry/node = SubResource("AnimationNodeBlendSpace2D_authd")
-states/Parry/position = Vector2(151, 279)
+states/Parry/position = Vector2(140, 225)
 states/Sheath/node = SubResource("AnimationNodeBlendSpace2D_r3t6t")
 states/Sheath/position = Vector2(577, 324)
 states/Start/position = Vector2(161, 63)
-transitions = ["Idle", "Move", SubResource("AnimationNodeStateMachineTransition_87f3q"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_m1ybu"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_elbtb"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_q4h4o"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_ob3t3"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_wiffs"), "Sheath", "End", SubResource("AnimationNodeStateMachineTransition_ovwfx"), "Idle", "Sheath", SubResource("AnimationNodeStateMachineTransition_x174v"), "Move", "Sheath", SubResource("AnimationNodeStateMachineTransition_8yfhw"), "Start", "Draw", SubResource("AnimationNodeStateMachineTransition_545bl"), "Draw", "Idle", SubResource("AnimationNodeStateMachineTransition_tsojl"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kvvow"), "Parry", "Idle", SubResource("AnimationNodeStateMachineTransition_x2ipu"), "Move", "Parry", SubResource("AnimationNodeStateMachineTransition_7eqdb"), "Idle", "Parry", SubResource("AnimationNodeStateMachineTransition_glmvw")]
-graph_offset = Vector2(-129, 85.571)
+transitions = ["Idle", "Move", SubResource("AnimationNodeStateMachineTransition_87f3q"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_m1ybu"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_elbtb"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_q4h4o"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_ob3t3"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_wiffs"), "Sheath", "End", SubResource("AnimationNodeStateMachineTransition_ovwfx"), "Idle", "Sheath", SubResource("AnimationNodeStateMachineTransition_x174v"), "Move", "Sheath", SubResource("AnimationNodeStateMachineTransition_8yfhw"), "Start", "Draw", SubResource("AnimationNodeStateMachineTransition_545bl"), "Draw", "Idle", SubResource("AnimationNodeStateMachineTransition_tsojl"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kvvow"), "Parry", "Idle", SubResource("AnimationNodeStateMachineTransition_x2ipu"), "Move", "Parry", SubResource("AnimationNodeStateMachineTransition_7eqdb"), "Idle", "Parry", SubResource("AnimationNodeStateMachineTransition_glmvw"), "Idle", "Dodge", SubResource("AnimationNodeStateMachineTransition_e0ms3"), "Dodge", "Idle", SubResource("AnimationNodeStateMachineTransition_vm5b4"), "Move", "Dodge", SubResource("AnimationNodeStateMachineTransition_86sd8")]
+graph_offset = Vector2(-85, -27.429)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kwd51"]
 animation = &"run_down"
@@ -9908,6 +10008,7 @@ current = true
 
 [node name="Base" type="Sprite2D" parent="Body" index="0"]
 material = SubResource("ShaderMaterial_qv6ah")
+texture = ExtResource("5_nq4pb")
 hframes = 8
 vframes = 8
 
@@ -9984,6 +10085,7 @@ parameters/conditions/is_attacked = false
 parameters/conditions/is_dead = false
 parameters/conditions/is_not_attack_state_and_alive = false
 parameters/Attack_state/conditions/is_attacking = false
+parameters/Attack_state/conditions/is_dodging = false
 parameters/Attack_state/conditions/is_drawing = false
 parameters/Attack_state/conditions/is_idling = false
 parameters/Attack_state/conditions/is_moving = false
@@ -10009,6 +10111,7 @@ parameters/Attack_state/Attack/Sword_shield_attack/Shield_bash/blend_position = 
 parameters/Attack_state/Attack/Sword_shield_attack/Slash_1/blend_position = Vector2(0, 0)
 parameters/Attack_state/Attack/Sword_shield_attack/Slash_2/blend_position = Vector2(0, 0)
 parameters/Attack_state/Attack/Sword_shield_attack/Thrust/blend_position = Vector2(0, 0)
+parameters/Attack_state/Dodge/blend_position = Vector2(-0.00297326, 1.1)
 parameters/Attack_state/Draw/blend_position = Vector2(-0.127849, 0.0873015)
 parameters/Attack_state/Idle/blend_position = Vector2(-0.00939852, 1.1)
 parameters/Attack_state/Move/blend_position = Vector2(0, 0)
@@ -10062,6 +10165,9 @@ one_shot = true
 
 [node name="CounterAttackTimer" type="Timer" parent="Timer" index="2"]
 wait_time = 0.5
+one_shot = true
+
+[node name="DodgeTimer" type="Timer" parent="Timer" index="3"]
 one_shot = true
 
 [node name="SoundEffect" type="AudioStreamPlayer2D" parent="Audio" index="0"]

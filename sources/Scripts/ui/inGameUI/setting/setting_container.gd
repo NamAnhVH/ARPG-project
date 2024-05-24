@@ -19,6 +19,7 @@ var input_actions = {
 	"move_right": "Move right",
 	"interact": "Interact",
 	"attack": "Attack",
+	"dodge": "Dodge",
 	"parry": "Parry",
 	"inventory": "Inventory",
 	"draw_sheath": "Draw Sheath",

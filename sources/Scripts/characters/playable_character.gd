@@ -15,6 +15,7 @@ const BIAS = Vector2(0, 5)
 @onready var quiver : Sprite2D = $Body/Quiver
 @onready var attack_timer : Timer = $Timer/AttackTimer
 @onready var parry_timer : Timer = $Timer/ParryTimer
+@onready var dodge_timer : Timer = $Timer/DodgeTimer
 @onready var counter_attack_timer : Timer = $Timer/CounterAttackTimer
 @onready var interactable_area : Area2D = $InteractableArea
 @onready var interactable_labels : VBoxContainer = $Interactable/InteractableLabels
@@ -33,6 +34,7 @@ var is_drawing : bool = false
 var is_sheathing : bool = false
 var is_hurting : bool = false
 var is_parrying : bool = false
+var is_dodging : bool = false
 
 var is_in_stair_direction : GameEnums.STAIR_DIRECTION
 var attack_combo : int = 0
@@ -92,12 +94,17 @@ func _unhandled_input(event):
 					is_parrying = false
 					parry_timer.start()
 		
+		if is_attack_state and !is_attacking and dodge_timer.is_stopped() and event.is_action_pressed("dodge"):
+			dodge()
+		
 
 func _physics_process(_delta):
 	if !Global.paused:
-		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying and is_alive:
+		if !is_attacking and !is_drawing and !is_sheathing and !is_hurting and !is_parrying and is_alive and !is_dodging:
 			move_state()
 		else:
+			if is_dodging:
+				dodge_state()
 			footstep.stop()
 	else: 
 		if !is_attack_state:
@@ -182,6 +189,11 @@ func move_state():
 	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 18, move_weight)
 	move_and_slide()
 
+func dodge_state():
+	var look_direction = -animation_tree.get("parameters/Attack_state/Dodge/blend_position").normalized()
+	velocity = lerp(velocity, look_direction * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 18, move_weight)
+	move_and_slide()
+
 ##Function
 #Tấn công
 func attack():
@@ -218,6 +230,11 @@ func parry():
 		animation_tree.set("parameters/Attack_state/Parry/blend_position", parry_direction)
 	animation_tree.set("parameters/Attack_state/conditions/is_parrying", is_parrying)
 	animation_tree.set("parameters/Attack_state/conditions/is_not_parrying", !is_parrying)
+
+func dodge():
+	set_move_speed_unit(3)
+	is_dodging = true
+	animation_tree.set("parameters/Attack_state/conditions/is_dodging", is_dodging)
 
 func check_parry_direction(attacker):
 	var attacker_direction = (attacker.global_position - global_position).normalized()
@@ -540,3 +557,8 @@ func _hurt_finished():
 func _die_finished():
 	SignalManager.player_dead.emit()
 
+func _dodge_finished():
+	dodge_timer.start()
+	set_move_speed_unit(2)
+	is_dodging = false
+	animation_tree.set("parameters/Attack_state/conditions/is_dodging", is_dodging)
