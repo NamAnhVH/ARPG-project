@@ -28,3 +28,7 @@ func _on_load_game_pressed():
 func _on_exit_pressed():
 	get_tree().quit()
 
+func _on_setting_pressed():
+	var setting_container = ResourceManager.get_instance("setting_container")
+	setting_container.is_start_game_screen = true
+	canvas_layer.add_child(setting_container)

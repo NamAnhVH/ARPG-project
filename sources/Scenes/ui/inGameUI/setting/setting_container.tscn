@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://caxwneo7qtynf"]
+[gd_scene load_steps=22 format=3 uid="uid://caxwneo7qtynf"]
 
 [ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_uingq"]
 [ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/setting/setting_container.gd" id="2_8pm3r"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bkj04buac1yfx" path="res://assets/ui/Buttons_1x.png" id="6_tjnd3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rspxp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68tfv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_if8xx"]
 texture = ExtResource("6_tjnd3")
@@ -34,12 +36,14 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(1, 1, 14, 14)
 
 [sub_resource type="Theme" id="Theme_s6m7g"]
+TabContainer/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
 TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
 TabContainer/font_sizes/font_size = 30
 TabContainer/fonts/font = ExtResource("5_6seok")
 TabContainer/styles/panel = SubResource("StyleBoxEmpty_rspxp")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_68tfv")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_if8xx")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_klgbf")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_0c6uf")

@@ -5,6 +5,7 @@ extends NinePatchRect
 @onready var sound_effect_sprite : AnimatedSprite2D = $TabContainer/Sound/SoundSetting/HBoxContainer2/SoundEffectSprite
 @onready var fullscreen_button : Button = $TabContainer/Graphics/GraphicSetting/HBoxContainer/FullScreenButton
 @onready var vsync_button : Button = $TabContainer/Graphics/GraphicSetting/HBoxContainer2/VsyncButton
+@onready var tab_container : TabContainer = $TabContainer
 
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
@@ -12,6 +13,8 @@ extends NinePatchRect
 var is_remapping : bool = false
 var action_to_remap
 var remapping_button
+var is_start_game_screen : bool = false
+
 var input_actions = {
 	"move_up": "Move up",
 	"move_left": "Move left",
@@ -32,10 +35,15 @@ var input_actions = {
 }
 
 func _ready():
+	check_screen()
 	set_graphic_setting_container()
 	set_sound_setting_container()
 	SignalManager.close_file_saving_container.connect(_on_close_file_saving_container)
 	create_action_list()
+
+func check_screen():
+	if is_start_game_screen:
+		tab_container.set_tab_disabled(3, true)
 
 func set_graphic_setting_container():
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
@@ -122,7 +130,7 @@ func _on_load_game_pressed():
 	_on_button_save_load_pressed(false)
 
 func _on_close_pressed():
-	get_parent().is_open_setting = false
+	if !get_parent() is CanvasLayer: get_parent().is_open_setting = false
 	queue_free()
 
 func _on_quit_game_pressed():

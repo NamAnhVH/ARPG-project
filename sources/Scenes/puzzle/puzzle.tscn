@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkyfcl33g2mep"]
+
+[ext_resource type="TileSet" uid="uid://5oxf8sny6iow" path="res://tileset/puzzle.tres" id="1_apl2m"]
+[ext_resource type="Script" path="res://sources/scripts/puzzle/puzzle.gd" id="1_u1p2j"]
+
+[node name="Puzzle" type="Node2D"]
+script = ExtResource("1_u1p2j")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_apl2m")
+format = 2

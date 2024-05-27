@@ -160,6 +160,7 @@ func move_state():
 			footstep.play()
 		animation_tree.set("parameters/Base/Stand/blend_position", move_input)
 		animation_tree.set("parameters/Base/Run/blend_position", move_input)
+		animation_tree.set("parameters/Base/Push/blend_position", move_input)
 		
 		animation_tree.set("parameters/Attack_state/Idle/blend_position", move_input)
 		animation_tree.set("parameters/Attack_state/Move/blend_position", move_input)
@@ -187,6 +188,19 @@ func move_state():
 
 	#Vecto di chuyen
 	velocity = lerp(velocity, move_input * move_speed_unit * (100 + player_data.get_stat(GameEnums.STAT.MOVE_SPEED)) / 100 * 18, move_weight)
+	
+	var have_push_object = false
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is PushableObject:
+			have_push_object = true
+			collision.get_collider().slide(-collision.get_normal() * 25)
+			animation_tree.set("parameters/Base/conditions/is_pushing", true)
+			animation_tree.set("parameters/Base/conditions/is_not_pushing", false)
+	
+	if !have_push_object:
+		animation_tree.set("parameters/Base/conditions/is_pushing", false)
+		animation_tree.set("parameters/Base/conditions/is_not_pushing", true)
 	move_and_slide()
 
 func dodge_state():

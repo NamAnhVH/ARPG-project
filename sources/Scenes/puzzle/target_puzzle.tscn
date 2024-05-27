@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyopfxfiqmgwj"]
+
+[ext_resource type="Texture2D" uid="uid://p42i5gu3lr77" path="res://assets/puzzle/target_position.png" id="1_gqaqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrg8q"]
+size = Vector2(16, 16)
+
+[node name="TargetPuzzle" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.583333, 0.583333)
+texture = ExtResource("1_gqaqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mrg8q")

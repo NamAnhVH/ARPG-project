@@ -26,4 +26,3 @@ func _on_area_entered(area):
 			feature_damaged.emit()
 
 
-

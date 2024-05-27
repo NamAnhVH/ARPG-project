@@ -710,6 +710,21 @@ var musics = {
 	"parry": preload("res://sound/parry.mp3")
 }
 
+var breakable_pot_texture = [
+	preload("res://assets/breakableObjects/breakable_pot_v00.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v01.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v02.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v03.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v04.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v05.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v06.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v07.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v08.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v09.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v10.png"),
+	preload("res://assets/breakableObjects/breakable_pot_v11.png")
+]
+
 var colors = {
 	GameEnums.RARITY.COMMON : "000000",
 	GameEnums.RARITY.UNCOMMON : "009623",
@@ -784,3 +799,6 @@ func get_stone_drop(index):
 
 func get_music(music):
 	return musics[music]
+
+func get_pot_texture(index):
+	return breakable_pot_texture[index]

@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://hudfmnxo7ro0"]
+[gd_scene load_steps=14 format=3 uid="uid://hudfmnxo7ro0"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_yxo3a"]
 [ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/core/change_world_area.tscn" id="3_uljmt"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_v44xs"]
 [ext_resource type="PackedScene" uid="uid://c1uf0vrhijrst" path="res://sources/scenes/characters/npcs/diana.tscn" id="3_x8chb"]
+[ext_resource type="PackedScene" uid="uid://bpu5ymvy1y5nw" path="res://sources/scenes/breakablObjects/breakable_pots.tscn" id="5_700bh"]
+[ext_resource type="Texture2D" uid="uid://d2awp7y6g78ov" path="res://assets/breakableObjects/breakable_pot_v11.png" id="6_dk7q1"]
+[ext_resource type="Texture2D" uid="uid://baomqcxvrvovr" path="res://assets/breakableObjects/breakable_pot_v04.png" id="7_ioeoc"]
+[ext_resource type="Texture2D" uid="uid://bhl1b84ljj0y" path="res://assets/breakableObjects/breakable_pot_v07.png" id="8_qmg4t"]
+[ext_resource type="Texture2D" uid="uid://b6lejiwrtanoa" path="res://assets/breakableObjects/breakable_pot_v01.png" id="9_pw7kb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_476mu"]
 resource_local_to_scene = true
@@ -158,3 +163,31 @@ polygon = PackedVector2Array(288, 144, 352, 144, 352, 160, 405, 160, 415, 144, 4
 [node name="Diana" parent="Npcs" index="0" instance=ExtResource("3_x8chb")]
 position = Vector2(142, 155)
 object_name = "Diana"
+
+[node name="BreakablePots" parent="BreakableObject" index="0" instance=ExtResource("5_700bh")]
+position = Vector2(389, 442)
+
+[node name="BreakablePots2" parent="BreakableObject" index="1" instance=ExtResource("5_700bh")]
+position = Vector2(369, 460)
+
+[node name="BreakablePots3" parent="BreakableObject" index="2" instance=ExtResource("5_700bh")]
+position = Vector2(338, 484)
+sprite = ExtResource("6_dk7q1")
+
+[node name="BreakablePots4" parent="BreakableObject" index="3" instance=ExtResource("5_700bh")]
+position = Vector2(368, 497)
+
+[node name="BreakablePots5" parent="BreakableObject" index="4" instance=ExtResource("5_700bh")]
+position = Vector2(397, 485)
+
+[node name="BreakablePots6" parent="BreakableObject" index="5" instance=ExtResource("5_700bh")]
+position = Vector2(409, 463)
+sprite = ExtResource("7_ioeoc")
+
+[node name="BreakablePots7" parent="BreakableObject" index="6" instance=ExtResource("5_700bh")]
+position = Vector2(409, 413)
+sprite = ExtResource("8_qmg4t")
+
+[node name="BreakablePots8" parent="BreakableObject" index="7" instance=ExtResource("5_700bh")]
+position = Vector2(314, 469)
+sprite = ExtResource("9_pw7kb")
