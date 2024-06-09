@@ -84,5 +84,5 @@ min_level = 4
 max_level = 7
 max_active_area = 50
 
-[node name="NavigationRegion2D" parent="." index="11"]
+[node name="NavigationRegion2D" parent="." index="12"]
 navigation_polygon = SubResource("NavigationPolygon_j5xxm")

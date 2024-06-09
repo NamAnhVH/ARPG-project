@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dpvlhydyd0o7b"]
+[gd_scene load_steps=76 format=3 uid="uid://dpvlhydyd0o7b"]
 
 [ext_resource type="PackedScene" uid="uid://cfq1tjn3b14n5" path="res://sources/scenes/characters/battleCharacters/enemies/enemy.tscn" id="1_p06r0"]
 [ext_resource type="Script" path="res://sources/scripts/characters/enemies/minions/mushroom.gd" id="2_phm2v"]
@@ -92,6 +92,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2(0, -8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(4, 4)]
 }
 
 [sub_resource type="Animation" id="Animation_nhjr3"]
@@ -783,6 +795,36 @@ tracks/0/keys = {
 "values": [12, 13, 14, 15]
 }
 
+[sub_resource type="Animation" id="Animation_s5udy"]
+resource_name = "healing"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_healing_finished"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0m2wh"]
 _data = {
 "RESET": SubResource("Animation_lsw6y"),
@@ -794,6 +836,7 @@ _data = {
 "die_left": SubResource("Animation_ihnnj"),
 "die_right": SubResource("Animation_ahld5"),
 "die_up": SubResource("Animation_lhmsg"),
+"healing": SubResource("Animation_s5udy"),
 "hurt_down": SubResource("Animation_li4e8"),
 "hurt_left": SubResource("Animation_hywwp"),
 "hurt_right": SubResource("Animation_7txbe"),
@@ -957,6 +1000,9 @@ states/Move/position = Vector2(389, 170)
 states/Start/position = Vector2(195, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jgeod"), "Start", "Move", SubResource("AnimationNodeStateMachineTransition_8lqnl"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_57brl"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_iknmn")]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kiph5"]
+animation = &"healing"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yhi4l"]
 advance_mode = 2
 
@@ -986,6 +1032,14 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_dead"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g2rsd"]
+advance_mode = 2
+advance_condition = &"is_healing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bvnnl"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3ps6k"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_qhvbl")
 states/Attack/position = Vector2(475, 10)
@@ -996,12 +1050,17 @@ states/Hurt/position = Vector2(582, 119)
 states/Move_idle/node = SubResource("AnimationNodeStateMachine_lrm80")
 states/Move_idle/position = Vector2(394, 119)
 states/Start/position = Vector2(202, 119)
-transitions = ["Start", "Move_idle", SubResource("AnimationNodeStateMachineTransition_yhi4l"), "Move_idle", "Attack", SubResource("AnimationNodeStateMachineTransition_nfogp"), "Attack", "Move_idle", SubResource("AnimationNodeStateMachineTransition_es10g"), "Attack", "Hurt", SubResource("AnimationNodeStateMachineTransition_40fcg"), "Move_idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_ulofy"), "Hurt", "Move_idle", SubResource("AnimationNodeStateMachineTransition_scqnc"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_m7vy4")]
-graph_offset = Vector2(37, -65)
+states/healing/node = SubResource("AnimationNodeAnimation_kiph5")
+states/healing/position = Vector2(371, 196)
+transitions = ["Start", "Move_idle", SubResource("AnimationNodeStateMachineTransition_yhi4l"), "Move_idle", "Attack", SubResource("AnimationNodeStateMachineTransition_nfogp"), "Attack", "Move_idle", SubResource("AnimationNodeStateMachineTransition_es10g"), "Attack", "Hurt", SubResource("AnimationNodeStateMachineTransition_40fcg"), "Move_idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_ulofy"), "Hurt", "Move_idle", SubResource("AnimationNodeStateMachineTransition_scqnc"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_m7vy4"), "Move_idle", "healing", SubResource("AnimationNodeStateMachineTransition_g2rsd"), "healing", "Move_idle", SubResource("AnimationNodeStateMachineTransition_bvnnl")]
+graph_offset = Vector2(-31, 42)
 
 [node name="Mushroom" instance=ExtResource("1_p06r0")]
 y_sort_enabled = true
 script = ExtResource("2_phm2v")
+min_level = 1
+max_level = 10
+max_active_area = 50
 move_speed_unit = 2.0
 
 [node name="Body" type="Sprite2D" parent="." index="0"]
@@ -1010,6 +1069,7 @@ position = Vector2(0, -14)
 texture = ExtResource("4_qnk0y")
 hframes = 8
 vframes = 9
+frame = 36
 
 [node name="Hitbox" parent="." index="1"]
 visible = false
@@ -1075,6 +1135,7 @@ parameters/conditions/is_alive = false
 parameters/conditions/is_attacked = false
 parameters/conditions/is_attacking = false
 parameters/conditions/is_dead = false
+parameters/conditions/is_healing = false
 parameters/Attack/blend_position = Vector2(-0.186512, 0.380952)
 parameters/Die/blend_position = Vector2(0, 0)
 parameters/Hurt/blend_position = Vector2(0, 0)

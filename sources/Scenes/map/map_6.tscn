@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2smxuin7ast8"]
+[gd_scene load_steps=5 format=3 uid="uid://2smxuin7ast8"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_n5gny"]
+[ext_resource type="PackedScene" uid="uid://bf1kcax2olju8" path="res://sources/scenes/puzzle/sokoban/sokoban_1.tscn" id="3_eumob"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_xefcu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mopo"]
@@ -36,3 +37,6 @@ polygon = PackedVector2Array(889, 321, 863, 372, 863, 451, 836, 482, 827, 508, 8
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="2"]
 polygon = PackedVector2Array(790, 880, 892, 881, 898, 742, 859, 741, 858, 798, 825, 798, 822, 845, 788, 862)
+
+[node name="Sokoban1" parent="." index="14" instance=ExtResource("3_eumob")]
+position = Vector2(403, 133)

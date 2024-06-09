@@ -8,7 +8,8 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	super._on_area_2d_body_entered(body)
-	gremlin._on_detect_area_body_entered(body)
+	if is_instance_valid(gremlin):
+		gremlin._on_detect_area_body_entered(body)
 	
 func _on_area_2d_body_exited(body):
 	if is_instance_valid(gremlin):

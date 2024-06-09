@@ -6,6 +6,7 @@ class_name Mushroom
 
 var drop_mushroom_id
 var is_running : bool = false
+var is_healing : bool = false
 
 func move_state():
 	var move_direction : Vector2
@@ -13,13 +14,14 @@ func move_state():
 		move_direction = global_position - navigation_agent.get_next_path_position()
 	else:
 		move_direction = navigation_agent.get_next_path_position() - global_position
+	
 	move_direction = move_direction.normalized()
 	animation_tree.set("parameters/Move_idle/Move/blend_position", move_direction)
 	animation_tree.set("parameters/Move_idle/Idle/blend_position", move_direction)
 	animation_tree.set("parameters/Move_idle/conditions/is_moving", is_moving or is_chasing)
 	animation_tree.set("parameters/Move_idle/conditions/is_idling", !is_moving and !is_chasing)
 	
-	if (!is_chasing and !is_moving and !is_ready_attack) or is_attacking or !is_alive or is_ready_attack:
+	if (!is_chasing and !is_moving and !is_ready_attack) or is_attacking or !is_alive or is_ready_attack or is_healing:
 		move_direction = Vector2.ZERO
 	
 	velocity = lerp(velocity, move_direction * move_speed_unit * 24, move_weight)
@@ -65,3 +67,10 @@ func _on_move_idle_change_time_timeout():
 
 func _on_running_timer_timeout():
 	is_running = false
+	is_healing = true
+	animation_tree.set("parameters/conditions/is_healing", is_healing)
+
+func _healing_finished():
+	is_healing = false
+	animation_tree.set("parameters/conditions/is_healing", is_healing)
+	set_health(- max_health * 30 / 100)

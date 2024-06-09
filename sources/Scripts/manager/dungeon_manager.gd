@@ -19,7 +19,7 @@ var roof_layer = 2
 
 var special_map = {
 	"dungeon_main": Vector2i.ZERO,
-	"boss_gremlin": Vector2i(1, 0)
+	"boss_gremlin": Vector2i(2, 2)
 }
 
 func _ready():

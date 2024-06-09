@@ -1607,9 +1607,6 @@ libraries = {
 "": SubResource("AnimationLibrary_uhkk1")
 }
 
-[node name="AttackCooldownTime" parent="Timers" index="0"]
-wait_time = 1.5
-
 [node name="MoveIdleChangeTime" parent="Timers" index="1"]
 wait_time = 5.0
 
