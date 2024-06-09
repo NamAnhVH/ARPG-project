@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8gmdyn4qgvur"]
+
+[ext_resource type="PackedScene" uid="uid://bjmtni4gq7kuh" path="res://sources/entities/characters/npcs/none_playable_character.tscn" id="1_wllfb"]
+[ext_resource type="Script" path="res://sources/scripts/characters/npcs/questable_character.gd" id="2_3d3s2"]
+[ext_resource type="Texture2D" uid="uid://d2p3pgx6b23p4" path="res://assets/npcs/npc man A v00.png" id="2_dfh3r"]
+
+[node name="Raven" instance=ExtResource("1_wllfb")]
+script = ExtResource("2_3d3s2")
+list_quest = Array[Dictionary]([{
+"id": "main_quest_1",
+"progress": "talk_to_Raven"
+}])
+object_name = "Raven"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dfh3r")
+frame = 16
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 5)

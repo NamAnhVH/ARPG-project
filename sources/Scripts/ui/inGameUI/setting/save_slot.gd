@@ -13,5 +13,5 @@ func _on_pressed():
 		SaveManager.save_game(file_name)
 	else:
 		SignalManager.scene_transition_fade_in.emit()
-		get_tree().change_scene_to_file("res://sources/scenes/main.tscn")
+		get_tree().change_scene_to_file("res://sources/main.tscn")
 		SaveManager.load_game(file_name)

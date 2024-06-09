@@ -130,11 +130,11 @@ func _on_load_game_pressed():
 	_on_button_save_load_pressed(false)
 
 func _on_close_pressed():
-	if !get_parent() is CanvasLayer: get_parent().is_open_setting = false
+	if get_parent() is InGameUI: get_parent().is_open_setting = false
 	queue_free()
 
 func _on_quit_game_pressed():
-	get_tree().change_scene_to_file("res://sources/scenes/gameSetup/start_game.tscn")
+	get_tree().change_scene_to_file("res://sources/entities/gameSetup/start_game.tscn")
 
 func _on_reset_button_pressed():
 	create_action_list()

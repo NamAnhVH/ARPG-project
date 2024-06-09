@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1uf0vrhijrst"]
+
+[ext_resource type="PackedScene" uid="uid://c5dri5h4ajtck" path="res://sources/entities/characters/npcs/questable_character.tscn" id="1_gt0mf"]
+[ext_resource type="Texture2D" uid="uid://dnuowlyi735ur" path="res://assets/npcs/npc old woman A v00.png" id="2_vkegl"]
+
+[node name="Diana" instance=ExtResource("1_gt0mf")]
+list_quest = Array[Dictionary]([{
+"id": "main_quest_3",
+"progress": "talk_to_Diana"
+}])
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_vkegl")

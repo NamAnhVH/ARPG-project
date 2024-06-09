@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5dri5h4ajtck"]
+
+[ext_resource type="PackedScene" uid="uid://bjmtni4gq7kuh" path="res://sources/entities/characters/npcs/none_playable_character.tscn" id="1_klt0t"]
+[ext_resource type="Script" path="res://sources/scripts/characters/npcs/questable_character.gd" id="2_8qfk6"]
+
+[node name="QuestableCharacter" instance=ExtResource("1_klt0t")]
+script = ExtResource("2_8qfk6")
+list_quest = Array[Dictionary]([])

@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name InGameUI
 
 @onready var window : Control = $Window
 @onready var quest_container = $Window/QuestContainer

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf1kcax2olju8"]
+
+[ext_resource type="PackedScene" uid="uid://xfras2rgsugx" path="res://sources/entities/puzzle/sokoban.tscn" id="1_hiwkb"]
+[ext_resource type="PackedScene" uid="uid://dyopfxfiqmgwj" path="res://sources/entities/puzzle/target_puzzle.tscn" id="2_spn1c"]
+[ext_resource type="PackedScene" uid="uid://cx76a0pfqc3pw" path="res://sources/entities/pushableObjects/pushable_box.tscn" id="3_r6iou"]
+
+[node name="Sokoban1" instance=ExtResource("1_hiwkb")]
+
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(131072, 0, 0, 131073, 65536, 3, 131074, 0, 65538, 65538, 0, 1, 2, 0, 0, 3, 65536, 3, 4, 65536, 3, 5, 65536, 3, 6, 65536, 3, 7, 0, 65536, 65543, 0, 1, 131079, 0, 2, 131080, 65536, 3, 131081, 0, 65538, 131084, 65536, 3, 131085, 0, 65536, 196621, 0, 1, 262157, 0, 1, 327693, 0, 1, 393229, 0, 1, 458763, 0, 0, 589837, 0, 1, 655373, 0, 1, 720909, 0, 1, 786445, 0, 1, 917515, 0, 1, 917508, 0, 1, 851972, 0, 65536, 786434, 0, 1, 720898, 0, 65536, 589824, 0, 1, 524288, 0, 1, 458752, 0, 1, 393216, 0, 1, 327680, 0, 1, 262144, 0, 1, 196608, 0, 1, 851980, 65536, 3, 851981, 0, 65538, 851979, 0, 0, 983051, 0, 65538, 983050, 65536, 3, 983044, 0, 2, 983045, 65536, 3, 983046, 65536, 3, 983047, 65536, 3, 983048, 65536, 3, 983049, 65536, 3, 851971, 65536, 3, 851970, 0, 2, 655360, 0, 1, 720896, 0, 2, 720897, 65536, 3, 524299, 0, 2, 524300, 0, 65538, 524301, 0, 1, 458764, 0, 65536, 458765, 0, 1, 458755, 0, 0, 524291, 0, 2, 524292, 0, 65538, 458756, 0, 65536, 458759, 0, 0, 524295, 0, 2, 524296, 0, 65538, 458760, 0, 65536, 720903, 0, 0, 786439, 0, 2, 786440, 0, 65538, 720904, 0, 65536, 65545, 0, 1, 9, 0, 0, 10, 65536, 3, 11, 65536, 3, 12, 131072, 2, 131083, 131072, 65538)
+
+[node name="TargetPuzzle" parent="TargetPosition" index="0" instance=ExtResource("2_spn1c")]
+position = Vector2(58, 29)
+
+[node name="TargetPuzzle2" parent="TargetPosition" index="1" instance=ExtResource("2_spn1c")]
+position = Vector2(63, 160)
+
+[node name="TargetPuzzle3" parent="TargetPosition" index="2" instance=ExtResource("2_spn1c")]
+position = Vector2(128, 160)
+
+[node name="TargetPuzzle4" parent="TargetPosition" index="3" instance=ExtResource("2_spn1c")]
+position = Vector2(161, 193)
+
+[node name="TargetPuzzle5" parent="TargetPosition" index="4" instance=ExtResource("2_spn1c")]
+position = Vector2(161, 226)
+
+[node name="PushableBox" parent="PushableObject" index="0" instance=ExtResource("3_r6iou")]
+position = Vector2(128, 110)
+
+[node name="PushableBox2" parent="PushableObject" index="1" instance=ExtResource("3_r6iou")]
+position = Vector2(128, 80)
+
+[node name="PushableBox3" parent="PushableObject" index="2" instance=ExtResource("3_r6iou")]
+position = Vector2(102, 80)
+
+[node name="PushableBox4" parent="PushableObject" index="3" instance=ExtResource("3_r6iou")]
+position = Vector2(160, 143)
+
+[node name="PushableBox5" parent="PushableObject" index="4" instance=ExtResource("3_r6iou")]
+position = Vector2(128, 175)
+
+[node name="InteractableRandomChest" parent="." index="3"]
+visible = false
+position = Vector2(233, 126)
+number_of_items = 5
+items = Array[String](["sword_v00", "sword_v01", "healing_potion_v00", "bow_v00"])

@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://wtduyrkmu5np"]
+
+[ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/entities/map/map.tscn" id="1_52otv"]
+[ext_resource type="TileSet" uid="uid://b38v88sd4p5yy" path="res://tileset/inside_house.tres" id="2_gcyjm"]
+[ext_resource type="Script" path="res://sources/entities/map/luna_house.gd" id="2_yn1lj"]
+[ext_resource type="Resource" uid="uid://rm4mjcfxpq7f" path="res://data/resources/progress_data.tres" id="3_yymp5"]
+[ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/components/core/change_world_area.tscn" id="4_xmsgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3onls"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayepm"]
+size = Vector2(33, 20)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_384u8"]
+vertices = PackedVector2Array(132, 91, 79, 91, 79, 87, 126, 87, 132, -11, 126, -11)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(69, 77, 116, 77, 116, -21, 142, -21, 142, 101, 69, 101)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="LunaHouse" instance=ExtResource("1_52otv")]
+script = ExtResource("2_yn1lj")
+map_id = "luna_house"
+progress_data = ExtResource("3_yymp5")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_3onls")
+disabled = true
+
+[node name="TileMap" parent="." index="1"]
+tile_set = ExtResource("2_gcyjm")
+layer_0/name = "ground"
+layer_0/tile_data = PackedInt32Array(3, 0, 4, 65539, 0, 5, 131075, 0, 5, 196611, 0, 5, 262147, 0, 4, 4, 1638400, 7, 65540, 0, 4, 131076, 0, 5, 196612, 0, 5, 262148, 0, 4, 327684, 0, 3, 393220, 0, 4, 5, 1703936, 7, 65541, 0, 3, 131077, 0, 5, 196613, 0, 6, 262149, 0, 6, 327685, 0, 6, 393221, 0, 6, 6, 0, 4, 65542, 0, 5, 131078, 0, 5, 196614, 0, 5, 262150, 0, 4, 327686, 0, 3, 393222, 0, 6, 7, 0, 6, 65543, 0, 3, 131079, 0, 3, 196615, 0, 6, 262151, 0, 4, 327687, 0, 6, 393223, 0, 4, 8, 0, 3, 65544, 0, 4, 131080, 0, 5, 196616, 0, 3, 262152, 0, 3, 327688, 0, 6, 393224, 0, 6, 9, 0, 4, 65545, 0, 6, 131081, 0, 6, 196617, 0, 5, 262153, 0, 3, 327689, 0, 4, 393225, 0, 3, 10, 1638400, 7, 65546, 0, 5, 131082, 0, 5, 196618, 0, 5, 262154, 0, 3, 327690, 0, 6, 393226, 0, 3, 11, 1703936, 7, 65547, 0, 6, 131083, 0, 5, 196619, 0, 4, 262155, 0, 5, 327691, 0, 6, 393227, 0, 5, 12, 0, 3, 65548, 0, 3, 131084, 0, 5, 196620, 0, 4, 262156, 0, 4, 327692, 0, 5, 393228, 0, 5, 65549, 0, 4, 131085, 0, 3, 196621, 0, 5, 262157, 0, 5, 327693, 0, 3, 393229, 0, 3, -131069, 917504, 8, -65533, 917504, 9, -131068, 1638400, 2, -65532, 1638400, 3, -131067, 1703936, 2, -65531, 1703936, 3, -131066, 1835008, 2, -65530, 1835008, 3, -131065, 1900544, 2, -65529, 1900544, 3, -131064, 1966080, 2, -65528, 1966080, 3, -131063, 2031616, 2, -65527, 2031616, 3, -131070, 720896, 8, -65534, 720896, 9, -131062, 1638400, 5, -65526, 1638400, 6, -131061, 1703936, 5, -65525, 1703936, 6, 13, 0, 5, -131059, 1114112, 8, -65523, 1114112, 9, -131060, 917504, 8, -65524, 917504, 9, -196606, 458752, 2, -196605, 524288, 2, -196604, 458752, 2, -196603, 524288, 2, -196602, 458752, 2, -196601, 524288, 2, -196600, 458752, 2, -196599, 524288, 2, -196598, 458752, 2, -196597, 524288, 2, -196596, 458752, 2, -196595, 524288, 2, -196594, 589824, 2, -131058, 589824, 4, -65522, 589824, 5, 14, 589824, 3, 65550, 589824, 4, 131086, 589824, 5, 196622, 589824, 6, 262158, 589824, 7, 327694, 589824, 8, 393230, 589824, 9, 458763, 524288, 9, 458764, 458752, 9, 458765, 524288, 9, 458766, 589824, 9, 458758, 458752, 9, 458759, 524288, 9, 458760, 458752, 9, 458761, 524288, 9, 458762, 458752, 9, 458754, 458752, 9, 458755, 458752, 9, 458756, 458752, 9, 458757, 524288, 9, 131073, 393216, 7, 196609, 393216, 8, 262145, 393216, 5, 327681, 393216, 6, 393217, 393216, 7, 458753, 393216, 9, -131071, 393216, 3, -65535, 393216, 4, 1, 393216, 5, 65537, 393216, 6, -196607, 393216, 2, 2, 0, 4, 65538, 0, 3, 131074, 0, 4, 196610, 0, 4, 262146, 0, 6, 327682, 0, 3, 393218, 0, 4)
+layer_1/name = "furniture"
+layer_1/y_sort_enabled = true
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(262147, 786434, 4, 393219, 917506, 4)
+
+[node name="ChangeWorldArea" parent="ChangeWorld" index="0" instance=ExtResource("4_xmsgm")]
+map_id = "map_13"
+location = Vector2(830, 600)
+next_z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeWorld/ChangeWorldArea" index="0"]
+position = Vector2(128, -15)
+shape = SubResource("RectangleShape2D_ayepm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CollisionArea" index="0"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="0"]
+polygon = PackedVector2Array(225, -8, 225, 111, 64, 111, 64, 99, 34, 99, 34, 81, 64, 81, 64, 70, 32, 70, 32, -8, 16, -33, 16, 127, 241, 127, 241, -33, 16, -33, 32, -8)
+
+[node name="NavigationRegion2D" parent="." index="10"]
+navigation_polygon = SubResource("NavigationPolygon_384u8")

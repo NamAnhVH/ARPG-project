@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmcl2dnnj3hx1"]
+
+[ext_resource type="PackedScene" uid="uid://tmkgaywd14n6" path="res://sources/entities/characters/battleCharacters/battle_character.tscn" id="1_eeah3"]
+[ext_resource type="Script" path="res://sources/scripts/characters/enemies/bosses/boss.gd" id="2_613pe"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v33v6"]
+
+[node name="Boss" instance=ExtResource("1_eeah3")]
+script = ExtResource("2_613pe")
+damage_amount = 10
+max_health = 0
+
+[node name="HurtAnimation" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_v33v6")
+}
+
+[node name="Timers" type="Node" parent="." index="6"]
+
+[node name="AttackCooldownTime" type="Timer" parent="Timers" index="0"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="7"]
+
+[connection signal="is_attacked" from="." to="." method="_on_is_attacked"]
+[connection signal="is_dead" from="." to="." method="_on_is_dead"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dntu3igosci6y"]
+
+[ext_resource type="PackedScene" uid="uid://bsjbcqtcivcmq" path="res://sources/entities/characters/npcs/merchant.tscn" id="1_km5gn"]
+[ext_resource type="Script" path="res://sources/scripts/characters/npcs/shops/weapon_shopkeeper.gd" id="2_s5roa"]
+
+[node name="WeaponShopkeeper" instance=ExtResource("1_km5gn")]
+script = ExtResource("2_s5roa")
+object_name = "Aric"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = null
+frame = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -3)
