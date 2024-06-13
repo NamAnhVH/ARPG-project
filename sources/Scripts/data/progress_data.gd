@@ -6,7 +6,7 @@ class_name ProgressData
 @export var current_main_quest: Dictionary
 @export var current_side_quest: Dictionary
 @export var current_main_quest_progress : int
-@export var current_side_quest_progress : int
+@export var current_side_quest_progress : Dictionary
 
 var main_quest_finished = []
 var side_quest_finished = []
@@ -17,7 +17,7 @@ func set_data(data):
 	current_main_quest = data.current_main_quest
 	current_side_quest = data.current_side_quest
 	current_main_quest_progress = data.current_main_quest_progress
-	current_side_quest_progress = data.current_side_quest_progress
+	current_side_quest_progress = data.current_side_quest_progress if data.current_side_quest_progress is Dictionary else {}
 	main_quest_finished = data.main_quest_finished
 	side_quest_finished = data.side_quest_finished
 	emit_changed()

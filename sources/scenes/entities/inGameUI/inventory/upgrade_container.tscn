@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://dei5ho0n26akj"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_qa7c1"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_cpu84"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/upgrade/upgrade_container.gd" id="2_mbhae"]
+[ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="3_2s8rq"]
+[ext_resource type="Theme" uid="uid://dg3315cp4hraj" path="res://data/resources/theme/upgrade_button.tres" id="4_dv38u"]
+[ext_resource type="PackedScene" uid="uid://bjturkqjak03r" path="res://sources/scenes/components/ui/inventory/upgrade/upgrade_slot.tscn" id="5_84883"]
+[ext_resource type="Texture2D" uid="uid://bk2g016gic3nv" path="res://assets/ui/plus_icon.png" id="6_qax0a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1u6qw"]
+font = ExtResource("3_2s8rq")
+font_color = Color(0, 0, 0, 1)
+
+[node name="UpgradeContainer" type="NinePatchRect"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -78.0
+offset_bottom = 78.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_qa7c1")
+region_rect = Rect2(160, 0, 24, 24)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_mbhae")
+
+[node name="MainContainer" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cpu84")
+region_rect = Rect2(160, 52, 16, 12)
+
+[node name="Label" type="Label" parent="MainContainer"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 15.0
+offset_right = 173.0
+offset_bottom = 40.0
+label_settings = SubResource("LabelSettings_1u6qw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="MainContainer"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 93.0
+offset_right = 137.0
+offset_bottom = 119.0
+theme = ExtResource("4_dv38u")
+disabled = true
+text = "Upgrade"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -21.0
+offset_right = -41.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="UpgradeSlot" parent="MainContainer/HBoxContainer" instance=ExtResource("5_84883")]
+layout_mode = 2
+type = 2
+
+[node name="PlusIcon" type="TextureRect" parent="MainContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("6_qax0a")
+expand_mode = 2
+
+[node name="MaterialSlot" parent="MainContainer/HBoxContainer" instance=ExtResource("5_84883")]
+layout_mode = 2
+
+[connection signal="pressed" from="MainContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

@@ -14,7 +14,7 @@ func _on_revive_pressed():
 	player_data.health = player_data.get_stat(GameEnums.STAT.LIFE_POINT)
 	world_data.current_map = "luna_house"
 	player_data.global_position = Vector2(47,85)
-	get_tree().change_scene_to_file("res://sources/scenes/main.tscn")
+	get_tree().change_scene_to_file("res://sources/main.tscn")
 
 func _on_load_game_pressed():
 	for i in get_children():
@@ -24,4 +24,4 @@ func _on_load_game_pressed():
 	add_child(file_saving_container)
 
 func _on_quit_game_pressed():
-	get_tree().change_scene_to_file("res://sources/scenes/gameSetup/start_game.tscn")
+	get_tree().change_scene_to_file("res://sources/scenes/entities/gameSetup/start_game.tscn")

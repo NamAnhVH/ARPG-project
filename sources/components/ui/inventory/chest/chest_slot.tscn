@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bds7lbcyusgf0"]
-
-[ext_resource type="PackedScene" uid="uid://dm54tgsrs80w3" path="res://sources/entities/inGameUI/inventory/inventory_slot.tscn" id="1_lxne3"]
-[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/chest/chest_slot.gd" id="2_gh8nc"]
-
-[node name="ChestSlot" instance=ExtResource("1_lxne3")]
-script = ExtResource("2_gh8nc")

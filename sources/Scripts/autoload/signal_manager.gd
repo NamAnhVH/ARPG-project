@@ -97,6 +97,7 @@ signal luna_go_out
 signal change_next_progress
 signal quest_updated
 signal show_quest
+signal update_quest_progress(quest: String, type: GameEnums.QUEST_TYPE, finished: bool)
 signal show_quest_description(quest: String, type: String)
 
 #Quest

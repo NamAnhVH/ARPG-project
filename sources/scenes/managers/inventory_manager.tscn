@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqlagw3bqq2f4"]
+
+[ext_resource type="Script" path="res://sources/scripts/ui/inventory_manager.gd" id="1_jjcom"]
+[ext_resource type="PackedScene" uid="uid://ccsv3662j4b8c" path="res://sources/scenes/components/ui/item_info.tscn" id="2_8p7tk"]
+[ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="2_eh25o"]
+[ext_resource type="Resource" uid="uid://ux1xcdadgxto" path="res://data/resources/world_data.tres" id="3_173gk"]
+
+[node name="InventoryManager" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_jjcom")
+player_data = ExtResource("2_eh25o")
+world_data = ExtResource("3_173gk")
+
+[node name="HiddenNodes" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -800.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemInHand" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="ItemInfo" parent="." instance=ExtResource("2_8p7tk")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ItemVoid" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

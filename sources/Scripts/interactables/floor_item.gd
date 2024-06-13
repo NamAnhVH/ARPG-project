@@ -18,7 +18,7 @@ func _ready():
 	InventoryManager.add_hidden_node(item)
 
 func interact():
-	if InventoryManager.has_space_for_items([item.get_data()]):
+	if InventoryManager.has_space_for_item(item.get_data()):
 		InventoryManager.remove_hidden_node(item)
-		InventoryManager.add_items([item])
+		InventoryManager.add_item(item)
 		queue_free()

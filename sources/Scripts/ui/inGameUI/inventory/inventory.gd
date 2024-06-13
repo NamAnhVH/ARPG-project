@@ -43,31 +43,25 @@ func add_item(item: Item):
 					return null
 	return item
 
-func try_place_stack_items(items: Array):
+func try_place_stack_item(item: Item):
 	for s in slots:
 		if s.item and s.item.quantity < s.item.stack_size:
 			var free_space = s.item.stack_size - s.item.quantity
-			for i in range(items.size() - 1, -1, -1):
-				if s.item.id == items[i].id:
-					if items[i].quantity <= free_space:
-						free_space -= items[i].quantity
-						var temp = items[i]
-						items.remove_at(i)
-						temp.queue_free()
-					else:
-						items[i].quantity -= free_space
-						break
-	return items
+			if s.item.id == item.id:
+				if item.quantity <= free_space:
+					free_space -= item.quantity
+					var temp = item
+					temp.queue_free()
+				else:
+					item.quantity -= free_space
+	return item
 
-func accept_items(items):
+func accept_item(item):
 	for s in slots:
-		for i in range(items.size() - 1, -1, -1):
-			if s.accept_item(items[i]):
-				var temp = items[i]
-				items.remove_at(i)
-				temp.queue_free()
-				break
-	return items
+		if s.accept_item(item):
+			var temp = item
+			temp.queue_free()
+	return item
 
 func get_data():
 	var data = {}

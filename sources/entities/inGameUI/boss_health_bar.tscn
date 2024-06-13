@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxqcbi6x6448"]
-
-[ext_resource type="PackedScene" uid="uid://b6hrbjx21cb25" path="res://sources/components/ui/health_bar.tscn" id="1_puvof"]
-[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/boss_health_bar.gd" id="2_j0qgt"]
-
-[node name="BossHealthBar" instance=ExtResource("1_puvof")]
-visible = false
-script = ExtResource("2_j0qgt")

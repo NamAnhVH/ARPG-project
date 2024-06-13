@@ -1,0 +1,110 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqg72tv4dae8x"]
+
+[ext_resource type="Texture2D" uid="uid://csrpnqvq437ea" path="res://assets/ui/GUI_Outer_1x.png" id="1_avu02"]
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/shop/sell_item_container.gd" id="2_6tmo4"]
+[ext_resource type="Texture2D" uid="uid://dssi8ee10vube" path="res://assets/ui/GUI_Inner_1x.png" id="2_cqk15"]
+[ext_resource type="Theme" uid="uid://dcxi7pkblbs8o" path="res://data/resources/theme/sell_button.tres" id="3_3c6gy"]
+[ext_resource type="PackedScene" uid="uid://5uussgunui3w" path="res://sources/scenes/components/ui/inventory/shop/sell_slot.tscn" id="3_8xdbm"]
+
+[node name="SellItemContainer" type="NinePatchRect"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -80.5
+offset_right = -39.0
+offset_bottom = 80.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_avu02")
+region_rect = Rect2(66, 26, 20, 19)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 13
+script = ExtResource("2_6tmo4")
+
+[node name="MainContainer" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cqk15")
+region_rect = Rect2(192, 0, 24, 24)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="SlotContainer" type="GridContainer" parent="MainContainer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 144.0
+offset_bottom = 110.0
+columns = 4
+
+[node name="SellSlot" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot2" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot3" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot4" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot5" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot6" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot7" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot8" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot9" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot10" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot11" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellSlot12" parent="MainContainer/SlotContainer" instance=ExtResource("3_8xdbm")]
+layout_mode = 2
+
+[node name="SellButton" type="Button" parent="MainContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -34.0
+offset_right = 28.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_3c6gy")
+text = "Sell"
+
+[connection signal="pressed" from="MainContainer/SellButton" to="." method="_on_sell_button_pressed"]

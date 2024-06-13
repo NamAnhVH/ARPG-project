@@ -46,15 +46,14 @@ func _process(delta):
 		item_void.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 #Function
-func has_space_for_items(items_data):
-	var items = ItemManager.get_items(items_data)
-	items = inventory.try_place_stack_items(items)
-	items = inventory.accept_items(items)
-	return items.size() <= 0
+func has_space_for_item(items_data):
+	var item = ItemManager.get_items(items_data)
+	item = inventory.try_place_stack_item(item)
+	item = inventory.accept_item(item)
+	return item
 
-func add_items(items):
-	for item in items:
-		item = inventory.add_item(item)
+func add_item(item):
+	item = inventory.add_item(item)
 
 func split_item(item):
 	var new_quantity = item.quantity / 2

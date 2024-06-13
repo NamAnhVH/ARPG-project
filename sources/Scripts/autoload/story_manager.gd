@@ -55,6 +55,7 @@ func _on_update_main_quest(id: String):
 			or (progress_data.current_main_quest.progress.has("find_treasure") and world_data.chest_opened.has(progress_data.current_main_quest.progress.find_treasure)):
 				_on_update_main_quest(id)
 	SignalManager.quest_updated.emit()
+	SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.MAIN_QUEST, false)
 
 func _on_update_side_quest(id: String):
 	var quest = ResourceManager.quest_info.side_quest[id]
@@ -71,20 +72,30 @@ func _on_update_side_quest(id: String):
 	else:
 		progress_data.current_side_quest.merge({id: {"progress": quest.progress[0]}})
 	SignalManager.quest_updated.emit()
+	SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.SIDE_QUEST, false)
 
 func _on_enemy_died(enemy):
 	if progress_data.current_main_quest.progress is Dictionary \
 	and progress_data.current_main_quest.progress.has("combat"):
 		if check_enemy(enemy):
 			progress_data.current_main_quest_progress += 1
+			SignalManager.update_quest_progress.emit(progress_data.current_main_quest.id, GameEnums.QUEST_TYPE.MAIN_QUEST, false)
 			if progress_data.current_main_quest_progress >= progress_data.current_main_quest.progress.combat.quantity:
 				progress_data.current_main_quest_progress = 0
 				_on_update_main_quest(progress_data.current_main_quest.id)
+			
 	for side_quest in progress_data.current_side_quest:
 		if progress_data.current_side_quest[side_quest].progress is Dictionary \
 		and progress_data.current_side_quest[side_quest].progress.has("combat"):
 			if check_enemy(enemy, side_quest):
-				pass
+				if progress_data.current_side_quest_progress.has(side_quest):
+					progress_data.current_side_quest_progress[side_quest] += 1
+				else:
+					progress_data.current_side_quest_progress.merge({side_quest: 1})
+				SignalManager.update_quest_progress.emit(side_quest, GameEnums.QUEST_TYPE.SIDE_QUEST, false)
+				if progress_data.current_side_quest_progress[side_quest] >= progress_data.current_side_quest[side_quest].progress.combat.quantity:
+					progress_data.current_side_quest_progress.erase(side_quest)
+					_on_update_side_quest(side_quest)
 
 func check_enemy(enemy, quest = ""):
 	if quest.is_empty():
@@ -158,6 +169,7 @@ func main_quest_finished(id: String):
 		else:
 			next_main_quest_id = quest_id
 			break
+	SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.MAIN_QUEST, true)
 	_on_update_main_quest(next_main_quest_id)
 
 func side_quest_finished(id: String):
@@ -168,4 +180,5 @@ func side_quest_finished(id: String):
 		SignalManager.gain_exp.emit(quest.reward.exp) 
 	progress_data.side_quest_finished.append(id)
 	progress_data.current_side_quest.erase(id)
+	SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.SIDE_QUEST, true)
 

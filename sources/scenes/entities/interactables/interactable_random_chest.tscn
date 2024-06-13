@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5mq8h28hbgyr"]
+
+[ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/entities/interactables/interactable_chest.tscn" id="1_w73fg"]
+[ext_resource type="Script" path="res://sources/scripts/interactables/interactable_random_chest.gd" id="2_tn05p"]
+
+[node name="InteractableRandomChest" instance=ExtResource("1_w73fg")]
+y_sort_enabled = true
+script = ExtResource("2_tn05p")
+number_of_items = 0
+
+[node name="Sprite2D" parent="." index="0"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+disabled = true

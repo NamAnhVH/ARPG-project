@@ -51,7 +51,7 @@ func has_new_item(new_item):
 	else:
 		set_item(new_item)
 		return null
-
+  
 #Kiểm tra item mới có cùng là item trên slot không
 func has_both_item(new_item):
 	if can_stack(new_item):

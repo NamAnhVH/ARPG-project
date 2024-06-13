@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=3 uid="uid://ded1w1y1piutp"]
+
+[ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/in_game_ui.gd" id="1_wya8l"]
+[ext_resource type="PackedScene" uid="uid://ba3ckafpos0op" path="res://sources/scenes/entities/inGameUI/inventory/inventory_container.tscn" id="2_tcsoq"]
+[ext_resource type="PackedScene" uid="uid://dh0kcds7ama2w" path="res://sources/scenes/entities/inGameUI/inventory/player_equipment.tscn" id="3_dog6p"]
+[ext_resource type="PackedScene" uid="uid://bm8ioreu85dku" path="res://sources/scenes/entities/inGameUI/inventory/chest_container.tscn" id="4_2kavp"]
+[ext_resource type="PackedScene" uid="uid://bhagkd1c6uibr" path="res://sources/scenes/entities/inGameUI/player_stat_ui.tscn" id="5_iukkp"]
+[ext_resource type="PackedScene" uid="uid://dfii8m8ffdwdp" path="res://sources/scenes/entities/inGameUI/progress_bar_container.tscn" id="6_ii3qe"]
+[ext_resource type="PackedScene" uid="uid://cqy7j7njemsll" path="res://sources/scenes/entities/inGameUI/inventory/shop_container.tscn" id="7_kd5r3"]
+[ext_resource type="PackedScene" uid="uid://43ftnltsx5g2" path="res://sources/scenes/entities/inGameUI/inventory/hotbar_container.tscn" id="8_uhajc"]
+[ext_resource type="Theme" uid="uid://bykywjdnebdha" path="res://data/resources/theme/button.tres" id="9_njqyw"]
+[ext_resource type="Texture2D" uid="uid://db2bfq5rpmc0o" path="res://assets/ui/setting_icon.png" id="10_t2d3y"]
+[ext_resource type="PackedScene" uid="uid://dr51bs1uwwgk1" path="res://sources/scenes/entities/inGameUI/quest_container.tscn" id="11_8try7"]
+[ext_resource type="PackedScene" uid="uid://dei5ho0n26akj" path="res://sources/scenes/entities/inGameUI/inventory/upgrade_container.tscn" id="12_f1f3q"]
+[ext_resource type="PackedScene" uid="uid://bqg72tv4dae8x" path="res://sources/scenes/components/ui/inventory/shop/sell_item_container.tscn" id="13_o01l2"]
+[ext_resource type="PackedScene" uid="uid://dxqcbi6x6448" path="res://sources/scenes/entities/inGameUI/boss_health_bar.tscn" id="14_jx7sr"]
+[ext_resource type="PackedScene" uid="uid://dp8hdc1nu63a4" path="res://sources/scenes/entities/inGameUI/died_screen.tscn" id="15_yf2wq"]
+[ext_resource type="PackedScene" uid="uid://c4wnosibcomys" path="res://sources/scenes/components/ui/quest/quest_progress.tscn" id="16_5ruwt"]
+
+[node name="InGameUI" type="CanvasLayer"]
+script = ExtResource("1_wya8l")
+
+[node name="Window" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="QuestProgress" parent="Window" instance=ExtResource("16_5ruwt")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = -64.0
+offset_right = 106.0
+offset_bottom = 64.0
+
+[node name="InventoryContainer" parent="Window" instance=ExtResource("2_tcsoq")]
+visible = false
+layout_mode = 1
+offset_left = 260.0
+offset_top = 101.0
+offset_right = 550.0
+offset_bottom = 289.0
+
+[node name="PlayerEquipment" parent="Window" instance=ExtResource("3_dog6p")]
+visible = false
+layout_mode = 0
+offset_left = 46.0
+offset_top = 86.0
+offset_right = 196.0
+offset_bottom = 259.0
+
+[node name="ChestContainer" parent="Window" instance=ExtResource("4_2kavp")]
+visible = false
+clip_contents = true
+layout_mode = 0
+offset_left = 299.0
+offset_top = 295.0
+offset_right = 506.0
+offset_bottom = 391.0
+
+[node name="PlayerStatUI" parent="Window" instance=ExtResource("5_iukkp")]
+visible = false
+layout_mode = 0
+offset_left = 47.0
+offset_top = 270.0
+offset_right = 190.0
+offset_bottom = 434.0
+
+[node name="ProgressBarContainer" parent="Window" instance=ExtResource("6_ii3qe")]
+
+[node name="ShopContainer" parent="Window" instance=ExtResource("7_kd5r3")]
+visible = false
+layout_mode = 0
+offset_left = 582.0
+offset_top = 84.0
+offset_right = 764.0
+offset_bottom = 276.0
+
+[node name="HotbarContainer" parent="Window" instance=ExtResource("8_uhajc")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -51.0
+offset_right = 101.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Setting" type="Button" parent="Window"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme = ExtResource("9_njqyw")
+icon = ExtResource("10_t2d3y")
+icon_alignment = 1
+
+[node name="QuestContainer" parent="Window" instance=ExtResource("11_8try7")]
+visible = false
+layout_mode = 1
+
+[node name="UpgradeContainer" parent="Window" instance=ExtResource("12_f1f3q")]
+visible = false
+layout_mode = 1
+offset_left = -251.0
+offset_top = -126.0
+offset_right = -15.0
+offset_bottom = 30.0
+
+[node name="SellItemContainer" parent="Window" instance=ExtResource("13_o01l2")]
+visible = false
+layout_mode = 1
+offset_top = -126.0
+offset_bottom = 35.0
+
+[node name="BossHealthBar" parent="Window" instance=ExtResource("14_jx7sr")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172.5
+offset_top = 59.0
+offset_right = 172.5
+offset_bottom = 78.0
+grow_horizontal = 2
+
+[node name="DiedScreen" parent="Window" instance=ExtResource("15_yf2wq")]
+layout_mode = 1
+
+[connection signal="pressed" from="Window/Setting" to="." method="_on_setting_pressed"]

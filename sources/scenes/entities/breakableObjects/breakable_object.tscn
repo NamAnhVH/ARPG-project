@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0p30gpen7oy"]
+
+[ext_resource type="Script" path="res://sources/scripts/breakableObjects/breakable_object.gd" id="1_b4nhv"]
+[ext_resource type="PackedScene" uid="uid://m7gcd725pp7p" path="res://sources/scenes/components/core/hitbox.tscn" id="1_ddfc5"]
+
+[node name="BreakableObject" type="StaticBody2D"]
+script = ExtResource("1_b4nhv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("1_ddfc5")]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
+bus = &"SFX"
