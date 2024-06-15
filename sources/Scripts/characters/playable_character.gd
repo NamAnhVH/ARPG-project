@@ -246,7 +246,7 @@ func parry():
 	animation_tree.set("parameters/Attack_state/conditions/is_not_parrying", !is_parrying)
 
 func dodge():
-	set_move_speed_unit(3)
+	set_move_speed_unit(5)
 	is_dodging = true
 	animation_tree.set("parameters/Attack_state/conditions/is_dodging", is_dodging)
 

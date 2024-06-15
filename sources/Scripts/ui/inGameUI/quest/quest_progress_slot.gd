@@ -9,6 +9,7 @@ var quest_name : String
 var progress : String
 var type : GameEnums.QUEST_TYPE
 
+
 func _ready():
 	lbl_name.text = quest_name
 	lbl_progress.text = progress

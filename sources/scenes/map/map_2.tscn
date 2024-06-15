@@ -40,10 +40,7 @@ polygon = PackedVector2Array(-20, 864, -9, 878, 19, 893, 30, 893, 31, 865, 51, 8
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="4"]
 polygon = PackedVector2Array(723, 851, 723, 868, 830, 851, 900, 833, 894, 812, 840, 821, 835, 806, 882, 793, 878, 771, 917, 756, 892, 717, 859, 725, 783, 772, 786, 795, 739, 814)
 
-[node name="Chest" parent="." index="10"]
-y_sort_enabled = true
-
 [node name="InteractableChest" parent="Chest" index="0" instance=ExtResource("3_3geg1")]
 position = Vector2(453, 757)
 id = "chest_v00"
-items = ["shield_v00", "healing_potion_v00", "healing_potion_v00", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone"]
+items = Array[String](["shield_v00", "healing_potion_v00", "healing_potion_v00", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone"])

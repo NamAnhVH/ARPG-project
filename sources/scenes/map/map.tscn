@@ -43,6 +43,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Chest" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="BreakableObject" type="Node2D" parent="."]
 y_sort_enabled = true

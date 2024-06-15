@@ -18,7 +18,7 @@ func _on_update_quest_progress(id : String, type: GameEnums.QUEST_TYPE, finished
 		elif type == GameEnums.QUEST_TYPE.SIDE_QUEST:
 			for quest_progress_slot : QuestProgressSlot in side_quest.get_children():
 				if quest_progress_slot.quest_id == id:
-					quest_progress_slot.queue_free()
+					quest_progress_slot.free()
 	else:
 		if type == GameEnums.QUEST_TYPE.MAIN_QUEST:
 			update_main_quest(id)
@@ -40,7 +40,7 @@ func setup_main_quest():
 				var text = format_string(StoryManager.progress_data.current_main_quest.progress.name)
 				quest_progress_slot.progress = text
 				if StoryManager.progress_data.current_main_quest.progress.has("combat"):
-					quest_progress_slot.progress = quest_progress_slot.progress + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(StoryManager.progress_data.current_main_quest.combat.quantity) + " )"
+					quest_progress_slot.progress = quest_progress_slot.progress + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(StoryManager.progress_data.current_main_quest.progress.combat.quantity) + " )"
 		main_quest.add_child(quest_progress_slot)
 
 func setup_side_quest():
@@ -74,8 +74,8 @@ func update_main_quest(id: String):
 					quest_progress_slot.lbl_progress.text = text
 					if StoryManager.progress_data.current_main_quest.progress.has("combat"):
 						quest_progress_slot.lbl_progress.text = quest_progress_slot.lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(StoryManager.progress_data.current_main_quest.progress.combat.quantity) + " )"
-	else:
-		setup_main_quest()
+		else:
+			setup_main_quest()
 
 func update_side_quest(id: String):
 	var is_new_quest : bool = true
@@ -92,7 +92,7 @@ func update_side_quest(id: String):
 					if StoryManager.progress_data.current_side_quest[id].progress.has("combat"):
 						quest_progress_slot.lbl_progress.text = quest_progress_slot.lbl_progress.text + " ( " + str(StoryManager.progress_data.current_side_quest_progress[id]) + " / " + str(StoryManager.progress_data.current_side_quest[id].progress.combat.quantity) + " )"
 			break
-	if is_new_quest:
+	if is_new_quest and StoryManager.progress_data.current_side_quest.has(id):
 		var quest_progress_slot : QuestProgressSlot = ResourceManager.get_instance("quest_progress_slot")
 		var current_quest_info = ResourceManager.quest_info["side_quest"][id]
 		quest_progress_slot.quest_id = id
@@ -101,12 +101,12 @@ func update_side_quest(id: String):
 		if StoryManager.progress_data.current_side_quest[id].has("progress"):
 			if StoryManager.progress_data.current_side_quest[id].progress is String:
 				var text = format_string(StoryManager.progress_data.current_side_quest[id].progress)
-				quest_progress_slot.lbl_progress.text = text
+				quest_progress_slot.progress = text
 			elif StoryManager.progress_data.current_side_quest[id].progress is Dictionary:
 				var text = format_string(StoryManager.progress_data.current_side_quest[id].progress.name)
-				quest_progress_slot.lbl_progress.text = text
+				quest_progress_slot.progress = text
 				if StoryManager.progress_data.current_side_quest[id].progress.has("combat"):
-					quest_progress_slot.lbl_progress.text = quest_progress_slot.lbl_progress.text + " ( " + str(StoryManager.progress_data.current_side_quest_progress[StoryManager.progress_data.current_side_quest[id].id]) + " / " + str(StoryManager.progress_data.current_side_quest[StoryManager.progress_data.current_side_quest[id].id].combat.quantity) + " )"
+					quest_progress_slot.progress = quest_progress_slot.progress + " ( " + str(StoryManager.progress_data.current_side_quest_progress[StoryManager.progress_data.current_side_quest[id].id]) + " / " + str(StoryManager.progress_data.current_side_quest[StoryManager.progress_data.current_side_quest[id].id].combat.quantity) + " )"
 		side_quest.add_child(quest_progress_slot)
 
 func format_string(string: String):

@@ -39,10 +39,10 @@ offset_bottom = 64.0
 [node name="InventoryContainer" parent="Window" instance=ExtResource("2_tcsoq")]
 visible = false
 layout_mode = 1
-offset_left = 260.0
-offset_top = 101.0
-offset_right = 550.0
-offset_bottom = 289.0
+offset_left = 251.0
+offset_top = 97.0
+offset_right = 541.0
+offset_bottom = 285.0
 
 [node name="PlayerEquipment" parent="Window" instance=ExtResource("3_dog6p")]
 visible = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://etb0nlplthmp"]
+[gd_scene load_steps=7 format=3 uid="uid://etb0nlplthmp"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_p3317"]
 [ext_resource type="PackedScene" uid="uid://dis6wr2xh52am" path="res://sources/scenes/entities/characters/battleCharacters/enemies/gremlin.tscn" id="3_8jqw7"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_tbmok"]
+[ext_resource type="PackedScene" uid="uid://2u3j2o58bi6c" path="res://sources/scenes/entities/interactables/interactable_chest.tscn" id="4_o8vre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vbsk"]
 resource_local_to_scene = true
@@ -33,7 +34,7 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(1507331, 1, 9, 1179662, 655361, 10, 786451, 1, 9, 720926, 327681, 10, 1048616, 1, 9, 917553, 655361, 10, 1441844, 1, 9, 1966129, 327681, 10, 1310730, 655361, 10, 2228231, 655361, 10, 1966084, 655361, 10, 2949139, 1, 9, 3211289, 1, 9, 3145780, 1, 9, 3276834, 327681, 10)
 
-[node name="CollisionArea" parent="." index="6"]
+[node name="CollisionArea" parent="." index="5"]
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionArea" index="0"]
@@ -126,5 +127,11 @@ position = Vector2(90, 673)
 min_level = 2
 max_level = 4
 
-[node name="NavigationRegion2D" parent="." index="11"]
+[node name="InteractableChest" parent="Chest" index="0" instance=ExtResource("4_o8vre")]
+position = Vector2(482, 428)
+id = "chest_v05"
+items = Array[String](["stone", "stone", "stone", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00", "healing_potion_v00", "stone", "quiver_v00", "sword_v00", "stone"])
+frame = 2
+
+[node name="NavigationRegion2D" parent="." index="12"]
 navigation_polygon = SubResource("NavigationPolygon_y2fdd")
