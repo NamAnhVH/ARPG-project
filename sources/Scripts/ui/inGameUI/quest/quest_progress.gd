@@ -64,7 +64,7 @@ func setup_side_quest():
 func update_main_quest(id: String):
 	if main_quest.get_child_count() > 0:
 		var quest_progress_slot : QuestProgressSlot = main_quest.get_child(0)
-		if quest_progress_slot and quest_progress_slot.quest_id == id:
+		if quest_progress_slot.quest_id == id:
 			if StoryManager.progress_data.current_main_quest.has("progress"):
 				if StoryManager.progress_data.current_main_quest.progress is String:
 					var text = format_string(StoryManager.progress_data.current_main_quest.progress)
@@ -76,6 +76,9 @@ func update_main_quest(id: String):
 						quest_progress_slot.lbl_progress.text = quest_progress_slot.lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(StoryManager.progress_data.current_main_quest.progress.combat.quantity) + " )"
 		else:
 			setup_main_quest()
+	else:
+		setup_main_quest()
+
 
 func update_side_quest(id: String):
 	var is_new_quest : bool = true

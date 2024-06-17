@@ -2,6 +2,7 @@ extends Node
 
 const SAVE_FOLDER = "user://save/"
 const NEW_GAME_FILE = "user://new_game.dat"
+const CONTINUE_GAME_FILE = "user://continue_game.dat"
 
 var game_data : GameData
 
@@ -26,6 +27,24 @@ func create_new_game_file():
 		var file = FileAccess.open(NEW_GAME_FILE, FileAccess.WRITE)
 		file.store_var(game_data.get_data(), true)
 		file.close()
+
+func continue_game():
+	if FileAccess.file_exists(CONTINUE_GAME_FILE):
+		var file = FileAccess.open(CONTINUE_GAME_FILE, FileAccess.READ)
+		var data = file.get_var(true)
+		file.close()
+		
+		if data != null:
+			game_data.set_data(data)
+
+func save_continue_file():
+	SignalManager.saving_game.emit()
+	var file = FileAccess.open(CONTINUE_GAME_FILE, FileAccess.WRITE)
+	file.store_var(game_data.get_data(), true)
+	file.close()
+
+func can_continue():
+	return FileAccess.file_exists(CONTINUE_GAME_FILE)
 
 func load_game(file_name):
 	SignalManager.inventory_closed.emit()

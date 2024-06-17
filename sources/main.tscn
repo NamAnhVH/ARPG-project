@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fsttyo8rq87n"]
+[gd_scene load_steps=8 format=3 uid="uid://fsttyo8rq87n"]
 
 [ext_resource type="Script" path="res://sources/scripts/main.gd" id="1_18d2v"]
 [ext_resource type="Script" path="res://sources/scripts/map/world_manager.gd" id="2_eagn0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://brx1kdm1inexx" path="res://data/resources/player_data.tres" id="3_5dv0b"]
 [ext_resource type="Resource" uid="uid://ux1xcdadgxto" path="res://data/resources/world_data.tres" id="4_77d44"]
 [ext_resource type="PackedScene" uid="uid://ded1w1y1piutp" path="res://sources/scenes/entities/inGameUI/in_game_ui.tscn" id="6_uughu"]
+[ext_resource type="PackedScene" uid="uid://p60yt1ghmqrp" path="res://sources/scenes/components/core/autosave.tscn" id="7_nexu5"]
 
 [node name="main" type="Node2D"]
 process_mode = 3
@@ -14,7 +15,6 @@ script = ExtResource("1_18d2v")
 
 [node name="PlayableCharacter" parent="." instance=ExtResource("2_u0g7d")]
 position = Vector2(405, 225)
-max_health = 0
 
 [node name="WorldManager" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -24,3 +24,5 @@ world_data = ExtResource("4_77d44")
 
 [node name="InGameUI" parent="." instance=ExtResource("6_uughu")]
 layer = 2
+
+[node name="Autosave" parent="." instance=ExtResource("7_nexu5")]

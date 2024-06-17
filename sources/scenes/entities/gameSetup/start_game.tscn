@@ -11,7 +11,7 @@ shader = ExtResource("2_e5v3q")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wpkhj"]
 font = ExtResource("5_7qaau")
-font_size = 100
+font_size = 80
 font_color = Color(0, 0, 0, 1)
 outline_size = 10
 shadow_size = 9
@@ -55,15 +55,34 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -67.5
-offset_top = -241.0
-offset_right = 67.5
-offset_bottom = -191.0
+offset_left = -67.0
+offset_top = -262.0
+offset_right = 68.0
+offset_bottom = -212.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_42uaw")
 theme_override_fonts/font = ExtResource("5_7qaau")
 text = "New Game"
+
+[node name="Continue" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -208.0
+offset_right = 68.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_42uaw")
+theme_override_fonts/font = ExtResource("5_7qaau")
+disabled = true
+text = "Continue
+"
 
 [node name="LoadGame" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -72,10 +91,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -67.5
-offset_top = -177.0
-offset_right = 67.5
-offset_bottom = -127.0
+offset_left = -67.0
+offset_top = -155.0
+offset_right = 68.0
+offset_bottom = -105.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_42uaw")
@@ -90,9 +109,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -67.0
-offset_top = -116.0
+offset_top = -102.0
 offset_right = 68.0
-offset_bottom = -70.0
+offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_42uaw")
@@ -106,9 +125,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -67.0
-offset_top = -57.0
+offset_top = -53.0
 offset_right = 68.0
-offset_bottom = -8.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_42uaw")
@@ -120,15 +139,18 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -192.0
-offset_top = 18.0
+offset_top = 2.0
 offset_right = 193.0
-offset_bottom = 181.0
+offset_bottom = 165.0
 grow_horizontal = 2
 text = "Journey of
 Rediscovery"
 label_settings = SubResource("LabelSettings_wpkhj")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/Control/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Continue" to="." method="_on_continue_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Exit" to="." method="_on_exit_pressed"]
