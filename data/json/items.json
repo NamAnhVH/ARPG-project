@@ -6737,5 +6737,380 @@
 				"cooldown": 20
 			}
 		}
+	},
+	"swift_potion_v00":{
+		"name": "Swift Elixir",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "COMMON",
+		"level": 1,
+		"usable":{
+			"type": "buff_move_speed",
+			"data": {
+				"value": 5,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"swift_potion_v01":{
+		"name": "Haste Potion",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "UNCOMMON",
+		"level": 10,
+		"usable":{
+			"type": "buff_move_speed",
+			"data": {
+				"value": 10,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"swift_potion_v02":{
+		"name": "Velocity Vial",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 20,
+		"usable":{
+			"type": "buff_move_speed",
+			"data": {
+				"value": 15,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"swift_potion_v03":{
+		"name": "Rapid Remedy",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "EPIC",
+		"level": 30,
+		"usable":{
+			"type": "buff_move_speed",
+			"data": {
+				"value": 20,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"swift_potion_v04":{
+		"name": "Blitz Brew",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "LEGENDARY",
+		"level": 40,
+		"usable":{
+			"type": "buff_move_speed",
+			"data": {
+				"value": 25,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"attack_potion_v00":{
+		"name": "Mighty Mixture",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "COMMON",
+		"level": 1,
+		"usable":{
+			"type": "buff_atk",
+			"data": {
+				"value": 10,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"attack_potion_v01":{
+		"name": "Power Potion",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "UNCOMMON",
+		"level": 10,
+		"usable":{
+			"type": "buff_atk",
+			"data": {
+				"value": 20,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"attack_potion_v02":{
+		"name": "Strength Serum",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 20,
+		"usable":{
+			"type": "buff_atk",
+			"data": {
+				"value": 30,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"attack_potion_v03":{
+		"name": "Fury Flask",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "EPIC",
+		"level": 30,
+		"usable":{
+			"type": "buff_atk",
+			"data": {
+				"value": 40,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"attack_potion_v04":{
+		"name": "Berserker's Brew",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "LEGENDARY",
+		"level": 40,
+		"usable":{
+			"type": "buff_atk",
+			"data": {
+				"value": 50,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"defence_potion_v00":{
+		"name": "Guard Elixir",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "COMMON",
+		"level": 1,
+		"usable":{
+			"type": "buff_def",
+			"data": {
+				"value": 4,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"defence_potion_v01":{
+		"name": "Fortress Flask",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "UNCOMMON",
+		"level": 10,
+		"usable":{
+			"type": "buff_def",
+			"data": {
+				"value": 8,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"defence_potion_v02":{
+		"name": "Aegis Potion",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 20,
+		"usable":{
+			"type": "buff_def",
+			"data": {
+				"value": 12,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"defence_potion_v03":{
+		"name": "Bulwark Brew",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "EPIC",
+		"level": 30,
+		"usable":{
+			"type": "buff_def",
+			"data": {
+				"value": 16,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"defence_potion_v04":{
+		"name": "Titan's Tonic",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "LEGENDARY",
+		"level": 40,
+		"usable":{
+			"type": "buff_def",
+			"data": {
+				"value": 20,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_rate_potion_v00":{
+		"name": "Sharpshot Serum",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "COMMON",
+		"level": 1,
+		"usable":{
+			"type": "buff_crit_rate",
+			"data": {
+				"value": 3,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_rate_potion_v01":{
+		"name": "Precision Potion",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "UNCOMMON",
+		"level": 10,
+		"usable":{
+			"type": "buff_crit_rate",
+			"data": {
+				"value": 6,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_rate_potion_v02":{
+		"name": "Keen Elixir",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 20,
+		"usable":{
+			"type": "buff_crit_rate",
+			"data": {
+				"value": 9,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_rate_potion_v03":{
+		"name": "Razor's Edge Remedy",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "EPIC",
+		"level": 30,
+		"usable":{
+			"type": "buff_crit_rate",
+			"data": {
+				"value": 12,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_rate_potion_v04":{
+		"name": "Deadeye Draught",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "LEGENDARY",
+		"level": 40,
+		"usable":{
+			"type": "buff_crit_rate",
+			"data": {
+				"value": 15,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_damage_potion_v00":{
+		"name": "Savage Serum",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "COMMON",
+		"level": 1,
+		"usable":{
+			"type": "buff_crit_damage",
+			"data": {
+				"value": 5,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_damage_potion_v01":{
+		"name": "Brutal Brew",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "UNCOMMON",
+		"level": 10,
+		"usable":{
+			"type": "buff_crit_damage",
+			"data": {
+				"value": 10,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_damage_potion_v02":{
+		"name": "Fierce Flask",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "RARE",
+		"level": 20,
+		"usable":{
+			"type": "buff_crit_damage",
+			"data": {
+				"value": 15,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_damage_potion_v03":{
+		"name": "Ravage Remedy",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "EPIC",
+		"level": 30,
+		"usable":{
+			"type": "buff_crit_damage",
+			"data": {
+				"value": 20,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
+	},
+	"crit_damage_potion_v04":{
+		"name": "Devastator Draught",
+		"type": "CONSUMABLE",
+		"stack_size": 99,
+		"rarity": "LEGENDARY",
+		"level": 40,
+		"usable":{
+			"type": "buff_crit_damage",
+			"data": {
+				"value": 25,
+				"effective_time": 30,
+				"cooldown": 120
+			}
+		}
 	}
 }

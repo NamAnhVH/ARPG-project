@@ -71,4 +71,7 @@ func set_can_use(value):
 	can_use_changed.emit(get_can_use())
 
 func get_can_use():
-	return (can_use or can_always_use) and item.item_slot and item.item_slot is EquipmentSlot and item.item_slot.is_on_player_equipment
+	if item.type == GameEnums.ITEM_TYPE.EQUIPMENT:
+		return (can_use or can_always_use) and item.item_slot and item.item_slot is EquipmentSlot and item.item_slot.is_on_player_equipment
+	if item.type == GameEnums.ITEM_TYPE.CONSUMABLE:
+		return (can_use or can_always_use) and item.item_slot and item.item_slot.is_on_player

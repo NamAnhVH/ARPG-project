@@ -10,7 +10,7 @@ var label_quantity : Label
 
 func _ready():
 	label_key.text = key
-	label_quantity = ResourceManager.get_instance(("quantity"))
+	label_quantity = ResourceManager.get_instance("quantity")
 	label_quantity.position = Vector2(3, 0)
 	add_child(label_quantity)
 	

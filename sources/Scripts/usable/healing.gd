@@ -14,6 +14,3 @@ func _on_player_life_changed(health, max_health):
 
 func execute():
 	SignalManager.heal_player.emit(-amount)
-
-func get_can_use():
-		return (can_use or can_always_use) and item.item_slot and item.item_slot.is_on_player

@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://sources/scripts/ui/inGameUI/inventory/hotbar/hotbar_slot.gd" id="2_rihek"]
 [ext_resource type="FontFile" uid="uid://cfunj47xo4cpv" path="res://font/m5x7.ttf" id="3_tkc4n"]
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_rmrxp"]
 font = ExtResource("3_tkc4n")
 font_size = 18

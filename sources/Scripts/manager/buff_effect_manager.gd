@@ -20,3 +20,6 @@ func get_stat(stat):
 		or (buff.type == "buff_move_speed" and stat == GameEnums.STAT.MOVE_SPEED):
 			total += buff.amount
 	return total
+
+func _on_child_order_changed():
+	SignalManager.update_stat.emit()
