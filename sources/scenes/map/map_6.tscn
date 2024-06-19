@@ -39,4 +39,4 @@ polygon = PackedVector2Array(889, 321, 863, 372, 863, 451, 836, 482, 827, 508, 8
 polygon = PackedVector2Array(790, 880, 892, 881, 898, 742, 859, 741, 858, 798, 825, 798, 822, 845, 788, 862)
 
 [node name="Sokoban1" parent="." index="14" instance=ExtResource("3_eumob")]
-position = Vector2(403, 133)
+position = Vector2(376, 156)

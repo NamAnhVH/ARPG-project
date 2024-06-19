@@ -10156,12 +10156,12 @@ graph_offset = Vector2(-118.687, 41.4015)
 [sub_resource type="LabelSettings" id="LabelSettings_8da0m"]
 line_spacing = 0.0
 font = ExtResource("7_h2tvk")
-font_size = 10
+font_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_o6v7j"]
 line_spacing = 0.0
 font = ExtResource("7_h2tvk")
-font_size = 10
+font_size = 15
 
 [node name="PlayableCharacter" instance=ExtResource("1_54hdu")]
 z_index = 1
@@ -10307,16 +10307,15 @@ parameters/Hurt/blend_position = Vector2(-0.341051, 0.111111)
 z_index = 10
 
 [node name="InteractableLabels" type="VBoxContainer" parent="Interactable" index="0"]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -33.5
-offset_top = -39.0
-offset_right = 33.5
-offset_bottom = -17.0
+offset_left = -50.5
+offset_top = -49.0
+offset_right = 50.5
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("6_g3p5i")

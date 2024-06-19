@@ -21,6 +21,13 @@ Echo: Currently, this place is being harassed by a bunch of slimes.
 Echo: Can you help me defeat them?
 {{Global.player_name}}: Do you have any weapons I can borrow?
 Echo: Okay, here you go.
+Echo: Remember, press {{DialogueManagerNode.get_button("inventory")}} to open your inventory.
+Echo: Choose a weapon and equip it in the corresponding slot.
+Echo: To prepare for battle, first draw your sword and switch to combat mode by pressing {{DialogueManagerNode.get_button("draw_sheath")}}.
+Echo: To attack the enemy, press {{DialogueManagerNode.get_button("attack")}} repeatedly to create a combo.
+Echo: To parry, press {{DialogueManagerNode.get_button("parry")}} in the direction of the enemy's attack. If timed correctly, you can counterattack.
+Echo: To dodge, press {{DialogueManagerNode.get_button("dodge")}} to step back.
+Echo: Good luck.
 do SignalManager.update_main_quest.emit("main_quest_1")
 do SignalManager.main_quest_1_talk_to_echo_1.emit()
 set Global.paused = false
@@ -48,5 +55,16 @@ Nova: Our village is located right in the center of the island.
 Nova: Also, be careful when venturing outside the village, as there are many creatures lurking around.
 {{Global.player_name}}: Thank you.
 Nova: It seems like the village chief has some business to attend to. You should go meet him.
+set Global.paused = false
+=> END
+
+~ echo
+Echo: Remember, press {{DialogueManagerNode.get_button("inventory")}} to open your inventory.
+Echo: Choose a weapon and equip it in the corresponding slot.
+Echo: To prepare for battle, first draw your sword and switch to combat mode by pressing {{DialogueManagerNode.get_button("draw_sheath")}}.
+Echo: To attack the enemy, press {{DialogueManagerNode.get_button("attack")}} repeatedly to create a combo.
+Echo: To parry, press {{DialogueManagerNode.get_button("parry")}} in the direction of the enemy's attack. If timed correctly, you can counterattack.
+Echo: To dodge, press {{DialogueManagerNode.get_button("dodge")}} to step back.
+Echo: Good luck.
 set Global.paused = false
 => END

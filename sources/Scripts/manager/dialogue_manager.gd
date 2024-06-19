@@ -12,3 +12,6 @@ func _on_show_dialogue(dialogue: String, branch: String):
 			balloon.start(ResourceManager.dialogue[dialogue], branch.to_lower())
 		else:
 			balloon.start(ResourceManager.dialogue["default"], "start")
+
+func get_button(value) -> String:
+	return InputMap.action_get_events(value)[0].as_text().trim_suffix(" (Physical)")

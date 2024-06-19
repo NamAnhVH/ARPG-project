@@ -43,4 +43,5 @@ position = Vector2(128, 175)
 visible = false
 position = Vector2(233, 126)
 number_of_items = 5
+id = "chest_v07"
 items = Array[String](["sword_v00", "sword_v01", "healing_potion_v00", "bow_v00"])

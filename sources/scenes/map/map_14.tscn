@@ -46,7 +46,7 @@ layer_4/y_sort_enabled = true
 layer_4/z_index = 3
 layer_4/tile_data = PackedInt32Array(1048593, 655361, 10, 983062, 655361, 10, 917529, 1, 9, 1441816, 327681, 10, 1835051, 327681, 10, 983085, 327681, 10, 2097186, 327681, 10, 3145762, 655361, 10)
 
-[node name="ChangeLayerArea" parent="." index="3"]
+[node name="ChangeLayerArea" parent="." index="2"]
 visible = false
 
 [node name="ChangeLayerArea" type="Area2D" parent="ChangeLayerArea" index="0"]
@@ -64,7 +64,7 @@ layer_index = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeLayerArea/ChangeLayerArea2" index="0"]
 polygon = PackedVector2Array(287, 501, 303, 500, 303, 511, 287, 525)
 
-[node name="StairArea" parent="." index="4"]
+[node name="StairArea" parent="." index="3"]
 visible = false
 
 [node name="StairArea" type="Area2D" parent="StairArea" index="0"]
@@ -84,7 +84,7 @@ next_z_index = 1
 position = Vector2(232, 362)
 shape = SubResource("RectangleShape2D_qgi8e")
 
-[node name="CollisionArea" parent="." index="6"]
+[node name="CollisionArea" parent="." index="5"]
 visible = false
 
 [node name="Floor1" type="StaticBody2D" parent="CollisionArea" index="0"]

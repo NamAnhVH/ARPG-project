@@ -9,7 +9,6 @@ var effective_time
 
 func _ready():
 	effective_timer.start(effective_time)
-	#SignalManager.update_stat.emit()
 
 func _on_effective_time_timeout():
 	queue_free()

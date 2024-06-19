@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://be6h0ynor1odg"]
+
+[ext_resource type="PackedScene" uid="uid://xfras2rgsugx" path="res://sources/scenes/entities/puzzle/sokoban.tscn" id="1_evtqw"]
+[ext_resource type="PackedScene" uid="uid://dyopfxfiqmgwj" path="res://sources/scenes/entities/puzzle/target_puzzle.tscn" id="2_hrbd3"]
+[ext_resource type="PackedScene" uid="uid://cx76a0pfqc3pw" path="res://sources/scenes/entities/pushableObjects/pushable_box.tscn" id="3_5x0he"]
+
+[node name="Sokoban" instance=ExtResource("1_evtqw")]
+
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(262144, 0, 0, 262145, 65536, 3, 262146, 0, 65538, 327680, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 2, 720897, 65536, 3, 720898, 65536, 3, 720899, 65536, 3, 720900, 65536, 3, 720901, 65536, 3, 720902, 65536, 3, 720903, 65536, 3, 720904, 65536, 3, 720905, 65536, 3, 720906, 0, 65536, 786442, 0, 1, 851978, 0, 2, 851979, 65536, 3, 851980, 0, 65536, 851983, 65536, 3, 851984, 65536, 3, 851985, 0, 65538, 786449, 0, 1, 720913, 0, 1, 655377, 0, 1, 589841, 0, 1, 524305, 0, 1, 458769, 0, 1, 393233, 0, 65536, 393232, 65536, 3, 393231, 0, 2, 327695, 0, 1, 262159, 0, 1, 196623, 0, 1, 131087, 0, 65536, 131086, 65536, 3, 131085, 65536, 3, 131084, 65536, 3, 131083, 0, 2, 65547, 0, 1, 11, 0, 65536, 10, 65536, 3, 9, 65536, 3, 8, 65536, 3, 7, 65536, 3, 6, 0, 0, 65542, 0, 1, 131078, 0, 65538, 131077, 65536, 3, 131076, 65536, 3, 131075, 65536, 3, 131074, 0, 0, 196610, 0, 1, 917516, 196608, 2, 851982, 0, 0, 917518, 196608, 2, 589837, 0, 0, 655373, 0, 2, 655374, 0, 65538, 589838, 0, 65536, 458755, 0, 0, 524291, 0, 2, 524292, 0, 65538, 458756, 0, 65536, 458759, 0, 0, 524295, 0, 2, 524296, 0, 65538, 458760, 0, 65536, 327691, 0, 0, 393227, 0, 2, 393228, 0, 65538, 327692, 0, 65536)
+
+[node name="TargetPuzzle" parent="TargetPosition" index="0" instance=ExtResource("2_hrbd3")]
+position = Vector2(28, 96)
+
+[node name="TargetPuzzle2" parent="TargetPosition" index="1" instance=ExtResource("2_hrbd3")]
+position = Vector2(93, 63)
+
+[node name="TargetPuzzle3" parent="TargetPosition" index="2" instance=ExtResource("2_hrbd3")]
+position = Vector2(95, 163)
+
+[node name="TargetPuzzle4" parent="TargetPosition" index="3" instance=ExtResource("2_hrbd3")]
+position = Vector2(128, 97)
+
+[node name="TargetPuzzle5" parent="TargetPosition" index="4" instance=ExtResource("2_hrbd3")]
+position = Vector2(224, 63)
+
+[node name="PushableBox" parent="PushableObject" index="0" instance=ExtResource("3_5x0he")]
+position = Vector2(94, 106)
+
+[node name="PushableBox2" parent="PushableObject" index="1" instance=ExtResource("3_5x0he")]
+position = Vector2(128, 106)
+
+[node name="PushableBox3" parent="PushableObject" index="2" instance=ExtResource("3_5x0he")]
+position = Vector2(157, 144)
+
+[node name="PushableBox4" parent="PushableObject" index="3" instance=ExtResource("3_5x0he")]
+position = Vector2(157, 176)
+
+[node name="PushableBox5" parent="PushableObject" index="4" instance=ExtResource("3_5x0he")]
+position = Vector2(224, 110)
+
+[node name="InteractableRandomChest" parent="." index="3"]
+position = Vector2(268, 80)
+number_of_items = 10
+id = "chest_v08"
+items = Array[String](["sword_v01", "helmet_v01", "stone", "gold", "stone", "iron", "stone", "stone", "iron", "ring_v02", "necklace_v02", "ring_v01", "necklace_v01", "attack_potion_v01", "attack_potion_v01", "attack_potion_v01", "attack_potion_v01", "defence_potion_v01", "defence_potion_v01", "defence_potion_v01", "crit_rate_potion_v01", "crit_rate_potion_v01", "crit_rate_potion_v01", "swift_potion_v01", "swift_potion_v01", "swift_potion_v01"])

@@ -36,6 +36,8 @@ func upgrade():
 func set_info(item_info):
 	for stat in stats:
 		var text = ResourceManager.stat_info[GameEnums.STAT[stat.stat]].display % stat.value
+		if stat.value < 0:
+			text = text.substr(1)
 		item_info.add_line(ItemInfoLine.new(text, item_rarity))
 
 func get_stat(stat_type):

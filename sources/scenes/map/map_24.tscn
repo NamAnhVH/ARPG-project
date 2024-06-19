@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4qv1tcotbtl4"]
+[gd_scene load_steps=4 format=3 uid="uid://b4qv1tcotbtl4"]
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_rnwu7"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_qakc0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u5nq"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
+
 [node name="Map24" instance=ExtResource("1_rnwu7")]
 map_id = "map_24"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_6u5nq")
 
 [node name="TileMap" parent="." index="1"]
 tile_set = ExtResource("3_qakc0")

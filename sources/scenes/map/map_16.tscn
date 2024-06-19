@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_ix0am"]
 [ext_resource type="PackedScene" uid="uid://dlenjisq3ek4s" path="res://sources/scenes/entities/characters/battleCharacters/enemies/slime.tscn" id="3_jiawa"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="3_nqkuo"]
-[ext_resource type="Texture2D" uid="uid://mgwg11erlvdj" path="res://assets/monsters/slimes/slime_v01.png" id="4_ir6uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmko6"]
+resource_local_to_scene = true
+size = Vector2(880, 880)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sgely"]
 vertices = PackedVector2Array(889, 888, 193, 883, 195, 882, 231, 10, 280, 10, 246, 42, 234, 24, 820, 199, 885, 145, 876, 304, 766, 316, 374, 110, 380, 96, 384, 104, 411, 172, 787, 200, 783, 215, 852, 607, 886, 605, 210, 843, 464, 737, 748, 220, 744, 231, 618, 211, 524, 69, 523, 59, 547, 61, 635, 185, 633, 207, 208, 687, 224, 683, 226, 703, 208, 707, 214, 39, 220, 114, 213, 92, 199, 106, 199, 189, 276, 140, 391, 191, 308, 131, 611, 10, 728, 13, 727, 57, 608, 26, 723, 441, 720, 541, 708, 541, 571, 41, 572, 25, 766, 361, 801, 364, 801, 432, 633, 420, 730, 233, 726, 249, 772, 589, 775, 569, 828, 569, 270, 715, 190, 817, 186, 714, 258, 698, 568, 218, 537, 193, 484, 104, 487, 86, 504, 84, 618, 252, 554, 41, 506, 74, 530, 292, 534, 278, 572, 275, 299, 715, 310, 738, 299, 96, 313, 83, 328, 85, 337, 104, 444, 173, 461, 193, 634, 593, 713, 587)
@@ -13,6 +16,9 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Map16" instance=ExtResource("1_ix0am")]
 map_id = "map_16"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_mmko6")
 
 [node name="TileMap" parent="." index="1"]
 tile_set = ExtResource("3_nqkuo")
@@ -42,24 +48,12 @@ polygon = PackedVector2Array(886, 314, 779, 327, 778, 352, 813, 355, 812, 443, 7
 
 [node name="Slime" parent="Enemies/Slime" index="0" instance=ExtResource("3_jiawa")]
 position = Vector2(673, 315)
-texture = ExtResource("4_ir6uc")
-list_item_dropped = Array[String](["sword_v00", "axe_v00", "healing_potion_v00"])
-money_dropped = 10
-exp_dropped = 20
 
 [node name="Slime2" parent="Enemies/Slime" index="1" instance=ExtResource("3_jiawa")]
 position = Vector2(708, 339)
-texture = ExtResource("4_ir6uc")
-list_item_dropped = Array[String](["sword_v00", "axe_v00", "healing_potion_v00"])
-money_dropped = 10
-exp_dropped = 20
 
 [node name="Slime3" parent="Enemies/Slime" index="2" instance=ExtResource("3_jiawa")]
 position = Vector2(647, 364)
-texture = ExtResource("4_ir6uc")
-list_item_dropped = Array[String](["sword_v00", "axe_v00", "healing_potion_v00"])
-money_dropped = 10
-exp_dropped = 20
 
 [node name="NavigationRegion2D" parent="." index="12"]
 navigation_polygon = SubResource("NavigationPolygon_sgely")
