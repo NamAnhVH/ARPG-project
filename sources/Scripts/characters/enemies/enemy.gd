@@ -3,8 +3,11 @@ class_name Enemy
 
 @onready var attack_cooldown_time: Timer = $Timers/AttackCooldownTime
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
+@onready var detect_area : Area2D = $DetectArea
+@onready var attack_area : AttackArea = $AttackArea
 
 @onready var first_position = global_position
+
 
 
 var money_dropped: int
@@ -19,6 +22,7 @@ func _ready():
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.active = true
 	set_stat()
+	set_layer()
 
 func _physics_process(delta):
 	if !Global.paused:
@@ -44,6 +48,14 @@ func drop_item():
 
 func set_stat():
 	health = max_health
+
+func set_layer():
+	hitbox.set_collision_mask_value(z_index / 2 + 21, true)
+	damage_area.set_collision_layer_value(z_index / 2 + 17, true)
+	detect_area.set_collision_mask_value(z_index / 2 + 1, true)
+	attack_area.set_collision_mask_value(z_index / 2 + 1, true)
+	set_collision_layer_value(z_index / 2 + 1, true)
+	set_collision_mask_value(z_index / 2 + 1, true)
 
 func _on_detect_area_body_entered(body):
 	if body is PlayableCharacter:

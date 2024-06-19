@@ -1560,8 +1560,6 @@ vframes = 10
 
 [node name="Hitbox" parent="." index="1"]
 visible = false
-collision_layer = 0
-collision_mask = 1048576
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="1"]
 position = Vector2(0, -9)
@@ -1570,8 +1568,6 @@ shape = SubResource("CapsuleShape2D_rbw66")
 
 [node name="DamageArea" parent="." index="2"]
 visible = false
-collision_layer = 65536
-collision_mask = 0
 
 [node name="Body" type="CollisionShape2D" parent="DamageArea" index="0"]
 position = Vector2(0, -8)

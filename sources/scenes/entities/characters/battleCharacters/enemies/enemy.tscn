@@ -10,12 +10,21 @@ script = ExtResource("2_ml5vh")
 max_health = 0
 
 [node name="Hitbox" parent="." index="0"]
+collision_layer = 0
+collision_mask = 0
 immunity_duration = 0.2
 
+[node name="DamageArea" parent="." index="1"]
+collision_layer = 0
+collision_mask = 0
+
 [node name="DetectArea" type="Area2D" parent="." index="2"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="AttackArea" parent="." index="3" instance=ExtResource("3_6svna")]
 collision_layer = 0
+collision_mask = 0
 
 [node name="Timers" type="Node" parent="." index="6"]
 

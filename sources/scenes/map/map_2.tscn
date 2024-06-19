@@ -52,41 +52,41 @@ polygon = PackedVector2Array(-20, 864, -9, 878, 19, 893, 30, 893, 31, 865, 51, 8
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="CollisionArea/StaticBody2D" index="4"]
 polygon = PackedVector2Array(723, 851, 723, 868, 830, 851, 900, 833, 894, 812, 840, 821, 835, 806, 882, 793, 878, 771, 917, 756, 892, 717, 859, 725, 783, 772, 786, 795, 739, 814)
 
-[node name="Mushroom" type="Node2D" parent="Enemies" index="0"]
+[node name="Mushrooms" type="Node2D" parent="Enemies" index="0"]
 
-[node name="Mushroom" parent="Enemies/Mushroom" index="0" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom" parent="Enemies/Mushrooms" index="0" instance=ExtResource("3_ap8bm")]
 position = Vector2(393, 207)
 min_level = 7
 
-[node name="Mushroom2" parent="Enemies/Mushroom" index="1" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom2" parent="Enemies/Mushrooms" index="1" instance=ExtResource("3_ap8bm")]
 position = Vector2(489, 207)
 min_level = 7
 
-[node name="Mushroom3" parent="Enemies/Mushroom" index="2" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom3" parent="Enemies/Mushrooms" index="2" instance=ExtResource("3_ap8bm")]
 position = Vector2(430, 286)
 min_level = 7
 
-[node name="Mushroom4" parent="Enemies/Mushroom" index="3" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom4" parent="Enemies/Mushrooms" index="3" instance=ExtResource("3_ap8bm")]
 position = Vector2(503, 259)
 min_level = 7
 
-[node name="Mushroom5" parent="Enemies/Mushroom" index="4" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom5" parent="Enemies/Mushrooms" index="4" instance=ExtResource("3_ap8bm")]
 position = Vector2(505, 329)
 min_level = 7
 
-[node name="Mushroom6" parent="Enemies/Mushroom" index="5" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom6" parent="Enemies/Mushrooms" index="5" instance=ExtResource("3_ap8bm")]
 position = Vector2(574, 304)
 min_level = 7
 
-[node name="Mushroom7" parent="Enemies/Mushroom" index="6" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom7" parent="Enemies/Mushrooms" index="6" instance=ExtResource("3_ap8bm")]
 position = Vector2(709, 265)
 min_level = 7
 
-[node name="Mushroom8" parent="Enemies/Mushroom" index="7" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom8" parent="Enemies/Mushrooms" index="7" instance=ExtResource("3_ap8bm")]
 position = Vector2(798, 256)
 min_level = 7
 
-[node name="Mushroom9" parent="Enemies/Mushroom" index="8" instance=ExtResource("3_ap8bm")]
+[node name="Mushroom9" parent="Enemies/Mushrooms" index="8" instance=ExtResource("3_ap8bm")]
 position = Vector2(648, 312)
 min_level = 7
 

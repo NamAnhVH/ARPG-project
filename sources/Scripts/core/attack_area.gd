@@ -1,4 +1,5 @@
 extends Area2D
+class_name AttackArea
 
 @onready var parent = get_parent()
 
