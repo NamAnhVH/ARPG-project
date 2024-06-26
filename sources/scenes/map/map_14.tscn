@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ckb6kvjosdnlj" path="res://sources/scenes/map/map.tscn" id="1_c2geq"]
 [ext_resource type="TileSet" uid="uid://dh33ifmar3w5i" path="res://tileset/village.tres" id="2_e5yut"]
+[ext_resource type="PackedScene" uid="uid://bl5nrfl5vxm56" path="res://sources/scenes/components/core/stair_area.tscn" id="4_7dthl"]
 [ext_resource type="PackedScene" uid="uid://c4inktsilomhw" path="res://sources/scenes/components/core/change_world_area.tscn" id="5_wioqe"]
-[ext_resource type="Script" path="res://sources/scripts/core/stair_area.gd" id="7_rbppq"]
 [ext_resource type="Script" path="res://sources/scripts/core/change_layer_area.gd" id="7_u14xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l2qh"]
@@ -64,15 +64,15 @@ layer_index = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeLayerArea/ChangeLayerArea2" index="0"]
 polygon = PackedVector2Array(287, 501, 303, 500, 303, 511, 287, 525)
 
-[node name="StairArea" parent="." index="3"]
-visible = false
-
-[node name="StairArea" type="Area2D" parent="StairArea" index="0"]
-script = ExtResource("7_rbppq")
+[node name="StairArea" parent="StairArea" index="0" instance=ExtResource("4_7dthl")]
+position = Vector2(302, 501)
 stair_direction = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StairArea/StairArea" index="0"]
-polygon = PackedVector2Array(273, 508, 326, 458, 328, 493, 274, 541)
+polygon = PackedVector2Array(-28, 5, -28, 39, 25, -9, 25, -48)
+
+[node name="ChangeWorld" parent="." index="4"]
+visible = false
 
 [node name="ChangeWorldArea" parent="ChangeWorld" index="0" instance=ExtResource("5_wioqe")]
 position = Vector2(-1, -5)

@@ -1,13 +1,56 @@
-~ this_is_a_node_title
+~ talk_to_lily_1
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+???: Huhu, huhu, sniff sniff
+???: Big brother, where are you?
+{{Global.player_name}}: What's wrong, little girl?
+???: Huhu, my mom is very sick at home. My big brother told me to go buy medicine, but he hasn't come back all day. Huhu
+{{Global.player_name}}: Alright, I'll buy the medicine for you. I'll also try to find your big brother.
+???: Huhu, thank you, mister.
+{{Global.player_name}}: No problem at all.
+{{Global.player_name}}: By the way, what's your name?
+Lily: It's Lily, sir.
+{{Global.player_name}}: (Lily ...)
+{{Global.player_name}}: (That name sounds familiar.)
+{{Global.player_name}}: Alright Lily, I'll be back soon.
+do SignalManager.update_main_quest.emit("main_quest_4")
+set Global.paused = false
+=> END
 
+~ lily
+if StoryManager.progress_data.current_main_quest.progress.has("give")
+	Lily: Have you found my big brother yet?
+	if InventoryManager.is_have_items_for_quest("main_quest_4",GameEnums.QUEST_TYPE.MAIN_QUEST)
+		=> have_items
+	else
+		=> not_have_items
+else
+	=> not_in_progress
+
+=> END
+
+~ not_in_progress
+???: Huhu, oh brother, where are you?
+???: Huhu, where are you now?
+set Global.paused = false
+=> END
+
+~ have_items
+{{Global.player_name}}: Here's the medicine for your mom, hold it and let's go help her.
+Lily: Thank you for helping us.
+do SignalManager.update_main_quest.emit("main_quest_4")
+do Global.paused = false
+=> END
+
+~ not_have_items
+{{Global.player_name}}: Don't cry anymore, I'll be right back.
+Lily: Huhu
+do Global.paused = false
+=> END
+
+~ talk_to_lily_2
+Lily: Where is my big brother?
+{{Global.player_name}}: I'm sorry, I couldn't find your big brother.
+Lily: HuHu... Wa..k..e ...u...p, big brother.
+do SignalManager.update_main_quest.emit("main_quest_4")
+do Global.paused = false
 => END

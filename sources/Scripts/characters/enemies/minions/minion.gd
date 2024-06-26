@@ -41,6 +41,7 @@ func generate_random_position():
 func get_enemy_data(new_enemy):
 	new_enemy.min_level = min_level
 	new_enemy.max_level = max_level
+	new_enemy.z_index = z_index
 	new_enemy.global_position = first_position - get_parent().global_position
 
 func set_base_texture():

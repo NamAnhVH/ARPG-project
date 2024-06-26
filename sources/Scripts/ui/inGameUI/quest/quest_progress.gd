@@ -14,7 +14,7 @@ func _on_update_quest_progress(id : String, type: GameEnums.QUEST_TYPE, finished
 		if type == GameEnums.QUEST_TYPE.MAIN_QUEST:
 			for quest_progress_slot : QuestProgressSlot in main_quest.get_children():
 				if quest_progress_slot.quest_id == id:
-					quest_progress_slot.queue_free()
+					quest_progress_slot.free()
 		elif type == GameEnums.QUEST_TYPE.SIDE_QUEST:
 			for quest_progress_slot : QuestProgressSlot in side_quest.get_children():
 				if quest_progress_slot.quest_id == id:
@@ -62,9 +62,10 @@ func setup_side_quest():
 		side_quest.add_child(quest_progress_slot)
 
 func update_main_quest(id: String):
-	if main_quest.get_child_count() > 0:
-		var quest_progress_slot : QuestProgressSlot = main_quest.get_child(0)
+	var is_new_quest : bool = true
+	for quest_progress_slot in main_quest.get_children():
 		if quest_progress_slot.quest_id == id:
+			is_new_quest = false
 			if StoryManager.progress_data.current_main_quest.has("progress"):
 				if StoryManager.progress_data.current_main_quest.progress is String:
 					var text = format_string(StoryManager.progress_data.current_main_quest.progress)
@@ -74,10 +75,9 @@ func update_main_quest(id: String):
 					quest_progress_slot.lbl_progress.text = text
 					if StoryManager.progress_data.current_main_quest.progress.has("combat"):
 						quest_progress_slot.lbl_progress.text = quest_progress_slot.lbl_progress.text + " ( " + str(StoryManager.progress_data.current_main_quest_progress) + " / " + str(StoryManager.progress_data.current_main_quest.progress.combat.quantity) + " )"
-		else:
-			setup_main_quest()
-	else:
+	if is_new_quest:
 		setup_main_quest()
+
 
 
 func update_side_quest(id: String):

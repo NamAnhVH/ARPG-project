@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b6hrbjx21cb25" path="res://sources/scenes/components/ui/health_bar.tscn" id="4_3gpgh"]
 
 [node name="Enemy" instance=ExtResource("1_k1l2v")]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("2_ml5vh")
 max_health = 0
 

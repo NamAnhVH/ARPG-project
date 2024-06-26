@@ -28,7 +28,16 @@
 				"exp": 30
 			}
 		},
-		"main_quest_4": {
+		"main_quest_4":{
+			"name": "Little girl",
+			"progress": [{"name": "reach_level_10", "level_up": 10}, "talk_to_Lily_1", {"name": "give_10_Greater_Healing_Draught", "give": [{"quantity": 10, "item_id": "healing_potion_v01"}]}, "talk_to_Lily_2"],
+			"description": "You hear crying from a petite, adorable little girl standing in front of the house.",
+			"reward": {
+				"money": 50,
+				"exp": 100
+			}
+		},
+		"main_quest_10": {
 			"name": "Discover the ancient cave",
 			"progress": ["talk_to_Raven", "talk_to_Rio", "enter_the_cave"],
 			"description": "Rumors speak of an ancient cave hidden deep within the wilderness, said to hold secrets of untold riches and forgotten knowledge. Assemble your courage and seek out the village chief for guidance. Then, venture forth to locate the cave and uncover its mysteries. But beware, for dangers may lurk within its depths, guarding its secrets fiercely.",

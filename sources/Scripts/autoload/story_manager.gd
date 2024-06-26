@@ -46,6 +46,7 @@ func _on_update_main_quest(id: String):
 				if (progress_data.current_main_quest.progress.has("level_up") and progress_data.current_main_quest.progress.level_up <= player_data.level) \
 				or (progress_data.current_main_quest.progress.has("find_treasure") and world_data.chest_opened.has(progress_data.current_main_quest.progress.find_treasure)):
 					_on_update_main_quest(id)
+			SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.MAIN_QUEST, false)
 		else:
 			main_quest_finished(id)
 	else:
@@ -54,8 +55,9 @@ func _on_update_main_quest(id: String):
 			if (progress_data.current_main_quest.progress.has("level_up") and progress_data.current_main_quest.progress.level_up <= player_data.level) \
 			or (progress_data.current_main_quest.progress.has("find_treasure") and world_data.chest_opened.has(progress_data.current_main_quest.progress.find_treasure)):
 				_on_update_main_quest(id)
+		SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.MAIN_QUEST, false)
 	SignalManager.quest_updated.emit()
-	SignalManager.update_quest_progress.emit(id, GameEnums.QUEST_TYPE.MAIN_QUEST, false)
+
 
 func _on_update_side_quest(id: String):
 	var quest = ResourceManager.quest_info.side_quest[id]

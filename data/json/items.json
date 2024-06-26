@@ -6238,14 +6238,12 @@
 			}
 		],
 		"usable": {
-			"usable": {
-				"type": "buff_move_speed",
-				"data": {
-					"value": 15,
-					"effective_time": 40,
-					"cooldown": 180,
-					"unlimited_use": true
-				}
+			"type": "buff_move_speed",
+			"data": {
+				"value": 15,
+				"effective_time": 40,
+				"cooldown": 180,
+				"unlimited_use": true
 			}
 		},
 		"legendary": {

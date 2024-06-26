@@ -56,38 +56,56 @@ polygon = PackedVector2Array(723, 851, 723, 868, 830, 851, 900, 833, 894, 812, 8
 
 [node name="Mushroom" parent="Enemies/Mushrooms" index="0" instance=ExtResource("3_ap8bm")]
 position = Vector2(393, 207)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom2" parent="Enemies/Mushrooms" index="1" instance=ExtResource("3_ap8bm")]
 position = Vector2(489, 207)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom3" parent="Enemies/Mushrooms" index="2" instance=ExtResource("3_ap8bm")]
 position = Vector2(430, 286)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom4" parent="Enemies/Mushrooms" index="3" instance=ExtResource("3_ap8bm")]
 position = Vector2(503, 259)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom5" parent="Enemies/Mushrooms" index="4" instance=ExtResource("3_ap8bm")]
 position = Vector2(505, 329)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom6" parent="Enemies/Mushrooms" index="5" instance=ExtResource("3_ap8bm")]
 position = Vector2(574, 304)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom7" parent="Enemies/Mushrooms" index="6" instance=ExtResource("3_ap8bm")]
 position = Vector2(709, 265)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom8" parent="Enemies/Mushrooms" index="7" instance=ExtResource("3_ap8bm")]
 position = Vector2(798, 256)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="Mushroom9" parent="Enemies/Mushrooms" index="8" instance=ExtResource("3_ap8bm")]
 position = Vector2(648, 312)
+collision_layer = 1
+collision_mask = 1
 min_level = 7
 
 [node name="InteractableChest" parent="Chest" index="0" instance=ExtResource("3_3geg1")]

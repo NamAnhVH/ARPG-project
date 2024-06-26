@@ -202,7 +202,8 @@ func _on_inventory_add_item(item: Item):
 func is_have_items_for_quest(quest_id,type_quest):
 	var items = []
 	if type_quest == GameEnums.QUEST_TYPE.MAIN_QUEST:
-		items = StoryManager.progress_data.current_main_quest.progress.give
+		items = StoryManager.progress_data.current_main_quest.progress.give.duplicate()
+		#print_debug(StoryManager.progress_data.current_main_quest.progress)
 	if type_quest == GameEnums.QUEST_TYPE.SIDE_QUEST:
 		items = StoryManager.progress_data.current_side_quest[quest_id].progress.give
 	for item in items:

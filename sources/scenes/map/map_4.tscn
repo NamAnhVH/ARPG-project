@@ -109,21 +109,29 @@ y_sort_enabled = true
 
 [node name="Gremlin" parent="Enemies/Gremlins" index="0" instance=ExtResource("3_8jqw7")]
 position = Vector2(124, 816)
+collision_layer = 1
+collision_mask = 1
 min_level = 2
 max_level = 4
 
 [node name="Gremlin2" parent="Enemies/Gremlins" index="1" instance=ExtResource("3_8jqw7")]
 position = Vector2(61, 773)
+collision_layer = 1
+collision_mask = 1
 min_level = 2
 max_level = 4
 
 [node name="Gremlin3" parent="Enemies/Gremlins" index="2" instance=ExtResource("3_8jqw7")]
 position = Vector2(148, 742)
+collision_layer = 1
+collision_mask = 1
 min_level = 2
 max_level = 4
 
 [node name="Gremlin4" parent="Enemies/Gremlins" index="3" instance=ExtResource("3_8jqw7")]
 position = Vector2(90, 673)
+collision_layer = 1
+collision_mask = 1
 min_level = 2
 max_level = 4
 

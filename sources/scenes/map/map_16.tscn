@@ -48,12 +48,18 @@ polygon = PackedVector2Array(886, 314, 779, 327, 778, 352, 813, 355, 812, 443, 7
 
 [node name="Slime" parent="Enemies/Slime" index="0" instance=ExtResource("3_jiawa")]
 position = Vector2(673, 315)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Slime2" parent="Enemies/Slime" index="1" instance=ExtResource("3_jiawa")]
 position = Vector2(708, 339)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Slime3" parent="Enemies/Slime" index="2" instance=ExtResource("3_jiawa")]
 position = Vector2(647, 364)
+collision_layer = 1
+collision_mask = 1
 
 [node name="NavigationRegion2D" parent="." index="12"]
 navigation_polygon = SubResource("NavigationPolygon_sgely")
