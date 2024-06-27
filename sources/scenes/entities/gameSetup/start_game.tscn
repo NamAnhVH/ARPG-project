@@ -9,13 +9,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hps55"]
 shader = ExtResource("2_e5v3q")
 
-[sub_resource type="LabelSettings" id="LabelSettings_wpkhj"]
+[sub_resource type="LabelSettings" id="LabelSettings_yn0e0"]
 font = ExtResource("5_7qaau")
-font_size = 80
+font_size = 100
 font_color = Color(0, 0, 0, 1)
 outline_size = 10
-shadow_size = 9
-shadow_color = Color(0, 0, 0, 1)
 
 [node name="StartGame" type="Node2D"]
 script = ExtResource("1_yyil4")
@@ -42,6 +40,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.5
+offset_right = 192.5
+offset_bottom = 163.0
+grow_horizontal = 2
+text = "Journey of 
+Rediscovery"
+label_settings = SubResource("LabelSettings_yn0e0")
 
 [node name="GameName" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -73,16 +84,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -67.0
-offset_top = -208.0
+offset_top = -209.0
 offset_right = 68.0
-offset_bottom = -158.0
+offset_bottom = -159.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_42uaw")
 theme_override_fonts/font = ExtResource("5_7qaau")
 disabled = true
-text = "Continue
-"
+text = "Continue"
 
 [node name="LoadGame" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -133,24 +143,8 @@ grow_vertical = 0
 theme = ExtResource("4_42uaw")
 text = "Exit"
 
-[node name="Title" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -192.0
-offset_top = 2.0
-offset_right = 193.0
-offset_bottom = 165.0
-grow_horizontal = 2
-text = "Journey of
-Rediscovery"
-label_settings = SubResource("LabelSettings_wpkhj")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="pressed" from="CanvasLayer/Control/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Continue" to="." method="_on_continue_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Continue" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Exit" to="." method="_on_exit_pressed"]
