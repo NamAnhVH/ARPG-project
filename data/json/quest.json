@@ -37,6 +37,15 @@
 				"exp": 100
 			}
 		},
+		"main_quest_5":{
+			"name": "Bonds of Brotherhood",
+			"progress": [{"name": "reach_level_15", "level_up": 15}, "talk_to_Ethan_1", "talk_to_Lucas_1", {"name": "kill_20_gremlins", "combat":{ "quantity": 20, "enemy": "gremlin", "min_level": 12, "max_level": 17}}, "talk_to_Lucas_2", "talk_to_Ethan_2"],
+			"description": "One person is seeking help at the entrance of the adventurer's guild.",
+			"reward": {
+				"money": 200,
+				"exp": 200
+			}
+		},
 		"main_quest_10": {
 			"name": "Discover the ancient cave",
 			"progress": ["talk_to_Raven", "talk_to_Rio", "enter_the_cave"],

@@ -38,13 +38,13 @@ set Global.paused = false
 {{Global.player_name}}: Here's the medicine for your mom, hold it and let's go help her.
 Lily: Thank you for helping us.
 do SignalManager.update_main_quest.emit("main_quest_4")
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ not_have_items
 {{Global.player_name}}: Don't cry anymore, I'll be right back.
 Lily: Huhu
-do Global.paused = false
+set Global.paused = false
 => END
 
 ~ talk_to_lily_2
@@ -52,5 +52,5 @@ Lily: Where is my big brother?
 {{Global.player_name}}: I'm sorry, I couldn't find your big brother.
 Lily: HuHu... Wa..k..e ...u...p, big brother.
 do SignalManager.update_main_quest.emit("main_quest_4")
-do Global.paused = false
+set Global.paused = false
 => END

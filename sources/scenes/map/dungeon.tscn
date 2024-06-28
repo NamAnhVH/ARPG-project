@@ -33,5 +33,5 @@ y_sort_enabled = true
 [node name="Mushrooms" type="Node2D" parent="Enemies" index="2"]
 y_sort_enabled = true
 
-[node name="NavigationRegion2D" parent="." index="11"]
+[node name="NavigationRegion2D" parent="." index="12"]
 visible = true

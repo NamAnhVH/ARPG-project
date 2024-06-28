@@ -203,4 +203,4 @@ object_name = "Bob"
 texture = ExtResource("7_hqljq")
 
 [node name="InteractableTreasureChest" parent="Chest" index="0" instance=ExtResource("9_ymg1i")]
-position = Vector2(561, 510)
+position = Vector2(281, 475)

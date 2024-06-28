@@ -1,0 +1,54 @@
+~ talk_to_ethan_1
+Ethan: Hello, friend. Can you help me with something?
+{{Global.player_name}}: What’s the matter?
+Ethan: I'm one of the members of the village's exploration team.
+Ethan: We were out exploring as usual when we encountered a strong monster.
+Ethan: Luckily, I managed to escape to come back and ask for help.
+Ethan: However, my friend got trapped, holding off the monsters to let me escape.
+Ethan: He's still stuck in the eastern forest.
+Ethan: Can you help us?
+{{Global.player_name}}: Sure, no problem.
+Ethan: Thank you very much.
+do SignalManager.update_main_quest.emit("main_quest_5")
+set Global.paused = false
+=> END
+
+~ talk_to_lucas_1
+{{Global.player_name}}: Hello, I'm here to help you.
+Lucas: Oh, they managed to escape to the village to ask for aid.
+Lucas: You arrived just in time, I thought I wouldn't survive this.
+Lucas: Can you defeat those monsters for me?
+{{Global.player_name}}: Leave it to me, you just rest.
+Lucas: Try not to die, alright?
+do SignalManager.update_main_quest.emit("main_quest_5")
+set Global.paused = false
+=> END
+
+~ talk_to_lucas_2
+{{Global.player_name}}: Looks like we're safe now.
+Lucas: You're really strong. Watching you fight, I feel like we've met somewhere before.
+{{Global.player_name}}: Really? I've lost my memory. Can you remember any details?
+{{Global.player_name}}: It might help me recover some memories.
+Lucas: I'm not sure. But you remind me a lot of a friend of mine.
+Lucas: You should talk to Ethan again. He might know something about you.
+{{Global.player_name}}: Thanks, I'll ask him.
+do SignalManager.update_main_quest.emit("main_quest_5")
+set Global.paused = false
+=> END
+
+~ talk_to_ethan_2
+Ethan: You're back?
+{{Global.player_name}}: Yes, I’m back. Your friend isn’t too badly injured.
+Ethan: Haha, I didn't think he'd go down that easily.
+Ethan: And neither will you. You're always so full of energy and kindness.
+{{Global.player_name}}: You know me?
+Ethan: Of course, the three of us have been inseparable since we were kids.
+{{Global.player_name}}: So who exactly am I?
+Ethan: You’re one of my best friends.
+Ethan: It seems your mind is still healing, so it’s not yet time for me to reveal your true identity.
+{{Global.player_name}}: What should I do now?
+Ethan: Discover your wounds and realize the true value of yourself.
+Ethan: I just want to say. Wake up... we have so many things left to do.
+do SignalManager.update_main_quest.emit("main_quest_5")
+set Global.paused = false
+=> END

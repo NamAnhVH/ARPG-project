@@ -166,7 +166,7 @@ position = Vector2(142, 155)
 object_name = "Diana"
 
 [node name="InteractableChest" parent="Chest" index="0" instance=ExtResource("5_tuauf")]
-position = Vector2(133, 195)
+position = Vector2(117, 294)
 id = "chest_v100"
 items = Array[String](["mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02", "mushroom_v02"])
 
