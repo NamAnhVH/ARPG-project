@@ -78,7 +78,7 @@ theme = ExtResource("4_42uaw")
 theme_override_fonts/font = ExtResource("5_7qaau")
 text = "New Game"
 
-[node name="Continue" type="Button" parent="CanvasLayer/Control"]
+[node name="ContinueGame" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -146,7 +146,7 @@ theme = ExtResource("4_42uaw")
 text = "Exit"
 
 [connection signal="pressed" from="CanvasLayer/Control/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Continue" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ContinueGame" to="." method="_on_continue_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Exit" to="." method="_on_exit_pressed"]

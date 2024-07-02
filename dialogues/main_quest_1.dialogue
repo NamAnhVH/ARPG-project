@@ -1,7 +1,6 @@
 ~ talk_to_raven
 Raven: Hello there, friend.
 Raven: So, you're finally awake, huh? It's good to see you up and about.
-{{Global.player_name}}: Hello, Raven. Where exactly am I?
 Raven: I'm Raven, the village chief of this small settlement. We've been quite concerned about you since you washed up on our shores.
 {{Global.player_name}}: I see. What can you tell me about this village?
 Raven: Our village may be small, but it's filled with warmth and community spirit. We rely on each other for support and protection.

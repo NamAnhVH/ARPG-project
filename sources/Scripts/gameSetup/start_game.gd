@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var control : Control = $CanvasLayer/Control
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var continue_button : Button = $CanvasLayer/Control/Continue
+@onready var continue_button : Button = $CanvasLayer/Control/ContinueGame
 
 func _ready():
 	SignalManager.close_file_saving_container.connect(_on_close_file_saving_container)
@@ -45,3 +45,4 @@ func _on_setting_pressed():
 	var setting_container = ResourceManager.get_instance("setting_container")
 	setting_container.is_start_game_screen = true
 	canvas_layer.add_child(setting_container)
+

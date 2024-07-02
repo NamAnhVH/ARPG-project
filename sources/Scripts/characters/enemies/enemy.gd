@@ -3,7 +3,7 @@ class_name Enemy
 
 @onready var attack_cooldown_time: Timer = $Timers/AttackCooldownTime
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
-@onready var detect_area : Area2D = $DetectArea
+
 @onready var attack_area : AttackArea = $AttackArea
 
 @onready var first_position = global_position
@@ -52,19 +52,9 @@ func set_stat():
 func set_layer():
 	hitbox.set_collision_mask_value(z_index / 2 + 21, true)
 	damage_area.set_collision_layer_value(z_index / 2 + 17, true)
-	detect_area.set_collision_mask_value(z_index / 2 + 1, true)
 	attack_area.set_collision_mask_value(z_index / 2 + 1, true)
 	set_collision_layer_value(z_index / 2 + 1, true)
 	set_collision_mask_value(z_index / 2 + 1, true)
-
-func _on_detect_area_body_entered(body):
-	if body is PlayableCharacter:
-		is_chasing = true
-		var indicator = ResourceManager.get_instance("indicator")
-		indicator.text = "!"
-		indicator.indicator_type = GameEnums.INDICATOR_TYPE.EMOTE_INDICATOR
-		indicator.texture = preload("res://assets/ui/emote_box.png")
-		add_child(indicator)
 
 func _die_finished():
 	SignalManager.gain_money.emit(money_dropped)
@@ -93,3 +83,4 @@ func _on_is_dead():
 	is_alive = false
 	animation_tree.set("parameters/conditions/is_alive", is_alive)
 	animation_tree.set("parameters/conditions/is_dead", !is_alive)
+

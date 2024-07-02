@@ -8,7 +8,7 @@ class_name Minion
 @onready var move_idle_change_time : Timer = $Timers/MoveIdleChangeTime
 @onready var generate_random_position_time : Timer = $Timers/GenerateRandomPositionTime
 @onready var health_bar : ProgressBar = $HealthBar/HealthBar
-
+@onready var detect_area : Area2D = $DetectArea
 
 @onready var random_position = global_position
 
@@ -67,6 +67,10 @@ func drop_item():
 			floor_item.set_z_index(self.z_index)
 		else:
 			item.queue_free()
+
+func set_layer():
+	super.set_layer()
+	detect_area.set_collision_mask_value(z_index / 2 + 1, true)
 
 func _on_generate_random_position_time_timeout():
 	generate_random_position()

@@ -21,6 +21,11 @@ func set_health(value, _is_hitted: bool = false):
 	return value
 
 func _on_detect_area_body_entered(body):
-	super._on_detect_area_body_entered(body)
 	if body is PlayableCharacter:
+		is_chasing = true
+		var indicator = ResourceManager.get_instance("indicator")
+		indicator.text = "!"
+		indicator.indicator_type = GameEnums.INDICATOR_TYPE.EMOTE_INDICATOR
+		indicator.texture = preload("res://assets/ui/emote_box.png")
+		add_child(indicator)
 		target = body
