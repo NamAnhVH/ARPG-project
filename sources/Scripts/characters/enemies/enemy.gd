@@ -9,7 +9,6 @@ class_name Enemy
 @onready var first_position = global_position
 
 
-
 var money_dropped: int
 var exp_dropped: int
 

@@ -8,6 +8,7 @@ extends NinePatchRect
 @onready var lbl_def : Label = $StatContainer/VBoxContainer/Defence/Stat
 @onready var lbl_crit_rate : Label = $StatContainer/VBoxContainer/CritRate/Stat
 @onready var lbl_crit_damage : Label = $StatContainer/VBoxContainer/CritDamage/Stat
+@onready var lbl_knockback : Label = $StatContainer/VBoxContainer/Knockback/Stat
 @onready var lbl_life_point : Label = $StatContainer/VBoxContainer/LifePoint/Stat
 
 func _ready():
@@ -28,4 +29,5 @@ func _on_update_stat():
 	lbl_def.text = str(player_data.get_stat(GameEnums.STAT.DEF))
 	lbl_crit_rate.text = str(player_data.get_stat(GameEnums.STAT.CRIT_RATE)) + "%"
 	lbl_crit_damage.text = str(player_data.get_stat(GameEnums.STAT.CRIT_DAMAGE)) + "%"
+	lbl_knockback.text = str(player_data.get_stat(GameEnums.STAT.KNOCKBACK))
 	lbl_life_point.text = str(player_data.get_stat(GameEnums.STAT.LIFE_POINT))
